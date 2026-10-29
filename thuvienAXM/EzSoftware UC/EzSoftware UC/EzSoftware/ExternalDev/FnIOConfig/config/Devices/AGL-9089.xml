@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RegisterDescription ModelName ="NA"
+                     VendorName="Crevis"
+                     ToolTip="Crevis FnIO"
+                     StandardNameSpace="None"
+                     SchemaMajorVersion="1"
+                     SchemaMinorVersion="0"
+                     SchemaSubMinorVersion="0"
+                     MajorVersion="1"
+                     MinorVersion="0"
+                     SubMinorVersion="0"
+                     ProductGuid="8BCD0E5A-9DA1-4504-BF95-5A27F2D02405"
+                     VersionGuid="D2EC627D-9311-4137-B1C6-0727CE0025E4"
+                     xmlns="http://www.genicam.org/GenApi/Version_1_0"
+                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xsi:schemaLocation="http://www.genicam.org/GenApi/Version_1_0
+                     http://www.genicam.org/GenApi/GenApiSchema_Version_1_0.xsd">
+
+  <!-- ***************************************** -->
+  <!-- RootCategory -->
+  <!-- ***************************************** -->
+  <Group Comment="Root">
+    <Category Name="Root">
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pFeature>AGL9089</pFeature>
+    </Category>
+  </Group>
+
+  <!-- ***************************************** -->
+  <!-- SubCategories -->
+  <!-- ***************************************** -->
+  <Group Comment="SubCategories">
+    <Category Name="AGL9089" NameSpace="Custom">
+      <ToolTip>Category for Device information and control.</ToolTip>
+      <Description>Category for Device information and control.</Description>
+      <DisplayName>AGL-9089</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <pFeature>WatchdogTime</pFeature>
+      <!--<pFeature>IOUpdateTime</pFeature>-->
+      <pFeature>FirmwareRevision</pFeature>
+      <pFeature>FirmwareReleaseDate</pFeature>
+      <pFeature>SubnetMask</pFeature>
+      <pFeature>MacAddress</pFeature>
+      <!--<pFeature>FnBusStatus</pFeature>
+      <pFeature>FieldPowerStatus</pFeature>
+      <pFeature>WatchdogError</pFeature>-->
+      <pFeature>ExpansionSlotNumber</pFeature>
+      <pFeature>IPSettingMethod</pFeature>
+    </Category>
+  </Group>
+  <!-- /SubCategories-->
+
+  <Group Comment="SubSubCategories">
+    <Category Name="SubnetMask" NameSpace="Custom">
+      <ToolTip>Category for Device information and control.</ToolTip>
+      <Description>Category for Device information and control.</Description>
+      <DisplayName>Subnet Mask</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <pFeature>SubnetMask_IP1</pFeature>
+      <pFeature>SubnetMask_IP2</pFeature>
+      <pFeature>SubnetMask_IP3</pFeature>
+      <pFeature>SubnetMask_IP4</pFeature>
+    </Category>
+  </Group>
+
+  <!-- SubNetMask Control-->
+  <Group Comment="Subnetmask">
+    <Integer Name="SubnetMask_IP1" NameSpace ="Custom">
+      <ToolTip> </ToolTip>
+      <Description>SubnetMask IP1</Description>
+      <DisplayName>SubnetMask IP1</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <pValue>SubnetMask1Reg</pValue>
+      <Representation>PureNumber</Representation>
+    </Integer>
+
+    <Integer Name="SubnetMask_IP2" NameSpace ="Custom">
+      <ToolTip> </ToolTip>
+      <Description>SubnetMask IP2</Description>
+      <DisplayName>SubnetMask IP2</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <pValue>SubnetMask2Reg</pValue>
+      <Representation>PureNumber</Representation>
+    </Integer>
+
+    <Integer Name="SubnetMask_IP3" NameSpace ="Custom">
+      <ToolTip> </ToolTip>
+      <Description>SubnetMask IP3</Description>
+      <DisplayName>SubnetMask IP3</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <pValue>SubnetMask3Reg</pValue>
+      <Representation>PureNumber</Representation>
+    </Integer>
+
+    <Integer Name="SubnetMask_IP4" NameSpace ="Custom">
+      <ToolTip> </ToolTip>
+      <Description>SubnetMask IP4</Description>
+      <DisplayName>SubnetMask IP4</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <pValue>SubnetMask4Reg</pValue>
+      <Representation>PureNumber</Representation>
+    </Integer>
+
+    <StructReg Comment="SubnetMaskReg">
+      <ToolTip>.</ToolTip>
+      <Visibility>Beginner</Visibility>
+      <Address>0x00003008</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>Device</pPort>
+      <Endianess>LittleEndian</Endianess>
+      <StructEntry Name="SubnetMask1Reg">
+        <LSB>0</LSB>
+        <MSB>7</MSB>
+      </StructEntry>
+      <StructEntry Name="SubnetMask2Reg">
+        <LSB>8</LSB>
+        <MSB>15</MSB>
+      </StructEntry>
+      <StructEntry Name="SubnetMask3Reg">
+        <LSB>16</LSB>
+        <MSB>23</MSB>
+      </StructEntry>
+      <StructEntry Name="SubnetMask4Reg">
+        <LSB>24</LSB>
+        <MSB>31</MSB>
+      </StructEntry>
+    </StructReg>
+  </Group>
+  <!-- Device Control -->
+  <Group Comment="DeviceControl">
+    <Integer Name="WatchdogTime" NameSpace ="Custom">
+      <ToolTip> </ToolTip>
+      <Description>WatchDog Time</Description>
+      <DisplayName>WatchDog Time(X 100 msec)</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <pValue>WatchDogTimeReg</pValue>
+      <Min>0</Min>
+      <Max>65535</Max>
+      <Inc>1</Inc>
+      <Representation>PureNumber</Representation>
+    </Integer>
+
+    <!--<Converter Name="WatchdogTimeCon">
+      <FormulaTo>FROM * 100</FormulaTo>
+      <FormulaFrom>TO / 100</FormulaFrom>
+      <pValue>WatchdogTime</pValue>
+      <Slope>Automatic</Slope>
+    </Converter>-->
+
+    <IntReg Name="WatchDogTimeReg">
+      <Visibility>Invisible</Visibility>
+      <Address>0x00002000</Address>
+      <Length>4</Length>
+      <AccessMode>RW</AccessMode>
+      <pPort>Device</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+    </IntReg>
+
+    <!--<Integer Name="IOUpdateTime" NameSpace ="Custom">
+      <ToolTip> </ToolTip>
+      <Description>IO Update Time</Description>
+      <DisplayName>IO Update Time(X 100 usec)</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <pValue>IOUpdateTimeReg</pValue>
+      <Representation>PureNumber</Representation>
+    </Integer>-->
+
+    <!--<IntReg Name="IOUpdateTimeReg">
+      <Visibility>Invisible</Visibility>
+      <Address>0x00002004</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>Device</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+    </IntReg>-->
+
+    <StringReg Name="FirmwareRevision" NameSpace="Custom">
+      <ToolTip>Version of the Firmware Revision.</ToolTip>
+      <Description>Version of the Firmware Revision.</Description>
+      <DisplayName>Firmware Revision</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <Address>0x00001003</Address>
+      <Length>8</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>Device</pPort>
+    </StringReg>
+
+    <StringReg Name="FirmwareReleaseDate" NameSpace="Custom">
+      <ToolTip> </ToolTip>
+      <Description>Release Date of the Firmware.</Description>
+      <DisplayName>Firmware Date</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <Address>0x00001007</Address>
+      <Length>12</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>Device</pPort>
+    </StringReg>
+
+    <Integer Name="ExpansionSlotNumber" NameSpace ="Custom">
+      <ToolTip>Count of Connected All Slot</ToolTip>
+      <Description>Count of Connected All Slot</Description>
+      <DisplayName>Expansion Slot Number</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <pValue>ExpansionSlotNumberReg</pValue>
+      <Min>0</Min>
+      <Max>63</Max>
+      <Inc>1</Inc>
+      <Representation>PureNumber</Representation>
+    </Integer>
+
+    <IntReg Name="ExpansionSlotNumberReg">
+      <Visibility>Invisible</Visibility>
+      <Address>0x00004009</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>Device</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+    </IntReg>
+
+
+    <StringReg Name="MacAddress" NameSpace="Custom">
+      <ToolTip> </ToolTip>
+      <Description>Mac Address</Description>
+      <DisplayName>Mac Address</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <Address>0x0000300A</Address>
+      <Length>18</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>Device</pPort>
+    </StringReg>
+
+    <Enumeration Name="IPSettingMethod" NameSpace="Custom">
+      <ToolTip> </ToolTip>
+      <Description>0: BOOTP, 1:DHCP</Description>
+      <DisplayName>IP Setting Method</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RW</ImposedAccessMode>
+      <EnumEntry Name="Bootp" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>BOOTP</Description>
+        <DisplayName>BOOTP</DisplayName>
+        <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="Dhcp" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>DHCP</Description>
+        <DisplayName>DHCP</DisplayName>
+        <Value>1</Value>
+      </EnumEntry>
+      <pValue>IPSettingMethodReg</pValue>
+    </Enumeration>
+
+    <StructReg Comment="IPSetMethodReg">
+      <ToolTip>.</ToolTip>
+      <Visibility>Beginner</Visibility>
+      <Address>0x00003005</Address>
+      <Length>4</Length>
+      <AccessMode>RW</AccessMode>
+      <pPort>Device</pPort>
+      <Endianess>LittleEndian</Endianess>
+      <StructEntry Name="IPSettingMethodReg">
+        <LSB>0</LSB>
+        <MSB>15</MSB>
+      </StructEntry>
+    </StructReg>
+  </Group>
+
+  <!-- Global Nodes -->
+  <Port Name="Device">
+    <ToolTip>Port giving access to the device.</ToolTip>
+    <SwapEndianess>Yes</SwapEndianess>
+  </Port>
+  <!-- /Global Nodes-->
+</RegisterDescription>

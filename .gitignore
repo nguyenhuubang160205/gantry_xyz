@@ -1,0 +1,34 @@
+# Bỏ qua tệp nén lớn vượt quá 100MB của GitHub
+*.rar
+*.zip
+*.7z
+
+# Bỏ qua tệp CHM tiếng Hàn dung lượng lớn (>100MB)
+**/AXL_HELP_Kor.chm
+
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# ROS 2 & C++ Build / Install / Log outputs
+**/build/
+**/install/
+**/log/
+**/devel/
+**/.cache/
+*.o
+*.obj
+*.so
+*.a
+compile_commands.json
+.vscode/
+
+# Shared Memory / Temporary files
+/dev/shm/*
+*.log
+*.csv
+**/tempCodeRunnerFile.*
+
+tools/codex_bridge/codex_env.sh

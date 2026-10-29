@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RegisterDescription ModelName ="IO"
+                     VendorName="Crevis"
+                     ToolTip="Crevis FnIO"
+                     StandardNameSpace="None"
+                     SchemaMajorVersion="1"
+                     SchemaMinorVersion="0"
+                     SchemaSubMinorVersion="0"
+                     MajorVersion="1"
+                     MinorVersion="0"
+                     SubMinorVersion="0"
+                     ProductGuid="8BCD0E5A-9DA1-4504-BF95-5A27F2D02405"
+                     VersionGuid="D2EC627D-9311-4137-B1C6-0727CE0025E4"
+                     xmlns="http://www.genicam.org/GenApi/Version_1_0"
+                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xsi:schemaLocation="http://www.genicam.org/GenApi/Version_1_0
+                     http://www.genicam.org/GenApi/GenApiSchema_Version_1_0.xsd">
+
+  <!-- ***************************************** -->
+  <!-- RootCategory -->
+  <!-- ***************************************** -->
+  <Group Comment="Root">
+    <Category Name="Root">
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pFeature>AGT2328</pFeature>
+    </Category>
+  </Group>
+
+  <!-- ***************************************** -->
+  <!-- SubCategories -->
+  <!-- ***************************************** -->
+  <Group Comment="SubCategories">
+    <Category Name="AGT2328" NameSpace="Custom">
+      <ToolTip>Category for Device information and control.</ToolTip>
+      <Description>Category for Device information and control.</Description>
+      <DisplayName>AGT-2328</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <pFeature>FaultActionChannel0_Enum</pFeature>
+      <pFeature>FaultActionChannel1_Enum</pFeature>
+      <pFeature>FaultActionChannel2_Enum</pFeature>
+      <pFeature>FaultActionChannel3_Enum</pFeature>
+      <pFeature>FaultActionChannel4_Enum</pFeature>
+      <pFeature>FaultActionChannel5_Enum</pFeature>
+      <pFeature>FaultActionChannel6_Enum</pFeature>
+      <pFeature>FaultActionChannel7_Enum</pFeature>
+      <pFeature>FaultValueChannel0_Enum</pFeature>
+      <pFeature>FaultValueChannel1_Enum</pFeature>
+      <pFeature>FaultValueChannel2_Enum</pFeature>
+      <pFeature>FaultValueChannel3_Enum</pFeature>
+      <pFeature>FaultValueChannel4_Enum</pFeature>
+      <pFeature>FaultValueChannel5_Enum</pFeature>
+      <pFeature>FaultValueChannel6_Enum</pFeature>
+      <pFeature>FaultValueChannel7_Enum</pFeature>
+    </Category>
+  </Group>
+  <!-- /SubCategories-->
+
+  <!-- Device Control -->
+  <Group Comment="DeviceControl">
+    <Enumeration Name="FaultActionChannel0_Enum" NameSpace="Custom">
+      <ToolTip> </ToolTip>
+      <Description>0: Fault value, 1:Hold last state</Description>
+      <DisplayName>IO Fault Action Channel 0</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RW</ImposedAccessMode>
+      <EnumEntry Name="FaultValue" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Fault Value</Description>
+        <DisplayName>Fault Value</DisplayName>
+        <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="HoldLastState" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Hold Last State</Description>
+        <DisplayName>Hold Last State</DisplayName>
+        <Value>1</Value>
+      </EnumEntry>
+      <pValue>FaultActionChannel0_Reg</pValue>
+    </Enumeration>
+
+    <Enumeration Name="FaultActionChannel1_Enum" NameSpace="Custom">
+      <ToolTip> </ToolTip>
+      <Description>0: Fault value, 1:Hold last state</Description>
+      <DisplayName>IO Fault Action Channel 1</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RW</ImposedAccessMode>
+      <EnumEntry Name="FaultValue" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Fault Value</Description>
+        <DisplayName>Fault Value</DisplayName>
+        <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="HoldLastState" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Hold Last State</Description>
+        <DisplayName>Hold Last State</DisplayName>
+        <Value>1</Value>
+      </EnumEntry>
+      <pValue>FaultActionChannel1_Reg</pValue>
+    </Enumeration>
+
+    <Enumeration Name="FaultActionChannel2_Enum" NameSpace="Custom">
+      <ToolTip> </ToolTip>
+      <Description>0: Fault value, 1:Hold last state</Description>
+      <DisplayName>IO Fault Action Channel 2</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RW</ImposedAccessMode>
+      <EnumEntry Name="FaultValue" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Fault Value</Description>
+        <DisplayName>Fault Value</DisplayName>
+        <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="HoldLastState" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Hold Last State</Description>
+        <DisplayName>Hold Last State</DisplayName>
+        <Value>1</Value>
+      </EnumEntry>
+      <pValue>FaultActionChannel2_Reg</pValue>
+    </Enumeration>
+
+    <Enumeration Name="FaultActionChannel3_Enum" NameSpace="Custom">
+      <ToolTip> </ToolTip>
+      <Description>0: Fault value, 1:Hold last state</Description>
+      <DisplayName>IO Fault Action Channel 3</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RW</ImposedAccessMode>
+      <EnumEntry Name="FaultValue" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Fault Value</Description>
+        <DisplayName>Fault Value</DisplayName>
+        <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="HoldLastState" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Hold Last State</Description>
+        <DisplayName>Hold Last State</DisplayName>
+        <Value>1</Value>
+      </EnumEntry>
+      <pValue>FaultActionChannel3_Reg</pValue>
+    </Enumeration>
+
+    <Enumeration Name="FaultActionChannel4_Enum" NameSpace="Custom">
+      <ToolTip> </ToolTip>
+      <Description>0: Fault value, 1:Hold last state</Description>
+      <DisplayName>IO Fault Action Channel 4</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RW</ImposedAccessMode>
+      <EnumEntry Name="FaultValue" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Fault Value</Description>
+        <DisplayName>Fault Value</DisplayName>
+        <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="HoldLastState" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Hold Last State</Description>
+        <DisplayName>Hold Last State</DisplayName>
+        <Value>1</Value>
+      </EnumEntry>
+      <pValue>FaultActionChannel4_Reg</pValue>
+    </Enumeration>
+
+    <Enumeration Name="FaultActionChannel5_Enum" NameSpace="Custom">
+      <ToolTip> </ToolTip>
+      <Description>0: Fault value, 1:Hold last state</Description>
+      <DisplayName>IO Fault Action Channel 5</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RW</ImposedAccessMode>
+      <EnumEntry Name="FaultValue" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Fault Value</Description>
+        <DisplayName>Fault Value</DisplayName>
+        <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="HoldLastState" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Hold Last State</Description>
+        <DisplayName>Hold Last State</DisplayName>
+        <Value>1</Value>
+      </EnumEntry>
+      <pValue>FaultActionChannel5_Reg</pValue>
+    </Enumeration>
+
+    <Enumeration Name="FaultActionChannel6_Enum" NameSpace="Custom">
+      <ToolTip> </ToolTip>
+      <Description>0: Fault value, 1:Hold last state</Description>
+      <DisplayName>IO Fault Action Channel 6</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RW</ImposedAccessMode>
+      <EnumEntry Name="FaultValue" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Fault Value</Description>
+        <DisplayName>Fault Value</DisplayName>
+        <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="HoldLastState" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Hold Last State</Description>
+        <DisplayName>Hold Last State</DisplayName>
+        <Value>1</Value>
+      </EnumEntry>
+      <pValue>FaultActionChannel6_Reg</pValue>
+    </Enumeration>
+
+    <Enumeration Name="FaultActionChannel7_Enum" NameSpace="Custom">
+      <ToolTip> </ToolTip>
+      <Description>0: Fault value, 1:Hold last state</Description>
+      <DisplayName>IO Fault Action Channel 7</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RW</ImposedAccessMode>
+      <EnumEntry Name="FaultValue" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Fault Value</Description>
+        <DisplayName>Fault Value</DisplayName>
+        <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="HoldLastState" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Hold Last State</Description>
+        <DisplayName>Hold Last State</DisplayName>
+        <Value>1</Value>
+      </EnumEntry>
+      <pValue>FaultActionChannel7_Reg</pValue>
+    </Enumeration>
+
+    <Enumeration Name="FaultValueChannel0_Enum" NameSpace="Custom">
+      <ToolTip> </ToolTip>
+      <Description>0:Off, 1:On</Description>
+      <DisplayName>IO Fault Value Channel 0</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RW</ImposedAccessMode>
+      <EnumEntry Name="FaultValueOFF" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>OFF</Description>
+        <DisplayName>OFF</DisplayName>
+        <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="FaultValueON" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>ON</Description>
+        <DisplayName>ON</DisplayName>
+        <Value>1</Value>
+      </EnumEntry>
+      <pValue>FaultValueChannel0_Reg</pValue>
+    </Enumeration>
+
+    <Enumeration Name="FaultValueChannel1_Enum" NameSpace="Custom">
+      <ToolTip> </ToolTip>
+      <Description>0:Off, 1:On</Description>
+      <DisplayName>IO Fault Value Channel 1</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RW</ImposedAccessMode>
+      <EnumEntry Name="FaultValueOFF" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>OFF</Description>
+        <DisplayName>OFF</DisplayName>
+        <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="FaultValueON" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>ON</Description>
+        <DisplayName>ON</DisplayName>
+        <Value>1</Value>
+      </EnumEntry>
+      <pValue>FaultValueChannel1_Reg</pValue>
+    </Enumeration>
+
+    <Enumeration Name="FaultValueChannel2_Enum" NameSpace="Custom">
+      <ToolTip> </ToolTip>
+      <Description>0:Off, 1:On</Description>
+      <DisplayName>IO Fault Value Channel 2</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RW</ImposedAccessMode>
+      <EnumEntry Name="FaultValueOFF" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>OFF</Description>
+        <DisplayName>OFF</DisplayName>
+        <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="FaultValueON" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>ON</Description>
+        <DisplayName>ON</DisplayName>
+        <Value>1</Value>
+      </EnumEntry>
+      <pValue>FaultValueChannel2_Reg</pValue>
+    </Enumeration>
+
+    <Enumeration Name="FaultValueChannel3_Enum" NameSpace="Custom">
+      <ToolTip> </ToolTip>
+      <Description>0:Off, 1:On</Description>
+      <DisplayName>IO Fault Value Channel 3</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RW</ImposedAccessMode>
+      <EnumEntry Name="FaultValueOFF" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>OFF</Description>
+        <DisplayName>OFF</DisplayName>
+        <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="FaultValueON" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>ON</Description>
+        <DisplayName>ON</DisplayName>
+        <Value>1</Value>
+      </EnumEntry>
+      <pValue>FaultValueChannel3_Reg</pValue>
+    </Enumeration>
+
+    <Enumeration Name="FaultValueChannel4_Enum" NameSpace="Custom">
+      <ToolTip> </ToolTip>
+      <Description>0:Off, 1:On</Description>
+      <DisplayName>IO Fault Value Channel 4</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RW</ImposedAccessMode>
+      <EnumEntry Name="FaultValueOFF" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>OFF</Description>
+        <DisplayName>OFF</DisplayName>
+        <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="FaultValueON" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>ON</Description>
+        <DisplayName>ON</DisplayName>
+        <Value>1</Value>
+      </EnumEntry>
+      <pValue>FaultValueChannel4_Reg</pValue>
+    </Enumeration>
+
+    <Enumeration Name="FaultValueChannel5_Enum" NameSpace="Custom">
+      <ToolTip> </ToolTip>
+      <Description>0:Off, 1:On</Description>
+      <DisplayName>IO Fault Value Channel 5</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RW</ImposedAccessMode>
+      <EnumEntry Name="FaultValueOFF" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>OFF</Description>
+        <DisplayName>OFF</DisplayName>
+        <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="FaultValueON" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>ON</Description>
+        <DisplayName>ON</DisplayName>
+        <Value>1</Value>
+      </EnumEntry>
+      <pValue>FaultValueChannel5_Reg</pValue>
+    </Enumeration>
+
+    <Enumeration Name="FaultValueChannel6_Enum" NameSpace="Custom">
+      <ToolTip> </ToolTip>
+      <Description>0:Off, 1:On</Description>
+      <DisplayName>IO Fault Value Channel 6</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RW</ImposedAccessMode>
+      <EnumEntry Name="FaultValueOFF" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>OFF</Description>
+        <DisplayName>OFF</DisplayName>
+        <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="FaultValueON" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>ON</Description>
+        <DisplayName>ON</DisplayName>
+        <Value>1</Value>
+      </EnumEntry>
+      <pValue>FaultValueChannel6_Reg</pValue>
+    </Enumeration>
+
+    <Enumeration Name="FaultValueChannel7_Enum" NameSpace="Custom">
+      <ToolTip> </ToolTip>
+      <Description>0:Off, 1:On</Description>
+      <DisplayName>IO Fault Value Channel 7</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RW</ImposedAccessMode>
+      <EnumEntry Name="FaultValueOFF" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>OFF</Description>
+        <DisplayName>OFF</DisplayName>
+        <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="FaultValueON" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>ON</Description>
+        <DisplayName>ON</DisplayName>
+        <Value>1</Value>
+      </EnumEntry>
+      <pValue>FaultValueChannel7_Reg</pValue>
+    </Enumeration>
+
+    <StructReg Comment="ConfigurationParamReg">
+      <ToolTip>.</ToolTip>
+      <Visibility>Beginner</Visibility>
+      <Address>0x0000A011</Address>
+      <Length>2</Length>
+      <AccessMode>RW</AccessMode>
+      <pPort>Device</pPort>
+      <Endianess>LittleEndian</Endianess>
+      <StructEntry Name="FaultActionChannel0_Reg">
+        <Bit>0</Bit>
+      </StructEntry>
+      <StructEntry Name="FaultActionChannel1_Reg">
+        <Bit>1</Bit>
+      </StructEntry>
+      <StructEntry Name="FaultActionChannel2_Reg">
+        <Bit>2</Bit>
+      </StructEntry>
+      <StructEntry Name="FaultActionChannel3_Reg">
+        <Bit>3</Bit>
+      </StructEntry>
+      <StructEntry Name="FaultActionChannel4_Reg">
+        <Bit>4</Bit>
+      </StructEntry>
+      <StructEntry Name="FaultActionChannel5_Reg">
+        <Bit>5</Bit>
+      </StructEntry>
+      <StructEntry Name="FaultActionChannel6_Reg">
+        <Bit>6</Bit>
+      </StructEntry>
+      <StructEntry Name="FaultActionChannel7_Reg">
+        <Bit>7</Bit>
+      </StructEntry>
+      <StructEntry Name="FaultValueChannel0_Reg">
+        <Bit>8</Bit>
+      </StructEntry>
+      <StructEntry Name="FaultValueChannel1_Reg">
+        <Bit>9</Bit>
+      </StructEntry>
+      <StructEntry Name="FaultValueChannel2_Reg">
+        <Bit>10</Bit>
+      </StructEntry>
+      <StructEntry Name="FaultValueChannel3_Reg">
+        <Bit>11</Bit>
+      </StructEntry>
+      <StructEntry Name="FaultValueChannel4_Reg">
+        <Bit>12</Bit>
+      </StructEntry>
+      <StructEntry Name="FaultValueChannel5_Reg">
+        <Bit>13</Bit>
+      </StructEntry>
+      <StructEntry Name="FaultValueChannel6_Reg">
+        <Bit>14</Bit>
+      </StructEntry>
+      <StructEntry Name="FaultValueChannel7_Reg">
+        <Bit>15</Bit>
+      </StructEntry>
+    </StructReg>
+  </Group>
+
+  <!-- Global Nodes -->
+  <Port Name="Device">
+    <ToolTip>Port giving access to the device.</ToolTip>
+    <SwapEndianess>Yes</SwapEndianess>
+  </Port>
+  <!-- /Global Nodes-->
+</RegisterDescription>

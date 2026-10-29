@@ -1,0 +1,27 @@
+# ==============================================================================
+# CẤU HÌNH TỌA ĐỘ CẢM BIẾN ROBOT 3 TRỤC XYZ (GAZEBO & MOTION CONTROLLER)
+# Bạn có thể tự do thay đổi tọa độ (mm) của từng cảm biến trên bất kỳ trục nào.
+# Hệ thống sẽ tự động cập nhật cả mô hình hiển thị 3D lẫn tín hiệu Digital In.
+# ==============================================================================
+
+sensors:
+  axis_x:
+    name: "Trục X (Hành trình 0 - 800mm)"
+    limit_min: 0.0       # mm (Mép trái - Cảm biến hành trình âm)
+    home_org: 0.0        # mm (Vị trí công tắc cờ Dò gốc Home - Gốc O trên bàn phôi)
+    limit_max: 800.0     # mm (Mép phải - Cảm biến hành trình dương)
+    sensor_width: 10.0   # mm
+
+  axis_y:
+    name: "Trục Y (Hành trình 0 - 680mm)"
+    limit_min: 0.0       # mm (Mép sau - Cảm biến hành trình âm)
+    home_org: 0.0        # mm (Vị trí công tắc cờ Dò gốc Home - Gốc O trên bàn phôi)
+    limit_max: 680.0     # mm (Mép trước - Cảm biến hành trình dương)
+    sensor_width: 10.0   # mm
+
+  axis_z:
+    name: "Trục Z (Hành trình -300mm đến +60mm)"
+    limit_min: -300.0    # mm (Đáy phôi / Mặt bàn máy)
+    home_org: 0.0        # mm (Vị trí cảm biến Home ORG - Gốc 0,0,0)
+    limit_max: 60.0      # mm (Đỉnh hành trình Z - Cảm biến Limit+)
+    sensor_width: 10.0   # mm

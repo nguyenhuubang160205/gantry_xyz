@@ -1,0 +1,229 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\InterruptSetting.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\InterruptSetting.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_INTERRUPTSETTING_DIALOG DIALOGEX 0, 0, 273, 335
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "InterruptSetting"
+FONT 9, "±¼¸²"
+BEGIN
+    COMBOBOX        IDC_CBO_SEL_AXIS,68,7,192,325,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Select Axis No : ",IDC_STATIC,13,9,54,11,SS_CENTERIMAGE
+    GROUPBOX        "< Interrupt Event Bank 1 [0x00000000] >",IDC_GRP_BANK1,
+                    7,27,259,82
+    GROUPBOX        "< Interrupt Event Bank 2 [0x00000000] >",IDC_GRP_BANK2,
+                    7,113,259,113
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,7,6,259,16
+    CONTROL         "[Bit 00] When drive set interrupt occurrence use is exited",
+                    IDC_CHK_BANK1_BIT_00,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,13,41,195,10
+    CONTROL         "[Bit 01] When drive is exited",IDC_CHK_BANK1_BIT_01,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,56,107,10
+    CONTROL         "[Bit 02] When drive started",IDC_CHK_BANK1_BIT_02,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,71,107,10
+    CONTROL         "[Bit 31] Interrupt occurrence command execution",
+                    IDC_CHK_BANK1_BIT_31,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,13,92,175,10
+    CONTROL         "[Bit 14] UOut 0 terminal signal is changed to '1' (Servo On) ",
+                    IDC_CHK_BANK2_BIT_14,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,13,126,210,10
+    CONTROL         "[Bit 15] UOut 1 terminal signal is changed to '1' (Alarm Clear)",
+                    IDC_CHK_BANK2_BIT_15,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,13,141,216,10
+    CONTROL         "[Bit 16] UOut 2 terminal signal is changed to '1'",
+                    IDC_CHK_BANK2_BIT_16,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,13,157,170,10
+    CONTROL         "[Bit 20] UInput 0 terminal signal is changed to '1' (Home Signal)",
+                    IDC_CHK_BANK2_BIT_20,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,13,178,223,10
+    CONTROL         "[Bit 21] UInput 1 terminal signal is changed to '1' (Z-Phase Signal)",
+                    IDC_CHK_BANK2_BIT_21,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,13,193,233,10
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,24,85,236,2
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,24,171,236,2
+    PUSHBUTTON      "Set Bank 1",IDC_BTN_SET_BANK1,193,94,72,14
+    GROUPBOX        "< Interrupt Method >",IDC_STATIC,7,231,181,28
+    CONTROL         "Message",IDC_RDO_MESSAGE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,13,243,46,10
+    CONTROL         "Callback",IDC_RDO_CALLBACK,"Button",BS_AUTORADIOBUTTON,
+                    83,243,41,10
+    CONTROL         "Event",IDC_RDO_EVENT,"Button",BS_AUTORADIOBUTTON,146,
+                    243,30,10
+    CONTROL         "[Bit 22] UInput 2 terminal signal is changed to '1'",
+                    IDC_CHK_BANK2_BIT_22,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,13,209,174,10
+    LISTBOX         IDC_LST_INT_LOG,7,263,259,65,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Interrupt Enable",IDC_CHK_INT_ENABLE,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,193,237,72,20
+    PUSHBUTTON      "Set Bank 2",IDC_BTN_SET_BANK2,193,211,72,14
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204b0"
+        BEGIN
+            VALUE "Comments", "(2011.03.28 compiled r1.0) for EzSoftwareRM\0"
+            VALUE "CompanyName", "Ajinextek\0"
+            VALUE "FileDescription", "InterruptSetting Example\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "InterruptSetting\0"
+            VALUE "LegalCopyright", "Copyright (C) 2011 AJINEXTEK Co,. LTD.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "InterruptSetting.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "InterruptSetting\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_INTERRUPTSETTING_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 266
+        VERTGUIDE, 13
+        VERTGUIDE, 260
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 328
+        HORZGUIDE, 239
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\InterruptSetting.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NormalTriggerMulti2008", "NormalTriggerMulti2008.csproj", "{8E95F080-8E3C-46FA-B35C-6DAE1393FE39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8E95F080-8E3C-46FA-B35C-6DAE1393FE39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E95F080-8E3C-46FA-B35C-6DAE1393FE39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E95F080-8E3C-46FA-B35C-6DAE1393FE39}.Debug|x86.ActiveCfg = Debug|x86
+		{8E95F080-8E3C-46FA-B35C-6DAE1393FE39}.Debug|x86.Build.0 = Debug|x86
+		{8E95F080-8E3C-46FA-B35C-6DAE1393FE39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E95F080-8E3C-46FA-B35C-6DAE1393FE39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E95F080-8E3C-46FA-B35C-6DAE1393FE39}.Release|x86.ActiveCfg = Release|x86
+		{8E95F080-8E3C-46FA-B35C-6DAE1393FE39}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

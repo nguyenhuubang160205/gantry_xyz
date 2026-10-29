@@ -1,0 +1,285 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\HomeSearch.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\HomeSearch.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_HOMESEARCH_DIALOG DIALOGEX 0, 0, 273, 335
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "HomeSearch"
+FONT 9, "±¼¸²"
+BEGIN
+    COMBOBOX        IDC_CBO_SEL_AXIS,69,7,123,325,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Select Axis No : ",IDC_STATIC,13,9,54,11,SS_CENTERIMAGE
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,7,6,259,15
+    GROUPBOX        "Position Monitor",IDC_STATIC,7,27,259,59
+    LTEXT           "Command Pos :",IDC_STATIC,13,37,54,13,SS_CENTERIMAGE
+    LTEXT           "Feedback Pos  :",IDC_STATIC,13,52,54,13,SS_CENTERIMAGE
+    RTEXT           "0.000",IDC_STC_CMD_POS,69,37,88,13,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    RTEXT           "0.000",IDC_STC_ACT_POS,69,52,88,13,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    PUSHBUTTON      "Position Clear",IDC_BTN_POS_CLEAR,193,37,67,26
+    LTEXT           "Command Vel  :",IDC_STATIC,13,67,54,13,SS_CENTERIMAGE
+    RTEXT           "0.000",IDC_STC_CMD_VEL,69,67,88,13,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    LTEXT           "Unit",IDC_STATIC,161,37,29,12,SS_CENTERIMAGE
+    LTEXT           "Unit",IDC_STATIC,161,52,29,12,SS_CENTERIMAGE
+    CONTROL         "Unit/Sec",IDC_STATIC,"Static",SS_SIMPLE | 
+                    SS_CENTERIMAGE | WS_GROUP,161,67,29,12
+    CONTROL         "Servo On",IDC_CHK_SERVO_ON,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,193,66,67,14
+    GROUPBOX        "< Home Method Setting >",IDC_STATIC,7,122,259,64
+    CONTROL         "Home Signal Satae",IDC_CHK_HOME_STATE,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,13,100,77,12
+    COMBOBOX        IDC_CBO_HOME_DIR,69,134,62,91,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Home Direction : ",IDC_STATIC,13,134,54,12,
+                    SS_CENTERIMAGE
+    COMBOBOX        IDC_CBO_HOME_LEVEL,193,99,67,91,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,193,166,72,2
+    LTEXT           "Home Level   : ",IDC_STATIC,143,99,51,12,SS_CENTERIMAGE
+    PUSHBUTTON      "Load File",IDC_BTN_LOAD_FILE,193,7,67,14
+    COMBOBOX        IDC_CBO_ZPHASE_USE,193,149,67,91,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Z Phase Use  : ",IDC_STATIC,142,149,51,12,
+                    SS_CENTERIMAGE
+    COMBOBOX        IDC_CBO_HOME_SIGNAL,193,134,67,91,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Home Signal  : ",IDC_STATIC,143,134,51,12,
+                    SS_CENTERIMAGE
+    LTEXT           "Home Set Offset: ",IDC_STATIC,13,149,54,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_HOME_OFFSET,69,149,62,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    PUSHBUTTON      "Set Method",IDC_BTN_SET_METHOD,193,171,72,14
+    GROUPBOX        "< Home Signal Level >",IDC_STATIC,7,89,259,29
+    GROUPBOX        "< Home Velocity Setting >",IDC_STATIC,7,190,259,85
+    LTEXT           "First Velocity    : ",IDC_STATIC,13,203,54,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_VEL_FIRST,69,203,62,14,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "Second Velocity: ",IDC_STATIC,13,220,54,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_VEL_SECOND,69,220,62,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Third Velocity   : ",IDC_STATIC,13,237,54,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_VEL_THIRD,69,237,62,14,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "First Accel      : ",IDC_STATIC,142,203,51,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_ACC_FIRST,193,203,67,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Second Accel :",IDC_STATIC,142,220,50,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_ACC_SECOND,193,220,67,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    PUSHBUTTON      "Set Velocity",IDC_BTN_SET_VELOCITY,193,260,72,14
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,193,255,72,2
+    GROUPBOX        "< Home Search >",IDC_STATIC,7,279,259,49
+    LTEXT           "Home Result     : ",IDC_STATIC,13,291,54,14,
+                    SS_CENTERIMAGE
+    LTEXT           " [FFH] HOME_ERR_UNKNOWN",IDC_STC_HOME_RESULT,69,291,121,
+                    14,SS_CENTERIMAGE | SS_SUNKEN
+    LTEXT           "Home Step/Rate: ",IDC_STATIC,13,307,55,14,
+                    SS_CENTERIMAGE
+    CTEXT           "",IDC_STC_HOME_STEP_MAIN,69,307,16,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    CTEXT           "",IDC_STC_HOME_STEP_SUB,86,307,16,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    CONTROL         "Progress1",IDC_PRG_HOME_RATE,"msctls_progress32",
+                    WS_BORDER,104,307,86,14
+    PUSHBUTTON      "Home Start",IDC_BTN_HOME_START,193,291,67,14
+    PUSHBUTTON      "Move Stop",IDC_BTN_MOVE_STOP,193,307,67,14
+    LTEXT           "Home Clr Time : ",IDC_STATIC,13,165,54,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_HOME_CLR_TIME,69,165,62,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    LTEXT           "mSec",IDC_STATIC,135,165,21,14,SS_CENTERIMAGE
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,136,134,2,30
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,136,203,2,62
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,136,100,2,10
+    LTEXT           "Last Velocity    : ",IDC_STATIC,13,254,54,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_VEL_LAST,69,254,62,14,ES_RIGHT | ES_AUTOHSCROLL
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204b0"
+        BEGIN
+            VALUE "Comments", "(2011.03.28 compiled r1.0) for EzSoftwareRM\0"
+            VALUE "CompanyName", "Ajinextek\0"
+            VALUE "FileDescription", "HomeSearch Example\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "HomeSearch\0"
+            VALUE "LegalCopyright", "Copyright (C) 2011 AJINEXTEK Co,. LTD.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "HomeSearch.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "HomeSearch\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_HOMESEARCH_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 266
+        VERTGUIDE, 13
+        VERTGUIDE, 260
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 328
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_HOMESEARCH_DIALOG DLGINIT
+BEGIN
+    IDC_CBO_HOME_DIR, 0x403, 13, 0
+0x3030, 0x203a, 0x442d, 0x5249, 0x435f, 0x5743, "\000" 
+    IDC_CBO_HOME_DIR, 0x403, 12, 0
+0x3130, 0x203a, 0x442b, 0x5249, 0x435f, 0x0057, 
+    0
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\HomeSearch.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

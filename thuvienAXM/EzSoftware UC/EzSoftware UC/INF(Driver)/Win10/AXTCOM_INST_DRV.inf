@@ -1,0 +1,84 @@
+[Version]
+Signature="$WINDOWS NT$"
+Class=Ports
+ClassGuid           = {4D36E978-E325-11CE-BFC1-08002BE10318}
+Provider            = "AJINEXTEK Co.,Ltd."
+CatalogFile         = axtcom_inst_drv.cat
+CatalogFile.NTamd64 = axtcom_inst_drv64.cat
+DriverVer           = 08/24/2020, 3.0.2.3
+
+[SourceDisksNames]
+1=%DiskId%
+
+[SourceDisksFiles]
+AxtCom_32bit.sys=1
+AxtCom_64bit.sys=1
+
+[DestinationDirs]
+DefaultDestDir=12
+
+; Install class "Ports"
+;----------------------------------------------------------
+[ClassInstall]
+AddReg=PortsClass.AddReg
+
+[PortsClass.AddReg]
+HKR,,,,%PortsClassName%
+HKR,,Icon,,"-23"
+HKR,,Installer32,,"MsPorts.Dll,PortsClassInstaller"
+
+; Drivers
+;----------------------------------------------------------
+
+[Manufacturer]
+%Mfg%=MfgDeviceSection, NTamd64
+
+[MfgDeviceSection]
+%DeviceDesc% = AJINPORTPCI, PNPDRV\PCIVCOM
+
+[MfgDeviceSection.NTamd64]
+%DeviceDesc64% = AJINPORTPCI64, PNPDRV\PCIVCOM
+
+[AJINPORTPCI]
+CopyFiles=@AxtCom_32bit.sys
+AddReg=AJINPORTPCI.AddReg
+
+[AJINPORTPCI64]
+CopyFiles=@AxtCom_64bit.sys
+AddReg=AJINPORTPCI.AddReg
+
+[AJINPORTPCI.AddReg]
+HKR,,PortSubClass,1,01
+AddReg=HKR,,EnumPropPages32,,"msports.dll,SerialPortPropPageProvider"
+
+[AJINPORTPCI.Services]
+AddService = AxtCom_32bit,%SPSVCINST_ASSOCSERVICE%,AJINPORT_Service_Inst
+
+[AJINPORTPCI64.Services]
+AddService = AxtCom_64bit,%SPSVCINST_ASSOCSERVICE%,AJINPORT_Service_Inst64
+
+[AJINPORT_Service_Inst]
+ServiceType    = %SERVICE_KERNEL_DRIVER%
+StartType      = %SERVICE_MANUAL_START%
+ErrorControl   = %SERVICE_ERROR_NORMAL%
+ServiceBinary  = %12%\AxtCom_32bit.sys 
+LoadOrderGroup = Extended Base
+
+[AJINPORT_Service_Inst64]
+ServiceType    = %SERVICE_KERNEL_DRIVER%
+StartType      = %SERVICE_MANUAL_START%
+ErrorControl   = %SERVICE_ERROR_NORMAL%
+ServiceBinary  = %12%\AxtCom_64bit.sys 
+LoadOrderGroup = Extended Base
+
+[Strings]
+PortsClassName 	= "AXT_COM"
+DeviceDesc 	= "AXT PCI Serial Port"
+DeviceDesc64= "AXT PCI Serial Port(64-Bit)"
+DiskId 		= "PCI Install Disk 1"
+Mfg = "AJIN, Inc."
+SPSVCINST_ASSOCSERVICE = 0x00000002
+SERVICE_KERNEL_DRIVER  = 1
+SERVICE_MANUAL_START    = 1
+SERVICE_ERROR_NORMAL  = 1
+

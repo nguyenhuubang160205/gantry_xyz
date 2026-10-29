@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="..\..\Executable\Trigger_SettingBlock.exe"/>
+    <OBJFILES value="..\..\Executable\Motion\Trigger_SettingBlock.obj 
+      ..\..\Executable\Motion\TriggerSettingBlock.obj"/>
+    <RESFILES value="Trigger_SettingBlock.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) TriggerSettingBlock.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value="vcl.lib rtl.lib"/>
+    <PACKAGES value="vcl.bpi rtl.bpi dbrtl.bpi adortl.bpi vcldb.bpi vclx.bpi bdertl.bpi 
+      vcldbx.bpi ibxpress.bpi dsnap.bpi cds.bpi bdecds.bpi qrpt.bpi teeui.bpi 
+      teedb.bpi tee.bpi dss.bpi teeqr.bpi visualclx.bpi visualdbclx.bpi 
+      dsnapcrba.bpi dsnapcon.bpi bcbsmp.bpi vclie.bpi xmlrtl.bpi inet.bpi 
+      inetdbbde.bpi inetdbxpress.bpi inetdb.bpi nmfast.bpi webdsnap.bpi 
+      bcbie.bpi websnap.bpi soaprtl.bpi dclocx.bpi dbexpress.bpi dbxcds.bpi 
+      indy.bpi bcb2kaxserver.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="_DEBUG"/>
+    <SYSDEFINES value="_RTLDLL;NO_STRICT;USEPACKAGES"/>
+    <MAINSOURCE value="Trigger_SettingBlock.cpp"/>
+    <INCLUDEPATH value="&quot;F:\Project\Examples\C++ Builder\Motion\12.[Trigger]-SettingBlock&quot;;&quot;E:\Program Files (x86)\Borland\CBuilder6\Projects&quot;;$(BCB)\include;$(BCB)\include\vcl;&quot;..\..\..\..\AXL(Library)\C, C++&quot;"/>
+    <LIBPATH value="&quot;F:\Project\Examples\C++ Builder\Motion\12.[Trigger]-SettingBlock&quot;;&quot;E:\Program Files (x86)\Borland\CBuilder6\Projects&quot;;$(BCB)\lib\obj;$(BCB)\lib;..\..\..\..\AXL(Library)\Library\CBuilder"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I&quot;F:\Project\Examples\C++ Builder\Motion\12.[Trigger]-SettingBlock&quot; 
+      -I&quot;E:\Program Files (x86)\Borland\CBuilder6\Projects&quot; -I$(BCB)\include 
+      -I$(BCB)\include\vcl -I&quot;..\..\..\..\AXL(Library)\C, C++&quot; -src_suffix cpp 
+      -D_DEBUG -boa"/>
+    <CFLAG1 value="-Od -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -r- -a8 -b- -k -y -v -vi- -c 
+      -tW -tWM"/>
+    <PFLAGS value="-N2..\..\Executable\Motion -N0..\..\Executable\Motion -$YD -$W -$O- -$A8 
+      -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zd"/>
+    <LFLAGS value="-I..\..\Executable\Motion -D&quot;&quot; -aa -Tpe -x -Gn -v"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0w32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="Trigger_SettingBlock.res" FORMNAME="" UNITNAME="Trigger_SettingBlock.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Trigger_SettingBlock.cpp" FORMNAME="" UNITNAME="Trigger_SettingBlock" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TriggerSettingBlock.cpp" FORMNAME="Form1" UNITNAME="TriggerSettingBlock" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1042
+CodePage=949
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=4
+Item0=E:\Program Files (x86)\Borland\CBuilder6\Projects;$(BCB)\include;$(BCB)\include\vcl;..\..\..\..\AXL(Library)\C, C++
+Item1=E:\Program Files (x86)\Borland\CBuilder6\Projects;F:\Project\Examples\C++ Builder\Motion\01.[Mot]-Parameter;$(BCB)\include;$(BCB)\include\vcl;..\..\..\..\AXL(Library)\C, C++
+Item2=E:\Program Files (x86)\Borland\CBuilder6\Projects;F:\Project\Examples\C++ Builder\Motion\01.[Mot]-Parameter;$(BCB)\include;$(BCB)\include\vcl;E:\Program Files (x86)\EzSoftware UC\AXL(Library)\C, C++
+Item3=E:\Program Files (x86)\Borland\CBuilder6\Projects;F:\Project\Examples\C++ Builder\Motion\01.[Mot]-Parameter;$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=4
+Item0=E:\Program Files (x86)\Borland\CBuilder6\Projects;$(BCB)\lib\obj;$(BCB)\lib;..\..\..\..\AXL(Library)\Library\CBuilder
+Item1=E:\Program Files (x86)\Borland\CBuilder6\Projects;F:\Project\Examples\C++ Builder\Motion\01.[Mot]-Parameter;$(BCB)\lib\obj;$(BCB)\lib;E:\Program Files (x86)\EzSoftware UC\AXL(Library)\Library\CBuilder;..\..\..\..\AXL(Library)\Library\CBuilder
+Item2=E:\Program Files (x86)\Borland\CBuilder6\Projects;F:\Project\Examples\C++ Builder\Motion\01.[Mot]-Parameter;$(BCB)\lib\obj;$(BCB)\lib;E:\Program Files (x86)\EzSoftware UC\AXL(Library)\Library\CBuilder
+Item3=E:\Program Files (x86)\Borland\CBuilder6\Projects;F:\Project\Examples\C++ Builder\Motion\01.[Mot]-Parameter;$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=1
+Item0=_DEBUG
+
+[HistoryLists\hlIntOutputDir]
+Count=1
+Item0=..\..\Executable\Motion
+
+[HistoryLists\hlFinalOutputDir]
+Count=1
+Item0=..\..\Executable\
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+  </IDEOPTIONS>
+</PROJECT>

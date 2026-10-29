@@ -1,0 +1,840 @@
+#Assortment,No,ParamaterName,Message,Length,252
+0,0,Operating direction setup,Setup the relationship between the direction of command and direction of motor operation.,89,
+0,1,Not used,,0,
+0,2,Real-time auto tuning setup,"Selects the operation mode of the Real Time Auto Tuning.
+Notes) Making it invalid after completeing the gain tuning.",116,
+0,3,Machine stiffness at real-time auto tuning,Sets the machine stiffness on the Real Time Auto Tuning executing.,66,
+0,4,Inertia ratio,You can set up the ratio of the load inertia against the moving portion¡¯s inertia of the motor.,96,
+0,5,Not used,,0,
+0,6,Not used,,0,
+0,7,Not used,,0,
+0,8,Not used,,0,
+0,9,Numerator of electronic gear,Set the numerator of electronic gear ratio.,43,
+0,10,Denominator of electronic gear,Sets the denominator of electronic gear ratio.,46,
+0,11,Numerator of pulse output division,Set the numerator of pulse output division.,43,
+0,12,Reversal of pulse output logic,You can set up the B-phase logic and the output source of the pulse output.,75,
+0,13,1st torque limit,"You can set up the 1st limit value of the motor output torque.
+In addition, the actual torque applied is limited with the maximum torque limit for the motor applied. (The parameter value is not limited)",202,
+0,14,Position deviation excess setup,"Sets the position overdeviation setting lange.
+Notes) Setting unit and deviation calculation depends on Pr5.20(Position setup unit select).",139,
+0,15,Not used,,0,
+0,16,External regenerative resistor setup,Executes the setting for regenerative resistance.,49,
+0,17,Load factor of external regenerative resistor,Selects the kind of load rate calculation on the extaernal regenerative resistance.,83,
+1,0,1st gain of position loop,"Sets the 1st position loop gain.
+Notes) This is set automatically when Real Time Auto Tuning is valid.
+ Please blank out the Real Time Auto Tuning when it is set manually. ",172,
+1,1,1st gain of velocity loop,"Sets the 1st velocity integration time constant.
+Notes) This is set automatically when Real Time Auto Tuning is valid.
+ Please blank out the Real Time Auto Tuning when it is set manually. ",188,
+1,2,1st time constant of velocity loop integration,"Sets the 1st velocity integration time constant.
+Notes) This is set automatically when Real Time Auto Tuning is valid.
+ Please blank out the Real Time Auto Tuning when it is set manually.",187,
+1,3,1st filter of speed detection,"Sets the 1st velocity detection filter on a scale of 1 to 6.
+Notes) This is set automatically when Real Time Auto Tuning is valid.
+Please blank out the Real Time Auto Tuning when it is set manually.",198,
+1,4,1st torque filter time constant,"Set up the time constant of the 1st torque filter.
+Notes) This is set automatically when Real Time Auto Tuning is valid.
+ Please blank out the Real Time Auto Tuning when it is set manually.",189,
+1,5,2nd gain of position loop,"Sets the 2nd position loop gain.
+Notes) This is set automatically when Real Time Auto Tuning is valid.
+ Please blank out the Real Time Auto Tuning when it is set manually.",171,
+1,6,2nd gain of velocity loop,"Sets the 2nd velocity proportion gain.
+Notes) This is set automatically when Real Time Auto Tuning is valid.
+ Please blank out the Real Time Auto Tuning when it is set manually.",177,
+1,7,2nd time constant of velocity loop integration,"Sets the 2nd velocity integration time constant.
+Notes) This is set automatically when Real Time Auto Tuning is valid.
+ Please blank out the Real Time Auto Tuning when it is set manually.",187,
+1,8,2nd filter of speed detection,"Sets the 2nd velocity detection filter on a scale of 1 to 6.
+Notes) This is set automatically when Real Time Auto Tuning is valid.
+Please blank out the Real Time Auto Tuning when it is set manually.",198,
+1,9,2nd torque filter time constant,"Set up the time constant of the 2nd torque filter.
+Notes) This is set automatically when Real Time Auto Tuning is valid.
+ Please blank out the Real Time Auto Tuning when it is set manually.",189,
+1,10,Velocity feed forward gain,"Sets the velocity feed forward gain.
+Notes) This is set automatically when Real Time Auto Tuning is valid.
+ Please blank out the Real Time Auto Tuning when it is set manually.",175,
+1,11,Velocity feed forward filter,"Sets the velocity feed fowared gain filter time constant.
+Notes) This is set automatically when Real Time Auto Tuning is valid.
+ Please blank out the Real Time Auto Tuning when it is set manually. ",197,
+1,12,Torque feed forward gain,"Set up the torque feed forward gain.
+Notes) This is set automatically when Real Time Auto Tuning is valid.
+ Please blank out the Real Time Auto Tuning when it is set manually.",175,
+1,13,Torque feed forward filter,"Set up the torque feed forward filter.
+Notes) This is set automatically when Real Time Auto Tuning is valid.
+ Please blank out the Real Time Auto Tuning when it is set manually.",177,
+1,14,2nd gain setup,"Sets in case the best qualified tuning with the gain switching function.
+Notes) This is set automatically when Real Time Auto Tuning is valid.
+Please blank out the Real Time Auto Tuning when it is set manually.",210,
+1,15,Mode of position control switching,"Selects the gain switching condition of the posituion control.
+Notes) This is set automatically when Real Time Auto Tuning is valid.
+ Please blank out the Real Time Auto Tuning when it is set manually.",201,
+1,16,Delay time of position control switching,"Sets the delay time when swithing from the 2nd gain to 1st gain.
+Notes) This is set automatically when Real Time Auto Tuning is valid.
+ Please blank out the Real Time Auto Tuning when it is set manually.",203,
+1,17,Level of position control switching,"Sets the gain swithing level. The unit depends on the switching condition.
+Notes) This is set automatically when Real Time Auto Tuning is valid.
+ Please blank out the Real Time Auto Tuning when it is set manually.",213,
+1,18,Hysteresis at position control switching,"Sets the Hysteresis on the gain switching.
+The unit depends on the swithing condition.
+Notes) This is set automatically when Real Time Auto Tuning is valid.
+ Please blank out the Real Time Auto Tuning when it is set manually.",225,
+1,19,Position gain switching time,"Sets the switching time of the position gain.
+Notes) This is set automatically when Real Time Auto Tuning is valid.
+ Please blank out the Real Time Auto Tuning when it is set manually.",184,
+1,20,Mode of velocity control switching,"Selects the gain swithing condition of the velocity control.
+Notes) This is set automatically when Real Time Auto Tuning is valid.
+ Please blank out the Real Time Auto Tuning when it is set manually.",199,
+1,21,Delay time of velocity control switching,"Sets the delay time when swithing from the 2nd gain to 1st gain.
+Notes) This is set automatically when Real Time Auto Tuning is valid.
+ Please blank out the Real Time Auto Tuning when it is set manually.",203,
+1,22,Level of velocity control switching,"Sets the gain swithing level. The unit depends on the swithing condition.
+Notes) This is set automatically when Real Time Auto Tuning is valid.
+ Please blank out the Real Time Auto Tuning when it is set manually.",212,
+1,23,Hysteresis at velocity control switching,"Sets the hysteresis on the gain switching.
+The unit depends on the switching condition.
+Notes) This is set automatically when Real Time Auto Tuning is valid.
+ Please blank out the Real Time Auto Tuning when it is set manually.",226,
+1,24,Mode of torque control switching,"Set the condition of gain switching for torque control
+Notes) This is set automatically when Real Time Auto Tuning is valid.
+ Please blank out the Real Time Auto Tuning when it is set manually.",193,
+1,25,Delay time of torque control switching,"Sets the dalay time when switching from the 2nd gain to 1st gain.
+Notes) This is set automatically when Real Time Auto Tuning is valid.
+ Please blank out the Real Time Auto Tuning when it is set manually.",204,
+1,26,Level of torque control switching,"Sets the gain switching level. The unit depends on the switching condition.
+Notes) This is set automatically when Real Time Auto Tuning is valid.
+ Please blank out the Real Time Auto Tuning when it is set manually.",214,
+1,27,Hysteresis at torque control switching,"Sets the hysteresis on the gain switching.
+The unit depends on the switching condition.
+Notes) This is set automatically when Real Time Auto Tuning is valid.
+ Please blank out the Real Time Auto Tuning when it is set manually.",226,
+2,0,Adaptive filter mode setup,"Sets the operation of the adaptive filter.
+Notes) After completeing the gaintuning, blanking out is recommended.",112,
+2,1,1st notch frequency,Sets the notch frequency of the 1st resonance oppression notch filter.,70,
+2,2,1st notch width selection,Sets the notch width of the 1st resonance oppression notch filter.,66,
+2,3,1st notch depth selection,Sets the notch depth of the 1st resonance oppression notch filter.,66,
+2,4,2nd notch frequency,Sets the notch frequency of the 2nd resonance oppression notch filter.,70,
+2,5,2nd notch width selection,Sets the notch width of the 2nd resonance oppression notch filter.,66,
+2,6,2nd notch depth selection,Sets the notch depth of the 2nd resonance oppression notch filter.,66,
+2,7,3rd notch frequency,"Sets the notch frequency of the 3rd resonance oppression notch filter.
+Notes) This is set automatically when the adaptive filter is valid.
+ Please blank out the adaptive filter, when this is set manually.",204,
+2,8,3rd notch width selection,"Sets the notch width of the 3rd resonance oppression notch filter.
+Notes) This is set automatically when the adaptive filter is valid.
+ Please blank out the adaptive filter, when this is set manually.",200,
+2,9,3rd notch depth selection,"Sets the notch depth of the 3rd resonance oppression notch filter.
+Notes) This is set automatically when the adaptive filter is valid.
+ Please blank out the adaptive filter, when this is set manually.",200,
+2,10,4th notch frequency,"Sets the notch frequency of the 4th resonance oppression notch filter.
+Notes) This is set automatically when two adaptive filters are valid.
+ Please blank out the adaptive filter, when this is set manually.",206,
+2,11,4th notch width selection,"Sets the notch width of the 4th resonance oppression notch filter.
+Notes) This is set automatically when two adaptive filters are valid.
+ Please blank out the adaptive filter, when this is set manually.",202,
+2,12,4th notch depth selection,"Sets the notch depth of the 4th resonance oppression notch filter.
+Notes) This is set automatically when two adaptive filters are valid.
+ Please blank out the adaptive filter, when this is set manually.",202,
+2,13,Selection of damping filter switching,Selects the switching way of the damping filter.,48,
+2,14,1st damping frequency,"Sets the 1st damping frequency.
+Notes) The modification of the set value is executed on the rising edge where the command pulse
+ for a control cycle changes from condition of to condition of NOT 0 during output of positioning completion.",237,
+2,15,1st damping filter setup,"Fine tune the 1st filter damping control.
+Notes) The modification of the set value is executed on the rising edge where the command pulse
+ for a control cycle changes from condition of to condition of NOT 0 during output of positioning completion.",247,
+2,16,2nd damping frequency,"Sets the 2nd damping frequency.
+Notes) The modification of the set value is executed on the rising edge where the command pulse
+ for a control cycle changes from condition of to condition of NOT 0 during output of positioning completion.",237,
+2,17,2nd damping filter setup,"Fine tune the 2nd filter damping control.
+Notes) The modification of the set value is executed on the rising edge where the command pulse
+ for a control cycle changes from condition of to condition of NOT 0 during output of positioning completion.",247,
+2,18,3rd damping frequency,"Sets the 3rd damping frequency.
+Notes) The modification of the set value is executed on the rising edge where the command pulse
+ for a control cycle changes from condition of to condition of NOT 0 during output of positioning completion.",237,
+2,19,3rd damping filter setup,"Fine tune the 3rd filter damping control.
+Notes) The modification of the set value is executed on the rising edge where the command pulse
+ for a control cycle changes from condition of to condition of NOT 0 during output of positioning completion.",247,
+2,20,4th damping frequency,"Sets the 4th damping frequency.
+Notes) The modification of the set value is executed on the rising edge where the command pulse
+ for a control cycle changes from condition of to condition of NOT 0 during output of positioning completion.",237,
+2,21,4th damping filter setup,"Fine tune the 4th filter damping control.
+Notes) The modification of the set value is executed on the rising edge where the command pulse
+ for a control cycle changes from condition of to condition of NOT 0 during output of positioning completion.",247,
+2,22,Position command smoothing filter,"Sets the 1st delay filter time constant for the position command.
+Notes) The modification of the set value is executed on the rising edge where the command pulse
+ for a control cycle changes from condition of to condition of NOT 0 during output of INP.",252,
+2,23,Position command FIR filter,"Sets the moving average time of the FIR filter for the position command.
+Notes) The modification of the set value is refrected after the filter switching wating time
+ that the FIR filter output completes passes over.",216,
+3,0,Not used,,0,
+3,1,Not used,,0,
+3,2,Not used,,0,
+3,3,Not used,,0,
+3,4,For manufacturer's use,0 Please fix.,13,
+3,5,For manufacturer's use,0 Please fix.,13,
+3,6,Not used,,0,
+3,7,Not used,,0,
+3,8,Not used,,0,
+3,9,Not used,,0,
+3,10,Not used,,0,
+3,11,Not used,,0,
+3,12,Acceleration time setup,Sets the acceleration time for the velocity command on acceleration procedure.,78,
+3,13,Deceleration time setup,Sets the acceleration time for the velocity command on deceleration procedure.,78,
+3,14,S-curve acceleration/deceleration time setup,Sets the S curve time for the acceleration/deceleration procedure of the velocity command.,90,
+3,15,Not used,,0,
+3,16,Not used,,0,
+3,17,Speed limit selection,Sets the selection method of the speed limit used for torque controlling.,73,
+3,18,Not used,,0,
+3,19,Not used,,0,
+3,20,Not used,,0,
+3,21,Speed limit value 1,"Set up the speed limit
+The internal value is limited by the smallest setting speed of Pr5.13(Over-speed level setup), Pr6.15(2nd over-speed level setup) and Pr9.10(Maximum over-speed level).",190,
+3,22,Speed limit value 2,"Set the speed limit value when Pr3.17(Speed limit selection)= 1 and SL_SW is 1.
+The internal value is limited by the smallest setting speed of Pr5.13(Over-speed level setup), Pr6.15(2nd over-speed level setup) and Pr9.10(Maximum over-speed level).",247,
+3,23,Feedback scale selection,Select the type of feedback scale.,34,
+3,24,Not used,,0,
+3,25,Not used,,0,
+3,26,Reversal of direction of feedback scale & CS,Set the polarity of feedback scale feedback pulse and the CS signal.,68,
+3,27,Feedback scale Z phase disconnection detection disable,Enable/disable Z phase open circuit detection when using feedback scale of AB phase output type.,96,
+3,28,Not used,,0,
+3,29,Not used,,0,
+4,0,SI1 input selection,"Sets the function and logic of the SI1(5pin) input.
+Notes) Please set this on the pin assignment screen of PANATERM.",116,
+4,1,SI2 input selection,"Sets the function and logic of the SI2(7pin) input.
+Notes) Please set this on the pin assignment screen of PANATERM.",116,
+4,2,SI3 input selection,"Sets the function and logic of the SI3(8pin) input.
+Notes) Please set this on the pin assignment screen of PANATERM.",116,
+4,3,SI4 input selection,"Sets the function and logic of the SI4(9pin) input.
+Notes) Please set this on the pin assignment screen of PANATERM.",116,
+4,4,SI5 input selection,"Sets the function and logic of the SI5(10pin) input.
+Notes) Please set this on the pin assignment screen of PANATERM.",117,
+4,5,SI6 input selection,"Sets the function and logic of the SI6(11pin) input.
+Notes) Please set this on the pin assignment screen of PANATERM.",117,
+4,6,SI7 input selection,"Sets the function and logic of the SI7(12pin) input.
+Notes) Please set this on the pin assignment screen of PANATERM.",117,
+4,7,SI8 input selection,"Sets the function and logic of the SI8(13pin) input.
+Notes) Please set this on the pin assignment screen of PANATERM.",117,
+4,8,Not used,,0,
+4,9,Not used,,0,
+4,10,SO1 output selection,"Sets the function assignment of the SO1(1/2pin) output.
+Notes) Please set this on the pin assignment screen of PANATERM.",120,
+4,11,SO2 output selection,"Sets the function assignment of the SO2(25/26pin) output.
+Notes) Please set this on the pin assignment screen of PANATERM.",122,
+4,12,SO3 output selection,"Sets the function assignment of the SO3(3/4pin) output.
+Notes) Please set this on the pin assignment screen of PANATERM.",120,
+4,13,Not used,,0,
+4,14,Not used,,0,
+4,15,Not used,,0,
+4,16,Analog monitor 1 type,Selects the type of the Analogue monitor 1.,43,
+4,17,Analog monitor 1 output gain,Sets the output gain of the Analogue monitor 1.,47,
+4,18,Analog monitor 2 type,Selects the type of the Analogue monitir 1.,43,
+4,19,Analog monitor 2 output gain,Sets the output gain of the Analogue monitor 2.,47,
+4,20,Not used,,0,
+4,21,Analog monitor output setup,Selects the Analogue monitor output voltage measure.,52,
+4,22,For manufacturer's use,0 Please fix.,13,
+4,23,For manufacturer's use,0 Please fix.,13,
+4,24,For manufacturer's use,0 Please fix.,13,
+4,25,Not used,,0,
+4,26,Not used,,0,
+4,27,Not used,,0,
+4,28,Not used,,0,
+4,29,Not used,,0,
+4,30,Not used,,0,
+4,31,In-position range,"Sets the tolerable pulse number of positioning completion signal(INP) 
+Notes) The set unit and the deviation calculation method depends on Pr5.20(Position setup unit select).",174,
+4,32,In-position output setup,Sets the judge condition of the positioning completion output.,62,
+4,33,INP hold time,Sets the positioning completion hold time.,42,
+4,34,Zero-speed,Set up threshold for zero speed (ZSP) detection.,48,
+4,35,Speed coincidence range,Sets the threshold value ofb the velocity fit range.,52,
+4,36,At-speed,Sets the detection threshold value of the velocity fit output(V-COIN) by the defference between the velocity command and the actual speed.,138,
+4,37,Mechanical brake action in stop,Sets the mechanical brake operation time on stopping.,53,
+4,38,Mechanical brake action in motion,"Set up mechanical brake operating time at running.
+Set resolution in unit of 2 ms. For example, when setting value = 11, processed in 12 ms.",140,
+4,39,Brake release speed setup,Sets the threshold value of the mechanical brake output judge on moving operation.,82,
+4,40,Warning output 1 selection,Selects the type of the alarm outputted on Alarm output 1.,58,
+4,41,Warning output 2 selection,Selects the type of the alarm outputted on Alarm output 2.,58,
+4,42,2nd in-position range,"Sets the tolerable pulse number of positioning completion signal 2(INP2).
+Notes) The set unit and the deviation calculation method depends on Pr5.20(Position setup unit select).",177,
+5,0,Not used,,0,
+5,1,Not used,,0,
+5,2,Not used,,0,
+5,3,Denominator of pulse output division,Set up the denominator of pulse output division.,48,
+5,4,Over-travel inhibit input setup,Sets the operation of plus direction/minus direction driving prohibition input.,79,
+5,5,Sequence at over-travel inhibit,Sets the sequence on driving prohibition input.,47,
+5,6,Sequence at servo-off,Sets the sequence on servo off.,31,
+5,7,Sequence at main power off,Sets the sequence on the main power supply AC off.,50,
+5,8,LV trip selection at main power off,Selects the main power supply shut off abnormality protection or servo off on the main power supply off.,104,
+5,9,Detection time of main power off,Sets the main power supply off detection time.,46,
+5,10,Sequence at alarm,Sets the sequence on alarm.,27,
+5,11,Torque setup for emergency stop,"Set up the torque limit at emergency stop.
+When setup value is 0, the torque limit for normal operation is applied.",115,
+5,12,Over-load level setup,Sets the over load detection level.,35,
+5,13,Over-speed level setup,"Set up the detection level of Err26.0(Over-speed protection).
+When the setting value is 0, Err26.0 is activated with the setup value for Pr9.10(Maximum over-speed level).
+If the setup value exceed Pr9.10, the error will be enabled with Pr9.10.",243,
+5,14,Motor working range setup,Sets over driving range for the position command.,49,
+5,15,Control input reading setup,"Select reading period of the control input signal.
+0: 0.166 ms, 1: 0.333 ms, 2: 1 ms and 3: 1.666 ms
+Exception: external latch input 1/2/3 (EXT1/2/3)",149,
+5,16,Not used,,0,
+5,17,Not used,,0,
+5,18,Not used,,0,
+5,19,Not used,,0,
+5,20,Position unit selection,"Specify the unit to determine the range of positioning complete and excessive positional deviation.
+0: Command, 1: Feedback scale
+Note:Positioning complete detection threshold of RTEX communication status is always in terms of command unit regardless.",251,
+5,21,Selection of torque limit,Select positive direction or negative direction torque limit.,61,
+5,22,2nd torque limit,"You can set up the 2nd limit value of the motor output torque.
+In addition, the actual torque applied is limited with the maximum torque limit for the motor applied.
+(The parameter value is not limited)",202,
+5,23,Not used,,0,
+5,24,Not used,,0,
+5,25,Positive direction torque limit,"With Pr5.21(Selection of torque limit) set to 4, set the positive direction torque limit when TL_SW is at 1.
+In addition, the actual torque applied is limited with the maximum torque limit for the motor applied.
+(The parameter value is not limited)",248,
+5,26,Negative direction torque limit,"With Pr5.21(Selection of torque limit) set to 4, set the negative direction torque limit when TL_SW is at 1.
+In addition, the actual torque applied is limited with the maximum torque limit for the motor applied.
+(The parameter value is not limited)",248,
+5,27,Not used,,0,
+5,28,Not used,,0,
+5,29,For manufacturer's use,2 Please fix.,13,
+5,30,Not used,,0,
+5,31,USB axis address,Sets the axis address for the USB communication.,48,
+5,32,Not used,,0,
+5,33,Pulse regenerative output limit setup,Sets valid/invalid of detection of Pulse regenerate output limitation protection.,81,
+5,34,For manufacturer's use,4 Please fix.,13,
+5,35,Not used,,0,
+6,0,Not used,,0,
+6,1,Not used,,0,
+6,2,Velocity deviation excess setup,"Sets the over abnormality value of the velocity deviation(deviation between position command speed
+ and actual speed).",118,
+6,3,Not used,,0,
+6,4,Not used,,0,
+6,5,Position 3rd gain valid time,Sets the 3rd gain valid time of the gain 3 steps switching. ,60,
+6,6,Position 3rd gain scaling factor,Sets the 3rd gain by the magnification for 1st gain.,52,
+6,7,Torque command additional value,"Set up the offset torque to be added to the torque command.
+Notes) On Real Time Auto Tuning, it is set automatically.
+ On manual setting, Please make the Real Time Auto Tuning invalid.",184,
+6,8,Positive direction torque compensation value,"Set up the value to be added to the t torque command for positive direction operation.
+Notes) On Real Time Auto Tuning valid, it is set automatically.
+ On manual setting, Please make the Real Time Auto Tuning invalid.",217,
+6,9,Negative direction torque compensation value,"Set up the value to be added to the torque command for negative direction operation.
+Notes) On Real Time Auto Tuning valid, it is set automatically.
+ On manual setting, Please make the Real Time Auto Tuning invalid.",215,
+6,10,Function expansion setup,"Sets each functions by bit unit.
+When Real Time Auto Tuning is valid, some functions are made invalid mandatorily.",114,
+6,11,Not used,,0,
+6,12,Not used,,0,
+6,13,Not used,,0,
+6,14,Quick stop time at alarm,Sets the accceptable time to stop on the immediate stop on alarm.,65,
+6,15,2nd over-speed level setup,"When the motor speed exceeds this setup time during emergency stop sequence in an alarm condition, Err26.1(2nd over-speed protection) will be activated.
+If the setup value is 0, Err26.1 will be activated with Pr9.10(Maximum over-speed level).",242,
+6,16,Not used,,0,
+6,17,Not used,,0,
+6,18,Power-up wait time,Sets the initializing time after turning the power supply on by standard 1.5 second plus ¥á.,92,
+6,19,Not used,,0,
+6,20,For manufacturer's use,0 Please fix.,13,
+6,21,For manufacturer's use,0 Please fix.,13,
+6,22,AB phase feedback scale pulse outputting method selection,"Select regeneration method of OA and OB pulse output when using AB phase output type feedback scale.
+0: Signal is not regenerated
+1: Signal is regenerated",154,
+6,23,Disturbance torque compensating gain,"Set up the compensation gain against disturbance torque.
+Notes) This is made invalid mandatorily when Real Time Auto Tuning is valid.",133,
+6,24,Disturbance observer filter,"Set up the filter time constant according to the disturbance torque compensation.
+Notes) This is made invalid mandatorily when Real Time Auto Tuning is valid.",158,
+6,25,Not used,,0,
+6,26,Not used,,0,
+6,27,Warning latch setup,"Determine whether to latch warning state.
+Setting can be made for warnings related to RTEX communication and servo.",115,
+6,28,Not used,,0,
+6,29,Not used,,0,
+6,30,Not used,,0,
+6,31,Real-time auto tuning estimation speed,Sets the load character estimation speed on Real Time Auto Tuning valid.,72,
+6,32,Real-time auto tuning custom setup,"Sets the details of customize mode of Real Time Auto Tuning.
+Notes) Please set on the gain tuning screen of PANATERM.",117,
+6,33,Not used,,0,
+6,34,Not used,,0,
+6,35,Not used,,0,
+6,36,Not used,,0,
+6,37,Oscillation detecting level,"Set up the oscillation detecting level.
+Upon detection of a torque vibration whose level is higher than this setup value, the oscillation detection alarm will be issued.",169,
+6,38,Warning mask setup,"Sets the mask setting of warning detection.
+If the correspondence bit is set to 1, the detection of the warning correspoded will be invalid.",140,
+6,39,For manufacturer's use,0 Please fix.,13,
+6,40,Disturbance torque compensation phase setup,The phase is advanced by the set amount respective to the disturbance torque value.,83,
+6,41,1st damping filter depth,Sets the damping depth of the 1st resonance oppression notch filter.,68,
+6,42,2-stage torque filter time constant,"Specifies the filter time constant for the torque command. The filter is disabled if the setting value is 0.
+This setting remains valid irrespective of gain selection state.",173,
+6,43,2-stage torque filter attenuation term,Specifies the attenuation term of the 2-stage torque filter.,60,
+7,0,LED display,Sets kind of front panel indication.,36,
+7,1,Address indicated time at power-up,Set up the station address display time upon turning ON of control power.,73,
+7,2,Not used,,0,
+7,3,Output setup during torque limit,"Set up judgment condition of output while torque is limited by torque control.
+0: Turn ON at torque limit including torque command value
+1: Turn ON at torque limit excluding torque command value",194,
+7,4,For manufacturer's use,0 Please fix.,13,
+7,5,For manufacturer's use,0 Please fix.,13,
+7,6,For manufacturer's use,0 Please fix.,13,
+7,7,For manufacturer's use,0 Please fix.,13,
+7,8,For manufacturer's use,0 Please fix.,13,
+7,9,For manufacturer's use,360 Please fix.,15,
+7,10,Profile software limit function,"Enable/disable software limit function.
+When selecting enable, set the software limit value through Pr7.11 and Pr7.12.",118,
+7,11,Profile positive side software limit value,"Set up software limit on positive direction.
+When the limit is exceeded, RTEX communication status P_SOT will be turned ON (=1).
+Notes) Pr7.11 must be larger than Pr7.12.
+ P_SOT will not be turned ON until return to home completes.",231,
+7,12,Profile negative side software limit value,"Set up software limit on negative direction.
+When the limit is exceeded, RTEX communication status N_SOT will be turned ON (=1).
+Notes) Pr7.11 must be larger than Pr7.12.
+ N_SOT will not be turned ON until return to home completes.",231,
+7,13,home offset for absolute encoder,Set up the offset value on feedback scale position (external scale position) when using absolute feedback scale (absolute external scale) and mechanical coordinate system position.,180,
+7,14,Detection time of main power off warning,Sets the detection time of main power off alarm.,48,
+7,15,Profile positioning adjacent range,"If the difference between target position and command position is below a set value, the NEAR of communication status is set to 1.",130,
+7,16,Not used,,0,
+7,17,Not used,,0,
+7,18,Not used,,0,
+7,19,Not used,,0,
+7,20,RTEX communication period,"Set up the RTEX communication cycle.
+Notes) Do not set other than 0, 1, 3 or 6.
+ They are used by the manufacturer so that the user is not allowed to set this parameter.",169,
+7,21,RTEX command update period,Setup the ratio of RTEX communication cycle and command update cycle.,69,
+7,22,RTEX function expansion 1,Sets each RTEX functions by bit unit.,37,
+7,23,RTEX function expansion 2,Sets each RTEX functions by bit unit.,37,
+7,24,RTEX function expansion 3,Sets each RTEX functions by bit unit.,37,
+7,25,RTEX velocity unit,"Sets the unit of speed data used in RTEX communication.
+Sets the unit both for both command data such as command speed and for actual data such as response speed.",162,
+7,26,RTEX warning setup of continuous com. error,"Generates RTEX continuous communication error warning when the number of continuous errors reaches the setting of this parameter.
+When the setting value is 0, this function is disabled and no warning is issued.",210,
+7,27,RTEX warning setup of cumulative com. error,"Generates RTEX accumulated communication error warning when the number of accumulated errors reaches the setting of this parameter.
+When the setting value is 0, this function is disabled and no warning is generated.",215,
+7,28,RTEX update counter warning setup,"When the number of continuous updates of Update_Counter has not reached the value set by this parameter, RTEX_Update_Counter error warning is generated.
+When the setting value is 0, this function is disabled and no warning is generated.",236,
+7,29,RTEX monitor selection 1,Select the monitor type of Response_data1.,42,
+7,30,RTEX monitor selection 2,Select the monitor type of Response_data2 when non-cyclic command = 0h.,71,
+7,31,RTEX monitor selection 3,Select the monitor type of Response_data3 when non-cyclic command = 0h.,71,
+7,32,RTEX monitor selection 4,Select the monitor type of Sub_Response_data1 when 32byte mode or sub command = 0h.,83,
+7,33,RTEX monitor selection 5,Select the monitor type of Sub_Response_data2 when 32byte mode.,63,
+7,34,RTEX monitor selection 6,Select the monitor type of Sub_Response_data3 when 32byte mode.,63,
+7,35,RTEX command setup 1,Set up Command_data3 with non-cyclic command.,45,
+7,36,RTEX command setup 2,Set up Sub_Command_data2 with sub command.,42,
+7,37,RTEX command setup 3,Set up Sub_Command_data3 with sub command.,42,
+7,38,RTEX_Update_Counter error protection setup,"If the Update_Counter exceeds the setup value for this parameter and is not updated correctly,
+ Err86.2(RTEX_Update_Counter error protection) will be activated.",160,
+7,39,For manufacturer's use,0 Please fix.,13,
+7,40,RTEX function extension setup 4,Sets each functions by bit unit.,32,
+7,41,RTEX function extension setup 5,Sets each functions by bit unit.,32,
+7,42,Not used,,0,
+7,43,Magnet pole position estimation completion output setup,"Set up the pit arrangement for outputting magnet pole position estimation completion output (CS_Complete) to byte 3 for the RTEX status.
+Setting with this parameter will be prioritized (supersede setting with Pr7.40-bit1).",222,
+8,0,For manufacturer's use,0 Please fix.,13,
+8,1,Profile linear acceleration ,Set up acceleration of profile positioning operation.,53,
+8,2,For manufacturer's use,0 Please fix.,13,
+8,3,For manufacturer's use,0 Please fix.,13,
+8,4,Profile linear deceleration ,Set up deceleration of profile positioning operation and during Smooth_Stop.,76,
+8,5,For manufacturer's use,0 Please fix.,13,
+8,6,Not used,,0,
+8,7,Not used,,0,
+8,8,Not used,,0,
+8,9,Not used,,0,
+8,10,Profile distance after position latched,Set up the distance of travel upon detection of latch signal input position during external input positioning.,110,
+8,11,Not used,,0,
+8,12,Profile homing mode,Set up direction of return to home position.,44,
+8,13,Profile homing speed 1,"Sets the operation speed during return to home: operation speed after completion of near the origin input turned OFF - ON - OFF and before detection of latch signal.
+Note) The max value is limited to the motor max speed by the internal process.",244,
+8,14,Profile homing speed 2,"Specifies a velocity for low-speed operation during profile home position return.
+Specify a minimum speed to decrease detection error.
+Unit is specified with Pr7.25 (RTEX velocity unit setting).
+Maximum velocity is internally limited using Pr9.10.",247,
+8,15,For manufacturer's use,0 Please fix.,13,
+9,0,Motor type selection,Select the type of a motor that will be connected.,50,
+9,1,Number of scale pulses per rotation,Set the number of pulses of the feedback scale per revolution.,62,
+9,2,Magnet pole pitch,Sets up the pitch of magnetic poles.,36,
+9,3,Pole logarithm per rotation,Set up the pole logarithm per motor rotation for the motor.,59,
+9,4,Motor inertia,Set up the motor inertia.,25,
+9,5,Rated motor torque,Set up the rated torque for the motor.,38,
+9,6,Rated effective motor current,Set up the rated effective current for the motor.,49,
+9,7,Maximum instantaneous motor current,Set up the maximum instantaneous current for the motor.,55,
+9,8,Motor phase inductance,Set up the phase inductance for the motor.,42,
+9,9,Motor phase resistance,Set up the phase resistance for the motor.,42,
+9,10,Maximum over-speed level,Set up the maximum over-speed for the motor.,44,
+9,11,Carrier frequency selection,"Select the carrier frequency.
+0: 6 kHz 1: 12 kHz",48,
+9,12,Automatic current response adjustment,Set up the criteria for current response for the automatic setup of Pr9.13(Proportional current gain) and Pr9.14(Integral current gain).,136,
+9,13,Proportional current gain,Set up the proportional current gain.,37,
+9,14,Integral current gain,Set up the integral current gain.,33,
+9,15,Not used,,0,
+9,16,Not used,,0,
+9,17,For manufacturer's use,0 Please fix.,13,
+9,18,For manufacturer's use,0 Please fix.,13,
+9,19,For manufacturer's use,0 Please fix.,13,
+9,20,Magnet pole detection scheme selection,Select the detection scheme for magnet pole position.,53,
+9,21,CS phase setup,Set up the phase difference between the induced voltage of the motor and the CS signal.,87,
+9,22,Magnet pole position estimation torque command time,Set up the command torque time for magnet pole position estimation.,67,
+9,23,Magnet pole position estimation command torque,Set up the command torque for magnet pole position estimation.,62,
+9,24,Magnet pole position estimation zero travel pulse width setup,Set up the zero travel pulse width for magnet pole position estimation.,71,
+9,25,Number of pulses for magnet pole position estimation motor stop judgment,Set up the number of pulses for motor stop judgment for magnet pole position estimation.,88,
+9,26,Time for magnet pole position estimation motor stop judgment,Set up the motor stop judgment time for magnet pole position estimation.,72,
+9,27,Time for magnet pole position estimation motor stop limitation,Set up the motor stop limitation time for magnet pole position estimation.,74,
+9,28,Magnet pole position estimation torque command filter,Set up the time constant for filter respective to the command torque for magnet pole position estimation.,105,
+9,29,Overload protection timing characteristic selection,"Select the overload protection timing characteristic from eight types of characteristics.
+0 : Standard",102,
+9,30,Number of pulses per magnet pole,"Linear motor information can be set in pulses, which is valid for linear-type settings.
+This parameter cannot be used at the same time with Pr9.02(Magnet pole pitch).
+Use either of these parameters for setting.",210,
+9,31,For manufacturer's use,0 Please fix.¡£,15,
+9,32,For manufacturer's use,0 Please fix.,13,
+9,33,For manufacturer's use,100 Please fix.,15,
+9,34,For manufacturer's use,0 Please fix.,13,
+9,35,Torque saturation error protection frequency,"If torque saturated is continued during a preset frequency, Err16.1(torque saturation protection) will be activated.
+If the setup value is 0, this function is disabled and an alarm will not be activated.",203,
+16,0,For manufacturer's use,,0,
+16,1,For manufacturer's use,,0,
+16,2,For manufacturer's use,,0,
+16,3,For manufacturer's use,,0,
+16,4,For manufacturer's use,,0,
+16,5,For manufacturer's use,,0,
+16,6,For manufacturer's use,,0,
+16,7,For manufacturer's use,,0,
+16,8,For manufacturer's use,,0,
+16,9,For manufacturer's use,,0,
+16,10,For manufacturer's use,,0,
+16,11,For manufacturer's use,,0,
+16,12,For manufacturer's use,,0,
+16,13,For manufacturer's use,,0,
+16,14,For manufacturer's use,,0,
+16,15,For manufacturer's use,,0,
+16,16,For manufacturer's use,,0,
+16,17,For manufacturer's use,,0,
+16,18,For manufacturer's use,,0,
+16,19,For manufacturer's use,,0,
+16,20,For manufacturer's use,,0,
+16,21,For manufacturer's use,,0,
+16,22,For manufacturer's use,,0,
+16,23,For manufacturer's use,,0,
+16,24,For manufacturer's use,,0,
+16,25,For manufacturer's use,,0,
+16,26,For manufacturer's use,,0,
+16,27,For manufacturer's use,,0,
+16,28,For manufacturer's use,,0,
+16,29,For manufacturer's use,,0,
+16,30,For manufacturer's use,,0,
+16,31,For manufacturer's use,,0,
+16,32,For manufacturer's use,,0,
+16,33,For manufacturer's use,,0,
+17,0,For manufacturer's use,,0,
+17,1,For manufacturer's use,,0,
+17,2,For manufacturer's use,,0,
+17,3,For manufacturer's use,,0,
+17,4,For manufacturer's use,,0,
+17,5,For manufacturer's use,,0,
+17,6,For manufacturer's use,,0,
+17,7,For manufacturer's use,,0,
+17,8,For manufacturer's use,,0,
+17,9,For manufacturer's use,,0,
+17,10,For manufacturer's use,,0,
+17,11,For manufacturer's use,,0,
+17,12,For manufacturer's use,,0,
+17,13,For manufacturer's use,,0,
+17,14,For manufacturer's use,,0,
+17,15,For manufacturer's use,,0,
+17,16,For manufacturer's use,,0,
+17,17,For manufacturer's use,,0,
+17,18,For manufacturer's use,,0,
+17,19,For manufacturer's use,,0,
+17,20,For manufacturer's use,,0,
+17,21,For manufacturer's use,,0,
+17,22,For manufacturer's use,,0,
+17,23,For manufacturer's use,,0,
+17,24,For manufacturer's use,,0,
+17,25,For manufacturer's use,,0,
+17,26,For manufacturer's use,,0,
+17,27,For manufacturer's use,,0,
+17,28,For manufacturer's use,,0,
+17,29,For manufacturer's use,,0,
+17,30,For manufacturer's use,,0,
+17,31,For manufacturer's use,,0,
+17,32,For manufacturer's use,,0,
+17,33,For manufacturer's use,,0,
+17,34,For manufacturer's use,,0,
+17,35,For manufacturer's use,,0,
+18,0,For manufacturer's use,,0,
+18,1,For manufacturer's use,,0,
+18,2,For manufacturer's use,,0,
+18,3,For manufacturer's use,,0,
+18,4,For manufacturer's use,,0,
+18,5,For manufacturer's use,,0,
+18,6,For manufacturer's use,,0,
+18,7,For manufacturer's use,,0,
+18,8,For manufacturer's use,,0,
+18,9,For manufacturer's use,,0,
+18,10,For manufacturer's use,,0,
+18,11,For manufacturer's use,,0,
+18,12,For manufacturer's use,,0,
+18,13,For manufacturer's use,,0,
+18,14,For manufacturer's use,,0,
+18,15,For manufacturer's use,,0,
+18,16,For manufacturer's use,,0,
+18,17,For manufacturer's use,,0,
+18,18,For manufacturer's use,,0,
+18,19,For manufacturer's use,,0,
+18,20,For manufacturer's use,,0,
+18,21,For manufacturer's use,,0,
+18,22,For manufacturer's use,,0,
+18,23,For manufacturer's use,,0,
+18,24,For manufacturer's use,,0,
+18,25,For manufacturer's use,,0,
+18,26,For manufacturer's use,,0,
+18,27,For manufacturer's use,,0,
+18,28,For manufacturer's use,,0,
+18,29,For manufacturer's use,,0,
+18,30,For manufacturer's use,,0,
+18,31,For manufacturer's use,,0,
+18,32,For manufacturer's use,,0,
+18,33,For manufacturer's use,,0,
+18,34,For manufacturer's use,,0,
+18,35,For manufacturer's use,,0,
+18,36,For manufacturer's use,,0,
+19,0,For manufacturer's use,,0,
+19,1,For manufacturer's use,,0,
+19,2,For manufacturer's use,,0,
+19,3,For manufacturer's use,,0,
+19,4,For manufacturer's use,,0,
+19,5,For manufacturer's use,,0,
+19,6,For manufacturer's use,,0,
+19,7,For manufacturer's use,,0,
+19,8,For manufacturer's use,,0,
+19,9,For manufacturer's use,,0,
+19,10,For manufacturer's use,,0,
+19,11,For manufacturer's use,,0,
+19,12,For manufacturer's use,,0,
+19,13,For manufacturer's use,,0,
+19,14,For manufacturer's use,,0,
+19,15,For manufacturer's use,,0,
+19,16,For manufacturer's use,,0,
+19,17,For manufacturer's use,,0,
+19,18,For manufacturer's use,,0,
+19,19,For manufacturer's use,,0,
+19,20,For manufacturer's use,,0,
+19,21,For manufacturer's use,,0,
+19,22,For manufacturer's use,,0,
+19,23,For manufacturer's use,,0,
+19,24,For manufacturer's use,,0,
+19,25,For manufacturer's use,,0,
+19,26,For manufacturer's use,,0,
+19,27,For manufacturer's use,,0,
+19,28,For manufacturer's use,,0,
+19,29,For manufacturer's use,,0,
+19,30,For manufacturer's use,,0,
+19,31,For manufacturer's use,,0,
+19,32,For manufacturer's use,,0,
+19,33,For manufacturer's use,,0,
+19,34,For manufacturer's use,,0,
+19,35,For manufacturer's use,,0,
+19,36,For manufacturer's use,,0,
+19,37,For manufacturer's use,,0,
+19,38,For manufacturer's use,,0,
+19,39,For manufacturer's use,,0,
+19,40,For manufacturer's use,,0,
+19,41,For manufacturer's use,,0,
+19,42,For manufacturer's use,,0,
+19,43,For manufacturer's use,,0,
+19,44,For manufacturer's use,,0,
+19,45,For manufacturer's use,,0,
+19,46,For manufacturer's use,,0,
+19,47,For manufacturer's use,,0,
+19,48,For manufacturer's use,,0,
+19,49,For manufacturer's use,,0,
+19,50,For manufacturer's use,,0,
+19,51,For manufacturer's use,,0,
+19,52,For manufacturer's use,,0,
+19,53,For manufacturer's use,,0,
+19,54,For manufacturer's use,,0,
+19,55,For manufacturer's use,,0,
+19,56,For manufacturer's use,,0,
+19,57,For manufacturer's use,,0,
+19,58,For manufacturer's use,,0,
+19,59,For manufacturer's use,,0,
+19,60,For manufacturer's use,,0,
+19,61,For manufacturer's use,,0,
+19,62,For manufacturer's use,,0,
+19,63,For manufacturer's use,,0,
+19,64,For manufacturer's use,,0,
+20,0,For manufacturer's use,,0,
+20,1,For manufacturer's use,,0,
+20,2,For manufacturer's use,,0,
+20,3,For manufacturer's use,,0,
+20,4,For manufacturer's use,,0,
+20,5,For manufacturer's use,,0,
+20,6,For manufacturer's use,,0,
+20,7,For manufacturer's use,,0,
+20,8,For manufacturer's use,,0,
+20,9,For manufacturer's use,,0,
+20,10,For manufacturer's use,,0,
+20,11,For manufacturer's use,,0,
+20,12,For manufacturer's use,,0,
+20,13,For manufacturer's use,,0,
+20,14,For manufacturer's use,,0,
+20,15,For manufacturer's use,,0,
+20,16,For manufacturer's use,,0,
+20,17,For manufacturer's use,,0,
+20,18,For manufacturer's use,,0,
+20,19,For manufacturer's use,,0,
+20,20,For manufacturer's use,,0,
+20,21,For manufacturer's use,,0,
+20,22,For manufacturer's use,,0,
+20,23,For manufacturer's use,,0,
+20,24,For manufacturer's use,,0,
+20,25,For manufacturer's use,,0,
+20,26,For manufacturer's use,,0,
+20,27,For manufacturer's use,,0,
+20,28,For manufacturer's use,,0,
+20,29,For manufacturer's use,,0,
+20,30,For manufacturer's use,,0,
+20,31,For manufacturer's use,,0,
+20,32,For manufacturer's use,,0,
+20,33,For manufacturer's use,,0,
+20,34,For manufacturer's use,,0,
+20,35,For manufacturer's use,,0,
+20,36,For manufacturer's use,,0,
+20,37,For manufacturer's use,,0,
+20,38,For manufacturer's use,,0,
+20,39,For manufacturer's use,,0,
+20,40,For manufacturer's use,,0,
+20,41,For manufacturer's use,,0,
+20,42,For manufacturer's use,,0,
+20,43,For manufacturer's use,,0,
+20,44,For manufacturer's use,,0,
+21,0,For manufacturer's use,,0,
+21,1,For manufacturer's use,,0,
+21,2,For manufacturer's use,,0,
+21,3,For manufacturer's use,,0,
+21,4,For manufacturer's use,,0,
+21,5,For manufacturer's use,,0,
+21,6,For manufacturer's use,,0,
+21,7,For manufacturer's use,,0,
+21,8,For manufacturer's use,,0,
+21,9,For manufacturer's use,,0,
+21,10,For manufacturer's use,,0,
+21,11,For manufacturer's use,,0,
+21,12,For manufacturer's use,,0,
+21,13,For manufacturer's use,,0,
+21,14,For manufacturer's use,,0,
+21,15,For manufacturer's use,,0,
+21,16,For manufacturer's use,,0,
+21,17,For manufacturer's use,,0,
+21,18,For manufacturer's use,,0,
+21,19,For manufacturer's use,,0,
+21,20,For manufacturer's use,,0,
+21,21,For manufacturer's use,,0,
+21,22,For manufacturer's use,,0,
+21,23,For manufacturer's use,,0,
+21,24,For manufacturer's use,,0,
+21,25,For manufacturer's use,,0,
+21,26,For manufacturer's use,,0,
+21,27,For manufacturer's use,,0,
+21,28,For manufacturer's use,,0,
+22,0,For manufacturer's use,,0,
+22,1,For manufacturer's use,,0,
+22,2,For manufacturer's use,,0,
+22,3,For manufacturer's use,,0,
+22,4,For manufacturer's use,,0,
+22,5,For manufacturer's use,,0,
+22,6,For manufacturer's use,,0,
+22,7,For manufacturer's use,,0,
+22,8,For manufacturer's use,,0,
+22,9,For manufacturer's use,,0,
+22,10,For manufacturer's use,,0,
+22,11,For manufacturer's use,,0,
+22,12,For manufacturer's use,,0,
+22,13,For manufacturer's use,,0,
+22,14,For manufacturer's use,,0,
+22,15,For manufacturer's use,,0,
+22,16,For manufacturer's use,,0,
+22,17,For manufacturer's use,,0,
+22,18,For manufacturer's use,,0,
+22,19,For manufacturer's use,,0,
+22,20,For manufacturer's use,,0,
+22,21,For manufacturer's use,,0,
+22,22,For manufacturer's use,,0,
+22,23,For manufacturer's use,,0,
+22,24,For manufacturer's use,,0,
+22,25,For manufacturer's use,,0,
+22,26,For manufacturer's use,,0,
+22,27,For manufacturer's use,,0,
+22,28,For manufacturer's use,,0,
+22,29,For manufacturer's use,,0,
+22,30,For manufacturer's use,,0,
+22,31,For manufacturer's use,,0,
+22,32,For manufacturer's use,,0,
+22,33,For manufacturer's use,,0,
+22,34,For manufacturer's use,,0,
+22,35,For manufacturer's use,,0,
+22,36,For manufacturer's use,,0,
+22,37,For manufacturer's use,,0,
+22,38,For manufacturer's use,,0,
+22,39,For manufacturer's use,,0,
+22,40,For manufacturer's use,,0,
+22,41,For manufacturer's use,,0,
+22,42,For manufacturer's use,,0,
+22,43,For manufacturer's use,,0,
+22,44,For manufacturer's use,,0,
+22,45,For manufacturer's use,,0,
+22,46,For manufacturer's use,,0,
+22,47,For manufacturer's use,,0,
+22,48,For manufacturer's use,,0,
+22,49,For manufacturer's use,,0,
+22,50,For manufacturer's use,,0,
+22,51,For manufacturer's use,,0,
+22,52,For manufacturer's use,,0,
+22,53,For manufacturer's use,,0,
+22,54,For manufacturer's use,,0,
+22,55,For manufacturer's use,,0,
+22,56,For manufacturer's use,,0,
+22,57,For manufacturer's use,,0,
+22,58,For manufacturer's use,,0,
+22,59,For manufacturer's use,,0,
+22,60,For manufacturer's use,,0,
+22,61,For manufacturer's use,,0,
+22,62,For manufacturer's use,,0,
+22,63,For manufacturer's use,,0,
+22,64,For manufacturer's use,,0,
+22,65,For manufacturer's use,,0,
+22,66,For manufacturer's use,,0,
+22,67,For manufacturer's use,,0,
+22,68,For manufacturer's use,,0,
+22,69,For manufacturer's use,,0,
+22,70,For manufacturer's use,,0,
+22,71,For manufacturer's use,,0,
+22,72,For manufacturer's use,,0,
+22,73,For manufacturer's use,,0,
+22,74,For manufacturer's use,,0,
+22,75,For manufacturer's use,,0,
+22,76,For manufacturer's use,,0,
+22,77,For manufacturer's use,,0,
+22,78,For manufacturer's use,,0,
+22,79,For manufacturer's use,,0,
+22,80,For manufacturer's use,,0,
+22,81,For manufacturer's use,,0,
+22,82,For manufacturer's use,,0,
+22,83,For manufacturer's use,,0,
+22,84,For manufacturer's use,,0,
+22,85,For manufacturer's use,,0,
+22,86,For manufacturer's use,,0,
+22,87,For manufacturer's use,,0,
+22,88,For manufacturer's use,,0,
+22,89,For manufacturer's use,,0,
+22,90,For manufacturer's use,,0,
+22,91,For manufacturer's use,,0,
+22,92,For manufacturer's use,,0,
+22,93,For manufacturer's use,,0,
+22,94,For manufacturer's use,,0,
+22,95,For manufacturer's use,,0,
+22,96,For manufacturer's use,,0,
+22,97,For manufacturer's use,,0,
+22,98,For manufacturer's use,,0,
+22,99,For manufacturer's use,,0,
+22,100,For manufacturer's use,,0,
+22,101,For manufacturer's use,,0,
+22,102,For manufacturer's use,,0,
+22,103,For manufacturer's use,,0,
+22,104,For manufacturer's use,,0,
+22,105,For manufacturer's use,,0,

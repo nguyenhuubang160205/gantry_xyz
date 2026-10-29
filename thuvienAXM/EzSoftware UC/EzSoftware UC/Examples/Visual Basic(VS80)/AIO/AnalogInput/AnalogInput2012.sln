@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "AnalogInput", "AnalogInput2012.vbproj", "{80DD8ACE-088E-4B3B-9102-325A80EE197A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+	
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+	
+		{80DD8ACE-088E-4B3B-9102-325A80EE197A}.Debug|x64.ActiveCfg = Debug|x64
+		{80DD8ACE-088E-4B3B-9102-325A80EE197A}.Debug|x64.Build.0 = Debug|x64
+		{80DD8ACE-088E-4B3B-9102-325A80EE197A}.Debug|x86.ActiveCfg = Debug|x86
+		{80DD8ACE-088E-4B3B-9102-325A80EE197A}.Debug|x86.Build.0 = Debug|x86
+		
+		{80DD8ACE-088E-4B3B-9102-325A80EE197A}.Release|x64.ActiveCfg = Release|x64
+		{80DD8ACE-088E-4B3B-9102-325A80EE197A}.Release|x64.Build.0 = Release|x64
+		{80DD8ACE-088E-4B3B-9102-325A80EE197A}.Release|x86.ActiveCfg = Release|x86
+		{80DD8ACE-088E-4B3B-9102-325A80EE197A}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

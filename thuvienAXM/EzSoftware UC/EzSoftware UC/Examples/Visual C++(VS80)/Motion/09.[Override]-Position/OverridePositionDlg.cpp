@@ -1,0 +1,597 @@
+// OverridePositionDlg.cpp : implementation file
+//
+// **************************************************************************
+// >> [일자]: 2016.01.05
+// >> [개요]: 이 예제는 거리오버라이드 함수의 사용법을 익히고 좌표계 설정에 따른
+//    오버라이드 값의 지정 방법에 대해 학습하는 예제입니다.
+// >> [중요]: 거리 오버라이드시 주의사항
+//     1) 거리오버라이드 함수는 모션 구동중에만 정상적으로 구동됩니다. 다시말해
+//        모션이 정지된 상태에서는 에러코드를 반환하며 무시됩니다.
+//     2) AxmOverridePos(0, dOverridePos) 함수에서 사용하는 dOverridePos는 절대
+//        위치가 아닌 전체 이동할 양에 대한 변경값(오버라이드 값)입니다.
+//	   3) 모션 가속, 등속, 감속 중일때 사용 가능하며, 모션이 정지한 후에는 지령을
+//        내려도 무시 됩니다.
+//     4) 전체 이동할 양은 설정된 구동좌표계에 따라 달라집니다. 예를들어 구동전
+//        상대좌표로 설정되어있었다면 구동함수에 입력되는 dPos 값이 전체 이동량
+//        이되며, 절대좌표로 설정되어있었다면 구동함수에 입력되는 dPos값에 현재
+//        위치값을 뺀 값이 전체이동량이 됩니다.
+//     Ex1) 현재 Command위치 100으로 가정
+//       1) AxmMotSetAbsRelMode(0, POS_ABS_MODE)
+//       2) AxmMoveStartPos(0, 200, ...)
+//       -> 전체 이동량은 200(dPos) - 100(현재위치)으로 100이됩니다.
+//     Ex2) 현재 Command위치 100으로 가정
+//       1) AxmMotSetAbsRelMode(0, POS_REL_MODE)
+//       2) AxmMoveStartPos(0, 200, ...)
+//       -> 전체 이동량은 200(dPos)이 됩니다.
+// **************************************************************************
+
+#include "stdafx.h"
+#include "OverridePosition.h"
+#include "OverridePositionDlg.h"
+
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
+// ++ =======================================================================
+// >> AXL(AjineXtek Library) 관련 Header파일 포함시킵니다.
+// ※ [CAUTION] 예제를 복사하여 다른 위치에서 실행시 참조경로 변경이 필요합니다.
+// --------------------------------------------------------------------------
+#include "../../../../AXL(Library)/C, C++/AXL.h"
+#include "../../../../AXL(Library)/C, C++/AXM.h"
+#include "../../../../AXL(Library)/C, C++/AXHS.h"
+
+// ++ =======================================================================
+// >> AXL(AjineXtek Library) 관련 Library파일을 Link시킵니다.
+// ※ [CAUTION] 예제를 복사하여 다른 위치에서 실행시 참조경로 변경이 필요합니다.
+// --------------------------------------------------------------------------
+#ifdef  _M_X64
+#pragma comment(lib, "../../../../AXL(Library)/Library/64Bit/AxL.lib")
+#else
+#pragma comment(lib, "../../../../AXL(Library)/Library/32Bit/AxL.lib")
+#endif
+
+#define	TM_DISPLAY		100
+
+/////////////////////////////////////////////////////////////////////////////
+// COverridePositionDlg dialog
+
+COverridePositionDlg::COverridePositionDlg(CWnd* pParent /*=NULL*/)
+	: CDialog(COverridePositionDlg::IDD, pParent)
+{
+	//{{AFX_DATA_INIT(COverridePositionDlg)
+		// NOTE: the ClassWizard will add member initialization here
+	//}}AFX_DATA_INIT
+	// Note that LoadIcon does not require a subsequent DestroyIcon in Win32
+	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
+
+	//++
+	m_lAxisNo		= -1;					// 제어할 축 번호 초기화
+	m_lAxisCount	= 0;					// 제어 가능한 축갯수 초기화
+	m_dwModuleID	= 0;					// 제어할 축의 모듈ID 초기화
+}
+
+void COverridePositionDlg::DoDataExchange(CDataExchange* pDX)
+{
+	CDialog::DoDataExchange(pDX);
+	//{{AFX_DATA_MAP(COverridePositionDlg)
+	DDX_Control(pDX, IDC_BTM_OVERRIDE, m_btmOverride);
+	DDX_Control(pDX, IDC_CBO_SEL_AXIS, m_cboSelAxis);
+	//}}AFX_DATA_MAP
+}
+
+BEGIN_MESSAGE_MAP(COverridePositionDlg, CDialog)
+	//{{AFX_MSG_MAP(COverridePositionDlg)
+	ON_WM_PAINT()
+	ON_WM_QUERYDRAGICON()
+	ON_CBN_SELCHANGE(IDC_CBO_SEL_AXIS, OnSelchangeCboSelAxis)
+	ON_WM_TIMER()
+	ON_BN_CLICKED(IDC_BTN_LOAD_FILE, OnBtnLoadFile)
+	ON_WM_DESTROY()
+	ON_BN_CLICKED(IDC_CHK_SERVO_ON, OnChkServoOn)
+	ON_BN_CLICKED(IDC_BTN_MOVE1, OnBtnMove1)
+	ON_BN_CLICKED(IDC_BTN_SSTOP, OnBtnSstop)
+	ON_BN_CLICKED(IDC_BTN_OVERRIDE1, OnBtnOverride1)
+	ON_BN_CLICKED(IDC_BTN_OVERRIDE2, OnBtnOverride2)
+	ON_BN_CLICKED(IDC_BTN_POS_SET, OnBtnPosSet)
+	//}}AFX_MSG_MAP
+	ON_COMMAND_RANGE(IDC_RDO_ABS, IDC_RDO_REL, OnRdoAbsRelMode)
+END_MESSAGE_MAP()
+
+/////////////////////////////////////////////////////////////////////////////
+// COverridePositionDlg message handlers
+
+BOOL COverridePositionDlg::OnInitDialog()
+{
+	CDialog::OnInitDialog();
+
+	// Set the icon for this dialog.  The framework does this automatically
+	//  when the application's main window is not a dialog
+	SetIcon(m_hIcon, TRUE);			// Set big icon
+	SetIcon(m_hIcon, FALSE);		// Set small icon
+	
+	//++
+	InitLibrary();					// 라이브러리 초기화 및 Mot파일을 불러옵니다.
+	AddAxisInfo();					// 검색된 축 정보를 ComboBox에 등록/Control들을 초기화합니다.
+	UpdateState();					// 모션보드의 상태와 Control들의 상태를 일치시킵니다.
+	
+	return TRUE;  // return TRUE  unless you set the focus to a control
+}
+
+// If you add a minimize button to your dialog, you will need the code below
+//  to draw the icon.  For MFC applications using the document/view model,
+//  this is automatically done for you by the framework.
+
+void COverridePositionDlg::OnPaint() 
+{
+	if (IsIconic())
+	{
+		CPaintDC dc(this); // device context for painting
+
+		SendMessage(WM_ICONERASEBKGND, (WPARAM) dc.GetSafeHdc(), 0);
+
+		// Center icon in client rectangle
+		int cxIcon = GetSystemMetrics(SM_CXICON);
+		int cyIcon = GetSystemMetrics(SM_CYICON);
+		CRect rect;
+		GetClientRect(&rect);
+		int x = (rect.Width() - cxIcon + 1) / 2;
+		int y = (rect.Height() - cyIcon + 1) / 2;
+
+		// Draw the icon
+		dc.DrawIcon(x, y, m_hIcon);
+	}
+	else
+	{
+		CDialog::OnPaint();
+	}
+}
+
+// The system calls this to obtain the cursor to display while the user drags
+//  the minimized window.
+HCURSOR COverridePositionDlg::OnQueryDragIcon()
+{
+	return (HCURSOR) m_hIcon;
+}
+
+void COverridePositionDlg::OnDestroy() 
+{
+	CDialog::OnDestroy();
+	
+	//++ AXL 사용을 종료합니다.
+	AxlClose();	
+}
+
+// **************************************************************************
+// >> [구분]: Control에 이벤트가 발생했을 때 처리하는 함수들 모음 
+// **************************************************************************
+
+// ++ =======================================================================
+// >> OnSelchangeCboSelAxis() : 축 번호 변경시 호출되는 핸들러 함수.
+//  - 축 번호가 변경되었을 때 변경된 축의 모듈 ID와 Control들을 갱신합니다.
+// --------------------------------------------------------------------------
+void COverridePositionDlg::OnSelchangeCboSelAxis() 
+{
+	m_lAxisNo = m_cboSelAxis.GetCurSel();		// 축 선택 ComboBox에서 선택된 축번호를 제어할 축 번호 변수에 설정합니다.
+	
+	//++ 지정한 축번호의 모듈ID를 반환합니다.
+	// [INFO] 여러개의 정보를 읽는 함수 사용시 불필요한 정보는 NULL(0)을 입력하면 됩니다.
+	AxmInfoGetAxis(m_lAxisNo, NULL, NULL, &m_dwModuleID);
+	
+	UpdateState();		
+}
+
+// ++ =======================================================================
+// >> OnBtnLoadFile() : "Load File"버튼 클릭시 호출되는 핸들러 함수.
+//  - 임의 위치에 있는 Mot(AXM에서 사용하는 설정파일 형식) 파일을 불러옵니다.
+//  - 이 함수를 통해 임의의 Mot파일을 불러오면 모션축의 설정값들이 Mot파일의 
+//    설정값들로 일괄 변경됩니다.
+// --------------------------------------------------------------------------
+void COverridePositionDlg::OnBtnLoadFile() 
+{
+	CString	temp;
+	CFileDialog dlg(TRUE, "Mot", NULL, OFN_HIDEREADONLY, "AXM File (*.mot)|*.mot|All Files (*.*)|*.*||");
+	
+	if (dlg.DoModal() == IDOK){
+		LPTSTR nFilename;
+		temp		= dlg.GetPathName();
+		nFilename	= temp.GetBuffer(0);
+
+		//++ 함수 실행 성공시 지정한 Mot파일의 설정값으로 모션축 설정이 일괄 변경됩니다.
+		if (AxmMotLoadParaAll(nFilename) != AXT_RT_SUCCESS)
+			AfxMessageBox("File load fail!");		
+		else
+			UpdateState();		// 변경된 모션축의 상태와 Control들의 상태를 일치시킵니다.
+	}		
+}
+
+// ++ =======================================================================
+// >> OnBtnPosSet() : "Position Setting"버튼 클릭시 호출되는 핸들러 함수.
+//  - 선택된 축의 위치정보를 지정한 값으로 설정합니다.
+//  - AxmStatusSetPosMatch함수는 AxmStatusSetCmdPos, AxmStatusSetActPos 함수를 
+//    사용하는것과 동일한 효과를 냅니다.
+// --------------------------------------------------------------------------
+void COverridePositionDlg::OnBtnPosSet() 
+{
+	double dSetPos;
+	dSetPos = GetDlgItemDouble(IDC_EDT_SET_POS);
+
+	//++ Command위치와 Actual위치를 지정한 값으로 설정합니다.
+	AxmStatusSetPosMatch(m_lAxisNo, dSetPos);	
+}
+
+// ++ =======================================================================
+// >> OnChkServoOn() : "Servo On"버튼 클릭시 호출되는 핸들러 함수.
+//  - 선택된 축을 체크버튼의 상태에 따라 서보 On/Off 합니다.
+// --------------------------------------------------------------------------
+void COverridePositionDlg::OnChkServoOn() 
+{
+	DWORD dwOnOff;
+	dwOnOff = IsDlgButtonChecked(IDC_CHK_SERVO_ON);
+	//++ 지정 축의 Servo On/Off 신호를 출력합니다.
+	AxmSignalServoOn(m_lAxisNo, dwOnOff);	
+}
+
+// ++ =======================================================================
+// >> OnBtnPosMove() : "Move Target"버튼 클릭시 호출되는 핸들러 함수.
+//  - 선택한 축을 "Move Target Pos" Edit콘트롤에 입력된 거리(또는 위치)/속도/
+//    가속도/감속도로 모션구동합니다.
+// --------------------------------------------------------------------------
+void COverridePositionDlg::OnBtnMove1() 
+{
+	double dMovePos, dMoveVel, dMoveAcc, dMoveDec;
+	
+	dMovePos = GetDlgItemDouble(IDC_EDT_MOVE_POS);
+	dMoveVel = GetDlgItemDouble(IDC_EDT_MOVE_VEL);
+	dMoveAcc = GetDlgItemDouble(IDC_EDT_MOVE_ACC);
+	dMoveDec = GetDlgItemDouble(IDC_EDT_MOVE_DEC);
+	
+	//++ 지정한 축을 지정한 거리(또는 위치)/속도/가속도/감속도로 모션구동하고 모션 종료여부와 상관없이 함수를 빠져나옵니다.
+	AxmMoveStartPos(m_lAxisNo, dMovePos, dMoveVel, dMoveAcc, dMoveDec);	
+}
+
+// ++ =======================================================================
+// >> OnBtnPosStop() : "Move SStop"버튼 클릭시 호출되는 핸들러 함수.
+//  - 선택한 축에 구동정지 함수를 호출하여 구동을 감속정지합니다.
+// --------------------------------------------------------------------------
+void COverridePositionDlg::OnBtnSstop() 
+{
+	//++ 지정한 축의 구동을 감속정지합니다.
+	AxmMoveSStop(m_lAxisNo);		
+}
+
+// ++ =======================================================================
+// >> OnRdoAbsRelMode(...) : "Absolute/Relative"버튼 클릭시 호출되는 핸들러 함수.
+//  - 지정한 축의 구동 좌표계를 설정합니다.
+//  - 설정된 좌표계에 따라 구동 함수들에 전달되는 dPos의 값은 절대위치 또는 
+//    상대 이동량이 됩니다.
+//  - Ex1) 현재 Command위치 100으로 가정
+//     1) AxmMotSetAbsRelMode(0, POS_ABS_MODE)
+//     2) AxmMoveStartPos(0, 200, ...)
+//     -> Command위치 기준 200 위치로 이동, 즉 (+)방향으로 100만큼 이동함
+//  - Ex2) 현재 Command위치 100으로 가정
+//     1) AxmMotSetAbsRelMode(0, POS_REL_MODE)
+//     2) AxmMoveStartPos(0, 200, ...)
+//     -> Command위치 기준 300 위치로 이동, 즉 (+)방향으로 200만큼 이동함
+// --------------------------------------------------------------------------
+void COverridePositionDlg::OnRdoAbsRelMode(UINT nID) 
+{
+	DWORD dwAbsRelMode = nID - IDC_RDO_ABS;
+	
+	//++ 지정 축의 구동 좌표계를 설정합니다. 
+	// dwAbsRelMode : (0)POS_ABS_MODE - 현재 위치와 상관없이 지정한 위치로 절대좌표 이동합니다.
+	//                (1)POS_REL_MODE - 현재 위치에서 지정한 양만큼 상대좌표 이동합니다.
+	AxmMotSetAbsRelMode(m_lAxisNo, dwAbsRelMode);
+
+	UpdateState();
+}
+
+// ++ =======================================================================
+// >> OnBtnOverride1() : "Override Pos 1"버튼 클릭시 호출되는 핸들러 함수.
+//  - 선택한 축의 전체 이동량을 변경합니다.
+// ※ [CAUTION] 거리오버라이드 함수는 모션 구동중에만 정상적으로 구동됩니다. 
+//    다시말해 모션이 정지된 상태에서는 에러코드를 반환하며 무시됩니다.
+// ※ [CAUTION] 모션 가속, 등속, 감속 중일때 사용 가능하며, 모션이 구동이 정지한 
+//    후에는 지령을 내려도 무시 됩니다.
+// --------------------------------------------------------------------------
+void COverridePositionDlg::OnBtnOverride1() 
+{
+	CString strData;
+	DWORD	dwRetCode;
+	double	dOverridePos;
+
+	dOverridePos= GetDlgItemDouble(IDC_EDT_OVERRIDE_DIS1);
+    //++ 지정 축의 구동이 종료되기 전 전체구동량을 변경합니다.
+	dwRetCode	= AxmOverridePos(m_lAxisNo, dOverridePos);
+	if(dwRetCode != AXT_RT_SUCCESS){
+		strData.Format("AxmOverridePos return error[Code:%04d]", dwRetCode);
+		MessageBox(strData, "Error", MB_OK | MB_ICONERROR);
+	}
+}
+
+// ++ =======================================================================
+// >> OnBtnOverride2() : "Override Pos 2"버튼 클릭시 호출되는 핸들러 함수.
+//  - 선택한 축의 전체 이동량을 변경합니다.
+// ※ [CAUTION] 거리오버라이드 함수는 모션 구동중에만 정상적으로 구동됩니다. 
+//    다시말해 모션이 정지된 상태에서는 에러코드를 반환하며 무시됩니다.
+// ※ [CAUTION] 모션 가속, 등속, 감속 중일때 사용 가능하며, 모션이 구동이 정지한 
+//    후에는 지령을 내려도 무시 됩니다.
+// --------------------------------------------------------------------------
+void COverridePositionDlg::OnBtnOverride2() 
+{
+	CString strData;
+	DWORD	dwRetCode;
+	double	dOverridePos;
+	
+	dOverridePos= GetDlgItemDouble(IDC_EDT_OVERRIDE_DIS2);
+    //++ 지정 축의 구동이 종료되기 전 전체구동량을 변경합니다.
+	dwRetCode	= AxmOverridePos(m_lAxisNo, dOverridePos);
+	if(dwRetCode != AXT_RT_SUCCESS){
+		strData.Format("AxmOverridePos return error[Code:%04d]", dwRetCode);
+		MessageBox(strData, "Error", MB_OK | MB_ICONERROR);
+	}
+}
+
+// ++ =======================================================================
+// >> OnTimer(...) : 타이머 이벤트 핸들러 함수.
+//  - 일정한 주기로 변경되는 위치/속도/정보등을 Control에 반영합니다.
+// --------------------------------------------------------------------------
+void COverridePositionDlg::OnTimer(UINT_PTR nIDEvent) 
+{
+	double dCmdPos = 0.0, dActPos = 0.0, dCmdVel = 0.0;
+	
+	switch(nIDEvent){
+	case TM_DISPLAY:		
+		//++ 지정한 축의 지령(Command)위치를 반환합니다.
+		AxmStatusGetCmdPos(m_lAxisNo, &dCmdPos);
+		if(m_dOldCmdPos != dCmdPos){
+			SetDlgItemDouble(IDC_STC_CMD_POS, dCmdPos);
+			m_dOldCmdPos = dCmdPos;
+		}
+		
+		//++ 지정한 축의 실제(Feedback)위치를 반환합니다.
+		AxmStatusGetActPos(m_lAxisNo, &dActPos);
+		if(m_dOldActPos != dActPos){
+			SetDlgItemDouble(IDC_STC_ACT_POS, dActPos);
+			m_dOldActPos = dActPos;
+		}
+		
+		//++ 지정한 축의 구동 속도를 반환합니다.
+		AxmStatusReadVel(m_lAxisNo, &dCmdVel);
+		if(m_dOldCmdVel != dCmdVel){
+			SetDlgItemDouble(IDC_STC_CMD_VEL, dCmdVel);
+			m_dOldCmdVel = dCmdVel;
+		}
+		break;
+	}
+
+	CDialog::OnTimer(nIDEvent);
+}
+
+// **************************************************************************
+// >> [구분]: 별도의 기능을 구현하기위해 만든 사용자 정의 함수들 모음 
+// **************************************************************************
+
+// ++ =======================================================================
+// >> InitLibrary() : 라이브러리 초기화 및 Mot파일을 불러오는 함수.
+//  - AXL(AjineXtek Library)을 사용가능하게 합니다. 
+//  - EzConfig 프로그램이 설치되어있는 폴더에서 기본 Mot파일(모션 설정파일)을
+//    지정해 모션관련 기본설정을 자동으로 합니다.
+// --------------------------------------------------------------------------
+BOOL COverridePositionDlg::InitLibrary()
+{
+	//++ AXL(AjineXtek Library)을 사용가능하게 하고 장착된 보드들을 초기화합니다.
+	if ((AxlOpen(7) != AXT_RT_SUCCESS)){
+		AfxMessageBox("AxlOpen Fail...");
+		return FALSE;
+	}
+	
+	// ※ [CAUTION] 아래와 다른 Mot파일(모션 설정파일)을 사용할 경우 경로를 변경하십시요.
+	char szFilePath[] = "..\\..\\..\\..\\EzSoftware\\MotionDefault.mot";
+
+	//++ 지정한 Mot파일의 설정값들로 모션보드의 설정값들을 일괄변경 적용합니다.
+	if(AxmMotLoadParaAll(szFilePath) != AXT_RT_SUCCESS){
+		AfxMessageBox("Mot File Not Found.");
+	}
+	return TRUE;
+}
+
+// ++ =======================================================================
+// >> AddAxisInfo() : 시스템에 장착된 모션축들을 ComboBox에 등록하는 함수.
+//  - AXL Open시 검색된 축들의 정보를 읽어 ComboBox에 등록하여 사용자가 선택
+//    제어할 수 있도록 합니다.
+//  - 유효한 축이 검색되었을 때 Control들을 초기화 하고, 정보 갱신용 타이머를 
+//    100msec 주기로 동작시킵니다.
+// --------------------------------------------------------------------------
+BOOL COverridePositionDlg::AddAxisInfo()
+{
+	CString	strData;
+	DWORD	dwModuleID;
+	
+	//++ 유효한 전체 모션축수를 반환합니다.
+	AxmInfoGetAxisCount(&m_lAxisCount);
+	if(m_lAxisCount < 1)	return FALSE;
+	
+	m_lAxisNo = 0;
+	//++ 지정한 축의 정보를 반환합니다.
+	// [INFO] 여러개의 정보를 읽는 함수 사용시 불필요한 정보는 NULL(0)을 입력하면 됩니다.
+	AxmInfoGetAxis(m_lAxisNo, NULL, NULL, &m_dwModuleID);
+
+	// 유효한 전체 모션축수의 정보를 읽어 ComboBox에 등록합니다.
+	for(int i = 0; i < m_lAxisCount; i++)
+	{
+		//++ 지정한 축의 정보를 반환합니다.
+		// [INFO] 여러개의 정보를 읽는 함수 사용시 불필요한 정보는 NULL(0)을 입력하면 됩니다.
+		AxmInfoGetAxis(i, NULL, NULL, &dwModuleID);
+		switch(dwModuleID){
+		case AXT_SMC_4V04:			strData.Format("%02ld-[PCIB-QI4A]",i);		break;
+		case AXT_SMC_2V04:			strData.Format("%02ld-[PCIB-QI2A]",i);		break;
+		case AXT_SMC_R1V04A4:		strData.Format("%02ld-[RTEX-A4N]", i);		break;
+		case AXT_SMC_R1V04A5:		strData.Format("%02ld-[RTEX-A5N]", i);		break;
+		case AXT_SMC_R1V04:			strData.Format("%02ld-(RTEX-PM)", i);		break;
+		case AXT_SMC_R1V04PM2Q:		strData.Format("%02ld-(RTEX-PM2Q)", i);		break;
+		case AXT_SMC_R1V04PM2QE:	strData.Format("%02ld-(RTEX-PM2QE)", i);	break;
+		case AXT_SMC_R1V04MLIISV:	strData.Format("%02ld-[MLII-SGDV]", i);		break;
+		case AXT_SMC_R1V04MLIIPM:	strData.Format("%02ld-(MLII-PM)", i);		break;
+		case AXT_SMC_R1V04MLIICL:	strData.Format("%02ld-[MLII-CSDL]", i);		break;
+		case AXT_SMC_R1V04MLIICR:	strData.Format("%02ld-[MLII-CSDH]", i);		break;
+		case AXT_SMC_R1V04SIIIHMIV:	strData.Format("%02ld-(SIIIH-MRJ4)", i);	break;
+		case AXT_ECAT_MOTION:		
+			{
+				char szModuleName[50];
+				AxmInfoGetAxisEx(i, NULL, szModuleName, NULL);
+				strData.Format("%02ld-[ECAT-%s]", i, szModuleName);	
+				break;
+			}
+		default:					strData.Format("%02ld-[Unknown]",i);
+		}
+		
+		m_cboSelAxis.AddString(strData);
+	}
+		
+	InitControl();							// Control 변수들을 등록하고, 초기 설정값들을 설정합니다.
+	SetTimer(TM_DISPLAY, 100, NULL);		// 일정한 주기로 변경되는 위치/속도/정보등을 Control에 반영할 타이머를 실행합니다.
+	return TRUE;
+}
+
+// ++ =======================================================================
+// >> InitControl() : Control들에 초기값을 설정하는 함수.
+//  - Control 변수들을 등록하고, 초기 설정값들을 설정합니다.
+// --------------------------------------------------------------------------
+BOOL COverridePositionDlg::InitControl()
+{
+	m_cboSelAxis.SetCurSel(m_lAxisNo);
+	
+	m_btmOvrride[POS_ABS_MODE].LoadBitmap(IDB_OVERRIDE_ABS);
+	m_btmOvrride[POS_REL_MODE].LoadBitmap(IDB_OVERRIDE_REL);
+
+	// Edit Control에 초기값 설정
+	SetDlgItemDouble(IDC_EDT_SET_POS, 0.0);
+	SetDlgItemDouble(IDC_EDT_MOVE_POS, 1000.0);
+	SetDlgItemDouble(IDC_EDT_MOVE_VEL, 200.0);
+	SetDlgItemDouble(IDC_EDT_MOVE_ACC, 400.0);
+	SetDlgItemDouble(IDC_EDT_MOVE_DEC, 400.0);
+	
+	SetDlgItemDouble(IDC_EDT_OVERRIDE_DIS1, 2000.0);
+	SetDlgItemDouble(IDC_EDT_OVERRIDE_DIS2, 1000.0);
+	
+	return TRUE;
+}
+
+// ++ =======================================================================
+// >> UpdateState() : 지정한 축의 설정값들을 읽어 Control과 일치시키는 함수.
+//  - 축번호가 변경되었을 때 변경한 축의 설정값들과 Control들과 일치시키는 
+//    역할을하는 함수입니다.
+//  - 지정한 축의 모델별 제약들을 Control에 반영하는 역할을 합니다.
+//  - 프로그램 초기 실행시, Mot파일 불러올 때, 축 번호 바뀔 때 사용됩니다.
+// --------------------------------------------------------------------------
+BOOL COverridePositionDlg::UpdateState()
+{
+	if(m_lAxisCount < 1)	return FALSE;
+	
+	DWORD dwAbsRelMode = POS_ABS_MODE, dwOnOff = 0;
+
+	//++ 지정한 축의 서보온 상태를 반환합니다.
+	AxmSignalIsServoOn(m_lAxisNo, &dwOnOff);
+	CheckDlgButton(IDC_CHK_SERVO_ON, dwOnOff);
+
+	//++ 지정한 축의 구동 좌표계 설정값을 확인합니다.
+	AxmMotGetAbsRelMode(m_lAxisNo, &dwAbsRelMode);	
+	CheckRadioButton(IDC_RDO_ABS, IDC_RDO_REL, IDC_RDO_ABS + dwAbsRelMode);
+	
+	m_btmOverride.SetBitmap(m_btmOvrride[dwAbsRelMode]);
+
+	return TRUE;
+}
+
+// ++ =======================================================================
+// >> ConvertComboToAxm(...) : ComboBox콘트롤에 현재 선택된 Item Index를 모션
+//    보드에 설정할 값으로 변경하는 함수.
+//  - ComboBox에 선택된 Item Index와 실제 모션보드에 설정되는 값이 다르므로 
+//    선택된 문자열에서 모션보드에 설정할 값을 추출해서 반환하는 함수입니다.
+//  - 변환 할 ComboBox 콘트롤의 포인트를 인자로 전달합니다.
+//  - 이 함수를 사용하고자 할 때 데이타 등록을 지정된 양식으로 설정해야됩니다.
+//    Format) XX: String, XX=라이브러리로 전달될 값, String=인자 설명
+//    Ex) "01: HIGH", "00: COMMAND", "04: HomeSensor"
+// --------------------------------------------------------------------------
+DWORD COverridePositionDlg::ConvertComboToAxm(CComboBox *pCboItem)
+{
+	if(pCboItem == NULL)	return 0;
+	
+	CString strText;
+	long	lCount, lSelData;	
+	
+	lCount = pCboItem->GetCount();
+	if(lCount == 0)		return 0;
+	
+	lSelData = pCboItem->GetCurSel();
+	if(lSelData < 0)	return 0;
+	
+	pCboItem->GetLBText(lSelData, strText);	
+	return (DWORD)atoi(strText);
+}
+
+// ++ =======================================================================
+// >> ConvertComboToAxm(...) : 지정한 모션보드에 설정값과 ComboBox콘트롤의  
+//    Item과 일치하는 Item을 찾아 선택하는 함수.
+//  - 실제 모션보드에 설정되는 값과 ComboBox의 Item Index와  다르므로 지정한
+//    값과 일치하는 Item을 찾아 선택하고 선택된 Item의 Index를 반환합니다.
+//  - 변경하고자하는 ComboBox 콘트롤의 포인트를 인자로 전달합니다.
+//  - 이 함수를 사용하고자 할 때 데이타 등록을 지정된 양식으로 설정해야됩니다.
+//    Format) XX: String, XX=라이브러리로 전달될 값, String=인자 설명
+//    Ex) "01: HIGH", "00: COMMAND", "04: HomeSensor"
+// --------------------------------------------------------------------------
+long COverridePositionDlg::ConvertAxmToCombo(CComboBox *pCboItem, DWORD dwCurData)
+{
+	if(pCboItem == NULL)	return 0;
+	
+	long	lCount, lSelData;
+	CString strText;
+	
+	lCount = pCboItem->GetCount();
+	if(lCount == 0)	return 0;
+	
+	for(int i = 0; i < lCount; i++){
+		pCboItem->GetLBText(i, strText);
+		lSelData = atoi(strText);
+		if(lSelData == (long)dwCurData){	
+			pCboItem->SetCurSel(i);
+			return i;
+		}
+	}
+	
+	pCboItem->SetCurSel(0);
+	return 0;
+}
+
+// ++ =======================================================================
+// >> SetDlgItemDouble(...) : double값을 지정한 콘트롤에 설정하는 함수.
+//  - 설정한 콘트롤의 ID와 double값을 입력합니다. 이때 표현 할 소숫점 자릿수를
+//    지정할 수 있습니다. (기본은 소숫점 3자리로 지정됨)
+//  - Edit, Static 콘트롤에 사용할 수 있으며 double값을 입력하면되므로 코드를
+//    간결하게 구현할 수 있습니다.
+// --------------------------------------------------------------------------
+void COverridePositionDlg::SetDlgItemDouble(int nID, double value, int nPoint)
+{
+	CString sTemp, sTemp2;
+	sTemp2.Format("%%.%df", nPoint);
+	sTemp.Format(sTemp2, value);
+	GetDlgItem(nID)->SetWindowText(sTemp);
+}
+
+// ++ =======================================================================
+// >> GetDlgItemDouble(...) : 지정한 콘트롤에 설정되어 있는 텍스트를 
+//    double값으로 변환하여 반환하는 함수.
+//  - Edit, Static 콘트롤에 설정된 텍스트를 double값으로 읽어들여 코드를 간결
+//    하게 구현할 수 있습니다.
+// --------------------------------------------------------------------------
+double COverridePositionDlg::GetDlgItemDouble(int nID)
+{
+	double dRet;
+	CString sTemp;
+	GetDlgItem(nID)->GetWindowText(sTemp);
+	dRet = atof((LPCTSTR)sTemp);
+	return dRet;
+}

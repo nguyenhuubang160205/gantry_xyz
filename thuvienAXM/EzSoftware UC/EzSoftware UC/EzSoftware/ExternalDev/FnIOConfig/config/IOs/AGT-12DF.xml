@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RegisterDescription ModelName ="IO"
+                     VendorName="Crevis"
+                     ToolTip="Crevis FnIO"
+                     StandardNameSpace="None"
+                     SchemaMajorVersion="1"
+                     SchemaMinorVersion="0"
+                     SchemaSubMinorVersion="0"
+                     MajorVersion="1"
+                     MinorVersion="0"
+                     SubMinorVersion="0"
+                     ProductGuid="8BCD0E5A-9DA1-4504-BF95-5A27F2D02405"
+                     VersionGuid="D2EC627D-9311-4137-B1C6-0727CE0025E4"
+                     xmlns="http://www.genicam.org/GenApi/Version_1_0"
+                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xsi:schemaLocation="http://www.genicam.org/GenApi/Version_1_0
+                     http://www.genicam.org/GenApi/GenApiSchema_Version_1_0.xsd">
+
+  <!-- ***************************************** -->
+  <!-- RootCategory -->
+  <!-- ***************************************** -->
+  <Group Comment="Root">
+    <Category Name="Root">
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pFeature>AGT12DF</pFeature>
+    </Category>
+  </Group>
+
+  <!-- ***************************************** -->
+  <!-- SubCategories -->
+  <!-- ***************************************** -->
+  <Group Comment="SubCategories">
+    <Category Name="AGT12DF" NameSpace="Custom">
+      <ToolTip>Category for Device information and control.</ToolTip>
+      <Description>Category for Device information and control.</Description>
+      <DisplayName>AGT-12DF</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <pFeature>Input_Filter_Value</pFeature>
+    </Category>
+  </Group>
+  <!-- /SubCategories-->
+
+  <!-- Device Control -->
+  <Group Comment="DeviceControl">
+    <Integer Name="Input_Filter_Value" NameSpace ="Custom">
+      <ToolTip>.</ToolTip>
+      <Description>.</Description>
+      <DisplayName>Input Filter Value(ms)</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <pValue>InputFilterValueReg</pValue>
+      <Min>0</Min>
+      <Max>10</Max>
+      <Inc>1</Inc>
+      <Representation>PureNumber</Representation>
+    </Integer>
+    <MaskedIntReg Name="InputFilterValueReg">
+      <Address>0x0000A011</Address>
+      <Length>2</Length>
+      <AccessMode>RW</AccessMode>
+      <pPort>Device</pPort>
+      <LSB>0</LSB>
+      <MSB>7</MSB>
+      <Endianess>LittleEndian</Endianess>
+      <Representation>PureNumber</Representation>
+    </MaskedIntReg>
+  </Group>
+
+  <!-- Global Nodes -->
+  <Port Name="Device">
+    <ToolTip>Port giving access to the device.</ToolTip>
+    <SwapEndianess>Yes</SwapEndianess>
+  </Port>
+  <!-- /Global Nodes-->
+</RegisterDescription>

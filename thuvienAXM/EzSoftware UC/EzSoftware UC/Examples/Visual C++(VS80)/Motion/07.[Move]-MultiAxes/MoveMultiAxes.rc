@@ -1,0 +1,312 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\MoveMultiAxes.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\MoveMultiAxes.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MOVEMULTIAXES_DIALOG DIALOGEX 0, 0, 273, 335
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "MoveMultiAxes"
+FONT 9, "±¼¸²"
+BEGIN
+    COMBOBOX        IDC_CBO_SEL_AXIS,66,7,125,325,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Select Axis No : ",IDC_STATIC,13,9,53,11,SS_CENTERIMAGE
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,7,6,259,15
+    PUSHBUTTON      "Load File",IDC_BTN_LOAD_FILE,193,7,67,14
+    GROUPBOX        "Position Monitor",IDC_STATIC,7,27,259,75
+    LTEXT           "Command Pos:",IDC_STATIC,13,51,51,13,SS_CENTERIMAGE
+    LTEXT           "Feedback Pos :",IDC_STATIC,13,67,51,13,SS_CENTERIMAGE
+    RTEXT           "0.000",IDC_STC_CMD_POS_00,66,51,38,13,SS_CENTERIMAGE | 
+                    SS_SUNKEN | NOT WS_GROUP
+    RTEXT           "0.000",IDC_STC_ACT_POS_00,66,67,38,13,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    PUSHBUTTON      "Clear",IDC_BTN_POS_CLEAR,226,51,34,29
+    LTEXT           "Command Vel :",IDC_STATIC,13,83,51,13,SS_CENTERIMAGE
+    RTEXT           "0.000",IDC_STC_CMD_VEL_00,66,83,38,13,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    CONTROL         "Servo On",IDC_CHK_SERVO_ON,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,226,83,34,14
+    RTEXT           "0.000",IDC_STC_CMD_POS_01,106,51,38,13,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    RTEXT           "0.000",IDC_STC_ACT_POS_01,106,67,38,13,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    RTEXT           "0.000",IDC_STC_CMD_VEL_01,106,83,38,13,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    RTEXT           "0.000",IDC_STC_CMD_POS_02,146,51,38,13,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    RTEXT           "0.000",IDC_STC_ACT_POS_02,146,67,38,13,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    RTEXT           "0.000",IDC_STC_CMD_VEL_02,146,83,38,13,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    RTEXT           "0.000",IDC_STC_CMD_POS_03,186,51,38,13,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    RTEXT           "0.000",IDC_STC_ACT_POS_03,186,67,38,13,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    RTEXT           "0.000",IDC_STC_CMD_VEL_03,186,83,38,13,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    CONTROL         "Axis 00",IDC_CHK_AXIS_00,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,66,37,38,10
+    CONTROL         "Axis 01",IDC_CHK_AXIS_01,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,106,37,38,10
+    CONTROL         "Axis 02",IDC_CHK_AXIS_02,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,146,37,38,10
+    CONTROL         "Axis 03",IDC_CHK_AXIS_03,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,186,37,38,10
+    GROUPBOX        "< Multi Position Move >",IDC_STATIC,7,108,259,79
+    LTEXT           "Target Position:",IDC_STATIC,13,119,51,13,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MOVE_POS_00,66,119,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_MOVE_POS_01,106,119,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_MOVE_POS_02,146,119,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_MOVE_POS_03,186,119,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Move Velocity :",IDC_STATIC,13,135,51,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MOVE_VEL_00,66,135,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_MOVE_VEL_01,106,135,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_MOVE_VEL_02,146,135,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_MOVE_VEL_03,186,135,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Move Accel    :",IDC_STATIC,13,151,51,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MOVE_ACC_00,66,151,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_MOVE_ACC_01,106,151,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_MOVE_ACC_02,146,151,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_MOVE_ACC_03,186,151,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Move Decel    :",IDC_STATIC,13,167,51,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MOVE_DEC_00,66,167,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_MOVE_DEC_01,106,167,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_MOVE_DEC_02,146,167,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_MOVE_DEC_03,186,167,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    PUSHBUTTON      "Move",IDC_BTN_POS_MOVE,226,136,34,22
+    CONTROL         "Block",IDC_CHK_MOVE_BLOCK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,226,119,34,10
+    GROUPBOX        "< Multi Jog(Velocity) Move >",IDC_STATIC,7,193,259,65
+    LTEXT           "Move Velocity :",IDC_STATIC,13,291,51,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_JOG_VEL_00,66,205,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_JOG_VEL_01,106,205,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_JOG_VEL_02,146,205,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_JOG_VEL_03,186,205,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Move Accel    :",IDC_STATIC,13,221,51,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_JOG_ACC_00,66,221,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_JOG_ACC_01,106,221,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_JOG_ACC_02,146,221,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_JOG_ACC_03,186,221,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Move Decel    :",IDC_STATIC,13,237,51,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_JOG_DEC_00,66,237,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_JOG_DEC_01,106,237,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_JOG_DEC_02,146,237,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_JOG_DEC_03,186,237,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    PUSHBUTTON      "Jog(+)",IDC_BTN_JOG_P,226,205,34,22
+    GROUPBOX        "< Multi Jog(Velocity) Line Move >",IDC_STATIC,7,264,259,
+                    64
+    LTEXT           "Target Position:",IDC_STATIC,13,275,51,13,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_LINE_POS_00,66,275,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_LINE_POS_01,106,275,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_LINE_POS_02,146,275,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_LINE_POS_03,186,275,38,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_LINE_VEL,66,291,78,14,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "Move Acc/Dec:",IDC_STATIC,13,307,51,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_LINE_ACC,66,307,78,14,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_LINE_DEC,146,307,78,14,ES_RIGHT | ES_AUTOHSCROLL
+    PUSHBUTTON      "Jog(+)",IDC_BTN_LINE_P,226,275,34,22
+    PUSHBUTTON      "Jog(-)",IDC_BTN_LINE_N,226,299,34,22
+    PUSHBUTTON      "Jog(-)",IDC_BTN_JOG_N,226,229,34,22
+    PUSHBUTTON      "Stop",IDC_BTN_POS_STOP,226,159,34,22
+    LTEXT           "Move Velocity :",IDC_STATIC,13,205,51,13,SS_CENTERIMAGE
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204b0"
+        BEGIN
+            VALUE "Comments", "(2011.03.28 compiled r1.0) for EzSoftwareRM\0"
+            VALUE "CompanyName", "Ajinextek\0"
+            VALUE "FileDescription", "MoveMultiAxes Example\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "MoveMultiAxes\0"
+            VALUE "LegalCopyright", "Copyright (C) 2011 AJINEXTEK Co,. LTD.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "MoveMultiAxes.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "MoveMultiAxes\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_MOVEMULTIAXES_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 266
+        VERTGUIDE, 13
+        VERTGUIDE, 260
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 328
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\MoveMultiAxes.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

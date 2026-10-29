@@ -1,0 +1,289 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// ÇÑ±¹¾î(´ëÇÑ¹Î±¹) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\MotParameter.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\MotParameter.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MOTPARAMETER_DIALOG DIALOGEX 0, 0, 275, 499
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "MotParameter"
+FONT 9, "±¼¸²", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Load File",IDC_BTN_LOAD_FILE,134,7,62,14
+    COMBOBOX        IDC_CBO_SEL_AXIS,43,7,88,325,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CBO_PULSE,43,39,88,91,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CBO_ENCODER,43,55,88,91,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CBO_INP,69,125,62,91,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CBO_ALARM,69,141,62,91,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CBO_ELIMIT_N,69,157,62,91,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CBO_ELIMIT_P,69,173,62,91,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDT_MIN_VEL,198,39,62,14,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_MAX_VEL,198,55,62,14,ES_RIGHT | ES_AUTOHSCROLL
+    COMBOBOX        IDC_CBO_HOME_SIGNAL,69,225,62,91,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CBO_HOME_LEVEL,69,241,62,91,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CBO_HOME_DIR,198,225,62,91,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CBO_Z_PHASE_LEV,198,125,62,121,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CBO_Z_PHASE_USE,198,241,62,121,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CBO_STOP_MODE,198,141,62,91,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CBO_STOP_LEVEL,198,157,62,91,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDT_VEL_FIRST,69,263,62,14,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_VEL_SECOND,69,280,62,14,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_VEL_THIRD,69,297,62,14,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_VEL_LAST,69,314,62,14,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_ACC_FIRST,198,263,62,14,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_ACC_SECOND,198,280,62,14,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_HOME_CLR_TIME,198,297,62,14,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_HOME_OFFSET,198,314,62,14,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_SW_POS_N,69,352,62,14,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_SW_POS_P,198,352,62,14,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_MOVE_PULSE,198,72,62,14,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_MOVE_UNIT,198,88,62,14,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_POSITION,69,432,62,14,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_VELOCITY,69,449,62,14,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_ACCEL,198,432,62,14,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_DECEL,198,449,62,14,ES_RIGHT | ES_AUTOHSCROLL
+    COMBOBOX        IDC_CBO_ABSREL,43,71,88,91,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CBO_PROFILE,43,87,88,91,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CBO_SERVO_ON,69,189,62,91,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CBO_ALARM_RESET,198,173,62,91,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CBO_ENCODER_TYPE,198,189,62,91,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Save File",IDC_BTN_SAVE_FILE,198,7,62,14
+    GROUPBOX        "< Pulse/Encoder Method && Move Parameter Setting >",IDC_STATIC,7,27,261,81
+    PUSHBUTTON      "Apply",IDC_BTN_APPLY_PULSE,198,26,62,11,BS_FLAT
+    LTEXT           "00:Axis",IDC_STATIC,13,8,29,11,SS_CENTERIMAGE
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,7,6,261,15
+    GROUPBOX        "< Input/Output Signal Setting >",IDC_STATIC,7,113,261,96
+    CONTROL         "",IDC_CHK_INP,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,60,125,8,12
+    CONTROL         "",IDC_CHK_ALARM,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,60,141,8,12
+    CONTROL         "",IDC_CHK_ELIMIT_N,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,60,157,8,12
+    CONTROL         "",IDC_CHK_ELIMIT_P,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,60,173,8,12
+    CONTROL         "",IDC_CHK_EMG,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,189,157,8,12
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,135,126,2,76
+    GROUPBOX        "< Software Limit Setting >",IDC_STATIC,7,340,261,69
+    LTEXT           "24:Neg Soft Limit",IDC_STATIC,13,352,55,14,SS_CENTERIMAGE
+    LTEXT           "25:Pos Soft Limit",IDC_STATIC,140,352,55,14,SS_CENTERIMAGE
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,135,352,2,31
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,135,39,2,61
+    LTEXT           "01:Pulse",IDC_STATIC,13,39,27,12,SS_CENTERIMAGE
+    LTEXT           "02:Enc",IDC_STATIC,13,55,29,12,SS_CENTERIMAGE
+    CONTROL         "",IDC_CHK_Z_PHASE,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,189,125,8,12
+    LTEXT           "03:Inposition",IDC_STATIC,13,125,44,12,SS_CENTERIMAGE
+    LTEXT           "04:Alarm",IDC_STATIC,13,141,44,12,SS_CENTERIMAGE
+    LTEXT           "05:Neg Limit",IDC_STATIC,13,157,44,12,SS_CENTERIMAGE
+    LTEXT           "06:Pos Limit",IDC_STATIC,13,173,44,12,SS_CENTERIMAGE
+    LTEXT           "12:ZPhase Lev",IDC_STATIC,140,125,49,12,SS_CENTERIMAGE
+    LTEXT           "14:EStop Mode",IDC_STATIC,140,141,49,12,SS_CENTERIMAGE
+    LTEXT           "15:EStop Level",IDC_STATIC,140,157,49,12,SS_CENTERIMAGE
+    LTEXT           "34:Servo On Lev",IDC_STATIC,13,189,54,12,SS_CENTERIMAGE
+    LTEXT           "35:Alm Reset Lev",IDC_STATIC,140,173,57,12,SS_CENTERIMAGE
+    LTEXT           "07:Min Velocity",IDC_STATIC,140,39,55,14,SS_CENTERIMAGE
+    LTEXT           "08:Max Velocity",IDC_STATIC,140,55,55,14,SS_CENTERIMAGE
+    LTEXT           "13:ZPhase Use",IDC_STATIC,140,241,49,12,SS_CENTERIMAGE
+    LTEXT           "10:Home Level",IDC_STATIC,13,241,51,12,SS_CENTERIMAGE
+    GROUPBOX        "< Home Search Setting >",IDC_STATIC,7,213,261,121
+    LTEXT           "09:Home Signal",IDC_STATIC,13,225,51,12,SS_CENTERIMAGE
+    LTEXT           "11:Home Dir",IDC_STATIC,140,225,54,12,SS_CENTERIMAGE
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,135,226,2,29
+    LTEXT           "16:First Vel",IDC_STATIC,13,263,54,14,SS_CENTERIMAGE
+    LTEXT           "17:Second Vel",IDC_STATIC,13,280,54,14,SS_CENTERIMAGE
+    LTEXT           "18:Third Vel",IDC_STATIC,13,297,54,14,SS_CENTERIMAGE
+    LTEXT           "20:First Accel",IDC_STATIC,140,263,51,14,SS_CENTERIMAGE
+    LTEXT           "21:Second Accel",IDC_STATIC,140,280,55,14,SS_CENTERIMAGE
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,135,263,2,63
+    LTEXT           "19:Last Vel ",IDC_STATIC,13,314,54,14,SS_CENTERIMAGE
+    LTEXT           "23:End Offset",IDC_STATIC,140,314,54,14,SS_CENTERIMAGE
+    LTEXT           "22:Clear TM[ms]",IDC_STATIC,140,297,56,14,SS_CENTERIMAGE
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,13,258,247,1
+    LTEXT           "36:Encoder Type",IDC_STATIC,140,189,57,12,SS_CENTERIMAGE
+    LTEXT           "32:Abs",IDC_STATIC,13,71,29,12,SS_CENTERIMAGE
+    LTEXT           "33:Profile",IDC_STATIC,13,87,29,12,SS_CENTERIMAGE
+    LTEXT           "26:Move Pulse",IDC_STATIC,140,72,55,14,SS_CENTERIMAGE
+    LTEXT           "27:Move Unit",IDC_STATIC,140,88,55,14,SS_CENTERIMAGE
+    PUSHBUTTON      "Apply",IDC_BTN_APPLY_HOME,198,213,62,11,BS_FLAT
+    PUSHBUTTON      "Apply",IDC_BTN_APPLY_SOFTLIMIT,198,339,62,11,BS_FLAT
+    LTEXT           "28:Position",IDC_STATIC,13,432,54,14,SS_CENTERIMAGE
+    LTEXT           "29:Velocity",IDC_STATIC,13,449,54,14,SS_CENTERIMAGE
+    LTEXT           "30:Acceleration",IDC_STATIC,140,432,51,14,SS_CENTERIMAGE
+    LTEXT           "31:Deceleration",IDC_STATIC,140,449,55,14,SS_CENTERIMAGE
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,135,433,2,29
+    GROUPBOX        "< User Move Parameter Setting >",IDC_STATIC,7,420,261,49
+    PUSHBUTTON      "Apply",IDC_BTN_APPLY_USER_PARA,198,420,62,11,BS_FLAT
+    PUSHBUTTON      "Apply All Axes",IDC_BTN_APPLY_ALL_AXES,7,473,261,16
+    PUSHBUTTON      "Apply",IDC_BTN_APPLY_SIGNAL,198,113,62,11,BS_FLAT
+    LTEXT           "37:Soft Limit Sel",IDC_STATIC,13,369,55,14,SS_CENTERIMAGE
+    LTEXT           "38:Stop Mode",IDC_STATIC,140,369,55,14,SS_CENTERIMAGE
+    COMBOBOX        IDC_CBO_SW_SEL,69,369,62,91,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CBO_SW_STOP_MODE,198,369,62,121,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Enable",IDC_CHK_SW_ENABLE,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,13,386,247,16,0,IDC_CHK_SW_ENABLE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204b0"
+        BEGIN
+            VALUE "Comments", "(2011.03.28 compiled r1.0) for EzSoftwareRM"
+            VALUE "CompanyName", "Ajinextek"
+            VALUE "FileDescription", "MotParameter MFC Example"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "MotParameter"
+            VALUE "LegalCopyright", "Copyright (C) 2011 AJINEXTEK Co,. LTD."
+            VALUE "OriginalFilename", "MotParameter.EXE"
+            VALUE "ProductName", "MotParameter"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_MOTPARAMETER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 268
+        VERTGUIDE, 13
+        VERTGUIDE, 260
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 492
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_MOTPARAMETER_DIALOG DLGINIT
+BEGIN
+    IDC_CBO_HOME_DIR, 0x403, 13, 0
+0x3030, 0x203a, 0x442d, 0x5249, 0x435f, 0x5743, "\000" 
+    IDC_CBO_HOME_DIR, 0x403, 12, 0
+0x3130, 0x203a, 0x442b, 0x5249, 0x435f, 0x0057, 
+    0
+END
+
+#endif    // ÇÑ±¹¾î(´ëÇÑ¹Î±¹) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\MotParameter.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

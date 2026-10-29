@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Devices>
+  <AGN-9289 Interface="G" ID = "0x9000" FileName="AGN-9289.xml"/>
+  <AGL-9089 Interface="G" ID = "0x9170" FileName="AGL-9089.xml"/>
+</Devices>
+

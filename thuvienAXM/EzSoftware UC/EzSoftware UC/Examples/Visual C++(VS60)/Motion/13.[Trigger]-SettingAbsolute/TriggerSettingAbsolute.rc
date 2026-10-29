@@ -1,0 +1,282 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\TriggerSettingAbsolute.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\TriggerSettingAbsolute.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_TRIGGERSETTINGABSOLUTE_DIALOG DIALOGEX 0, 0, 273, 335
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "TriggerSettingAbsolute"
+FONT 9, "±¼¸²"
+BEGIN
+    COMBOBOX        IDC_CBO_SEL_AXIS,81,7,117,325,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Select Axis No : ",IDC_STATIC,13,9,54,11,SS_CENTERIMAGE
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,7,6,259,15
+    PUSHBUTTON      "Load File",IDC_BTN_LOAD_FILE,200,7,60,14
+    GROUPBOX        "Position Monitor",IDC_STATIC,7,28,259,64
+    LTEXT           "Command Position :",IDC_STATIC,13,39,67,14,
+                    SS_CENTERIMAGE
+    LTEXT           "Feedback Position  :",IDC_STATIC,13,55,67,14,
+                    SS_CENTERIMAGE
+    RTEXT           "0.000",IDC_STC_CMD_POS,81,39,76,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    RTEXT           "0.000",IDC_STC_ACT_POS,81,55,76,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    PUSHBUTTON      "Position Setting",IDC_BTN_POS_SET,200,55,60,14
+    LTEXT           "Command Velocity :",IDC_STATIC,13,71,67,14,
+                    SS_CENTERIMAGE
+    RTEXT           "0.000",IDC_STC_CMD_VEL,81,71,76,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    LTEXT           "Unit",IDC_STATIC,161,39,36,14,SS_CENTERIMAGE
+    LTEXT           "Unit",IDC_STATIC,161,55,36,14,SS_CENTERIMAGE
+    CONTROL         "Unit/Sec",IDC_STATIC,"Static",SS_SIMPLE | 
+                    SS_CENTERIMAGE | WS_GROUP,161,71,36,14
+    CONTROL         "Servo On",IDC_CHK_SERVO_ON,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,200,71,60,14
+    EDITTEXT        IDC_EDT_SET_POS,200,39,60,14,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "Target Position      :",IDC_STATIC,13,121,67,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MOVE_POS,81,121,76,14,ES_RIGHT | ES_AUTOHSCROLL
+    PUSHBUTTON      "Move Target",IDC_BTN_MOVE,200,121,60,30
+    GROUPBOX        "Position Move",IDC_STATIC,7,96,259,78
+    CONTROL         "[00] Absolute",IDC_RDO_ABS,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,83,107,57,10
+    CONTROL         "[01] Relative",IDC_RDO_REL,"Button",BS_AUTORADIOBUTTON,
+                    145,107,57,10
+    LTEXT           "Move Velocity       :",IDC_STATIC,13,137,67,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MOVE_VEL,81,137,76,14,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "Move Accel/Decel :",IDC_STATIC,13,153,67,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MOVE_ACCDEC,81,153,76,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    PUSHBUTTON      "Move Stop",IDC_BTN_MOVE_STOP,200,153,60,14
+    LTEXT           "Unit",IDC_STATIC,161,121,36,14,SS_CENTERIMAGE
+    LTEXT           "Unit/Sec",IDC_STATIC,161,137,36,14,SS_CENTERIMAGE
+    CONTROL         "Unit/Sec^2",IDC_STATIC,"Static",SS_SIMPLE | 
+                    SS_CENTERIMAGE | WS_GROUP,161,153,36,14
+    GROUPBOX        "< Trigger Setting Method >",IDC_STATIC,7,178,259,66
+    LTEXT           "Trigger Time(us)   :",IDC_STATIC,13,190,67,12,
+                    SS_CENTERIMAGE
+    COMBOBOX        IDC_CBO_TRIG_LEVEL,81,207,76,91,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Trigger Level Set   :",IDC_STATIC,13,207,67,12,
+                    SS_CENTERIMAGE
+    LTEXT           "Trigger Target  Sel :",IDC_STATIC,13,225,67,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_TRIG_TIME,81,190,76,14,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "Interrupt :",IDC_STATIC,166,207,31,14,SS_CENTERIMAGE
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,160,190,2,48
+    COMBOBOX        IDC_CBO_TRIG_TARGET,81,223,76,91,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CBO_INT_USE,200,207,60,91,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Set Method",IDC_BTN_SET_METHOD,200,229,65,14
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,200,224,65,2
+    LTEXT           "Int Count:",IDC_STATIC,166,190,31,14,SS_CENTERIMAGE
+    CTEXT           "0",IDC_STC_INT_COUNT,200,190,60,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    LISTBOX         IDC_LST_TRIG_POS,81,260,76,61,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP,WS_EX_RIGHT
+    LTEXT           "Trigger Position List:",IDC_STATIC,13,260,66,14,
+                    SS_CENTERIMAGE
+    LTEXT           "Trig Pos:",IDC_STATIC,166,260,31,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_TRIG_POS_ADD,200,260,60,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    PUSHBUTTON      "All Clear Item",IDC_BTN_TRIG_DATA_CLR,200,290,60,14
+    PUSHBUTTON      "<< Add Item   ",IDC_BTN_TRIG_DATA_ADD,200,275,60,14
+    GROUPBOX        "< Trigger Setting Absolute >",IDC_STATIC,7,248,259,80
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,200,307,65,2
+    CONTROL         "Set Absolute",IDC_CHK_SET_ABSOLUTE,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,200,313,65,14
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,160,260,2,61
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204b0"
+        BEGIN
+            VALUE "Comments", "(2011.03.28 compiled r1.0) for EzSoftwareRM\0"
+            VALUE "CompanyName", "Ajinextek\0"
+            VALUE "FileDescription", "TriggerSettingAbsolute Example\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "TriggerSettingAbsolute\0"
+            VALUE "LegalCopyright", "Copyright (C) 2011 AJINEXTEK Co,. LTD.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "TriggerSettingAbsolute.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "TriggerSettingAbsolute\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_TRIGGERSETTINGABSOLUTE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 266
+        VERTGUIDE, 13
+        VERTGUIDE, 260
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 328
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_TRIGGERSETTINGABSOLUTE_DIALOG DLGINIT
+BEGIN
+    IDC_CBO_TRIG_LEVEL, 0x403, 8, 0
+0x3030, 0x203a, 0x4f4c, 0x0057, 
+    IDC_CBO_TRIG_LEVEL, 0x403, 9, 0
+0x3130, 0x203a, 0x4948, 0x4847, "\000" 
+    IDC_CBO_TRIG_TARGET, 0x403, 12, 0
+0x3030, 0x203a, 0x4f43, 0x4d4d, 0x4e41, 0x0044, 
+    IDC_CBO_TRIG_TARGET, 0x403, 11, 0
+0x3130, 0x203a, 0x4341, 0x5554, 0x4c41, "\000" 
+    IDC_CBO_INT_USE, 0x403, 12, 0
+0x3030, 0x203a, 0x4944, 0x4153, 0x4c42, 0x0045, 
+    IDC_CBO_INT_USE, 0x403, 11, 0
+0x3130, 0x203a, 0x4e45, 0x4241, 0x454c, "\000" 
+    0
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\TriggerSettingAbsolute.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

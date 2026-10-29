@@ -1,0 +1,34 @@
+Imports System.Reflection
+Imports System.Runtime.CompilerServices
+Imports System.Runtime.InteropServices
+
+' 어셈블리에 대한 일반 정보는 다음 특성 집합을 통해 제어됩니다.
+' 어셈블리와 관련된 정보를 수정하려면
+' 이 특성 값을 변경하십시오
+
+
+' TODO: 어셈블리 특성 값을 확인하십시오.
+
+
+<Assembly: AssemblyTitle("")>
+<Assembly: AssemblyDescription("")>
+<Assembly: AssemblyCompany("(주)아진엑스텍")>
+<Assembly: AssemblyProduct("")>
+<Assembly: AssemblyCopyright("")>
+<Assembly: AssemblyTrademark("")>
+<Assembly: AssemblyCulture("")>
+
+' 어셈블리의 버전 정보는 다음 네 값으로 구성됩니다.
+
+'	주 버전
+'	부 버전
+'	수정 번호
+'	빌드 번호
+
+' 모든 값을 지정하거나 
+' 아래와 같이 '*'를 사용하여 수정 번호 및 빌드 번호를 기본값으로 지정할 수 있습니다
+
+
+<Assembly:  AssemblyVersion("1.0.*")>
+
+

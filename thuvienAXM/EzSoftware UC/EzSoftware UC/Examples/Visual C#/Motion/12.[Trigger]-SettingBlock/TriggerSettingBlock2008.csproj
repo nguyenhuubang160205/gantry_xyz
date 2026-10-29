@@ -1,0 +1,74 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{49157C44-BDD8-4FD2-BFFF-CE4B4D02689D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TriggerSettingBlock</RootNamespace>
+    <AssemblyName>TriggerSettingBlock</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>..\..\Executable\32Bit\</OutputPath>
+    <IntermediateOutputPath>..\..\Executable\32Bit\TriggerSettingBlock\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>..\..\Executable\32Bit\</OutputPath>
+    <IntermediateOutputPath>..\..\Executable\32Bit\TriggerSettingBlock\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\Executable\64Bit\</OutputPath>
+    <IntermediateOutputPath>..\..\Executable\64Bit\TriggerSettingBlock\$(Configuration)\</IntermediateOutputPath>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>..\..\Executable\64Bit\</OutputPath>
+    <IntermediateOutputPath>..\..\Executable\64Bit\TriggerSettingBlock\$(Configuration)\</IntermediateOutputPath>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\..\AXL(Library)\C#\AXHS.cs" />
+    <Compile Include="..\..\..\..\AXL(Library)\C#\AXL.cs" />
+    <Compile Include="..\..\..\..\AXL(Library)\C#\AXM.cs" />
+    <Compile Include="TriggerSettingBlock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TriggerSettingBlock.Designer.cs">
+      <DependentUpon>TriggerSettingBlock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <EmbeddedResource Include="TriggerSettingBlock.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TriggerSettingBlock.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

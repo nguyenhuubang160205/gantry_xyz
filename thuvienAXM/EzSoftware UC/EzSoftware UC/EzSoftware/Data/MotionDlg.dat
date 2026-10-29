@@ -1,0 +1,101 @@
+##-- Single Axis Move --
+#Current Axis Number, Move Position, Move Velocity, Move Accel, Move Decel
+0,	100.000,	100.000,	200.000,	200.000
+#Repeat Delay
+100
+#Repeat Count
+1
+#Stop Decel
+200.000
+##-- Multi Axis Move --
+#List Counts(Axis Counts)
+1
+#- Axis Info -
+#Axis Number,	Position,	Velocity,	Accel,	Decel
+00-[ECAT],	1000,	200,	400,	400
+#Stop Decel
+400
+##-- Velocity Move(Jog Move) --
+#List Counts(Axis Counts)
+1
+#- Axis Info -
+#Axis Number,	Velocity,	Accel,	Decel
+00-[ECAT],	200.000,	400.000,	400.000
+#Stop Decel
+400.000
+##-- Signal Search Move --
+#Axis Number,	Move Velocity,	Move Accel
+0,	200.000,	400.000
+#Detect Signal,	Signal Mode,	Stop Method,	Target(Command, Actual)
+0,	0,	0,	0
+#Stop Decel
+400.000
+##-- Home Search Move --
+#Axis Number,	Home Dir,	Home Signal,	Use ZPhase
+0,	0,	2,	0
+#Home ClrTime,	Home Offset,	1st Velocity,	2nd Velocity
+1000.000,	0.000,	100.000,	100.000
+#3rd Velocity,	Last Velocity,	1st Accel,	2nd Accel
+20.000,	1.000,	400.000,	400.000
+#Stop Decel
+400.000
+##-- Interpolation Move --
+#Current Coordinator Number
+ 0
+#- Coord Info (Axis Mapping) -
+#List counter,	Axes Number,   AbsRel
+0[	[	[
+1[	[	[
+2[	[	[
+3[	[	[
+4[	[	[
+5[	[	[
+6[	[	[
+7[	[	[
+8[	[	[
+9[	[	[
+10[	[	[
+11[	[	[
+12[	[	[
+13[	[	[
+14[	[	[
+15[	[	[
+#Coord Number,	Coord Size,	Profile Mode,	AbsRel Mode,	Real Axes Number
+-1,	0,	0,	-1,	
+-1,	0,	0,	-1,	
+-1,	0,	0,	-1,	
+-1,	0,	170262584,	-1,	
+-1,	0,	0,	-1,	
+-1,	0,	0,	-1,	
+-1,	0,	0,	-1,	
+-1,	0,	0,	-1,	
+-1,	0,	0,	-1,	
+-1,	0,	0,	-1,	
+-1,	0,	0,	-1,	
+-1,	0,	0,	-1,	
+-1,	0,	0,	-1,	
+-1,	0,	0,	-1,	
+-1,	0,	0,	-1,	
+-1,	0,	0,	-1,	
+#- Interpolation Segments -
+#Interpolation Count
+ -1
+#Segments Number,	Move Type,	Move Data
+#Stop Decel
+400.000
+##-- Override Move --
+#Current Axis Number
+ 0
+#Override Position, Override Velocity, Override Velocity at Position, Override Velocity at Velocity
+1000.000,	200.000,	1000.000,	200.000
+#Override Velocity at Accel, Override Velocity at Decel, Override Velocity at Override Position, Override Velocity at Override Velocity
+400.000,	400.000,	500.000,	400.000
+#Override Velocity at Target(Command, Actual)
+ 0
+#Stop Decel
+400.000
+##-- Move Stop --
+#Current Axis Number
+ 0
+#Stop Decel
+400.000

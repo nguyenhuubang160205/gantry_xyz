@@ -1,0 +1,12 @@
+1. Select file with mouse								
+2. Select the sub-menu program in the selection as for the link program(H) in the pop-up menu by clicking of mouse right button....							
+3. Then the link program box is activated. 						
+4. Click other ¡¦ button								
+5. After move the searching position in link program... dialogue box to system32(window 2000) folder, select regsvr32.exe then click open button.					
+6. Once click the confirm button, the registration is to completed with message of successful registration. 	
+								
+7. After execute basic, on the menu, click configuration element into the project./		
+
+8. Select AxtMsg ActiveX Control module in control tab.
+   ->Scroll down the scroll bar and select Axt3DGraphActiveX Control
+   ->Click the install button in below buttons. 	

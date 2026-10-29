@@ -1,0 +1,1 @@
+CodeMeterRuntime.exe /x /ComponentArgs "*":"/qb"

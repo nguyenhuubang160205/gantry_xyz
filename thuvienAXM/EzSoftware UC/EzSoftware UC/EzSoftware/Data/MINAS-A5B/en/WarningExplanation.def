@@ -1,0 +1,13 @@
+# Warning No. (Hex),Name,Cause,Treatment
+00,Normal,Normal,Normal
+A0,Over-load warning,Load factor is 85% or more the warning level.,Check the load factor. Set up longer acceleration/deceleration time. Lower the load.
+A1,Over-regeneration warning,Regenerative load factor is 85% or more the warning level.,Check the regeneration load factor. Set up longer acceleration/deceleration time. Lower the load.
+A2,Battery warning,Battery voltage is 3.2 V or lower.,Check the battery voltage. Replace the battery.
+A3,Fan lock warning,Fan has stopped for 1 sec.,Check the turn of the fan. Replace the fan.
+A4,Encoder communication warning,The number of successive encoder communication warnings exceeds the specified value.,Examine the possibility of the noise.
+A5,Encoder overheat warning,The encoder detects overheat warning.,Check use environment of motor.
+A6,Oscillation detection warning,Oscillation or vibration is detected.,Make a gain adjustment.
+A7,Lifetime warning,The life expectancy of capacity or fan becomes shorter than the specified time.,Replace the driver.
+A8,External scale warning,The feedback scale detects the warning.,Replace the external feedback device.
+A9,External scale communication warning,The number of successive feedback scale communication warnings exceeds the specified value.,Examine the possibility of the noise.
+C3,Main power off warning,"When setting of Pr7.14 (Detection time of main power off warning) is 10-1999,instantaneous power interruption occurs between L1 and L3 and lasts for a time longer than the setting of Pr7.14.","Check the setup value of Pr7.14. Measure the voltage between lines of connector (L1, L2 and L3).  Connect each phase of the power supply (L1, L2 and L3) correctly. Replace the driver."

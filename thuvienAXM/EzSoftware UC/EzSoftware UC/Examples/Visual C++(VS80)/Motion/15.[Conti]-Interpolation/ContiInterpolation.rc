@@ -1,0 +1,268 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\ContiInterpolation.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\ContiInterpolation.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CONTIINTERPOLATION_DIALOG DIALOGEX 0, 0, 273, 335
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "ContiInterpolation"
+FONT 9, "±¼¸²"
+BEGIN
+    COMBOBOX        IDC_CBO_SEL_AXIS,66,7,134,325,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Select Axis No: ",IDC_STATIC,13,9,52,11,SS_CENTERIMAGE
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,7,6,259,15
+    PUSHBUTTON      "Load File",IDC_BTN_LOAD_FILE,202,7,58,14
+    GROUPBOX        "Position Monitor",IDC_STATIC,7,27,259,76
+    LTEXT           "Command Pos:",IDC_STATIC,13,51,51,13,SS_CENTERIMAGE
+    LTEXT           "Feedback Pos :",IDC_STATIC,13,67,51,13,SS_CENTERIMAGE
+    RTEXT           "0.000",IDC_STC_CMD_POS_00,66,51,38,13,SS_CENTERIMAGE | 
+                    SS_SUNKEN | NOT WS_GROUP
+    RTEXT           "0.000",IDC_STC_ACT_POS_00,66,67,38,13,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    PUSHBUTTON      "Clear",IDC_BTN_POS_CLEAR,226,51,34,29
+    LTEXT           "Command Vel :",IDC_STATIC,13,83,51,13,SS_CENTERIMAGE
+    RTEXT           "0.000",IDC_STC_CMD_VEL_00,66,83,38,13,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    CONTROL         "Servo On",IDC_CHK_SERVO_ON,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,226,83,34,14
+    RTEXT           "0.000",IDC_STC_CMD_POS_01,106,51,38,13,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    RTEXT           "0.000",IDC_STC_ACT_POS_01,106,67,38,13,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    RTEXT           "0.000",IDC_STC_CMD_VEL_01,106,83,38,13,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    RTEXT           "0.000",IDC_STC_CMD_POS_02,146,51,38,13,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    RTEXT           "0.000",IDC_STC_ACT_POS_02,146,67,38,13,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    RTEXT           "0.000",IDC_STC_CMD_VEL_02,146,83,38,13,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    RTEXT           "0.000",IDC_STC_CMD_POS_03,186,51,38,13,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    RTEXT           "0.000",IDC_STC_ACT_POS_03,186,67,38,13,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    RTEXT           "0.000",IDC_STC_CMD_VEL_03,186,83,38,13,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    CONTROL         "Axis 00",IDC_CHK_AXIS_00,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,66,37,38,10
+    CONTROL         "Axis 01",IDC_CHK_AXIS_01,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,106,37,38,10
+    CONTROL         "Axis 02",IDC_CHK_AXIS_02,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,146,37,38,10
+    CONTROL         "Axis 03",IDC_CHK_AXIS_03,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,186,37,38,10
+    GROUPBOX        "< Interpolation Monitor >",IDC_STATIC,7,109,259,46
+    PUSHBUTTON      "Start",IDC_BTN_INTP_START,226,265,34,27
+    LTEXT           "Interpolation Velocity         :  ",IDC_STATIC,13,174,
+                    90,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MOVE_VEL,106,175,78,14,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "Interpolation Acceleration   :",IDC_STATIC,13,192,90,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MOVE_ACC,106,192,78,14,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "Interpolation Deceleration   :",IDC_STATIC,13,208,90,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MOVE_DEC,106,209,78,14,ES_RIGHT | ES_AUTOHSCROLL
+    PUSHBUTTON      "Stop",IDC_BTN_INTP_STOP,226,175,34,81
+    LTEXT           "Unit/Sec",IDC_STATIC,186,175,36,14,SS_CENTERIMAGE
+    CONTROL         "Unit/Sec^2",IDC_STATIC,"Static",SS_SIMPLE | 
+                    SS_CENTERIMAGE | WS_GROUP,186,192,36,14
+    CONTROL         "Unit/Sec^2",IDC_STATIC,"Static",SS_SIMPLE | 
+                    SS_CENTERIMAGE | WS_GROUP,186,209,36,14
+    GROUPBOX        "< Interpolation Move >",IDC_STATIC,7,162,259,166
+    LTEXT           "Interpolation Execute Node :",IDC_STATIC,13,120,92,13,
+                    SS_CENTERIMAGE
+    CTEXT           "0",IDC_STC_INTP_EXE_NODE,106,120,38,13,SS_CENTERIMAGE | 
+                    SS_SUNKEN | NOT WS_GROUP
+    LTEXT           "In Interpolation Move:",IDC_STATIC,154,135,69,13,
+                    SS_CENTERIMAGE
+    CTEXT           "0",IDC_STC_INTP_TOTAL_NODE,106,135,38,13,SS_CENTERIMAGE | 
+                    SS_SUNKEN | NOT WS_GROUP
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,148,119,2,30
+    CONTROL         "",IDC_CHK_INTP_QUEUE_FREE,"Button",BS_AUTOCHECKBOX | 
+                    BS_LEFTTEXT | WS_DISABLED | WS_TABSTOP,226,120,8,12
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,13,229,208,2
+    PUSHBUTTON      "Clear",IDC_BTN_INTP_CLEAR,226,295,34,26
+    PUSHBUTTON      "Line",IDC_BTN_INTP_LINE,13,236,68,20,WS_DISABLED
+    PUSHBUTTON      "Circle(Angle)",IDC_BTN_INTP_CIRCLE,153,236,68,20,
+                    WS_DISABLED
+    PUSHBUTTON      "Arc(Radius)",IDC_BTN_INTP_ARC,83,236,68,20,WS_DISABLED
+    PUSHBUTTON      "Line && Arc",IDC_BTN_INTP_LINE_ARC,13,265,68,56,
+                    WS_DISABLED
+    PUSHBUTTON      "Helical",IDC_BTN_INTP_HELICAL,83,265,68,56,WS_DISABLED
+    PUSHBUTTON      "Spline",IDC_BTN_INTP_SPLINE,153,265,68,56,WS_DISABLED
+    LTEXT           "Interpolation Q Free  :",IDC_STATIC,154,120,69,13,
+                    SS_CENTERIMAGE
+    LTEXT           "Interpolation Total Node     :",IDC_STATIC,13,135,90,13,
+                    SS_CENTERIMAGE
+    CONTROL         "",IDC_CHK_INTP_IN_MOTION,"Button",BS_AUTOCHECKBOX | 
+                    BS_LEFTTEXT | WS_DISABLED | WS_TABSTOP,226,135,8,12
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,13,260,208,2
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204b0"
+        BEGIN
+            VALUE "Comments", "(2011.03.28 compiled r1.0) for EzSoftwareRM\0"
+            VALUE "CompanyName", "Ajinextek\0"
+            VALUE "FileDescription", "ContiInterpolation Example\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "ContiInterpolation\0"
+            VALUE "LegalCopyright", "Copyright (C) 2011 AJINEXTEK Co,. LTD.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "ContiInterpolation.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "ContiInterpolation\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_CONTIINTERPOLATION_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 266
+        VERTGUIDE, 13
+        VERTGUIDE, 260
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 328
+        HORZGUIDE, 278
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\ContiInterpolation.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

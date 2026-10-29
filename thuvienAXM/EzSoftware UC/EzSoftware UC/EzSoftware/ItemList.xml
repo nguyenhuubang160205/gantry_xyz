@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ItemList>
+  
+  <Motio>
+    <MotionItem name="CMD_POS" Index="0" />
+    <MotionItem name="ACT_POS" Index="1" />
+    <MotionItem name="CMD_VEL" Index="2" />
+    <MotionItem name="ACT_VEL" Index="3" />
+    <MotionItem name="CMD_ACCDEC" Index="4" />
+    <MotionItem name="ACT_ACCDEC" Index="5" />
+    <MotionItem name="POS_ERROR" Index="6" />
+    <MotionItem name="INMOTION" Index="7" />
+    <MotionItem name="ACT_TORQUE" Index="8" />
+    <MotionItem name="POS_DEMAND" Index="9" />
+    <MotionItem name="VEL_DEMAND" Index="10" />
+    <MotionItem name="TOR_DEMAND" Index="11" />
+    <MotionItem name="MO_AI" Index="12" />
+    <MotionItem name="MO_DI" Index="13" />
+    <MotionItem name="MO_DO" Index="14" />
+  </Motio>
+  
+  <DIO>
+    <DIOItem name="DI_VALUE" index="15" />
+    <DIOItem name="DO_VALUE" index="16" />
+  </DIO>
+
+  <AIO>
+    <AIOItem name="AI_VALUE" index ="17" />
+    <AIOItem name="AO_VALUE" index ="18" />
+  </AIO>
+
+  <CNT>
+  </CNT>
+  
+</ItemList>

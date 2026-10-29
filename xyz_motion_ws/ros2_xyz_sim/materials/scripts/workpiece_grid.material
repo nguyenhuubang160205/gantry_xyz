@@ -1,0 +1,19 @@
+material Gazebo/WorkpieceOxyGrid
+{
+  technique
+  {
+    pass
+    {
+      ambient 0.9 0.9 0.9 1.0
+      diffuse 0.95 0.95 0.95 1.0
+      specular 0.2 0.2 0.2 1.0 16.0
+
+      texture_unit
+      {
+        texture workpiece_oxy_grid.png
+        filtering anisotropic
+        max_anisotropy 16
+      }
+    }
+  }
+}

@@ -1,0 +1,292 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\MoveSignalCapture.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\MoveSignalCapture.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MOVESIGNALCAPTURE_DIALOG DIALOGEX 0, 0, 273, 335
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "MoveSignalCapture"
+FONT 9, "±¼¸²"
+BEGIN
+    COMBOBOX        IDC_CBO_SEL_AXIS,81,7,119,325,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Select Axis No : ",IDC_STATIC,13,9,54,11,SS_CENTERIMAGE
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,7,6,259,15
+    PUSHBUTTON      "Load File",IDC_BTN_LOAD_FILE,202,7,58,14
+    GROUPBOX        "Position Monitor",IDC_STATIC,7,28,259,68
+    LTEXT           "Command Position :",IDC_STATIC,13,39,67,14,
+                    SS_CENTERIMAGE
+    LTEXT           "Feedback Position  :",IDC_STATIC,13,57,67,14,
+                    SS_CENTERIMAGE
+    RTEXT           "0.000",IDC_STC_CMD_POS,81,39,76,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    RTEXT           "0.000",IDC_STC_ACT_POS,81,57,76,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    PUSHBUTTON      "Position Clear",IDC_BTN_POS_CLEAR,202,39,58,31
+    LTEXT           "Command Velocity :",IDC_STATIC,13,75,67,14,
+                    SS_CENTERIMAGE
+    RTEXT           "0.000",IDC_STC_CMD_VEL,81,75,76,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    LTEXT           "Unit",IDC_STATIC,161,39,36,14,SS_CENTERIMAGE
+    LTEXT           "Unit",IDC_STATIC,161,57,36,14,SS_CENTERIMAGE
+    CONTROL         "Unit/Sec",IDC_STATIC,"Static",SS_SIMPLE | 
+                    SS_CENTERIMAGE | WS_GROUP,161,75,36,14
+    CONTROL         "Servo On",IDC_CHK_SERVO_ON,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,202,75,58,14
+    GROUPBOX        "< Signal Capture Move >",IDC_STATIC,7,180,259,148
+    LTEXT           "Move Velocity       :",IDC_STATIC,13,191,67,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MOVE_VEL,81,191,76,14,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "Move Acceleration :",IDC_STATIC,13,209,67,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MOVE_ACC,81,209,76,14,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "Detect Signal         :",IDC_STATIC,13,227,67,14,
+                    SS_CENTERIMAGE
+    COMBOBOX        IDC_CBO_DETECT_SIG,81,227,117,101,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Signal Edge          :",IDC_STATIC,13,245,67,14,
+                    SS_CENTERIMAGE
+    COMBOBOX        IDC_CBO_SIGNAL_EDGE,81,245,117,83,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Capture Target      :",IDC_STATIC,13,262,67,14,
+                    SS_CENTERIMAGE
+    COMBOBOX        IDC_CBO_CAPTURE_TARGET,81,262,117,75,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Jog(Velocity) Move",IDC_STATIC,7,103,259,68
+    LTEXT           "Jog Velocity       :",IDC_STATIC,13,114,67,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_JOG_VEL,81,114,76,14,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "Jog Acceleration :",IDC_STATIC,13,132,67,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_JOG_ACC,81,132,76,14,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "Jog Deceleration :",IDC_STATIC,13,150,67,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_JOG_DEC,81,150,76,14,ES_RIGHT | ES_AUTOHSCROLL
+    PUSHBUTTON      "Jog Move(+)",IDC_BTN_JOG_MOVE_P,202,114,58,23
+    PUSHBUTTON      "Jog Move(-)",IDC_BTN_JOG_MOVE_N,202,141,58,23
+    LTEXT           "Unit/Sec",IDC_STATIC,161,114,36,14,SS_CENTERIMAGE
+    CONTROL         "Unit/Sec^2",IDC_STATIC,"Static",SS_SIMPLE | 
+                    SS_CENTERIMAGE | WS_GROUP,161,132,36,14
+    CONTROL         "Unit/Sec^2",IDC_STATIC,"Static",SS_SIMPLE | 
+                    SS_CENTERIMAGE | WS_GROUP,161,150,36,14
+    LTEXT           "Stop Method         :",IDC_STATIC,13,280,67,14,
+                    SS_CENTERIMAGE
+    COMBOBOX        IDC_CBO_STOP_METHOD,81,280,117,48,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Capture Move ",IDC_BTN_CAPTURE_MOVE,202,191,58,49
+    PUSHBUTTON      "Move Stop",IDC_BTN_MOVE_STOP,202,245,58,47
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,13,299,246,2
+    LTEXT           "Capture Position    :",IDC_STATIC,13,307,67,14,
+                    SS_CENTERIMAGE
+    RTEXT           "xxx.xxx ",IDC_STC_CAPTURE_POS,81,307,117,14,
+                    SS_CENTERIMAGE | SS_SUNKEN
+    PUSHBUTTON      "Get Position",IDC_BTN_GET_POS,202,307,58,14
+    LTEXT           "Unit/Sec",IDC_STATIC,161,191,36,14,SS_CENTERIMAGE
+    CONTROL         "Unit/Sec^2",IDC_STATIC,"Static",SS_SIMPLE | 
+                    SS_CENTERIMAGE | WS_GROUP,161,209,36,14
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204b0"
+        BEGIN
+            VALUE "Comments", "(2011.03.28 compiled r1.0) for EzSoftwareRM\0"
+            VALUE "CompanyName", "Ajinextek\0"
+            VALUE "FileDescription", "MoveSignalCapture Example\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "MoveSignalCapture\0"
+            VALUE "LegalCopyright", "Copyright (C) 2011 AJINEXTEK Co,. LTD.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "MoveSignalCapture.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "MoveSignalCapture\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_MOVESIGNALCAPTURE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 266
+        VERTGUIDE, 13
+        VERTGUIDE, 260
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 328
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_MOVESIGNALCAPTURE_DIALOG DLGINIT
+BEGIN
+    IDC_CBO_DETECT_SIG, 0x403, 16, 0
+0x3030, 0x203a, 0x6f50, 0x4573, 0x646e, 0x694c, 0x696d, 0x0074, 
+    IDC_CBO_DETECT_SIG, 0x403, 16, 0
+0x3130, 0x203a, 0x654e, 0x4567, 0x646e, 0x694c, 0x696d, 0x0074, 
+    IDC_CBO_DETECT_SIG, 0x403, 15, 0
+0x3430, 0x203a, 0x6f48, 0x656d, 0x6553, 0x736e, 0x726f, "\000" 
+    IDC_CBO_DETECT_SIG, 0x403, 16, 0
+0x3530, 0x203a, 0x6e45, 0x6f63, 0x5a64, 0x6850, 0x7361, 0x0065, 
+    IDC_CBO_DETECT_SIG, 0x403, 15, 0
+0x3630, 0x203a, 0x6e55, 0x4969, 0x706e, 0x7475, 0x3230, "\000" 
+    IDC_CBO_DETECT_SIG, 0x403, 15, 0
+0x3730, 0x203a, 0x6e55, 0x4969, 0x706e, 0x7475, 0x3330, "\000" 
+    IDC_CBO_SIGNAL_EDGE, 0x403, 21, 0
+0x3030, 0x203a, 0x4953, 0x4e47, 0x4c41, 0x445f, 0x574f, 0x5f4e, 0x4445, 
+0x4547, "\000" 
+    IDC_CBO_SIGNAL_EDGE, 0x403, 19, 0
+0x3130, 0x203a, 0x4953, 0x4e47, 0x4c41, 0x555f, 0x5f50, 0x4445, 0x4547, 
+"\000" 
+    IDC_CBO_CAPTURE_TARGET, 0x403, 12, 0
+0x3030, 0x203a, 0x4f43, 0x4d4d, 0x4e41, 0x0044, 
+    IDC_CBO_CAPTURE_TARGET, 0x403, 11, 0
+0x3130, 0x203a, 0x4341, 0x5554, 0x4c41, "\000" 
+    IDC_CBO_STOP_METHOD, 0x403, 19, 0
+0x3030, 0x203a, 0x4d45, 0x5245, 0x4547, 0x434e, 0x5f59, 0x5453, 0x504f, 
+"\000" 
+    IDC_CBO_STOP_METHOD, 0x403, 18, 0
+0x3130, 0x203a, 0x4c53, 0x574f, 0x4f44, 0x4e57, 0x535f, 0x4f54, 0x0050, 
+
+    0
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\MoveSignalCapture.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

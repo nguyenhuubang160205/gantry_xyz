@@ -1,0 +1,79 @@
+#Signal type,Signal code,Signal name,ConnectA value,ConnectB value
+LI,SEN,ABS data request signal,0x0,0x0
+LI,PULSH1,Command pulse input 1,0x0,0x0
+LI,PULSH2,Command pulse input 1,0x0,0x0
+LI,SIGNH1,Command pulse sign input 1,0x0,0x0
+LI,SIGNH2,Command pulse sign input 1,0x0,0x0
+LI,OPC1,Command pulse input 2 (open collector),0x0,0x0
+LI,OPC2,Command pulse sign input 2 (open collector),0x0,0x0
+LI,PULS1,Command pulse input 2,0x0,0x0
+LI,PULS2,Command pulse input 2,0x0,0x0
+LI,SIGN1,Command pulse sign input 2,0x0,0x0
+LI,SIGN2,Command pulse sign input 2,0x0,0x0
+LI,COM,Power supply,0x0,0x0
+LI,EX-SON,External servo on input,0x03,0x83
+LI,POT,Positive direction over-travel inhibition input,0x01,0x81
+LI,NOT,Negative direction over-travel inhibition input,0x02,0x82
+LI,CL,Deviation counter clear input,0x0,0x0
+LI,A-CLR,Alarm clear input,0x0,0x0
+LI,INH,Command pulse inhibition input,0x0,0x0
+LI,DIV1,Electronic gear switching input 1,0x0,0x0
+LI,VS-SEL1,Damping control switching input 1,0x0,0x0
+LI,GAIN,Gain switching input,0x0,0x0
+LI,TL-SEL,Thrust limit switching input,0x0,0x0
+LI,C-MODE,Control mode switching input,0x0,0x0
+LI,INTSPD1,Slection 1 input of internal command speed,0x0,0x0
+LI,INTSPD2,Slection 2 input of internal command speed,0x0,0x0
+LI,INTSPD3,Slection 3 input of internal command speed,0x0,0x0
+LI,ZEROSPD,Speed zero clamp input,0x0,0x0
+LI,VS-SEL2,Damping control switching input 2,0x0,0x0
+LI,VC-SIGN,Speed command sign input,0x0,0x0
+LI,TC-SIGN,Thrust command sign input,0x0,0x0
+LI,DIV2,Electronic gear switching input 2,0x0,0x0
+LI,E-STOP,Forced alarm input,0x14,0x94
+LI,J-SEL,Mass ratio switching input,0x0,0x0
+LI,DB-SEL,Dynamic brake (DB) switching input,0x16,0x0
+LI,EXT1,External latch input 1,0x20,0xA0
+LI,EXT2,External latch input 2,0x21,0xA1
+LI,HOME,Near the origin input,0x22,0xA2
+LI,EXT3,External latch input 3,0x2B,0xAB
+LI,SI-MON1,General purpose monitor input 1,0x2E,0xAE
+LI,SI-MON2,General purpose monitor input 2,0x2F,0xAF
+LI,SI-MON3,General purpose monitor input 3,0x30,0xB0
+LI,SI-MON4,General purpose monitor input 4,0x31,0xB1
+LI,SI-MON5,General purpose monitor input 5,0x32,0xB2
+LI,BAT,Absolute cell input,0x0,0x0
+LI,AIN,Maker uses,0x0,0x0
+LI,FG,Frame ground,0x0,0x0
+LI,GND,Signal ground,0x0,0x0
+LO,OA,A-phase output,0x0,0x0
+LO,OB,B-phase output,0x0,0x0
+LO,OZ,Z-phase output,0x0,0x0
+LO,CZ,Z-phase output (open collector),0x0,0x0
+LO,ALM,Servo-Alarm output,0x01,0x0
+LO,S-RDY,Servo-Ready output,0x02,0x0
+LO,BRK-OFF,External brake release signal,0x03,0x0
+LO,INP,Positioning complete,0x04,0x0
+LO,AT-SPEED,Speed arrival output,0x0,0x0
+LO,TLC,Thrust in-limit signal output,0x06,0x0
+LO,ZSP,Zero-speed detection output signal,0x07,0x0
+LO,V-COIN,Speed coincidence output,0x0,0x0
+LO,INP2,Positioning complete 2,0x0C,0x0
+LO,WARN1,Alarm output 1,0x09,0x0
+LO,WARN2,Alarm output 2,0x0A,0x0
+LO,IM,Thrust monitor output,0x0,0x0
+LO,SP,Speed monitor output,0x0,0x0
+LO,P-CMD,Positional command ON/OFF output,0x0B,0x0
+LO,ALM-ATB,Alarm attribute output,0x0E,0x0
+LO,V-CMD,Speed command ON/OFF output,0x0,0x0
+LO,V-LIMIT,Speed in-limit output,0x0,0x0
+LO,EX-OUT1,RTEX operation output 1,0x10,0x0
+LO,EX-OUT2,RTEX operation output 2,0x11,0x0
+LO,SRV-ST,Servo-ON status output,0x0,0x0
+LO,CS-CMP,Magnet pole position estimation completion output ,0x12,0x0
+LO,STO,STO monitor status output,0x0,0x0
+LO,CMP-OUT,Position comparison output,0x0,0x0
+LO,V-DIAG,Deterioration diagnosis velocity output,0x0,0x0
+LI,CS1,CS1 Signal input,0x0,0x0
+LI,CS2,CS2 Signal input,0x0,0x0
+LI,CS3,CS3 Signal input,0x0,0x0

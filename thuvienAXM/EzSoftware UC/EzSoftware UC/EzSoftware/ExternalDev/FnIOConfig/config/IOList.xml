@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<IOs>
+  <AGT-1238 Interface="G" ID = "0x1238" FileName="AGT-1238.xml"/>
+  <AGT-12DF Interface="G" ID = "0x12DF" FileName="AGT-12DF.xml"/>
+  <AGT-2318 Interface="G" ID = "0x2318" FileName="AGT-2318.xml"/>
+  <AGT-2328 Interface="G" ID = "0x2328" FileName="AGT-2328.xml"/>
+  <AGT-225F Interface="G" ID = "0x225F" FileName="AGT-225F.xml"/>
+  <AGT-226F Interface="G" ID = "0x226F" FileName="AGT-226F.xml"/>
+  <AGT-2784 Interface="G" ID = "0x2784" FileName="AGT-2784.xml"/>
+  <AGT-3114 Interface="G" ID = "0x3114" MinValue="0" MaxValue="20" DigitBitSize="12" Unit="mA" FileName="AGT-3114.xml"/>
+  <AGT-3424 Interface="G" ID = "0x3424" MinValue="0" MaxValue="10" DigitBitSize="12" Unit="mV" FileName="AGT-3424.xml"/>
+  <AGT-3804 Interface="G" ID = "0x3804" MinValue="-270" MaxValue="2490" DigitBitSize="16" Unit="℃" FileName="AGT-3804.xml"/>
+  <AGT-4114 Interface="G" ID = "0x4114" MinValue="0" MaxValue="20" DigitBitSize="12" Unit="mA" FileName="AGT-4114.xml"/>
+  <AGT-4424 Interface="G" ID = "0x4424" MinValue="0" MaxValue="10" DigitBitSize="12" Unit="V" FileName="AGT-4424.xml"/>
+  <AGT-5112 Interface="G" ID = "0x5112" FileName="AGT-5112.xml"/>
+  <AGT-7511 Interface="G" ID = "0x7511" FileName="AGT-7511.xml"/>
+</IOs>
+

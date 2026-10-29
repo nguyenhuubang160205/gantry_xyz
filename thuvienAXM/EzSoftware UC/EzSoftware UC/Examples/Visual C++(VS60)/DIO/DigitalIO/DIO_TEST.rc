@@ -1,0 +1,402 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\DIO_TEST.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\DIO_TEST.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 232
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "DigitallO Example 1.0"
+FONT 9, "굴림", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,16,79,20,21
+    LTEXT           "Digital I/O Example 1.0",IDC_STATIC_VERSION,46,64,119,8,
+                    SS_NOPREFIX
+    LTEXT           "(주)아진엑스텍",IDC_STATIC_COMPANY,46,79,119,8
+    DEFPUSHBUTTON   "확인",IDOK,178,206,50,19,WS_GROUP
+    CONTROL         129,IDC_STATIC,"Static",SS_BITMAP | SS_NOTIFY,7,7,221,53,
+                    WS_EX_CLIENTEDGE
+    LTEXT           "본사           전화 : (053) 593-3700, 팩스 : (053) 593-3703",
+                    IDC_STATIC_TEL1,46,94,182,8
+    LTEXT           "서울사무소  전화 : (031) 389-1580, 팩스 : (031) 389-1583",
+                    IDC_STATIC_TEL2,46,109,182,8
+    LTEXT           "홈페이지",IDC_STATIC_HOMEPAGE,46,124,36,8
+    LTEXT           "http://www.ajinextek.com",IDC_AJINEXTEK,86,124,143,8
+    LTEXT           "이 제품은 다음 사용자에게 허가 되었습니다.",
+                    IDC_STATIC_APPROVAL,46,139,182,8
+    LTEXT           "",IDC_STATIC,46,157,182,41,SS_SUNKEN
+END
+
+IDD_DIO_TEST_DIALOG DIALOGEX 0, 0, 259, 326
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "DigitallO"
+FONT 9, "Tahoma"
+BEGIN
+    LTEXT           "[Board No◈Module No◈Module ID]",IDC_STATIC,7,5,120,11
+    COMBOBOX        IDC_COMBO,7,16,241,65,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    GROUPBOX        "",IDC_STATIC_HIGH,7,63,241,52
+    CONTROL         "00",IDC_CHECK_HIGH_00,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,20,81,23,10
+    CONTROL         "01",IDC_CHECK_HIGH_01,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,46,81,23,10
+    CONTROL         "02",IDC_CHECK_HIGH_02,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,73,81,23,10
+    CONTROL         "03",IDC_CHECK_HIGH_03,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,102,81,23,10
+    CONTROL         "04",IDC_CHECK_HIGH_04,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,131,81,23,10
+    CONTROL         "05",IDC_CHECK_HIGH_05,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,161,81,23,10
+    CONTROL         "06",IDC_CHECK_HIGH_06,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,187,81,23,10
+    CONTROL         "07",IDC_CHECK_HIGH_07,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,214,81,23,10
+    CONTROL         "08",IDC_CHECK_HIGH_08,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,20,97,23,10
+    CONTROL         "09",IDC_CHECK_HIGH_09,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,46,97,23,10
+    CONTROL         "10",IDC_CHECK_HIGH_10,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,73,97,23,10
+    CONTROL         "11",IDC_CHECK_HIGH_11,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,102,97,23,10
+    CONTROL         "12",IDC_CHECK_HIGH_12,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,131,97,23,10
+    CONTROL         "13",IDC_CHECK_HIGH_13,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,161,97,23,10
+    CONTROL         "14",IDC_CHECK_HIGH_14,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,187,97,23,10
+    CONTROL         "15",IDC_CHECK_HIGH_15,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,214,97,23,10
+    GROUPBOX        "",IDC_STATIC_LOW,7,116,241,52
+    CONTROL         "16",IDC_CHECK_LOW_00,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,20,132,23,10
+    CONTROL         "17",IDC_CHECK_LOW_01,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,46,132,23,10
+    CONTROL         "18",IDC_CHECK_LOW_02,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,73,132,23,10
+    CONTROL         "19",IDC_CHECK_LOW_03,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,102,132,23,10
+    CONTROL         "20",IDC_CHECK_LOW_04,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,131,132,23,10
+    CONTROL         "21",IDC_CHECK_LOW_05,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,161,132,23,10
+    CONTROL         "22",IDC_CHECK_LOW_06,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,187,132,23,10
+    CONTROL         "23",IDC_CHECK_LOW_07,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,214,132,23,10
+    CONTROL         "24",IDC_CHECK_LOW_08,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,20,148,23,10
+    CONTROL         "25",IDC_CHECK_LOW_09,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,46,148,23,10
+    CONTROL         "26",IDC_CHECK_LOW_10,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,73,148,23,10
+    CONTROL         "27",IDC_CHECK_LOW_11,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,102,148,23,10
+    CONTROL         "28",IDC_CHECK_LOW_12,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,131,148,23,10
+    CONTROL         "29",IDC_CHECK_LOW_13,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,161,148,23,10
+    CONTROL         "30",IDC_CHECK_LOW_14,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,187,148,23,10
+    CONTROL         "31",IDC_CHECK_LOW_15,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,214,148,23,10
+    PUSHBUTTON      "List Clear",IDC_LIST_CLEAR,43,298,66,18
+    PUSHBUTTON      "E X I T",IDC_BUTTON_EXIT,150,298,66,18
+    CONTROL         "Enable Intrrupt",IDC_CHECK_INTRRUPT,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,20,173,66,20
+    CONTROL         "Rising",IDC_CHECK_RISING,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,145,173,43,20
+    CONTROL         "Falling",IDC_CHECK_FALLING,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,196,173,43,20
+    LISTBOX         IDC_LIST_Message,7,200,241,90,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Interrupt Mode",IDC_STATIC,7,34,241,27
+    CONTROL         "Message",IDC_RADIO_MESSAGE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,20,46,46,10
+    CONTROL         "Callback",IDC_RADIO_CALLBACK,"Button",
+                    BS_AUTORADIOBUTTON,106,46,44,10
+    CONTROL         "Event",IDC_RADIO_EVENT,"Button",BS_AUTORADIOBUTTON,194,
+                    46,34,10
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "FileDescription", "DIO_TEST MFC 응용 프로그램\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "DIO_TEST\0"
+            VALUE "LegalCopyright", "Copyright (C) 2007\0"
+            VALUE "OriginalFilename", "DIO_TEST.EXE\0"
+            VALUE "ProductName", "DIO_TEST 응용 프로그램\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO MOVEABLE PURE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        VERTGUIDE, 46
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 225
+        HORZGUIDE, 64
+        HORZGUIDE, 79
+        HORZGUIDE, 94
+        HORZGUIDE, 109
+        HORZGUIDE, 124
+        HORZGUIDE, 139
+    END
+
+    IDD_DIO_TEST_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 248
+        VERTGUIDE, 7
+        VERTGUIDE, 20
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 319
+        HORZGUIDE, 16
+        HORZGUIDE, 46
+        HORZGUIDE, 67
+        HORZGUIDE, 173
+        HORZGUIDE, 193
+        HORZGUIDE, 298
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_AJINLOGO            BITMAP  MOVEABLE PURE   "res\\ajinlogo.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "DIO_TEST 정보(&A)..."
+    IDS_STRING1008          "인증되지 않은 사용자"
+    IDS_STRING1009          "인증되지 않은 회사"
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 232
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "DigitallO Example 1.0"
+FONT 9, "Arial", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,16,79,20,20
+    LTEXT           "Digital I/O Example 1.0",IDC_STATIC_VERSION,46,64,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Ajinextek co., Ltd.",IDC_STATIC_COMPANY,46,79,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,206,50,19,WS_GROUP
+    CONTROL         129,IDC_STATIC,"Static",SS_BITMAP | SS_NOTIFY,7,7,221,53,
+                    WS_EX_CLIENTEDGE
+    LTEXT           "Head Office   Tel:+82-53-593-3700, Fax:+82-53-593-3703",
+                    IDC_STATIC_TEL1,46,94,182,8
+    LTEXT           "Seoul Office  Tel:+82-31-389-1580, Fax:+82-31-389-1583",
+                    IDC_STATIC_TEL2,46,109,182,8
+    LTEXT           "Homepage",IDC_STATIC_HOMEPAGE,46,124,36,8
+    LTEXT           "http://www.ajinextek.com",IDC_AJINEXTEK,86,124,143,8
+    LTEXT           "This product is licensed to:",IDC_STATIC_APPROVAL,46,
+                    139,119,8
+    LTEXT           "",IDC_STATIC,46,157,182,41,SS_SUNKEN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO MOVEABLE PURE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        VERTGUIDE, 46
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 225
+        HORZGUIDE, 64
+        HORZGUIDE, 79
+        HORZGUIDE, 94
+        HORZGUIDE, 109
+        HORZGUIDE, 124
+        HORZGUIDE, 139
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "DIO_TEST ??(&A)..."
+    IDS_STRING1008          "Uncertified User"
+    IDS_STRING1009          "Uncertified Company"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\DIO_TEST.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

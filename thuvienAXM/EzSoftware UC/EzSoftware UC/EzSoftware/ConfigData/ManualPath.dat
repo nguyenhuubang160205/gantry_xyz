@@ -1,0 +1,11 @@
+### EzConfig 1.0 Manual path ###
+# Date : 2010. 05. 06.
+# ================ Manual Path Start ==============
+EZSOFTWARE=EzSoftwareRM_USER_KOR_V20100506.pdf
+EZCONFIG=EzConfig_AG_KOR_V20100513.pdf
+EZDIO=EzDIO_AG_KOR_V20101203.pdf
+EZAIO=EzAIO_AG_KOR_V20101209.pdf
+EZMOTION=EzMotion_AG_KOR_V20101202.pdf
+EZTERM=EzTerm_USER_KOR_V20101202.pdf
+EZSPY=EzSpy_USER_KOR_V20090615.pdf
+# ================ Manual Path End ================

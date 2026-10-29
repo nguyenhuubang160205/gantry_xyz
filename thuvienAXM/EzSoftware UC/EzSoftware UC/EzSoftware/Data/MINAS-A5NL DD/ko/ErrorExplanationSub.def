@@ -1,0 +1,265 @@
+#메인,서브,명칭,원인,처치
+0,0,정상,정상,정상
+11,0,제어 전원 부족 전압 보호,제어 전원 컨버터부의 P-N간 전압이 떨어져 규정치 이하가 됨,커넥터 또는 단자대의 제어 전원선간 전압을 확인.
+,,,(1) 전원 전압이 낮음. 순간 정전 발생.,(1) 전원 전압 업 전원을 바꾼다.
+,,,(2) 전원 용량 부족…주전원이 온일 때의 돌입 전류에 의해 전원 전압이 떨어짐.,(2) 전원 용량을 늘린다.
+,,,(3) 서보 앰프 고장(회로가 고장),(3) 새 서보 앰프로 교체한다.
+12,0,과전압 보호,컨버터부의 P-N간 전압이 규정치 이상이 됨,"커넥터(L1, L2, L3)의 선간 전압을 확인."
+,,,(1) 전원 전압이 허용 입력 전력 범위를 초과. 진상 콘덴서와 UPS(무정전 전원 장치)에 의한 전압 상승.,(1) 전압을 올바르게 입력한다. 진상 콘덴서를 제거한다.
+,,,(2) 회생 저항 단선,(2) 서보 앰프의 단자 B1-B2 사이에 설치된 외장형 저항의 저항값을 테스터로 측정하고 ∞이면 단선. 외장형 저항을 교환한다.
+,,,(3) 외장형 회생 저항이 부적절하여 회생 에너지를 흡수하지 못함.,(3) 지정된 회생 저항값 W수로 변경한다.
+,,,(4) 서보 앰프 고장(회로가 고장),(4) 새 서보 앰프로 교체한다.
+13,0,주전원 부족 전압 보호(PN),서보 온 중에 주전원 컨버터부의 P-N간 전압이 떨어져 규정치 이하가 됨,커넥터의 주전원 선간 전압을 확인.
+,,,(1) 전원 전압이 낮음. 순간 정전 발생.,(1) 전원 전압 용량 업. 전원을 바꾼다. 주전원의 전자 접촉기가 떨어진 원인을 제거하고 다시 전원을 투입한다.
+,,,(2) 전원 용량 부족…주전원이 온일 때의 돌입 전류에 의해 전원 전압이 떨어짐.,(2) 전원 용량을 늘린다. 전원 용량은 '서보 앰프와 적용 주변 기기 일람'을 참조
+,,,(3) 결상…3상 입력 사양의 서보 앰프가 단상 전원으로 운전됨.,"(3) 전원의 각 상(L1, L2, L3)을 올바르게 연결한다."
+,,,(4) 서보 앰프 고장(회로가 고장),(4) 새 서보 앰프로 교체한다.
+13,1,주전원 부족 전압 보호(AC),Pr5.08 '주전원 오프 시 LV 트립 선택'=1인 경우에 주전원 L1-L3간이 Pr5.09 '주전원 오프 검출 시간'으로 설정된 시간 이상 순간 정전됨.,커넥터의 주전원 선간 전압을 확인.
+,,,(1) 전원 전압이 낮음. 순간 정전 발생.,(1) 전원 전압 용량 업. 전원을 바꾼다. 주전원의 전자 접촉기가 떨어진 원인을 제거하고 다시 전원을 투입한다.
+,,,(2) 순간 정전 발생,(2) Pr5.09 '주전원 오프 검출 시간'을 길게 설정한다. 전원의 각 상을 올바르게 설정한다.
+,,,(3) 전원 용량 부족…주전원이 온일 때의 돌입 전류에 의해 전원 전압이 떨어짐.,(3) 전원 용량을 늘린다. 전원 용량은 '서보 앰프와 적용 주변 기기 일람'을 참조
+,,,(4) 결상…3상 입력 사양의 서보 앰프가 단상 전원으로 운전됨.,(4) 단상 100V 및 단상 200V인 경우 L1과 L3에 접속되어 있는지 확인한다.
+,,,(5) 서보 앰프 고장(회로가 고장),(5) 새 서보 앰프로 교체한다.
+14,0,과전류 보호,컨버터부에 흐르는 전류가 규정치를 초과.,배선의 단락?지락을 확인.
+,,,"(1) 서보 앰프 고장(회로, IGBT의 결함 등)",(1) 모터선을 제거하고 서보 온하여 즉시 발생하면 새(동작 중) 서보 앰프로 교체한다.
+,,,(2) 모터선(U/V/W상)이 단락됨.,(2) 모터선이 상간에 단락되어 있지 않는가. 커넥터의 리드선 수염을 확인. 모터선을 올바르게 연결한다.
+,,,(3) 모터선이 지락됨.,(3) 모터선과 모터 접지선 사이의 절연 저항을 확인. 절연 불량인 경우 모터 교체.
+,,,(4) 모터가 파손됨.,(4) 모터의 각 선간 저항의 균형을 확인하고 균형이 맞지 않으면 모터 교체.
+,,,(5) 모터선 접촉 불량.,(5) 모터 연결 커넥터의 핀이 빠져 있는지 확인하고 느슨하거나 빠져 있으면 확실하게 고정시킨다.
+,,,(6) 빈번한 서보 온?오프 때문에 다이나믹 브레이크용 릴레이가 용착됨.,(6) 서보 앰프를 교체한다. 서보 온?오프를 통한 운전?정지를 그만둔다.
+,,,(7) 모터와 서보 앰프의 조합이 올바르지 않음.,(7) 모터?서보 앰프의 품번(용량)을 명판으로 확인하고 서보 앰프에 맞는 모터로 바꾼다.
+,,,(8) 펄스 입력과 서보 온의 타이밍이 똑같거나 펄스 입력이 더 빠름.,(8) 서보 온 후 100ms 이상 기다리고 나서 펄스를 입력한다.
+,,,(9) 다이나믹 브레이크 회로 과열,(9) Discontinue the run/stop operation with Servo ON-OFF. Allow approx. 3 minutes pause when the dynamic brake is activated during highspeed running.
+14,1,IPM 이상 보호,컨버터부에 흐르는 전류가 규정치를 초과.,배선의 단락?지락을 확인.
+,,,"(1) 서보 앰프 고장(회로, IGBT의 결함 등)",(1) 모터선을 제거하고 서보 온하여 즉시 발생하면 새(동작 중) 서보 앰프로 교체한다.
+,,,(2) 모터선(U/V/W상)이 단락됨.,(2) 모터선이 상간에 단락되어 있지 않는가. 커넥터의 리드선 수염을 확인. 모터선을 올바르게 연결한다.
+,,,(3) 모터선이 지락됨.,(3) 모터선과 모터 접지선 사이의 절연 저항을 확인. 절연 불량인 경우 모터 교체.
+,,,(4) 모터가 파손됨.,(4) 모터의 각 선간 저항의 균형을 확인하고 균형이 맞지 않으면 모터 교체.
+,,,(5) 모터선 접촉 불량.,(5) 모터 연결 커넥터의 핀이 빠져 있는지 확인하고 느슨하거나 빠져 있으면 확실하게 고정시킨다.
+,,,(6) 빈번한 서보 온?오프 때문에 다이나믹 브레이크용 릴레이가 용착됨.,(6) 서보 앰프를 교체한다. 서보 온?오프를 통한 운전?정지를 그만둔다.
+,,,(7) 모터와 서보 앰프의 조합이 올바르지 않음.,(7) 모터?서보 앰프의 품번(용량)을 명판으로 확인하고 서보 앰프에 맞는 모터로 바꾼다.
+,,,(8) 펄스 입력과 서보 온의 타이밍이 똑같거나 펄스 입력이 더 빠름.,(8) 서보 온 후 100ms 이상 기다리고 나서 펄스를 입력한다.
+,,,(9) 다이나믹 브레이크 회로 과열,(9) Discontinue the run/stop operation with Servo ON-OFF. Allow approx. 3 minutes pause when the dynamic brake is activated during highspeed running.
+15,0,과열 보호,"서보 앰프의 방열기, 파워 소자의 온도가 규정치를 초과.",서보 앰프의 사용 온도 범위를 확인.
+,,,(1) 서보 앰프 사용 온도가 규정치를 초과.,(1) 서보 앰프의 사용 온도 및 냉각 조건을 개선한다.
+,,,(2) 과부하 상태에서 사용.,"(2) 서보 앰프, 모터의 용량 업. 가감속 시간을 길게 설정한다. 부하를 줄인다."
+16,0,과중부하 보호(과부하 보호),토크 지령 실동값이 Pr5.12 '과중부하 수준 설정'에 설정되어 있는 과부하 수준을 초과.,아날로그 출력 등으로 토크(전류) 파형이 발진되고 상하로 크게 흔들리고 있지 않은지 확인. 과부하 경고 표시 및 부하율을 전면 패널 또는 통신으로 확인.
+,,,(1) 부하가 크고 실효 토크가 정격 토크를 초과하여 오랫동안 운전을 계속함.,"(1) 서보 앰프, 모터의 용량 업. 가감속 시간을 길게 설정한다. 부하를 줄인다."
+,,,"(2) 게인 조정 불량으로 인한 발진, 헌팅 동작. 모터의 진동, 이상음. Pr0.04 '관성비'의 설정값 이상.",(2) 게인을 재조정.
+,,,"(3) 모터의 오배선, 단선.",(3) 모터선을 배선도대로 연결한다. 케이블을 교체한다.
+,,,(4) 기계와 부딪쳤거나 기계가 갑자기 무거워짐. 기계의 뒤틀림,(4) 기계의 뒤틀림을 제거한다. 부하를 줄인다.
+,,,(5) 전자 브레이크가 작동된 상태에서 모터를 움직임.,(5) 브레이크 단자 전압을 측정. 브레이크를 개방한다.
+,,,"(6) While wiring multiple axes, miswiring has occurred by connecting the motor cable to other axis.",(6) Make a correct wiring by matching the correct motor and feedback scale wires.
+,,,(7) Pr5.12 '과중부하 수준 설정'이 너무 낮음.,(7) Pr5.12 '과중부하 수준 설정'을 변경한다.
+16,1,Torque saturation error protection,Torque saturated has continued for the period set to Pr9.35 (Torque saturation error protection frequency).,Check the operating state of the amplifier.
+,,,,Check to see if the motor wire is disconnected.
+18,0,회생 과부하 보호,회생 에너지가 회생 저항 처리 능력을 초과.,전면 패널 등에서 회생 저항 부하율을 확인. 연속적 회생 제동 용도로는 사용할 수 없습니다.
+,,,(1) 부하 관성대에 의해 감속 중인 회생 에너지로 인해 컨버터 전압이 상승하고 회생 저항 에너지 흡수 부족으로 이상 검출치까지 상승.,"(1) 운전 패턴 확인(속도 모니터). 회생 저항 부하율 및 과회생 경고 표시를 확인. 모터, 서보 앰프 용량 향상, 감속 시간을 완만하게 한다. 회생 저항을 외부에 설치."
+,,,(2) Regenerative energy has not been absorbed in the specified time due to a high motor operational speed.,"(2) Check the running pattern (speed monitor). Check the load factor of the regenerative resistor. Increase the capacity of the driver and the motor, and loosen the deceleration time. "
+,,,,Lower the motor speed. Use an external regenerative resistor.
+,,,(3) 외장형 저항의 동작 한계가 10% 듀티로 제한되어 있음.,(3) Pr0.16 '회생 저항 외장 설정'을 변경한다.
+18,1,회생 트랜지스터 이상 보호,서보 앰프의 회생 구동용 트랜지스터 고장을 검지함.,서보 앰프를 교환하십시오.
+24,0,위치 편차 과대 보호,위치 편차 펄스가 Pr0.14 '위치 편차 과대 설정'의 설정을 초과.,모터 동작을 확인.
+,,,(1) 모터의 움직임이 지령을 따르지 않음.,(1) 위치 지령 펄스에 따라 모터가 회전하는지 확인.
+,,,,토크 모니터로 출력 토크가 포화되어 있지 않은지 확인. 게인을 조정한다.
+,,,,"Pr0.13 '제1 토크 한계', Pr5.22 '제2 토크 한계'을 최대화한다."
+,,,,Make a feedback scale wiring as per the wiring diagram. Set up the longer acceleration/deceleration time. Lower the load and speed.
+,,,(2) Pr0.14 '위치 편차 과대 설정'의 수치가 작음.,(2) Pr0.14 '위치 편자 과대 설정'의 설정값을 크게 한다. 또는 0으로 설정하고 비활성화한다.
+24,1,속도 편차 과대 보호,내부 위치 지령 속도와 실제로 속도의 차이(속도 편차)Pr6.02 '속도 편차 과대 설정'의 설정을 초과.,내부위치 지령 속도의 가속 시간과 감속 시간을 길게 한다. 또는 게인 조정에 의해 추종성을 향상시킨다.
+,,,,Pr6.02 '속도 편차 과대 설정'의 설정값을 크게 한다. 또는 0으로 설정하고 비활성화한다.
+26,0,과속도 보호,The motor speed has exceeded the setup value of Pr5.13 (Over-speed level setup).,게인 조정 불량으로 인해 오버 슈트가 발생한 경우 게인을 조정한다.
+,,,,과대한 속도 지령을 부여하지 않는다.
+,,,,지령 펄스 입력 주파수 및 분주?체배비를 확인.
+,,,,Make a wiring connection of the feedback scale as per the wiring diagram.
+,,,,Set up Pr5.13 (Over-speed level setup) to 0. (Set up the best number of revolutions of the motor to 1.2 times)
+26,1,제 2 과속도 보호,The motor speed has exceeded the setup value of Pr6.15 (2nd over-speed level setup).,게인 조정 불량으로 인해 오버 슈트가 발생한 경우 게인을 조정한다.
+,,,,과대한 속도 지령을 부여하지 않는다.
+,,,,지령 펄스 입력 주파수 및 분주?체배비를 확인.
+,,,,Make a wiring connection of the feedback scale as per the wiring diagram.
+,,,,Pr6.15 '제2 과속도 수준 설정'의 설정값을 정정한다.
+27,4,Command error,Position command variation (value after electronic gear) exceeds the specified value.,Check whether the position command was significantly changed due to cyclic position control (CP).
+,,,,Check electronic gear ratio.
+27,5,Command generation error,Position command generation process exceeded the computation range.,Make sure that the electronic gear ratio and velocity control conform to limit requirements.
+27,6,Motion commands conflict,FFT operated only by the driver: RTEX communication was established during trial run.,FFT: check if RTEX communication was established during trial run.
+27,7,Position data initialization error,"During validation mode of attribute C parameter of reset command of RTEX communication, servo was turned ON.",Check to see that the servo is OFF during validation mode of attribute C parameter of reset command of RTEX communication.
+28,0,펄스 재생 한계 보호,펄스 재생 출력 주파수가 한계를 초과.,"Check the setup values of Pr0.11(Numerator of pulse
+output division) and Pr5.03 (Denominator of pulse output division)."
+,,,,"검출을 무효화할 경우, Pr5.33 '펄스 재생 한계 유효'를 0으로 설정하십시오."
+29,1,Counter overflow 1,"After turning on of control power in absolute mode, after CONFIG, after FFT or after trial run: during position information initialization process, absolute encoder (absolute scale) position (pulse unit)/electronic gear ratio exceeded ±2^31 (2147483648).",Check the operation range at the position of absolute encoder (absolute scale) and electronic gear ratio.
+29,2,Counter overflow 2,Position deviation in unit of pulse has exceeded ±2^29 (536870912).,Check that the motor follows the position command pulses.
+,,,"Or, position deviation in unit of command has exceeded ±2^30 (1073741824).",Check that the output torque has not saturated in torque monitor.
+,,,,Make a gain adjustment.
+,,,,Set up maximum value to torque limit setting.
+,,,,Make a wiring connection of the feedback scale as per the wiring diagram.
+29,3,Counter overflow 3,Return to home final running distance x electronic gear ratio has exceeded ±2^31 (2147483648).,Review the return to home final running distance and the electronic gear ratio.
+30,0,Safety input,안전 입력 1 또는 안전 입력 2 중 적어도 하나의 입력 포토커플러가 OFF됨.,"안전 입력 1, 2의 입력 배선 상태를 확인한다."
+33,0,Input duplicated allocation error 1,"Input signals (SI1, SI2, SI3, SI4) are assigned with two functions.",커넥터 핀에 대한 기능 할당을 올바르게 설정하십시오.
+33,1,Input duplicated allocation error 2,"Input signals (SI5, SI6, SI7, SI8) are assigned with two functions.",커넥터 핀에 대한 기능 할당을 올바르게 설정하십시오.
+33,2,Input function number error 1,"Input signals (SI1, SI2, SI3, SI4) are assigned with undefined number. Or, logical setup is not correct.",커넥터 핀에 대한 기능 할당을 올바르게 설정하십시오.
+33,3,Input function number error 2,"Input signals (SI5, SI6, SI7, SI8) are assigned with undefined number. Or, logical setup is not correct.",커넥터 핀에 대한 기능 할당을 올바르게 설정하십시오.
+33,4,Output function number error 1,Output signals (SO1) are assigned with undefined number.,커넥터 핀에 대한 기능 할당을 올바르게 설정하십시오.
+33,5,Output function number error 2,Output signals (SO2) are assigned with undefined number.,커넥터 핀에 대한 기능 할당을 올바르게 설정하십시오.
+33,8,Latch input allocation error,"Error has occurred during function assignment of latch correction pins (SI5, SI6, and SI7).",커넥터 핀에 대한 기능 할당을 올바르게 설정하십시오.
+,,,(1) EXT1 must be allocated to SI5. EXT2 to SI6 and EXT3 to SI7: but these are assigned to other pins.,
+,,,(2) HOME is allocated to SI6 or SI7; POT is allocated to SI5 or SI7; NOT is allocated to SI5 ot SI6.,
+,,,(3) Function is allocated to b-contact.,
+,,,(4) Function not allocated to one or more control modes.,
+34,0,Software limit,위치 지령 입력 범위에 대해 모터가 Pr5.14 '모터 가동 범위 설정'에 설정된 모터 동작 가능 범위를 초과.,모터 동작을 확인.
+,,,(1) 게인이 적당하지 않음.,"(1) 게인(위치 루프 게인과 속도 루프 게인의 균형), 관성비를 확인한다."
+,,,(2) Pr5.14 '모터 가동 범위 설정'의 설정값이 작음.,(2) Pr5.14 '모터 가동 범위 설정'의 설정값을 크게 한다. 또는 설정값을 0으로 하고 보호 기능을 비활성화한다.
+36,0,EEPROM 매개변수 이상 보호,전원 투입 시 EEPROM에서 데이터를 불러왔을 때 매개변수 저장 영역의 데이터가 손상되어 있음.,모든 매개변수를 재설정한다.
+,,,,여러 번 반복하여 발생한다면 고장일 가능성이 있으므로 서보 앰프를 교환한다. 구입처로 연락하십시오.
+36,1,EEPROM 매개변수 이상 보호,전원 투입 시 EEPROM에 접속했을 때 이상이 발견됨.,모든 매개변수를 재설정한다.
+,,,,여러 번 반복하여 발생한다면 고장일 가능성이 있으므로 서보 앰프를 교환한다. 구입처로 연락하십시오.
+36,2,EEPROM 매개변수 이상 보호,전원 투입 시 EEPROM에서 데이터를 불러왔을 때 매개변수 저장 영역의 데이터가 손상되어 있음.,모든 매개변수를 재설정한다.
+,,,,여러 번 반복하여 발생한다면 고장일 가능성이 있으므로 서보 앰프를 교환한다. 구입처로 연락하십시오.
+37,0,EEPROM 체크 코드 이상 보호,전원 투입 시 EEPROM에서 데이터를 불러왔을 때 EEPROM 입력 확인 데이터가 손상되어 있음.,"고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+37,1,EEPROM 체크 코드 이상 보호,전원 투입 시 EEPROM에서 데이터를 불러왔을 때 출하 매개변수 저장 영역의 데이터가 손상되어 있음.,"고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+37,2,EEPROM 체크 코드 이상 보호,전원 투입 시 EEPROM에서 데이터를 불러왔을 때 시스템 매개변수 저장 영역의 데이터가 손상되어 있음.,"고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+38,0,구동 금지 입력 보호 1,Pr5.04 '구동 금지 입력 설정'=0인 경우 정방향/부방향 구동 금지 입력(POT/NOT)이 모두 ON됨.,"정방향/부방향 구동 금지 입력에 연결된 스위치, 전선, 전원에 이상이 없는지 확인."
+,,,Pr5.04 '구동 금지 입력 설정'=2인 경우 정방향/부방향 구동 금지 입력 중 하나가 ON됨.,제어용 신호 전원(DC12～24V)의 상승이 늦지 않는지 확인.
+,,,"With Pr5.04 = 0, and either of the positive and
+negative over-travel inhibit input has turned ON during
+the execution of magnet pole position estimation.",
+,,,"With Pr5.04 = 0, and either of the positive and
+negative over-travel inhibit input has turned ON during
+automatic linear motor setup,",
+38,1,구동 금지 입력 보호 2,"RTEX communication is OFF with Pr5.04 (Over-travel inhibit input setup) = 0, and POT or NOT is ON, and then operation command (ex. trial run, FFT) is given through USB communication.","Check that there are not any errors in switches, wires or power supply which are connected to positive direction/ negative direction over-travel inhibit input. "
+,,,"Or, POT or NOT is turned ON while the system is operating according to the command given through USB communication.",Check that the rising time of the control power supply (12 to 24 VDC) is not slow.
+38,2,구동 금지 입력 보호 3,"With POT allocated to SI6 or NOT to SI7, Pr5.04 (Over-travel inhibit input setup) is set to a value other than 1 (disabled).","When POT is allocated to SI6 or NOT allocated to SI7, make sure that Pr5.04 (Over-travel inhibit input setup) is set to 1 (disabled)."
+50,0,Feedback scale wiring error,"Communication between the feedback scale and the driver has been interrupted in certain times, and disconnection detecting function has been triggered.","Make a wiring connection of the feedback scale as per the wiring diagram.
+Correct the miswiring of the connector pins."
+,,,,"Check to see if the feedback scale type (AB-phase, serial
+incremental, serial absolute) coincides with Pr3.23
+(Feedback scale type selection)."
+50,1,Feedback scale communication data error,Communication error has occurred in data from the feedback scale. Mainly data error due to noise. ,Secure the power supply for the feedback scale of DC5±5% (4.75 to 5.25V)...pay attention especially when the feedback scale cables are long.
+,,,"Feedback scale cables are connected, but communication date has some error.",Separate the feedback scale cable and the motor cable if they are bound together.
+,,,,Connect the shield to FG.
+50,2,(Feedback scale communication data error),Communication data of Feedback scal and driver are not right.,커넥터 핀 연결 오류를 정정한다.
+51,0,Feedback scale status 0 error,Bit 0 of the feedback scale error code (ALMC) has been turned to 1. Check the specifications of the feedback scale.,"Remove the causes of the error, then clear the feedback scale error from the front panel. And then, shut off the power to reset."
+51,1,Feedback scale status 1 error,Bit 1 of the feedback scale error code (ALMC) has been turned to 1. Check the specifications of the feedback scale.,"Remove the causes of the error, then clear the feedback scale error from the front panel. And then, shut off the power to reset."
+51,2,Feedback scale status 2 error,Bit 2 of the feedback scale error code (ALMC) has been turned to 1. Check the specifications of the feedback scale.,"Remove the causes of the error, then clear the feedback scale error from the front panel. And then, shut off the power to reset."
+51,3,Feedback scale status 3 error,Bit 3 of the feedback scale error code (ALMC) has been turned to 1. Check the specifications of the feedback scale.,"Remove the causes of the error, then clear the feedback scale error from the front panel. And then, shut off the power to reset."
+51,4,Feedback scale status 4 error,Bit 4 of the feedback scale error code (ALMC) has been turned to 1. Check the specifications of the feedback scale.,"Remove the causes of the error, then clear the feedback scale error from the front panel. And then, shut off the power to reset."
+51,5,Feedback scale status 5 error,Bit 5 of the feedback scale error code (ALMC) has been turned to 1. Check the specifications of the feedback scale.,"Remove the causes of the error, then clear the feedback scale error from the front panel. And then, shut off the power to reset."
+51,6,(Feedback scale status 6 error),Bit 6 of the feedback scale error code (ALMC) has been turned to 1. Check the specifications of the feedback scale.,"Remove the causes of the error, then clear the feedback scale error from the front panel. And then, shut off the power to reset."
+51,7,(Feedback scale status 7 error),Bit 7 of the feedback scale error code (ALMC) has been turned to 1. Check the specifications of the feedback scale.,"Remove the causes of the error, then clear the feedback scale error from the front panel. And then, shut off the power to reset."
+51,8,(Feedback scale other error),제어 회로가 과대한 노이즈 등으로 오작동함. 서보 앰프의 자기 진단 기능이 작동하고 서보 앰프 내부에 어떤 이상이 발생.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+55,0,A상 결선 이상 보호,"A-phase wiring in the feedback scale is defective, e.g. discontinued.",Check the A-phase wiring connection of feedback scale.
+55,1,B상 결선 이상 보호,"B-phase wiring in the feedback scale is defective, e.g. discontinued.",Check the B-phase wiring connection of feedback scale.
+55,2,Ｚ상 결선 이상 보호,"Z-phase wiring in the feedback scale is defective, e.g. discontinued.",Check the Z-phase wiring connection of feedback scale.
+55,3,CS signal logic error,"There is an error in CS signal logic.
+(All of CS signals 1, 2, and 3 are high or low)",Check the CS signal wiring connection.
+55,4,AB-phase missing error,There are extremely few AB-phase pulses between CS signal changes.,"Check the CS signal, A-phase, and B-phase wiring connections."
+60,0,Motor setting error,Pr9.00 (Motor type selection) = 0 has been set.,Check the setup value for Pr9.00 (Motor type selection).
+,,,A setup value out of the range has been set as a setup value for Pr9.01 (Feedback scale resolution/number of scale pulse per rotation).,Check the setup value for Pr9.01 (Feedback scale resolution/number of scale pulse per rotation).
+,,,"When setting Pr9.00 = 1(Linear type), Pr9.02 (Magnet pole pitch) and Pr9.30 (Number of pulses per magnet pole) has been set at the same time.","Check the setup value for each of Pr9.00 (Motor type selection), Pr9.02 (Magnet pole pitch), and Pr9.30 (Number of pulses per magnet pole)."
+,,,"When setting Pr9.00 = 1 (Linear type), a value out of the range has been set as a setup value for Pr9.30 (Number of pulses per magnet pole).",Check the setup value for each of Pr9.00 (Motor type selection) and Pr9.30 (Number of pulses per magnet pole).
+,,,"When setting Pr9.00 = 2 (Rotary type), Pr9.03 (Pole logarithm per rotation) = 0 has been set.",Check the setup value for each of Pr9.00 (Motor type selection) and Pr9.03 (Pole logarithm per rotation).
+,,,"When setting Pr9.08 (Motor phase inductance) = 0, Pr9.12 (Automatic current response adjustment) is not 0 has been set.",Check the setup value for each of Pr9.08 (Motor phase inductance) and Pr9.12 (Automatic current response adjustment).
+,,,"When setting Pr9.09 (Motor phase resistance), Pr9.12 is not 0 has been set.",Check the setup value for each of Pr9.09 (Motor phase resistance) and Pr9.12 (Automatic current response adjustment).
+,,,"Number 0 has been set to each of Pr9.04 to Pr9.07, Pr9.10, and Pr9.20.","Check the setup value for each of Pr9.04 to Pr9.07, Pr9.10, and Pr9.20."
+60,1,Motor combination error 1,The setup value for Pr9.06 (Rated effective motor current) is above the allowable rated current for the amplifier.,Check the setup value for Pr9.06 (Rated effective motor current) (Setting unit: 0.1 Arms).
+,,,The setup value for Pr9.07 (Maximum instantaneous motor current) is above the allowable maximum current for the amplifier.,Check the setup value for Pr9.07 (Maximum instantaneous motor current) (Setting unit: 0.1 A).
+,,,A value of more than 126 Mpulses has been set to the number of pulses per unit second.,"If the above setup value is not problematic, the framework for the amplifier needs to be enlarged."
+,,,,Check the setup value for each of Pr9.01 (Feedback scale resolution/number of scale pulse per rotation) and Pr9.10 (Maximum over-speed level) and set a value of less than 126 M pulses to the number of pulses per unit second.
+60,2,Motor combination error 2,The rated motor current is too small as against the rated amplifier current.,"Check the setup value for Pr9.06 (Rated effective motor current) (Setting unit: 0.1 Arms). If the above setup value is not problematic, the framework of the amplifier needs to be reduced."
+,,,A ratio of a movable-part Inertia (M) to the rated torque (F) is too large. (The M-F ratio is too large),Check the setup value for each of Pr9.05 (Rated motor torque) (Setting unit: 0.1 N) and Pr9.04 (Moving portion Inertia of motor) (Setting unit: 0.01 kg).
+,,,The automatically adjusted current-proportional integral gain is too large.,"Check the setup value for each of Pr9.06 (Rated effective motor current) (Setting unit: 0.1 Arms), Pr9.08 (Motor phase inductance) (Setting unit: 0.01 mH), and Pr9.09 (Motor phase resistance) (Setting unit: 0.01 Ω)"
+,,,The percentage of the maximum current to the rated motor current is larger than 500%.,Check the setup value for each of Pr9.07 (Maximum instantaneous motor current) (Setting unit: 0.1 A) and Pr9.06 (Rated effective motor current) (Setting unit: 0.1 Arms).
+60,3,Linear motor automatic setting error,RTEX communication has been established during automatic linear motor setup (during automatic scale direction/CS setting and during automatic current gain adjustment),Make sure that no RTEX communication will be established during automatic linear motor setting (during automatic scale direction/CS setting and during automatic current gain adjustment)
+,,,"After automatic linear motor setting, RTEX communication has been established with the power supply not turned ON again.","After automatic linear motor setting, establish communication with the host device after the power supply is turned ON."
+,,,A feedback current value has been overshot respective to the torque command during automatic linear motor setting.,"If there is current overshooting present, make adjustments such as by reducing the current gain."
+61,0,Magnet pole position estimation error 1,Magnet pole position estimation has not been finished correctly.,Check the direction of the feedback scale
+,,,"- Wrong feedback scale direction setting 
+- Shortage of torque command/command time at the time of magnet pole position estimation",Adjust Pr9.22 (Torque command time for magnet pole position estimation) and Pr9.23 (Command torque for magnet pole position estimation).
+,,,"- Use of the vertical axis 
+- An unbalanced load and a large friction",The magnet pole position estimation function cannot be used for the vertical axis and an axis with an unbalanced load and a large friction.
+61,1,Magnet pole position estimation error 2,The motor has not stopped after the elapse of the time set using Pr9.27 (Motor stop control time for magnet pole position estimation).,Increase the setup value for Pr9.27.
+,,,,Check for unbalanced loads in the setup environment. (Does the motor operate even when with torque command = 0 ?)
+61,2,Magnet pole position estimation error 3,A value of 3 has been set to Pr9.20 (Magnet pole detection scheme selection) with magnet pole position estimation never executed.,"Temporarily use Pr9.20 = 2 and perform magnet pole position estimation once. Then use Pr9.20 = 3, and this error will not be activated."
+,,,A value of 3 has been set to Pr9.20 when a feedback scale that is not of the absolute type is in use.,Check that the feedback scale is of the absolute type.
+70,0,(U상 전류 검출기 이상),제어 회로가 과대한 노이즈 등으로 오작동함. 서보 앰프의 자기 진단 기능이 작동하고 서보 앰프 내부에 어떤 이상이 발생.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+70,1,(W상 전류 검출기 이상),제어 회로가 과대한 노이즈 등으로 오작동함. 서보 앰프의 자기 진단 기능이 작동하고 서보 앰프 내부에 어떤 이상이 발생.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+70,2,(전류 검출기 설정 이상),제어 회로가 과대한 노이즈 등으로 오작동함. 서보 앰프의 자기 진단 기능이 작동하고 서보 앰프 내부에 어떤 이상이 발생.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+72,0,(서멀 이상),제어 회로가 과대한 노이즈 등으로 오작동함. 서보 앰프의 자기 진단 기능이 작동하고 서보 앰프 내부에 어떤 이상이 발생.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+73,0,(Vdc 검출기 이상),제어 회로가 과대한 노이즈 등으로 오작동함. 서보 앰프의 자기 진단 기능이 작동하고 서보 앰프 내부에 어떤 이상이 발생.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+76,0,(내장 RAM 이상),제어 회로가 과대한 노이즈 등으로 오작동함. 서보 앰프의 자기 진단 기능이 작동하고 서보 앰프 내부에 어떤 이상이 발생.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+76,1,(내장 ROM 이상),제어 회로가 과대한 노이즈 등으로 오작동함. 서보 앰프의 자기 진단 기능이 작동하고 서보 앰프 내부에 어떤 이상이 발생.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+77,0,(스택 영역 이상),제어 회로가 과대한 노이즈 등으로 오작동함. 서보 앰프의 자기 진단 기능이 작동하고 서보 앰프 내부에 어떤 이상이 발생.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+78,0,(인코더 EEPROM 베리파이 이상),제어 회로가 과대한 노이즈 등으로 오작동함. 서보 앰프의 자기 진단 기능이 작동하고 서보 앰프 내부에 어떤 이상이 발생.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+82,0,RTEX node addressing error,"On power up of the control power, node address setting rotary switch on the servo drive has been set to a value outside the valid value.",Check the setting of the node address setting switch.
+,,,,Set node address setting switch to a value within the range of 0 and 31 and then turn on control power to the servo driver.
+83,0,RTEX continues communication error 1,An error (CRC error) with reading data received by a local node continued for a specified period.,Check the communication cable for excessive noise.
+,,,,"Check the communication cable for length, layout arrangement and connections."
+,,,,Communication cable must be category 5-e or higher (6 or higher grade is recommended) shielded twisted pair cable (STPC) specified by TIA/EIA-568.
+,,,,"Replace the cable with the one recommended as above, if not a recommended one."
+,,,,Attach the ferrite core to the cable if effective.
+83,1,RTEX continues communication error 2,An error with the reading data received by a local node continued for a specified period.,Check the communication cable for excessive noise.
+,,,"Note) This alarm assumes an error if CRC error, receiving failure, or cyclic data error occurs.","Check the communication cable for length, layout arrangement and connections."
+,,,,Communication cable must be category 5-e or higher (6 or higher grade is recommended) shielded twisted pair cable (STPC) specified by TIA/EIA-568.
+,,,,"Replace the cable with the one recommended as above, if not a recommended one."
+,,,,Attach the ferrite core to the cable if effective.
+84,0,RTEX communication timeout error,No communication data was received and no signal to start receive interrupt handling was received from MNM1221 (RTEX communication control ASIC) for a specified period.,Check to see that the cable is disconnected or broken.
+,,,,"Check that the upstream node is ready for transmission (power is ON, not reset)."
+,,,,Make sure that the host device can transmit the signal at the correct timing and speed.
+,,,,The communication cycle set by Pr7.20 (RTEX communication period) must match the transmission cycle of the host device.
+,,,,Check the communication cable for excessive noise.
+,,,,"Check the communication cable for length, layout arrangement and connections."
+,,,,Communication cable must be category 5-e or higher (6 or higher grade is recommended) shielded twisted pair cable (STPC) specified by TIA/EIA-568.
+,,,,"Replace the cable with the one recommended as above, if not a recommended one."
+,,,,Attach the ferrite core to the cable if effective.
+84,3,REX sync & initialization error,Error occurred during communication and servo sync and initialization process.,"Turn off the power once, then re-enter. If error repeats, this might be a failure."
+,,,,"Stop using the products, and replace the motor and the driver. Return the products to the dealer or manufacturer."
+84,5,RTEX communication cycle error,"Although the NMNI221 (RTEX communication control ASIC) output a receive interrupt handling start signal, communication and servo went out of synchronizationdue to an output frequency problem with the signal.",Make sure that the host device can transmit the signal at the correct timing and speed.
+,,,,The communication cycle set by Pr7.20 (RTEX communication period) must match the transmission cycle of the host device.
+,,,,Check the communication cable for excessive noise.
+,,,,"Check the communication cable for length, layout arrangement and connections."
+,,,,Communication cable must be category 5-e or higher (6 or higher grade is recommended) shielded twisted pair cable (STPC) specified by TIA/EIA-568.
+,,,,"Replace the cable with the one recommended as above, if not a recommended one."
+,,,,Attach the ferrite core to the cable if effective.
+86,0,RTEX cyclic-data not receivable 1,"A problem with the data (C/R and MAC-ID) in the cyclic command area, or a problem with the Sub_Chk in 32-byte 86 mode continued for a specified period.",Check the data in the cyclic command field (MAC-ID or C/R).
+,,,,Check process performed on the host device.
+86,1,RTEX cyclic-data not receivable 2,A problem with cyclic command code continued for a specified period.,Check the data in the cyclic command field (cyclic command).
+,,,,Check process performed on the host device.
+86,2,RTEX_Update_Counter error,The setup value for Pr7.38 (RTEX_Update_Counter error protection setup) has been exceeded and the Update_Counter has not been updated correctly.,Check for any trouble in the process performed on the host device.
+,,,,Check if there is any problem in frequency setting in upper devise side and in amplifier side.
+,,,,Increase the setup value for Pr7.38.
+,,,,"When Update_Counter is not used with ratio of communication frequency and command renewal frequency being 1:1, this alarm is made invalid."
+87,0,강제 알람 입력 보호,강제 알람 입력(E-STOP)이 입력됨.,강제 알람 입력(E-STOP) 배선을 확인한다.
+90,2,RTEX multi-axis synchronization establishment error,Communication error occurred or communication was lost during transition to synchronization establishment in full synchronization mode.,Check the communication cable for excessive noise.
+,,,,"Check the communication cable for length, layout arrangement and connections."
+,,,,Communication cable must be category 5-e or higher (6 or higher grade is recommended) shielded twisted pair cable (STPC) specified by TIA/EIA-568.
+,,,,"Replace the cable with the one recommended as above, if not a recommended one."
+,,,,Attach the ferrite core to the cable if effective.
+91,1,RTEX command error,"Inconsistency in communication frequency, semi-close/full-close, and combination of 16/32 byte mode and control mode.",Check the process of upper device for any problem.
+,,,Control mode was switched at intervals shorter than 2 ms.,
+,,,"Control mode was changed during profile position latch positioning/profile home position return (Type_Code = 12h, 13h, 31h, 32h, 33h).",
+,,,Control mode was changed while non-cyclic command (Busy = 1) was processed.,
+,,,"Home position return command (4h) was executed during profile position latch positioning/profile home position return (Type_Code = 12h, 13h, 31h, 32h, 33h).",
+,,,"Initialization mode (Type_Code = 1??h, 31h) for home position return command (4h) was performed during profile positioning/profile continuous rotation (Type_Code = 10h, 11h, 20h).",
+,,,Type_Code was changed during profile position control (pp).,
+,,,Type_Code = 1*h/2*h for home position return command (4th) was performed at the time of speed control (CV)/torque control (CT).,
+92,1,Feedback scale data recovery error,"When in the absolute mode (absolute scale), internal position data has not been correctly initialized.",Regulate the power source of the feedback scale to 5VDC ±5% (4.75?5.25V).…Measure the voltage at the feedback scale connection cable end if it is long.
+,,,,"If the motor cable and feedback scale connection cable are bundled together, separated them."
+,,,,Connect the shield to FG.…See the feedback scale connection diagramin.
+93,0,Parameter setup error 1,Electronic gear ratio exceeds the allowable range.,Check the setting value of the parameter.
+,,,,Electronic gear ratio must be in the range 1/1000 to 1000.
+93,2,Parameter setup error 2,Feedback scale ratio exceeds acceptable range.,Check the setting value of the parameter.
+,,,,Feedback scale ratio must be in the range 1/40 to 160.
+93,3,Feedback scale connection error,The communication type of the connected external scale (serial communication model) does not match the type selected through Pr3.23 (Feedback scale selection).,Set Pr3.23 (Feedback scale selection) to the type of feedback scale connected.
+93,5,Parameter setup error 4,The combination conditions of Pr7.20 (RTEX communication period) and Pr7.21 (RTEX command update period) are not met.,Check settings of the parameters.
+,,,Feed forward settings of Pr7.35?Pr7.37 are duplicated.,"For correct setting conditions, refer to the technical document, Specification of RTEX communication."
+94,2,Home position return error,An error with profile home position return occurred.,Check sensor installation status etc. for any problem.
+95,0,모터 자동 인식 이상 보호,모터와 서보 앰프가 매치되지 않음.,취급 설명서에 기재된 서보 앰프와 모터를 올바르게 조합하여 사용한다.
+95,1,모터 자동 인식 이상 보호,모터와 서보 앰프가 매치되지 않음.,취급 설명서에 기재된 서보 앰프와 모터를 올바르게 조합하여 사용한다.
+95,2,모터 자동 인식 이상 보호,모터와 서보 앰프가 매치되지 않음.,취급 설명서에 기재된 서보 앰프와 모터를 올바르게 조합하여 사용한다.
+95,3,모터 자동 인식 이상 보호,모터와 서보 앰프가 매치되지 않음.,취급 설명서에 기재된 서보 앰프와 모터를 올바르게 조합하여 사용한다.
+95,4,모터 자동 인식 이상 보호,모터와 서보 앰프가 매치되지 않음.,취급 설명서에 기재된 서보 앰프와 모터를 올바르게 조합하여 사용한다.
+96,0,(MNM1223 이상),제어 회로가 과대한 노이즈 등으로 오작동함. 서보 앰프의 자기 진단 기능이 작동하고 서보 앰프 내부에 어떤 이상이 발생.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+97,0,(제어 모드 설정 이상),제어 회로가 과대한 노이즈 등으로 오작동함. 서보 앰프의 자기 진단 기능이 작동하고 서보 앰프 내부에 어떤 이상이 발생.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+98,0,(자기 진단 이상),제어 회로가 과대한 노이즈 등으로 오작동함. 서보 앰프의 자기 진단 기능이 작동하고 서보 앰프 내부에 어떤 이상이 발생.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+98,1,RTEX hardware error 1,Fault is determined in RTEX communication related peripheral device.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+98,2,RTEX hardware error 2,Fault is determined in RTEX communication related peripheral device.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+98,3,RTEX hardware error 3,Fault is determined in RTEX communication related peripheral device.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+99,0,(기타 이상),제어 회로가 과대한 노이즈 등으로 오작동함. 서보 앰프의 자기 진단 기능이 작동하고 서보 앰프 내부에 어떤 이상이 발생.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."

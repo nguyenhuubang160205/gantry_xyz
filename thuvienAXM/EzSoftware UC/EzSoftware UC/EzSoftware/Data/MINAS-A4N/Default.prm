@@ -1,0 +1,556 @@
+#
+#
+#file(C:\Program Files\PANATERM\prm\mino.prm)
+#Date and time2008-09-25 09:48:44
+#
+#
+#----------------------------------------------
+MODEL         ,1            ,#Group name and max. data
+#
+DATA          ,0            ,MSD_A        ,A4N TypeC___ ,#Type and model
+END
+#----------------------------------------------
+PARA COMMENT  ,5            ,#Group name and max. data
+#
+DATA          ,0            ,"MINAS-A4 TypeC"           ,#Memo
+DATA          ,1            ,"m"          ,#Memo
+DATA          ,2            ,"i"          ,#Memo
+DATA          ,3            ,"n"          ,#Memo
+DATA          ,4            ,"o"          ,#Memo
+END
+#----------------------------------------------
+CPU VER       ,11           ,#Group name and max. data
+#
+END
+#----------------------------------------------
+MOTOR MODEL   ,1            ,#Group name and max. data
+#
+END
+#----------------------------------------------
+USER DATA     ,256          ,#Group name and max. data
+#
+DATA          ,0x00         ,1            ,#[0x0001]:For manufacturer use
+DATA          ,0x01         ,0            ,#[0x0000]:LED display
+DATA          ,0x02         ,0            ,#[0x0000]:Control mode
+DATA          ,0x03         ,1            ,#[0x0001]:Torque limit selection
+DATA          ,0x04         ,1            ,#[0x0001]:Overtravel input inhibit
+DATA          ,0x05         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x06         ,0            ,#[0x0000]:Address indicated time at power-up
+DATA          ,0x07         ,3            ,#[0x0003]:Speed monitor (SP) selection
+DATA          ,0x08         ,0            ,#[0x0000]:Torque monitor (IM) selection
+DATA          ,0x09         ,0            ,#[0x0000]:Unit of velocity
+DATA          ,0x0A         ,0            ,#[0x0000]:Inhibit parameter change via network
+DATA          ,0x0B         ,1            ,#[0x0001]:Absolute encoder setup
+DATA          ,0x0C         ,2            ,#[0x0002]:Baud rate of RS232
+DATA          ,0x0D         ,0            ,#[0x0000]:Warning setup of cumulative COM error
+DATA          ,0x0E         ,0            ,#[0x0000]:Warning setup of continuous COM error
+DATA          ,0x0F         ,0            ,#[0x0000]:Update counter warning setup
+DATA          ,0x10         ,63           ,#[0x003F]:1st position loop gain
+DATA          ,0x11         ,35           ,#[0x0023]:1st velocity loop gain
+DATA          ,0x12         ,16           ,#[0x0010]:1st velocity loop integration time constant
+DATA          ,0x13         ,0            ,#[0x0000]:1st speed detection filter
+DATA          ,0x14         ,65           ,#[0x0041]:1st torque filter time constant
+DATA          ,0x15         ,300          ,#[0x012C]:Velocity feed forward
+DATA          ,0x16         ,50           ,#[0x0032]:Feed forward filter time constant
+DATA          ,0x17         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x18         ,73           ,#[0x0049]:2nd position loop gain
+DATA          ,0x19         ,35           ,#[0x0023]:2nd velocity loop gain
+DATA          ,0x1A         ,1000         ,#[0x03E8]:2nd velocity loop integration time constant
+DATA          ,0x1B         ,0            ,#[0x0000]:2nd speed detection filter
+DATA          ,0x1C         ,65           ,#[0x0041]:2nd torque filter time constant
+DATA          ,0x1D         ,1500         ,#[0x05DC]:1st notch frequency
+DATA          ,0x1E         ,2            ,#[0x0002]:1st notch width selection
+DATA          ,0x1F         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x20         ,250          ,#[0x00FA]:Inertia ratio
+DATA          ,0x21         ,1            ,#[0x0001]:Real-time auto tuning setup
+DATA          ,0x22         ,4            ,#[0x0004]:Machine stiffness at auto tuning
+DATA          ,0x23         ,1            ,#[0x0001]:Adaptive filter mode
+DATA          ,0x24         ,0            ,#[0x0000]:Vibration suppression filter selection
+DATA          ,0x25         ,0            ,#[0x0000]:Normal auto tuning motion setup
+DATA          ,0x26         ,10           ,#[0x000A]:Software limit setup
+DATA          ,0x27         ,0            ,#[0x0000]:Velocity observer
+DATA          ,0x28         ,1500         ,#[0x05DC]:2nd notch frequency
+DATA          ,0x29         ,2            ,#[0x0002]:2nd notch width selection
+DATA          ,0x2A         ,0            ,#[0x0000]:2nd notch depth selection
+DATA          ,0x2B         ,0            ,#[0x0000]:1st vibration suppression frequency
+DATA          ,0x2C         ,0            ,#[0x0000]:1st vibration suppression filter
+DATA          ,0x2D         ,0            ,#[0x0000]:2nd vibration suppression frequency
+DATA          ,0x2E         ,0            ,#[0x0000]:2nd vibration suppression filter
+DATA          ,0x2F         ,0            ,#[0x0000]:Adaptive filter frequency
+DATA          ,0x30         ,1            ,#[0x0001]:2nd gain action setup
+DATA          ,0x31         ,10           ,#[0x000A]:Gain switching mode
+DATA          ,0x32         ,30           ,#[0x001E]:Gain switching delay time
+DATA          ,0x33         ,50           ,#[0x0032]:Gain switching level
+DATA          ,0x34         ,33           ,#[0x0021]:Gain switching hysteresis
+DATA          ,0x35         ,20           ,#[0x0014]:Position loop gain switching time
+DATA          ,0x36         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x37         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x38         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x39         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x3A         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x3B         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x3C         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x3D         ,300          ,#[0x012C]:JOG speed
+DATA          ,0x3E         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x3F         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x40         ,0            ,#[0x0000]:External servo-on enable
+DATA          ,0x41         ,1            ,#[0x0001]:Emergency stop enable
+DATA          ,0x42         ,1            ,#[0x0001]:Home input logic
+DATA          ,0x43         ,1            ,#[0x0001]:Direction of motion
+DATA          ,0x44         ,2500         ,#[0x09C4]:Numerator of output pulse ratio
+DATA          ,0x45         ,0            ,#[0x0000]:Denominator of output pulse ratio
+DATA          ,0x46         ,0            ,#[0x0000]:Pulse output logic inversion
+DATA          ,0x47         ,0            ,#[0x0000]:Z-phase of external scale setup
+DATA          ,0x48         ,10000        ,#[0x2710]:For manufacturer use
+DATA          ,0x49         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x4A         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x4B         ,10000        ,#[0x2710]:For manufacturer use
+DATA          ,0x4C         ,1            ,#[0x0001]:Smoothing filter
+DATA          ,0x4D         ,0            ,#[0x0000]:FIR filter setup
+DATA          ,0x4E         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x4F         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x50         ,500          ,#[0x01F4]:For manufacturer use
+DATA          ,0x51         ,1            ,#[0x0001]:For manufacturer use
+DATA          ,0x52         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x53         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x54         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x55         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x56         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x57         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x58         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x59         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x5A         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x5B         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x5C         ,30           ,#[0x001E]:For manufacturer use
+DATA          ,0x5D         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x5E         ,500          ,#[0x01F4]:1st torque limit
+DATA          ,0x5F         ,500          ,#[0x01F4]:2nd torque limit
+DATA          ,0x60         ,131          ,#[0x0083]:In-position range
+DATA          ,0x61         ,50           ,#[0x0032]:Zero speed
+DATA          ,0x62         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x63         ,0            ,#[0x0000]:In-position output setup
+DATA          ,0x64         ,0            ,#[0x0000]:CT-offset re-calibration at servo-on
+DATA          ,0x65         ,1            ,#[0x0001]:Undervoltage error response at main power-off
+DATA          ,0x66         ,0            ,#[0x0000]:Error response at overtravel limit
+DATA          ,0x67         ,0            ,#[0x0000]:Error response at main power-off
+DATA          ,0x68         ,0            ,#[0x0000]:Error response action
+DATA          ,0x69         ,0            ,#[0x0000]:Sequence at servo-off
+DATA          ,0x6A         ,0            ,#[0x0000]:Mechanical brake delay at motor standstill
+DATA          ,0x6B         ,0            ,#[0x0000]:Mechanical brake delay at motor in motion
+DATA          ,0x6C         ,0            ,#[0x0000]:External regenerative resistor setup
+DATA          ,0x6D         ,35           ,#[0x0023]:Main power-off detection time
+DATA          ,0x6E         ,0            ,#[0x0000]:Emergency stop torque setup
+DATA          ,0x6F         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x70         ,25000        ,#[0x61A8]:Position deviation error level
+DATA          ,0x71         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x72         ,0            ,#[0x0000]:Overload level
+DATA          ,0x73         ,0            ,#[0x0000]:Overspeed level
+DATA          ,0x74         ,2            ,#[0x0002]:Command update period
+DATA          ,0x75         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x76         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x77         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x78         ,0            ,#[0x0000]:Numerator of external scale ratio
+DATA          ,0x79         ,0            ,#[0x0000]:Multiplier of numerator of external scale ratio
+DATA          ,0x7A         ,10000        ,#[0x2710]:Denominator of external scale ratio
+DATA          ,0x7B         ,100          ,#[0x0064]:Hybrid deviation error level
+DATA          ,0x7C         ,0            ,#[0x0000]:External scale direction
+DATA          ,0x7D         ,0            ,#[0x0000]:Absolute external scale setup
+DATA          ,0x7E         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x7F         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x80         ,4            ,#[0x0004]:For manufacturer use
+DATA          ,0x81         ,20           ,#[0x0014]:For manufacturer use
+DATA          ,0x82         ,255          ,#[0x00FF]:For manufacturer use
+DATA          ,0x83         ,129          ,#[0x0081]:For manufacturer use
+DATA          ,0x84         ,7200         ,#[0x1C20]:For manufacturer use
+DATA          ,0x85         ,500          ,#[0x01F4]:For manufacturer use
+DATA          ,0x86         ,500          ,#[0x01F4]:For manufacturer use
+DATA          ,0x87         ,115          ,#[0x0073]:For manufacturer use
+DATA          ,0x88         ,30400        ,#[0x76C0]:For manufacturer use
+DATA          ,0x89         ,128          ,#[0x0080]:For manufacturer use
+DATA          ,0x8A         ,43           ,#[0x002B]:For manufacturer use
+DATA          ,0x8B         ,220          ,#[0x00DC]:For manufacturer use
+DATA          ,0x8C         ,878          ,#[0x036E]:For manufacturer use
+DATA          ,0x8D         ,3136         ,#[0x0C40]:For manufacturer use
+DATA          ,0x8E         ,3266         ,#[0x0CC2]:For manufacturer use
+DATA          ,0x8F         ,646          ,#[0x0286]:For manufacturer use
+DATA          ,0x90         ,768          ,#[0x0300]:For manufacturer use
+DATA          ,0x91         ,52           ,#[0x0034]:For manufacturer use
+DATA          ,0x92         ,50           ,#[0x0032]:For manufacturer use
+DATA          ,0x93         ,10           ,#[0x000A]:For manufacturer use
+DATA          ,0x94         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x95         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x96         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x97         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x98         ,16384        ,#[0x4000]:For manufacturer use
+DATA          ,0x99         ,512          ,#[0x0200]:For manufacturer use
+DATA          ,0x9A         ,200          ,#[0x00C8]:For manufacturer use
+DATA          ,0x9B         ,1            ,#[0x0001]:For manufacturer use
+DATA          ,0x9C         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0x9D         ,-7486        ,#[0xE2C2]:For manufacturer use
+DATA          ,0x9E         ,2796         ,#[0x0AEC]:For manufacturer use
+DATA          ,0x9F         ,311          ,#[0x0137]:For manufacturer use
+DATA          ,0xA0         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xA1         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xA2         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xA3         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xA4         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xA5         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xA6         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xA7         ,1            ,#[0x0001]:For manufacturer use
+DATA          ,0xA8         ,1000         ,#[0x03E8]:For manufacturer use
+DATA          ,0xA9         ,50           ,#[0x0032]:For manufacturer use
+DATA          ,0xAA         ,-1           ,#[0xFFFF]:For manufacturer use
+DATA          ,0xAB         ,-1           ,#[0xFFFF]:For manufacturer use
+DATA          ,0xAC         ,-16418       ,#[0xBFDE]:For manufacturer use
+DATA          ,0xAD         ,4095         ,#[0x0FFF]:For manufacturer use
+DATA          ,0xAE         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xAF         ,-16400       ,#[0xBFF0]:For manufacturer use
+DATA          ,0xB0         ,4095         ,#[0x0FFF]:For manufacturer use
+DATA          ,0xB1         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xB2         ,-16406       ,#[0xBFEA]:For manufacturer use
+DATA          ,0xB3         ,4095         ,#[0x0FFF]:For manufacturer use
+DATA          ,0xB4         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xB5         ,-16428       ,#[0xBFD4]:For manufacturer use
+DATA          ,0xB6         ,4095         ,#[0x0FFF]:For manufacturer use
+DATA          ,0xB7         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xB8         ,12           ,#[0x000C]:For manufacturer use
+DATA          ,0xB9         ,4            ,#[0x0004]:For manufacturer use
+DATA          ,0xBA         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xBB         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xBC         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xBD         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xBE         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xBF         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xC0         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xC1         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xC2         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xC3         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xC4         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xC5         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xC6         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xC7         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xC8         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xC9         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xCA         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xCB         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xCC         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xCD         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xCE         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xCF         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xD0         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xD1         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xD2         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xD3         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xD4         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xD5         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xD6         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xD7         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xD8         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xD9         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xDA         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xDB         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xDC         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xDD         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xDE         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xDF         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xE0         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xE1         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xE2         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xE3         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xE4         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xE5         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xE6         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xE7         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xE8         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xE9         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xEA         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xEB         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xEC         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xED         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xEE         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xEF         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xF0         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xF1         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xF2         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xF3         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xF4         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xF5         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xF6         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xF7         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xF8         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xF9         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xFA         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xFB         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xFC         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xFD         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xFE         ,0            ,#[0x0000]:For manufacturer use
+DATA          ,0xFF         ,0            ,#[0x0000]:For manufacturer use
+END
+#----------------------------------------------
+PARA TYPE     ,256          ,#Group name and max. data
+#
+DATA          ,0            ,2            ,#For manufacturer use
+DATA          ,1            ,2            ,#LED display
+DATA          ,2            ,2            ,#Control mode
+DATA          ,3            ,2            ,#Torque limit selection
+DATA          ,4            ,2            ,#Overtravel input inhibit
+DATA          ,5            ,2            ,#For manufacturer use
+DATA          ,6            ,2            ,#Address indicated time at power-up
+DATA          ,7            ,2            ,#Speed monitor (SP) selection
+DATA          ,8            ,2            ,#Torque monitor (IM) selection
+DATA          ,9            ,2            ,#Unit of velocity
+DATA          ,10           ,2            ,#Inhibit parameter change via network
+DATA          ,11           ,2            ,#Absolute encoder setup
+DATA          ,12           ,2            ,#Baud rate of RS232
+DATA          ,13           ,2            ,#Warning setup of cumulative COM error
+DATA          ,14           ,2            ,#Warning setup of continuous COM error
+DATA          ,15           ,2            ,#Update counter warning setup
+DATA          ,16           ,3            ,#1st position loop gain
+DATA          ,17           ,3            ,#1st velocity loop gain
+DATA          ,18           ,3            ,#1st velocity loop integration time constant
+DATA          ,19           ,3            ,#1st speed detection filter
+DATA          ,20           ,3            ,#1st torque filter time constant
+DATA          ,21           ,2            ,#Velocity feed forward
+DATA          ,22           ,2            ,#Feed forward filter time constant
+DATA          ,23           ,2            ,#For manufacturer use
+DATA          ,24           ,2            ,#2nd position loop gain
+DATA          ,25           ,2            ,#2nd velocity loop gain
+DATA          ,26           ,2            ,#2nd velocity loop integration time constant
+DATA          ,27           ,2            ,#2nd speed detection filter
+DATA          ,28           ,2            ,#2nd torque filter time constant
+DATA          ,29           ,2            ,#1st notch frequency
+DATA          ,30           ,2            ,#1st notch width selection
+DATA          ,31           ,2            ,#For manufacturer use
+DATA          ,32           ,3            ,#Inertia ratio
+DATA          ,33           ,2            ,#Real-time auto tuning setup
+DATA          ,34           ,2            ,#Machine stiffness at auto tuning
+DATA          ,35           ,2            ,#Adaptive filter mode
+DATA          ,36           ,2            ,#Vibration suppression filter selection
+DATA          ,37           ,2            ,#Normal auto tuning motion setup
+DATA          ,38           ,2            ,#Software limit setup
+DATA          ,39           ,2            ,#Velocity observer
+DATA          ,40           ,2            ,#2nd notch frequency
+DATA          ,41           ,2            ,#2nd notch width selection
+DATA          ,42           ,2            ,#2nd notch depth selection
+DATA          ,43           ,2            ,#1st vibration suppression frequency
+DATA          ,44           ,2            ,#1st vibration suppression filter
+DATA          ,45           ,2            ,#2nd vibration suppression frequency
+DATA          ,46           ,2            ,#2nd vibration suppression filter
+DATA          ,47           ,2            ,#Adaptive filter frequency
+DATA          ,48           ,2            ,#2nd gain action setup
+DATA          ,49           ,2            ,#Gain switching mode
+DATA          ,50           ,2            ,#Gain switching delay time
+DATA          ,51           ,2            ,#Gain switching level
+DATA          ,52           ,2            ,#Gain switching hysteresis
+DATA          ,53           ,2            ,#Position loop gain switching time
+DATA          ,54           ,2            ,#For manufacturer use
+DATA          ,55           ,2            ,#For manufacturer use
+DATA          ,56           ,2            ,#For manufacturer use
+DATA          ,57           ,2            ,#For manufacturer use
+DATA          ,58           ,2            ,#For manufacturer use
+DATA          ,59           ,2            ,#For manufacturer use
+DATA          ,60           ,2            ,#For manufacturer use
+DATA          ,61           ,2            ,#JOG speed
+DATA          ,62           ,2            ,#For manufacturer use
+DATA          ,63           ,2            ,#For manufacturer use
+DATA          ,64           ,2            ,#External servo-on enable
+DATA          ,65           ,2            ,#Emergency stop enable
+DATA          ,66           ,2            ,#Home input logic
+DATA          ,67           ,2            ,#Direction of motion
+DATA          ,68           ,2            ,#Numerator of output pulse ratio
+DATA          ,69           ,2            ,#Denominator of output pulse ratio
+DATA          ,70           ,2            ,#Pulse output logic inversion
+DATA          ,71           ,2            ,#Z-phase of external scale setup
+DATA          ,72           ,2            ,#For manufacturer use
+DATA          ,73           ,2            ,#For manufacturer use
+DATA          ,74           ,2            ,#For manufacturer use
+DATA          ,75           ,2            ,#For manufacturer use
+DATA          ,76           ,2            ,#Smoothing filter
+DATA          ,77           ,2            ,#FIR filter setup
+DATA          ,78           ,2            ,#For manufacturer use
+DATA          ,79           ,2            ,#For manufacturer use
+DATA          ,80           ,2            ,#For manufacturer use
+DATA          ,81           ,2            ,#For manufacturer use
+DATA          ,82           ,2            ,#For manufacturer use
+DATA          ,83           ,2            ,#For manufacturer use
+DATA          ,84           ,2            ,#For manufacturer use
+DATA          ,85           ,2            ,#For manufacturer use
+DATA          ,86           ,2            ,#For manufacturer use
+DATA          ,87           ,2            ,#For manufacturer use
+DATA          ,88           ,2            ,#For manufacturer use
+DATA          ,89           ,2            ,#For manufacturer use
+DATA          ,90           ,2            ,#For manufacturer use
+DATA          ,91           ,2            ,#For manufacturer use
+DATA          ,92           ,2            ,#For manufacturer use
+DATA          ,93           ,2            ,#For manufacturer use
+DATA          ,94           ,2            ,#1st torque limit
+DATA          ,95           ,2            ,#2nd torque limit
+DATA          ,96           ,2            ,#In-position range
+DATA          ,97           ,2            ,#Zero speed
+DATA          ,98           ,2            ,#For manufacturer use
+DATA          ,99           ,2            ,#In-position output setup
+DATA          ,100          ,2            ,#CT-offset re-calibration at servo-on
+DATA          ,101          ,2            ,#Undervoltage error response at main power-off
+DATA          ,102          ,2            ,#Error response at overtravel limit
+DATA          ,103          ,2            ,#Error response at main power-off
+DATA          ,104          ,2            ,#Error response action
+DATA          ,105          ,2            ,#Sequence at servo-off
+DATA          ,106          ,2            ,#Mechanical brake delay at motor standstill
+DATA          ,107          ,2            ,#Mechanical brake delay at motor in motion
+DATA          ,108          ,2            ,#External regenerative resistor setup
+DATA          ,109          ,2            ,#Main power-off detection time
+DATA          ,110          ,2            ,#Emergency stop torque setup
+DATA          ,111          ,2            ,#For manufacturer use
+DATA          ,112          ,2            ,#Position deviation error level
+DATA          ,113          ,2            ,#For manufacturer use
+DATA          ,114          ,2            ,#Overload level
+DATA          ,115          ,2            ,#Overspeed level
+DATA          ,116          ,2            ,#Command update period
+DATA          ,117          ,2            ,#For manufacturer use
+DATA          ,118          ,2            ,#For manufacturer use
+DATA          ,119          ,2            ,#For manufacturer use
+DATA          ,120          ,2            ,#Numerator of external scale ratio
+DATA          ,121          ,2            ,#Multiplier of numerator of external scale ratio
+DATA          ,122          ,2            ,#Denominator of external scale ratio
+DATA          ,123          ,2            ,#Hybrid deviation error level
+DATA          ,124          ,2            ,#External scale direction
+DATA          ,125          ,2            ,#Absolute external scale setup
+DATA          ,126          ,2            ,#For manufacturer use
+DATA          ,127          ,2            ,#For manufacturer use
+DATA          ,128          ,0            ,#For manufacturer use
+DATA          ,129          ,0            ,#For manufacturer use
+DATA          ,130          ,0            ,#For manufacturer use
+DATA          ,131          ,0            ,#For manufacturer use
+DATA          ,132          ,0            ,#For manufacturer use
+DATA          ,133          ,0            ,#For manufacturer use
+DATA          ,134          ,0            ,#For manufacturer use
+DATA          ,135          ,0            ,#For manufacturer use
+DATA          ,136          ,0            ,#For manufacturer use
+DATA          ,137          ,0            ,#For manufacturer use
+DATA          ,138          ,0            ,#For manufacturer use
+DATA          ,139          ,0            ,#For manufacturer use
+DATA          ,140          ,0            ,#For manufacturer use
+DATA          ,141          ,0            ,#For manufacturer use
+DATA          ,142          ,0            ,#For manufacturer use
+DATA          ,143          ,0            ,#For manufacturer use
+DATA          ,144          ,0            ,#For manufacturer use
+DATA          ,145          ,0            ,#For manufacturer use
+DATA          ,146          ,0            ,#For manufacturer use
+DATA          ,147          ,0            ,#For manufacturer use
+DATA          ,148          ,0            ,#For manufacturer use
+DATA          ,149          ,0            ,#For manufacturer use
+DATA          ,150          ,0            ,#For manufacturer use
+DATA          ,151          ,0            ,#For manufacturer use
+DATA          ,152          ,0            ,#For manufacturer use
+DATA          ,153          ,0            ,#For manufacturer use
+DATA          ,154          ,0            ,#For manufacturer use
+DATA          ,155          ,0            ,#For manufacturer use
+DATA          ,156          ,0            ,#For manufacturer use
+DATA          ,157          ,0            ,#For manufacturer use
+DATA          ,158          ,0            ,#For manufacturer use
+DATA          ,159          ,0            ,#For manufacturer use
+DATA          ,160          ,0            ,#For manufacturer use
+DATA          ,161          ,0            ,#For manufacturer use
+DATA          ,162          ,0            ,#For manufacturer use
+DATA          ,163          ,0            ,#For manufacturer use
+DATA          ,164          ,0            ,#For manufacturer use
+DATA          ,165          ,0            ,#For manufacturer use
+DATA          ,166          ,0            ,#For manufacturer use
+DATA          ,167          ,0            ,#For manufacturer use
+DATA          ,168          ,0            ,#For manufacturer use
+DATA          ,169          ,0            ,#For manufacturer use
+DATA          ,170          ,0            ,#For manufacturer use
+DATA          ,171          ,0            ,#For manufacturer use
+DATA          ,172          ,0            ,#For manufacturer use
+DATA          ,173          ,0            ,#For manufacturer use
+DATA          ,174          ,0            ,#For manufacturer use
+DATA          ,175          ,0            ,#For manufacturer use
+DATA          ,176          ,0            ,#For manufacturer use
+DATA          ,177          ,0            ,#For manufacturer use
+DATA          ,178          ,0            ,#For manufacturer use
+DATA          ,179          ,0            ,#For manufacturer use
+DATA          ,180          ,0            ,#For manufacturer use
+DATA          ,181          ,0            ,#For manufacturer use
+DATA          ,182          ,0            ,#For manufacturer use
+DATA          ,183          ,0            ,#For manufacturer use
+DATA          ,184          ,0            ,#For manufacturer use
+DATA          ,185          ,0            ,#For manufacturer use
+DATA          ,186          ,0            ,#For manufacturer use
+DATA          ,187          ,0            ,#For manufacturer use
+DATA          ,188          ,0            ,#For manufacturer use
+DATA          ,189          ,0            ,#For manufacturer use
+DATA          ,190          ,0            ,#For manufacturer use
+DATA          ,191          ,0            ,#For manufacturer use
+DATA          ,192          ,0            ,#For manufacturer use
+DATA          ,193          ,0            ,#For manufacturer use
+DATA          ,194          ,0            ,#For manufacturer use
+DATA          ,195          ,0            ,#For manufacturer use
+DATA          ,196          ,0            ,#For manufacturer use
+DATA          ,197          ,0            ,#For manufacturer use
+DATA          ,198          ,0            ,#For manufacturer use
+DATA          ,199          ,0            ,#For manufacturer use
+DATA          ,200          ,0            ,#For manufacturer use
+DATA          ,201          ,0            ,#For manufacturer use
+DATA          ,202          ,0            ,#For manufacturer use
+DATA          ,203          ,0            ,#For manufacturer use
+DATA          ,204          ,0            ,#For manufacturer use
+DATA          ,205          ,0            ,#For manufacturer use
+DATA          ,206          ,0            ,#For manufacturer use
+DATA          ,207          ,0            ,#For manufacturer use
+DATA          ,208          ,0            ,#For manufacturer use
+DATA          ,209          ,0            ,#For manufacturer use
+DATA          ,210          ,0            ,#For manufacturer use
+DATA          ,211          ,0            ,#For manufacturer use
+DATA          ,212          ,0            ,#For manufacturer use
+DATA          ,213          ,0            ,#For manufacturer use
+DATA          ,214          ,0            ,#For manufacturer use
+DATA          ,215          ,0            ,#For manufacturer use
+DATA          ,216          ,0            ,#For manufacturer use
+DATA          ,217          ,0            ,#For manufacturer use
+DATA          ,218          ,0            ,#For manufacturer use
+DATA          ,219          ,0            ,#For manufacturer use
+DATA          ,220          ,0            ,#For manufacturer use
+DATA          ,221          ,0            ,#For manufacturer use
+DATA          ,222          ,0            ,#For manufacturer use
+DATA          ,223          ,0            ,#For manufacturer use
+DATA          ,224          ,0            ,#For manufacturer use
+DATA          ,225          ,0            ,#For manufacturer use
+DATA          ,226          ,0            ,#For manufacturer use
+DATA          ,227          ,0            ,#For manufacturer use
+DATA          ,228          ,0            ,#For manufacturer use
+DATA          ,229          ,0            ,#For manufacturer use
+DATA          ,230          ,0            ,#For manufacturer use
+DATA          ,231          ,0            ,#For manufacturer use
+DATA          ,232          ,0            ,#For manufacturer use
+DATA          ,233          ,0            ,#For manufacturer use
+DATA          ,234          ,0            ,#For manufacturer use
+DATA          ,235          ,0            ,#For manufacturer use
+DATA          ,236          ,0            ,#For manufacturer use
+DATA          ,237          ,0            ,#For manufacturer use
+DATA          ,238          ,0            ,#For manufacturer use
+DATA          ,239          ,0            ,#For manufacturer use
+DATA          ,240          ,0            ,#For manufacturer use
+DATA          ,241          ,0            ,#For manufacturer use
+DATA          ,242          ,0            ,#For manufacturer use
+DATA          ,243          ,0            ,#For manufacturer use
+DATA          ,244          ,0            ,#For manufacturer use
+DATA          ,245          ,0            ,#For manufacturer use
+DATA          ,246          ,0            ,#For manufacturer use
+DATA          ,247          ,0            ,#For manufacturer use
+DATA          ,248          ,0            ,#For manufacturer use
+DATA          ,249          ,0            ,#For manufacturer use
+DATA          ,250          ,0            ,#For manufacturer use
+DATA          ,251          ,0            ,#For manufacturer use
+DATA          ,252          ,0            ,#For manufacturer use
+DATA          ,253          ,0            ,#For manufacturer use
+DATA          ,254          ,0            ,#For manufacturer use
+DATA          ,255          ,0            ,#For manufacturer use
+END
+#----------------------------------------------
+DEF END       ,0
+#
+#
+#
+#end of file
+#
+#

@@ -1,0 +1,65 @@
+#신호 번호,신호 종류,어사인 변경 가능 여부,조합 핀 번호,접점,위치 제어 시 신호 기호,위치 제어 시 신호명,속도 제어 시 신호 기호,속도 제어 시 신호명,토크 제어 시 신호 기호,Signal code of Thrust control,Signal name of Thrust control,풀클로즈 제어 시 신호명
+1,LI,NG,,,,,,,,,,
+2,LI,NG,,,A-CLR,알람 클리어 입력,A-CLR,알람 클리어 입력,A-CLR,알람 클리어 입력,A-CLR,알람 클리어 입력
+3,LI,NG,,,NOT,역방향 구동 금지 입력,NOT,역방향 구동 금지 입력,NOT,역방향 구동 금지 입력,NOT,역방향 구동 금지 입력
+4,LI,NG,,,POT,정방향 구동 금지 입력,POT,정방향 구동 금지 입력,POT,정방향 구동 금지 입력,POT,정방향 구동 금지 입력
+5,LI,NG,,,,,,,,,,
+6,LI,NG,,,,,,,,,,
+7,LI,NG,,,,,,,,,,
+8,LI,NG,,,E-STOP,강제 알람 입력,E-STOP,강제 알람 입력,E-STOP,강제 알람 입력,E-STOP,강제 알람 입력
+9,LI,NG,,,,,,,,,,
+10,LI,NG,,,,,,,,,,
+11,LI,NG,,,,,,,,,,
+12,LI,NG,,,,,,,,,,
+13,LI,NG,,,,,,,,,,
+14,LI,NG,,,,,,,,,,
+15,LI,NG,,,,,,,,,,
+16,LI,NG,,,,,,,,,,
+17,LI,NG,,,,,,,,,,
+18,LI,NG,,,,,,,,,,
+19,LI,NG,,,,,,,,,,
+20,LI,NG,,,,,,,,,,
+21,LI,NG,,,,,,,,,,
+22,LI,NG,,,,,,,,,,
+23,LI,NG,,,,,,,,,,
+24,LI,NG,,,,,,,,,,
+25,LI,NG,,,,,,,,,,
+26,LI,NG,,,,,,,,,,
+27,LI,NG,,,,,,,,,,
+28,LI,NG,,,SF1,안전 SF1 입력,SF1,안전 SF1 입력,SF1,안전 SF1 입력,SF1,안전 SF1 입력
+29,LI,NG,,,SF2,안전 SF2 입력,SF2,안전 SF2 입력,SF2,안전 SF2 입력,SF2,안전 SF2 입력
+30,LI,NG,,,,,,,,,,
+31,LI,NG,,,,,,,,,,
+32,LI,NG,,,,,,,,,,
+33,LO,NG,,,S-RDY,서보 레디 출력,S-RDY,서보 레디 출력,S-RDY,서보 레디 출력,S-RDY,서보 레디 출력
+34,LO,NG,,,ALM,서보 알람 출력,ALM,서보 알람 출력,ALM,서보 알람 출력,ALM,서보 알람 출력
+35,LO,NG,,,INP,위치 결정 완료,,,,,INP,위치 결정 완료
+36,LO,NG,,,BRK-OFF,외부 브레이크 해제 신호,BRK-OFF,외부 브레이크 해제 신호,BRK-OFF,외부 브레이크 해제 신호,BRK-OFF,외부 브레이크 해제 신호
+37,LO,NG,,,ZSP,제로 속도 검출 신호,ZSP,제로 속도 검출 신호,ZSP,제로 속도 검출 신호,ZSP,제로 속도 검출 신호
+38,LO,NG,,,TLC,Thrust in-limit signal output,TLC,Thrust in-limit signal output,TLC,Thrust in-limit signal output,TLC,Thrust in-limit signal output
+39,LO,NG,,,,,V-COIN,속도 일치 출력,V-COIN,속도 일치 출력,,
+40,LO,NG,,,CS-CMP,Complete of magnetic poles estimation,CS-CMP,Complete of magnetic poles estimation,CS-CMP,Complete of magnetic poles estimation,,
+41,LO,NG,,,,,,,,,,
+42,LO,NG,,,,,AT-SPEED,속도 도달 출력,AT-SPEED,속도 도달 출력,,
+43,LO,NG,,,,,,,,,EX_COIN,풀클로즈 위치 결정 완료
+44,LO,NG,,,REGBON,회생 트랜지스터 온 출력,REGBON,회생 트랜지스터 온 출력,REGBON,회생 트랜지스터 온 출력,REGBON,회생 트랜지스터 온 출력
+45,LO,NG,,,RYON,돌입 방지 릴레이 온 출력,RYON,돌입 방지 릴레이 온 출력,RYON,돌입 방지 릴레이 온 출력,RYON,돌입 방지 릴레이 온 출력
+46,LO,NG,,,DBRK,다이나믹 브레이크 동작 출력,DBRK,다이나믹 브레이크 동작 출력,DBRK,다이나믹 브레이크 동작 출력,DBRK,다이나믹 브레이크 동작 출력
+47,LO,NG,,,SRST,파워 래치 리셋 출력,SRST,파워 래치 리셋 출력,SRST,파워 래치 리셋 출력,SRST,파워 래치 리셋 출력
+48,LO,NG,,,FREE,서보 프리 출력,FREE,서보 프리 출력,FREE,서보 프리 출력,FREE,서보 프리 출력
+49,LO,NG,,,WARN1,경고 출력 1,WARN1,경고 출력 1,WARN1,경고 출력 1,WARN1,경고 출력 1
+50,LO,NG,,,WARN2,경고 출력 2,WARN2,경고 출력 2,WARN2,경고 출력 2,WARN2,경고 출력 2
+51,LO,NG,,,P-CMD,위치 지령 유무 출력,,,,,P-CMD,위치 지령 유무 출력
+52,LO,NG,,,INP2,위치 결정 완료 2,,,,,INP2,위치 결정 완료 2
+53,LO,NG,,,,,,,V-LIMIT,速度制限中出力,,
+54,LO,NG,,,ALM-ATB,알람 클리어 속성출력,ALM-ATB,알람 클리어 속성출력,ALM-ATB,알람 클리어 속성출력,ALM-ATB,알람 클리어 속성출력
+55,LO,NG,,,,,V-CMD,속도 지령 유무 출력,,,,
+56,LO,NG,,,O-EDM,안전 EDM 출력,O-EDM,안전 EDM 출력,O-EDM,안전 EDM 출력,O-EDM,안전 EDM 출력
+57,LO,NG,,,EX-OUT1,일반 출력 1,EX-OUT1,일반 출력 1,EX-OUT1,일반 출력 1,EX-OUT1,일반 출력 1
+58,LO,NG,,,set brake,set brake 출력,set brake,set brake 출력,set brake,set brake 출력,set brake,set brake 출력
+59,LO,NG,,,,,,,,,,
+60,LO,NG,,,,,,,,,,
+61,LO,NG,,,,,,,,,,
+62,LO,NG,,,,,,,,,,
+63,LO,NG,,,,,,,,,,
+64,LO,NG,,,,,,,,,,

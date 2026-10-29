@@ -1,0 +1,10 @@
+# Warning No. (Hex),Name,Cause,Treatment
+00,Normal,Normal,Normal
+A0,Over-load warning,"Load factors are 85% or more of protection levels, and Pr6.73 or more. ",Check the load factor. Set up longer acceleration/deceleration time. Lower the load.
+A1,Over-regeneration warning,Regenerative load factor is 85% or more the warning level.,Check the regeneration load factor. Set up longer acceleration/deceleration time. Lower the load.
+A3,Fan lock warning,Fan has stopped for 1 sec.,Check the turn of the fan. Replace the fan.
+A6,Oscillation detection warning,Oscillation or vibration is detected.,Make a gain adjustment.
+A7,Lifetime warning,The life expectancy of capacity or fan becomes shorter than the specified time.,Replace the driver.
+A8,Feedback scale warning,The feedback scale detects the warning.,Replace the feedback scale.
+A9,Feedback scale communication warning,The number of successive feedback scale communication warnings exceeds the specified value.,Examine the possibility of the noise.
+C3,Main power off warning,"When setting of Pr7.14 (Main power off warning detection time) is 10-1999,instantaneous power interruption occurs between L1 and L3 and lasts for a time longer than the setting of Pr7.14.","Check the setup value of Pr7.14. Measure the voltage between lines of connector (L1, L2 and L3).  Connect each phase of the power supply (L1, L2 and L3) correctly. Replace the driver."

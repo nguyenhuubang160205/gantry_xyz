@@ -1,0 +1,268 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\SignalMonitor.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\SignalMonitor.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SIGNALMONITOR_DIALOG DIALOGEX 0, 0, 273, 335
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "SignalMonitor"
+FONT 9, "±¼¸²"
+BEGIN
+    COMBOBOX        IDC_CBO_SEL_AXIS,68,7,128,325,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Select Axis No : ",IDC_STATIC,13,9,54,11,SS_CENTERIMAGE
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,7,6,259,15
+    GROUPBOX        "< Input Signal Monitor >",IDC_STATIC,7,28,259,67
+    PUSHBUTTON      "Load File",IDC_BTN_LOAD_FILE,198,7,62,14
+    CONTROL         "Z Phase      :",IDC_CHK_Z_PHASE,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,13,42,55,14
+    COMBOBOX        IDC_CBO_Z_PHASE,69,42,62,121,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CBO_SERVO_ON,69,113,62,91,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CBO_ALARM_RESET,198,113,62,91,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Inposition    :",IDC_CHK_INP,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,142,42,53,14
+    COMBOBOX        IDC_CBO_INP,198,42,62,91,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "Servo Alarm :",IDC_CHK_ALARM,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,13,58,54,14
+    COMBOBOX        IDC_CBO_ALARM,69,58,62,91,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "(-) End Limit:",IDC_CHK_ELIMIT_N,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,13,74,54,14
+    COMBOBOX        IDC_CBO_ELIMIT_N,69,74,62,91,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "(+) End Limit:",IDC_CHK_ELIMIT_P,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,142,74,54,14
+    COMBOBOX        IDC_CBO_ELIMIT_P,198,74,62,91,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Emergency :",IDC_CHK_EMG,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,142,58,53,14
+    COMBOBOX        IDC_CBO_EMG,198,58,62,91,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    GROUPBOX        "< Output Signal Monitor >",IDC_STATIC,7,100,259,32
+    GROUPBOX        "< Universal In/Out Signal Monitor >",IDC_STATIC,7,137,
+                    259,98
+    CONTROL         "Input Bit 00 (Orgin Sensor)",IDC_CHK_INP_00,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,13,151,95,14
+    CONTROL         "Input Bit 01 (Z-Phase)",IDC_CHK_INP_01,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,13,167,95,14
+    CONTROL         "Input Bit 02",IDC_CHK_INP_02,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,13,183,95,14
+    CONTROL         "Input Bit 03",IDC_CHK_INP_03,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,13,199,95,14
+    CONTROL         "Input Bit 04",IDC_CHK_INP_04,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,13,215,95,14
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,135,42,2,45
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,135,113,2,12
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,135,153,2,73
+    CONTROL         "  Output Bit 00 (Servo On)",IDC_CHK_OUT_00,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | BS_LEFT | BS_VCENTER | 
+                    BS_PUSHLIKE | WS_TABSTOP,142,151,118,14
+    CONTROL         "  Output Bit 01 (Alarm Clear)",IDC_CHK_OUT_01,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFT | BS_VCENTER | BS_PUSHLIKE | 
+                    WS_TABSTOP,142,167,118,14
+    CONTROL         "  Output Bit 02",IDC_CHK_OUT_02,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFT | BS_VCENTER | BS_PUSHLIKE | 
+                    WS_TABSTOP,142,183,118,14
+    CONTROL         "  Output Bit 03",IDC_CHK_OUT_03,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFT | BS_VCENTER | BS_PUSHLIKE | 
+                    WS_TABSTOP,142,199,118,14
+    CONTROL         "  Output Bit 04",IDC_CHK_OUT_04,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFT | BS_VCENTER | BS_PUSHLIKE | 
+                    WS_TABSTOP,142,215,118,14
+    GROUPBOX        "< Software Limit >",IDC_STATIC,7,240,259,88
+    CONTROL         "(-) Software End Limit",IDC_CHK_SWLIMIT_N,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,13,252,86,14
+    CONTROL         "(+) Software End Limit",IDC_CHK_SWLIMIT_P,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,142,252,86,14
+    CONTROL         "Enable",IDC_CHK_SW_ENABLE,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,13,304,247,16
+    COMBOBOX        IDC_CBO_SW_STOP,69,269,62,91,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Stop Mode       :",IDC_STATIC,13,269,53,12,
+                    SS_CENTERIMAGE
+    COMBOBOX        IDC_CBO_SW_REF,198,269,62,91,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Reference Pos :",IDC_STATIC,142,269,53,12,
+                    SS_CENTERIMAGE
+    LTEXT           "(-) Soft EndPos:",IDC_STATIC,13,285,55,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_SW_POS_N,69,285,62,14,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "(+) Soft EndPos:",IDC_STATIC,142,285,55,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_SW_POS_P,198,285,62,14,ES_RIGHT | ES_AUTOHSCROLL
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,135,254,2,45
+    LTEXT           "Servo On Level : ",IDC_STATIC,13,113,54,12,
+                    SS_CENTERIMAGE
+    LTEXT           "Alm Reset Level: ",IDC_STATIC,142,113,54,12,
+                    SS_CENTERIMAGE
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204b0"
+        BEGIN
+            VALUE "Comments", "(2011.03.28 compiled r1.0) for EzSoftwareRM\0"
+            VALUE "CompanyName", "Ajinextek\0"
+            VALUE "FileDescription", "SignalMonitor MFC Example\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "SignalMonitor\0"
+            VALUE "LegalCopyright", "Copyright (C) 2011 AJINEXTEK Co,. LTD.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "SignalMonitor.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "SignalMonitor\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_SIGNALMONITOR_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 266
+        VERTGUIDE, 13
+        VERTGUIDE, 260
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 328
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\SignalMonitor.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

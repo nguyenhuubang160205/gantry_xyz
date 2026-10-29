@@ -1,0 +1,725 @@
+// NormalTriggerMultiDlg.cpp : implementation file
+//
+// **************************************************************************
+// >> [일자]: 2016.01.14
+// >> [개요]: 이 예제는 AIO모듈의 Normal Trigger 관련 함수들의 사용법을 익히고
+//    다중 채널의 아날로그 입력 값을 전압 혹은 Digit 값으로 반환하는 방법을 
+//    학습하는 예제입니다.
+// >> [중요]: Normal Trigger 관련 함수들
+//     1) AxaiSetMultiRange 함수는 지정 다중 입력 채널에 입력 전압 범위를 설정합니다.
+//     2) AxaiSetTriggerMode 함수는 지정 입력 모듈에 A/D변환 방식을 설정합니다.
+//     3) AxaiSwReadMultiVoltage 함수는 지정 다중 입력 채널의 아날로그 입력 값을 
+//        전압으로 반환합니다.
+//     4) AxaiSwReadMultiVoltage 함수는 지정 다중 입력 채널의 아날로그 입력 값을 
+//        Digit 값으로 반환합니다.
+//     ※ AxaiSwReadMultiVoltage 함수를 사용하기 전에 AxaiSetTriggerMode 함수를 사용하여
+//        Normal Trigger Mode로 설정해야 합니다.
+// **************************************************************************
+
+#include "stdafx.h"
+#include "NormalTriggerMulti.h"
+#include "NormalTriggerMultiDlg.h"
+
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
+// ++ =======================================================================
+// >> AXL(AjineXtek Library) 관련 Header파일 포함시킵니다.
+// ※ [CAUTION] 예제를 복사하여 다른 위치에서 실행시 참조경로 변경이 필요합니다.
+// --------------------------------------------------------------------------
+#include "../../../../AXL(Library)/C, C++/AXL.h"
+#include "../../../../AXL(Library)/C, C++/AXA.h"
+#include "../../../../AXL(Library)/C, C++/AXHS.h"
+
+// ++ =======================================================================
+// >> AXL(AjineXtek Library) 관련 Library파일을 Link시킵니다.
+// ※ [CAUTION] 예제를 복사하여 다른 위치에서 실행시 참조경로 변경이 필요합니다.
+// --------------------------------------------------------------------------
+#ifdef  _M_X64
+#pragma comment(lib, "../../../../AXL(Library)/Library/64Bit/AxL.lib")
+#else
+#pragma comment(lib, "../../../../AXL(Library)/Library/32Bit/AxL.lib")
+#endif
+
+#define	TM_NORMAL_TRIGGER		100
+
+/////////////////////////////////////////////////////////////////////////////
+// CAboutDlg dialog used for App About
+
+class CAboutDlg : public CDialog
+{
+public:
+	CAboutDlg();
+
+// Dialog Data
+	//{{AFX_DATA(CAboutDlg)
+	enum { IDD = IDD_ABOUTBOX };
+	//}}AFX_DATA
+
+	// ClassWizard generated virtual function overrides
+	//{{AFX_VIRTUAL(CAboutDlg)
+	protected:
+	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+	//}}AFX_VIRTUAL
+
+// Implementation
+protected:
+	//{{AFX_MSG(CAboutDlg)
+	//}}AFX_MSG
+	DECLARE_MESSAGE_MAP()
+};
+
+CAboutDlg::CAboutDlg() : CDialog(CAboutDlg::IDD)
+{
+	//{{AFX_DATA_INIT(CAboutDlg)
+	//}}AFX_DATA_INIT
+}
+
+void CAboutDlg::DoDataExchange(CDataExchange* pDX)
+{
+	CDialog::DoDataExchange(pDX);
+	//{{AFX_DATA_MAP(CAboutDlg)
+	//}}AFX_DATA_MAP
+}
+
+BEGIN_MESSAGE_MAP(CAboutDlg, CDialog)
+	//{{AFX_MSG_MAP(CAboutDlg)
+		// No message handlers
+	//}}AFX_MSG_MAP
+END_MESSAGE_MAP()
+
+/////////////////////////////////////////////////////////////////////////////
+// CNormalTriggerMultiDlg dialog
+
+CNormalTriggerMultiDlg::CNormalTriggerMultiDlg(CWnd* pParent /*=NULL*/)
+	: CDialog(CNormalTriggerMultiDlg::IDD, pParent)
+{
+	//{{AFX_DATA_INIT(CNormalTriggerMultiDlg)
+		// NOTE: the ClassWizard will add member initialization here
+	//}}AFX_DATA_INIT
+	// Note that LoadIcon does not require a subsequent DestroyIcon in Win32
+	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
+}
+
+void CNormalTriggerMultiDlg::DoDataExchange(CDataExchange* pDX)
+{
+	CDialog::DoDataExchange(pDX);
+	//{{AFX_DATA_MAP(CNormalTriggerMultiDlg)
+	DDX_Control(pDX, IDC_STC_CH03, m_stcCh03);
+	DDX_Control(pDX, IDC_STC_CH02, m_stcCh02);
+	DDX_Control(pDX, IDC_STC_CH01, m_stcCh01);
+	DDX_Control(pDX, IDC_STC_CH00, m_stcCh00);
+	DDX_Control(pDX, IDC_CBO_VOLTAGE_RANGE, m_cboVoltageRange);
+	DDX_Control(pDX, IDC_CBO_VALUE_TYPE, m_cboValueType);
+	DDX_Control(pDX, IDC_CBO_MODULE, m_cboModule);
+	DDX_Control(pDX, IDC_BTN_STOP, m_btnStop);
+	DDX_Control(pDX, IDC_BTN_START, m_btnStart);
+	//}}AFX_DATA_MAP
+}
+
+BEGIN_MESSAGE_MAP(CNormalTriggerMultiDlg, CDialog)
+	//{{AFX_MSG_MAP(CNormalTriggerMultiDlg)
+	ON_WM_SYSCOMMAND()
+	ON_WM_PAINT()
+	ON_WM_QUERYDRAGICON()
+	ON_WM_TIMER()
+	ON_WM_DESTROY()
+	ON_CBN_SELCHANGE(IDC_CBO_MODULE, OnSelchangeCboModule)
+	ON_CBN_SELCHANGE(IDC_CBO_VOLTAGE_RANGE, OnSelchangeCboVoltageRange)
+	ON_CBN_SELCHANGE(IDC_CBO_VALUE_TYPE, OnSelchangeCboValueType)
+	ON_BN_CLICKED(IDC_BTN_START, OnBtnStart)
+	ON_BN_CLICKED(IDC_BTN_STOP, OnBtnStop)
+	//}}AFX_MSG_MAP
+END_MESSAGE_MAP()
+
+/////////////////////////////////////////////////////////////////////////////
+// CNormalTriggerMultiDlg message handlers
+
+BOOL CNormalTriggerMultiDlg::OnInitDialog()
+{
+	CDialog::OnInitDialog();
+
+	// Add "About..." menu item to system menu.
+
+	// IDM_ABOUTBOX must be in the system command range.
+	ASSERT((IDM_ABOUTBOX & 0xFFF0) == IDM_ABOUTBOX);
+	ASSERT(IDM_ABOUTBOX < 0xF000);
+
+	CMenu* pSysMenu = GetSystemMenu(FALSE);
+	if (pSysMenu != NULL)
+	{
+		CString strAboutMenu;
+		strAboutMenu.LoadString(IDS_ABOUTBOX);
+		if (!strAboutMenu.IsEmpty())
+		{
+			pSysMenu->AppendMenu(MF_SEPARATOR);
+			pSysMenu->AppendMenu(MF_STRING, IDM_ABOUTBOX, strAboutMenu);
+		}
+	}
+
+	// Set the icon for this dialog.  The framework does this automatically
+	//  when the application's main window is not a dialog
+	SetIcon(m_hIcon, TRUE);			// Set big icon
+	SetIcon(m_hIcon, FALSE);		// Set small icon
+	
+	//++
+	InitLibrary();					// 라이브러리 초기화 작업을 수행합니다.
+	AddModuleChannelInfo();			// 검색된 모듈과 채널 정보를 ComboBox에 등록/Control들을 초기화합니다.
+	UpdateState();					// AIO모듈의 상태와 Control들의 상태를 일치시킵니다.
+	
+	return TRUE;  // return TRUE  unless you set the focus to a control
+}
+
+void CNormalTriggerMultiDlg::OnSysCommand(UINT nID, LPARAM lParam)
+{
+	if ((nID & 0xFFF0) == IDM_ABOUTBOX)
+	{
+		CAboutDlg dlgAbout;
+		dlgAbout.DoModal();
+	}
+	else
+	{
+		CDialog::OnSysCommand(nID, lParam);
+	}
+}
+
+// If you add a minimize button to your dialog, you will need the code below
+//  to draw the icon.  For MFC applications using the document/view model,
+//  this is automatically done for you by the framework.
+
+void CNormalTriggerMultiDlg::OnPaint() 
+{
+	if (IsIconic())
+	{
+		CPaintDC dc(this); // device context for painting
+
+		SendMessage(WM_ICONERASEBKGND, (WPARAM) dc.GetSafeHdc(), 0);
+
+		// Center icon in client rectangle
+		int cxIcon = GetSystemMetrics(SM_CXICON);
+		int cyIcon = GetSystemMetrics(SM_CYICON);
+		CRect rect;
+		GetClientRect(&rect);
+		int x = (rect.Width() - cxIcon + 1) / 2;
+		int y = (rect.Height() - cyIcon + 1) / 2;
+
+		// Draw the icon
+		dc.DrawIcon(x, y, m_hIcon);
+	}
+	else
+	{
+		CDialog::OnPaint();
+	}
+}
+
+// The system calls this to obtain the cursor to display while the user drags
+//  the minimized window.
+HCURSOR CNormalTriggerMultiDlg::OnQueryDragIcon()
+{
+	return (HCURSOR) m_hIcon;
+}
+
+void CNormalTriggerMultiDlg::OnDestroy() 
+{
+	CDialog::OnDestroy();
+	
+	//++ AXL 사용을 종료합니다.
+	AxlClose();	
+}
+
+// **************************************************************************
+// >> [구분]: Control에 이벤트가 발생했을 때 처리하는 함수들 모음 
+// **************************************************************************
+
+// ++ =======================================================================
+// >> OnSelchangeCboModule() : 모듈 변경시 호출되는 핸들러 함수.
+//  - 모듈이 변경되었을 때 변경된 모듈의 ID와 Control들을 갱신합니다.
+// --------------------------------------------------------------------------
+void CNormalTriggerMultiDlg::OnSelchangeCboModule() 
+{
+	DWORD dwRetCode = 0;
+	long lBoardNo = 0, lModulePos = 0;	
+	CString strChNum;
+	
+	//m_lModuleNo = ConvertComboToAxa(&m_cboModule);
+	m_lModuleNo = m_cboModule.GetCurSel();
+	// 변경된 모듈의 ID를 가져옵니다.
+	AxaInfoGetModule(m_lModuleNo, &lBoardNo, &lModulePos, &m_dwModuleID);
+	
+	// 변경된 모듈의 채널 수를 가져옵니다.
+	AxaInfoGetInputCount(m_lModuleNo, &m_lChannelCount);
+
+	// 전압 범위 업데이트
+	//++ 지정 입력 채널에 설정한 입력 전압 범위를 확인합니다.
+	UpdateState();
+
+	// Normal 트리거 설정
+	// 현재 SIO_AI8AO4F 모듈이 등록되어있지 않아서 지원하지 않는 하드웨어라고 뜨는 것으로 보임.
+	/*
+	DWORD a = 100;
+	dwRetCode = AxaiGetTriggerMode(m_lModuleNo, &a);
+	dwRetCode = AxaiSetTriggerMode(m_lModuleNo, NORMAL_MODE);
+	if(dwRetCode != AXT_RT_SUCCESS)
+	{
+		CString strData;
+		strData.Format("AxaiSetTriggerMode return error[Code:%04d]", dwRetCode);
+		MessageBox(strData, "Error", MB_OK | MB_ICONERROR);
+	}
+	*/
+}
+
+// ++ =======================================================================
+// >> OnSelchangeCboVoltageRange() : 입력 전압 범위 변경시 호출되는 핸들러 함수.
+//  - 해당 채널의 입력 전압 범위를 갱신합니다.
+//  - 입력 전압 범위는 A/D변환 성능과 관련이 있으므로 측정 범위 확인 후 설정하시기 바랍니다.
+//  - 모듈별로 허용 입력 전압이 정해져 있습니다. 
+//  - 사용자가 입력 전압 설정범위 이외 전압을 입력하면 자동으로 그 값을 포함하는 근삿값으로 자동 설정됩니다.
+// --------------------------------------------------------------------------
+void CNormalTriggerMultiDlg::OnSelchangeCboVoltageRange() 
+{
+	DWORD	dwRetCode = 0;
+	double	dMinVolt = 0.0, dMaxVolt = 0.0;
+	long	lChannelArr[4] = {0, 1, 2, 3};
+	
+	switch(m_cboVoltageRange.GetCurSel())
+	{
+	case 0:
+		dMinVolt = -10.0;
+		dMaxVolt = 10.0;
+		break;
+		
+	case 1:
+		dMinVolt = -5.0;
+		dMaxVolt = 5.0;
+		break;
+		
+	case 2:
+		dMinVolt = 0.0;
+		dMaxVolt = 10.0;
+		break;
+		
+	case 3:
+		dMinVolt = 0.0;
+		dMaxVolt = 5.0;
+		break;
+		
+	default:
+		break;
+	}
+	
+	// 입력 전압 범위를 설정합니다.
+	dwRetCode = AxaiSetMultiRange(4, lChannelArr, dMinVolt, dMaxVolt);
+	if(dwRetCode != AXT_RT_SUCCESS)
+	{
+		CString strData;
+		strData.Format("AxaiSetMultiRange return error[Code:%04d]", dwRetCode);
+		MessageBox(strData, "Error", MB_OK | MB_ICONERROR);
+	}
+}
+
+// ++ =======================================================================
+// >> OnSelchangeCboValueType() : 입력 정보 종류를 변경시 호출되는 핸들러 함수.
+//  - 입력값을 전압 또는 10진수로 출력할 때 설정합니다.
+// --------------------------------------------------------------------------
+void CNormalTriggerMultiDlg::OnSelchangeCboValueType() 
+{
+	int nValueType = 0;
+	
+	nValueType = ConvertComboToAxa(&m_cboValueType);
+	if (nValueType == 0)
+	{
+		m_bIsReadVoltage = TRUE;		
+	}
+	else
+	{
+		m_bIsReadVoltage = FALSE;		
+	}
+}
+
+// ++ =======================================================================
+// >> OnBtnStart() : "Start"버튼 클릭시 호출되는 핸들러 함수.
+//  - 단일 채널에 들어오는 값을 Normal Trigger로 읽기 시작합니다.
+// --------------------------------------------------------------------------
+void CNormalTriggerMultiDlg::OnBtnStart() 
+{
+	m_cboModule.EnableWindow(FALSE);
+	m_cboVoltageRange.EnableWindow(FALSE);
+	m_cboValueType.EnableWindow(FALSE);
+	m_btnStart.EnableWindow(FALSE);
+	m_btnStop.EnableWindow(TRUE);
+	
+	memset(m_dOldVoltArr, NULL, sizeof(double) * 4);
+	memset(m_dwOldDigitArr, NULL, sizeof(DWORD) * 4);
+	
+	SetTimer(TM_NORMAL_TRIGGER, 100, NULL);		// Normal Trigger 시작
+}
+
+// ++ =======================================================================
+// >> OnBtnStop() : "Stop"버튼 클릭시 호출되는 핸들러 함수.
+//  - 작업을 중지합니다.
+// --------------------------------------------------------------------------
+void CNormalTriggerMultiDlg::OnBtnStop() 
+{
+	m_cboModule.EnableWindow(TRUE);
+	m_cboVoltageRange.EnableWindow(TRUE);
+	m_cboValueType.EnableWindow(TRUE);
+	m_btnStart.EnableWindow(TRUE);
+	m_btnStop.EnableWindow(FALSE);
+	
+	KillTimer(TM_NORMAL_TRIGGER);
+}
+
+// ++ =======================================================================
+// >> OnTimer(...) : 타이머 이벤트 핸들러 함수.
+//  - Normal Trigger로 입력 값을 주기적으로 갱신합니다.
+// --------------------------------------------------------------------------
+void CNormalTriggerMultiDlg::OnTimer(UINT nIDEvent) 
+{
+	CString strValue;
+	long lChannelArr[4] = {0, 1, 2, 3};
+	
+	switch (nIDEvent)
+	{
+	case TM_NORMAL_TRIGGER:
+		if (m_bIsReadVoltage)
+		{
+			double dVoltArr[4] = {0.0, };
+			// 지정 채널로 들어오는 값을 전압 단위로 읽어옵니다.
+			AxaiSwReadMultiVoltage(4, lChannelArr, dVoltArr);
+			if (m_dOldVoltArr[0] != dVoltArr[0])
+			{
+				strValue.Format("%.4lf", dVoltArr[0]);
+				m_stcCh00.SetWindowText(strValue);
+				m_dOldVoltArr[0] = dVoltArr[0];
+			}
+			if (m_dOldVoltArr[1] != dVoltArr[1])
+			{
+				strValue.Format("%.4lf", dVoltArr[1]);
+				m_stcCh01.SetWindowText(strValue);
+				m_dOldVoltArr[1] = dVoltArr[1];
+			}
+			if (m_dOldVoltArr[2] != dVoltArr[2])
+			{
+				strValue.Format("%.4lf", dVoltArr[2]);
+				m_stcCh02.SetWindowText(strValue);
+				m_dOldVoltArr[2] = dVoltArr[2];
+			}
+			if (m_dOldVoltArr[3] != dVoltArr[3])
+			{
+				strValue.Format("%.4lf", dVoltArr[3]);
+				m_stcCh03.SetWindowText(strValue);
+				m_dOldVoltArr[3] = dVoltArr[3];
+			}
+		}
+		else
+		{
+			DWORD dwDigitArr[4] = {0, };
+			// 지정 채널로 들어오는 값을 10진수 단위로 읽어옵니다.
+			AxaiSwReadMultiDigit(4, lChannelArr, dwDigitArr);
+			if (m_dwOldDigitArr[0] != dwDigitArr[0])
+			{
+				strValue.Format("%d", dwDigitArr[0]);
+				m_stcCh00.SetWindowText(strValue);
+				m_dwOldDigitArr[0] = dwDigitArr[0];
+			}
+			if (m_dwOldDigitArr[1] != dwDigitArr[1])
+			{
+				strValue.Format("%d", dwDigitArr[1]);
+				m_stcCh01.SetWindowText(strValue);
+				m_dwOldDigitArr[1] = dwDigitArr[1];
+			}
+			if (m_dwOldDigitArr[2] != dwDigitArr[2])
+			{
+				strValue.Format("%d", dwDigitArr[2]);
+				m_stcCh02.SetWindowText(strValue);
+				m_dwOldDigitArr[2] = dwDigitArr[2];
+			}
+			if (m_dwOldDigitArr[3] != dwDigitArr[3])
+			{
+				strValue.Format("%d", dwDigitArr[3]);
+				m_stcCh03.SetWindowText(strValue);
+				m_dwOldDigitArr[3] = dwDigitArr[3];
+			}
+		}
+		break;
+		
+	default:
+		break;
+	}
+	
+	CDialog::OnTimer(nIDEvent);
+}
+
+// **************************************************************************
+// >> [구분]: 별도의 기능을 구현하기위해 만든 사용자 정의 함수들 모음 
+// **************************************************************************
+
+// ++ =======================================================================
+// >> InitLibrary() : 라이브러리 초기화 함수.
+//  - AXL(AjineXtek Library)을 사용가능하게 합니다. 
+// --------------------------------------------------------------------------
+BOOL CNormalTriggerMultiDlg::InitLibrary()
+{
+	//++ AXL(AjineXtek Library)을 사용가능하게 하고 장착된 보드들을 초기화합니다.
+	DWORD dwStatus = 0;
+	DWORD dwRetCode = AxlOpenNoReset(7);			// 설정값들을 초기화하지 않음
+	long lModuleCounts = 0;
+
+	if (dwRetCode != AXT_RT_SUCCESS){
+		AfxMessageBox("AxlOpen Fail...", MB_OK, 0);
+		return FALSE;
+	}
+
+	TRACE("The library became the initialization.\n");
+	dwRetCode = AxaInfoIsAIOModule(&dwStatus);		// AIO모듈 존재여부를 확인합니다
+	if (dwStatus != STATUS_EXIST)
+	{
+		AfxMessageBox("The module does not exist...", MB_OK, 0);
+		return FALSE;
+	}
+
+	TRACE("AIO module exists.\n");
+	return TRUE;
+}
+
+// ++ =======================================================================
+// >> InitControl() : Control들에 초기값을 설정하는 함수.
+//  - Control 변수들을 등록하고, 초기 설정값들을 설정합니다.
+// --------------------------------------------------------------------------
+BOOL CNormalTriggerMultiDlg::InitControl()
+{
+	m_lModuleNo = 0;
+	m_bIsReadVoltage = TRUE;
+
+	m_cboModule.SetCurSel(0);	
+	m_cboValueType.SetCurSel(0);
+
+	m_btnStop.EnableWindow(FALSE);
+
+	// 첫번째 모듈의 ID를 가져옵니다.
+	AxaInfoGetModule(m_lModuleNo, NULL, NULL, &m_dwModuleID);
+
+	return TRUE;
+}
+
+// ++ =======================================================================
+// >> AddModuleChannelInfo() : 시스템에 장착된 AIO모듈들을 ComboBox에 등록하는 함수.
+//  - AIO모듈 정보를 읽어 ComboBox에 등록하여 사용자가 선택
+//    제어할 수 있도록 합니다.
+//  - 유효한 모듈이 검색되었을 때 Control들을 초기화 합니다.
+// --------------------------------------------------------------------------
+BOOL CNormalTriggerMultiDlg::AddModuleChannelInfo()
+{
+	CString strData;
+	char szModuleName[50] = "";
+	long lInputCounts = 0, lBoardNo = 0, lModulePos = 0;
+	DWORD dwModuleID = 0;
+	// 시스템에 장착된 모든AIO 모듈의 개수를 확인합니다.
+	DWORD dwRetCode = AxaInfoGetModuleCount(&m_lModuleCount);
+	if (dwRetCode == AXT_RT_SUCCESS)
+	{
+		TRACE("The number of AIO module: %d\n",m_lModuleCount);
+	} 
+	else
+	{
+		TRACE("AxaGetModuleCount() : ERROR code Ox%x\n",dwRetCode);
+	}
+
+	for (int iModuleNo = 0; iModuleNo < m_lModuleCount; iModuleNo++)
+	{
+		// 각 모듈의 입력 채널 수를 확인합니다.
+		AxaInfoGetInputCount(iModuleNo, &lInputCounts);
+		if (lInputCounts > 0)
+		{
+			// 해당 모듈의 정보를 가져옵니다.
+			dwRetCode = AxaInfoGetModule(iModuleNo, &lBoardNo, &lModulePos, &dwModuleID);
+			if (dwRetCode == AXT_RT_SUCCESS)
+			{
+				switch (dwModuleID)
+				{
+				case AXT_SIO_AI4RB:
+					strData.Format("[BD No:%d - MD No:%d] SIO_AI4RB [Input : %d]", lBoardNo, iModuleNo, lInputCounts);
+					break;
+				case AXT_SIO_AI16H:
+					strData.Format("[BD No:%d - MD No:%d] SIO_AI16H [Input : %d]", lBoardNo, iModuleNo, lInputCounts);
+					break;
+				case AXT_SIO_AI16HB:
+					strData.Format("[BD No:%d - MD No:%d] SIO_AI16HB [Input : %d]", lBoardNo, iModuleNo, lInputCounts);
+					break;
+				case AXT_SIO_RAI8RB:
+					strData.Format("[BD No:%d - MD No:%d] SIO_RAI8RB [Input : %d]", lBoardNo, iModuleNo, lInputCounts);
+					break;
+				case AXT_SIO_RAI4MLII:
+					strData.Format("[BD No:%d - MD No:%d] SIO_RAI4MLII [Input : %d]", lBoardNo, iModuleNo, lInputCounts);
+					break;
+				case AXT_SIO_RAI16RB:
+					strData.Format("[BD No:%d - MD No:%d] SIO_RAI16RB [Input : %d]", lBoardNo, iModuleNo, lInputCounts);
+					break;
+				case AXT_SIO_RAVCI4MLII:
+					strData.Format("[BD No:%d - MD No:%d] SIO_RAVCI4MLII [Input : %d]", lBoardNo, iModuleNo, lInputCounts);
+					break;
+				case AXT_SIO_RATI4MLII:
+					strData.Format("[BD No:%d - MD No:%d] SIO_RATI4MLII [Input : %d]", lBoardNo, iModuleNo, lInputCounts);
+					break;
+				case AXT_SIO_RARTDI4MLII:
+					strData.Format("[BD No:%d - MD No:%d] SIO_RARTDI4MLII [Input : %d]", lBoardNo, iModuleNo, lInputCounts);
+					break;
+				case AXT_SIO_RAO08RTEX:
+					strData.Format("[BD No:%d - MD No:%d] SIO_RAO08RTEX [Input : %d]", lBoardNo, iModuleNo, lInputCounts);
+					break;
+				case AXT_SIO_AI8F:
+					strData.Format("[BD No:%d - MD No:%d] SIO_AI8F [Input : %d]", lBoardNo, iModuleNo, lInputCounts);
+					break;
+				case AXT_SIO_AI8AO4F:
+					strData.Format("[BD No:%d - MD No:%d] SIO_AI8A04F [Input : %d]", lBoardNo, iModuleNo, lInputCounts);
+					break;
+				case AXT_ECAT_AIO:
+					if(lInputCounts > 0)
+					{
+						// EtherCAT AIO 전용 모듈 정보 추출
+						AxaInfoGetModuleEx(iModuleNo, NULL, szModuleName, NULL);
+						strData.Format("[BD No:%d - MD No:%d] %s [Input : %d]", lBoardNo, iModuleNo, szModuleName, lInputCounts);
+					}
+					break;
+				}				
+				m_cboModule.AddString(strData);				
+			}
+		}
+	}
+
+	InitControl();
+
+	return TRUE;
+}
+
+// ++ =======================================================================
+// >> UpdateState() : 지정한 모듈의 설정값들을 읽어 Control과 일치시키는 함수.
+//  - 모듈이 변경되었을 때 변경한 모듈의 설정값들과 Control들과 일치시키는 
+//    역할을하는 함수입니다.
+//  - 지정한 모듈의 모델별 제약들을 Control에 반영하는 역할을 합니다.
+//  - 프로그램 초기 실행시, 모듈 번호 바뀔 때 사용됩니다.
+// --------------------------------------------------------------------------
+BOOL CNormalTriggerMultiDlg::UpdateState()
+{
+	if(m_lModuleCount < 1) return FALSE;
+	
+	//++ 각 모듈별 지원여부에 따라 콘트롤 값들을 변경합니다.
+	m_cboVoltageRange.ResetContent();
+	m_cboVoltageRange.EnableWindow(TRUE);
+	switch(m_dwModuleID) {
+	case AXT_SIO_AI4RB:
+	case AXT_SIO_AO4RB:
+	case AXT_SIO_AI8AO4F:
+		m_cboVoltageRange.AddString("00: -10V ~ +10V");
+		m_cboVoltageRange.AddString("01: -5V ~ +5V");
+		m_cboVoltageRange.AddString("02: 0V ~ +10V");
+		m_cboVoltageRange.AddString("03: 0V ~ +5V");
+		break;
+
+	case AXT_SIO_AI8F:
+	case AXT_SIO_AO4F:
+		m_cboVoltageRange.AddString("00: -10V ~ +10V");
+		m_cboVoltageRange.AddString("01: -5V ~ +5V");
+		break;
+
+	default:
+		break;
+	}
+
+	//++ 지정 입력 채널에 설정한 입력 전압 범위를 확인합니다.
+	UpdateVoltageRange();
+
+	return TRUE;
+}
+
+// ++ =======================================================================
+// >> ConvertComboToAxa(...) : ComboBox콘트롤에 현재 선택된 Item Index를 모션
+//    보드에 설정할 값으로 변경하는 함수.
+//  - ComboBox에 선택된 Item Index와 실제 모듈에 설정되는 값이 다르므로 
+//    선택된 문자열에서 모듈에 설정할 값을 추출해서 반환하는 함수입니다.
+//  - 변환 할 ComboBox 콘트롤의 포인터를 인자로 전달합니다.
+//  - 이 함수를 사용하고자 할 때 데이타 등록을 지정된 양식으로 설정해야됩니다.
+//    Format) XX: String, XX=라이브러리로 전달될 값, String=인자 설명
+//    Ex) "00: Volt", "01: Digit"
+// --------------------------------------------------------------------------
+DWORD CNormalTriggerMultiDlg::ConvertComboToAxa(CComboBox *pCboItem)
+{
+	if(pCboItem == NULL)	return 0;
+
+	CString strText;
+	long	lCount, lSelData;	
+
+	lCount = pCboItem->GetCount();
+	if(lCount == 0)		return 0;
+
+	lSelData = pCboItem->GetCurSel();
+	if(lSelData < 0)	return 0;
+
+	pCboItem->GetLBText(lSelData, strText);	
+	return (DWORD)_ttoi(strText);
+}
+
+// ++ =======================================================================
+// >> ConvertAxaToCombo(...) : 지정한 모듈의 설정값과 ComboBox콘트롤의  
+//    Item과 일치하는 Item을 찾아 선택하는 함수.
+//  - 실제 모듈값과 ComboBox의 Item Index가  다르므로 지정한
+//    값과 일치하는 Item을 찾아 선택하고 선택된 Item의 Index를 반환합니다.
+//  - 변경하고자하는 ComboBox 콘트롤의 포인터를 인자로 전달합니다.
+//  - 이 함수를 사용하고자 할 때 데이타 등록을 지정된 양식으로 설정해야됩니다.
+//    Format) XX: String, XX=라이브러리로 전달될 값, String=인자 설명
+//    Ex) "00: Volt", "01: Digit"
+// --------------------------------------------------------------------------
+long CNormalTriggerMultiDlg::ConvertAxaToCombo(CComboBox *pCboItem, DWORD dwCurData)
+{
+	if(pCboItem == NULL)	return 0;
+
+	long	lCount, lSelData;
+	CString strText;
+
+	lCount = pCboItem->GetCount();
+	if(lCount == 0)	return 0;
+
+	for(int i = 0; i < lCount; i++){
+		pCboItem->GetLBText(i, strText);
+		lSelData = _ttoi(strText);
+		if(lSelData == (long)dwCurData){	
+			pCboItem->SetCurSel(i);
+			return i;
+		}
+	}
+
+	pCboItem->SetCurSel(0);
+	return 0;
+}
+
+// ++ =======================================================================
+// >> UpdateVoltageRange(...) : 전압 범위를 갱신하는 함수.
+//  - 모듈이나 채널 변경 시 해당 채널의 입력 전압 범위로
+//    Control값을 변경합니다.
+// --------------------------------------------------------------------------
+void CNormalTriggerMultiDlg::UpdateVoltageRange()
+{
+	DWORD	dwRetCode = 0;
+	double	dMinVolt = 0.0, dMaxVolt = 0.0;
+
+	//++ 0번 입력 채널을 대표로 입력 전압 범위를 확인합니다.
+	dwRetCode = AxaiGetRange(0, &dMinVolt, &dMaxVolt);
+	if(dwRetCode == AXT_RT_SUCCESS)
+	{
+		if(dMinVolt == -10.0 && dMaxVolt == 10.0)
+			m_cboVoltageRange.SetCurSel(0);
+		else if(dMinVolt == -5.0 && dMaxVolt == 5.0)
+			m_cboVoltageRange.SetCurSel(1);
+		else if(dMinVolt == 0.0 && dMaxVolt == 10.0)
+			m_cboVoltageRange.SetCurSel(2);
+		else if(dMinVolt == 0.0 && dMaxVolt == 5.0)
+			m_cboVoltageRange.SetCurSel(3);
+	}
+	else
+	{
+		m_cboVoltageRange.SetCurSel(0);
+	}
+}

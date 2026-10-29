@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RegisterDescription ModelName ="IO"
+                     VendorName="Crevis"
+                     ToolTip="Crevis FnIO"
+                     StandardNameSpace="None"
+                     SchemaMajorVersion="1"
+                     SchemaMinorVersion="0"
+                     SchemaSubMinorVersion="0"
+                     MajorVersion="1"
+                     MinorVersion="0"
+                     SubMinorVersion="0"
+                     ProductGuid="8BCD0E5A-9DA1-4504-BF95-5A27F2D02405"
+                     VersionGuid="D2EC627D-9311-4137-B1C6-0727CE0025E4"
+                     xmlns="http://www.genicam.org/GenApi/Version_1_0"
+                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xsi:schemaLocation="http://www.genicam.org/GenApi/Version_1_0
+                     http://www.genicam.org/GenApi/GenApiSchema_Version_1_0.xsd">
+
+  <!-- ***************************************** -->
+  <!-- RootCategory -->
+  <!-- ***************************************** -->
+  <Group Comment="Root">
+    <Category Name="Root">
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pFeature>AGT3804</pFeature>
+    </Category>
+  </Group>
+
+  <!-- ***************************************** -->
+  <!-- SubCategories -->
+  <!-- ***************************************** -->
+  <Group Comment="SubCategories">
+    <Category Name="AGT3804" NameSpace="Custom">
+      <ToolTip>Category for Device information and control.</ToolTip>
+      <Description>Category for Device information and control.</Description>
+      <DisplayName>AGT-3804</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <pFeature>SensorType</pFeature>
+      <pFeature>TemperatureTypeEnum</pFeature>
+      <pFeature>ColdJunctionCompensationEnum</pFeature>
+      <pFeature>DataResolutionEnum</pFeature>
+      <pFeature>FilterTypeEnum</pFeature>
+      <pFeature>SW_FilterEnum</pFeature>
+      <pFeature>Internal_ColdJunction1_Low</pFeature>
+      <pFeature>Internal_ColdJunction1_High</pFeature>
+      <pFeature>Internal_ColdJunction2_Low</pFeature>
+      <pFeature>Internal_ColdJunction2_High</pFeature>
+      <pFeature>External_ColdJunction_Low</pFeature>
+    <pFeature>External_ColdJunction_High</pFeature>
+    </Category>
+  </Group>
+  <!-- /SubCategories-->
+
+  <!-- Device Control -->
+  <Group Comment="DeviceControl">
+    <Enumeration Name="SensorType" NameSpace="Custom">
+      <ToolTip> </ToolTip>
+      <Description> </Description>
+      <DisplayName>Sensor Type</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RW</ImposedAccessMode>
+      <EnumEntry Name="SensorTypeK" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Type K, 0.1°C/count</Description>
+        <DisplayName>Type K</DisplayName>
+        <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="SensorTypeJ" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Type J, 0.1°C/count</Description>
+        <DisplayName>Type J</DisplayName>
+        <Value>1</Value>
+      </EnumEntry>
+      <EnumEntry Name="SensorTypeT" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Type T, 0.1°C/count</Description>
+        <DisplayName>Type T</DisplayName>
+        <Value>2</Value>
+      </EnumEntry>
+      <EnumEntry Name="SensorTypeB" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Type B, 0.1°C/count</Description>
+        <DisplayName>Type B</DisplayName>
+        <Value>3</Value>
+      </EnumEntry>
+      <EnumEntry Name="SensorTypeR" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Type R, 0.1°C/count</Description>
+        <DisplayName>Type R</DisplayName>
+        <Value>4</Value>
+      </EnumEntry>
+      <EnumEntry Name="SensorTypeS" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Type S, 0.1°C/count</Description>
+        <DisplayName>Type S</DisplayName>
+        <Value>5</Value>
+      </EnumEntry>
+      <EnumEntry Name="SensorTypeE" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Type E, 0.1°C/count</Description>
+        <DisplayName>Type E</DisplayName>
+        <Value>6</Value>
+      </EnumEntry>
+      <EnumEntry Name="SensorTypeN" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Type N, 0.1°C/count</Description>
+        <DisplayName>Type N</DisplayName>
+        <Value>7</Value>
+      </EnumEntry>
+      <EnumEntry Name="SensorTypeL" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Type L, 0.1°C/count</Description>
+        <DisplayName>Type L</DisplayName>
+        <Value>8</Value>
+      </EnumEntry>
+      <EnumEntry Name="SensorTypeU" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Type U, 0.1°C/count</Description>
+        <DisplayName>Type U</DisplayName>
+        <Value>9</Value>
+      </EnumEntry>
+      <EnumEntry Name="SensorTypeC" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Type C, 0.1°C/count</Description>
+        <DisplayName>Type C</DisplayName>
+        <Value>10</Value>
+      </EnumEntry>
+      <EnumEntry Name="SensorTypeD" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Type D, 0.1°C/count</Description>
+        <DisplayName>Type D</DisplayName>
+        <Value>11</Value>
+      </EnumEntry>
+      <EnumEntry Name="Input10Voltage" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>10uV Input, -81.0~81.0mV, 10uV / 1count</Description>
+        <DisplayName>10uV Input</DisplayName>
+        <Value>128</Value>
+      </EnumEntry>
+      <EnumEntry Name="Input1Voltage" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>1uV Input, -32.7~32.7mV, 1uV / 1count</Description>
+        <DisplayName>1uV Input</DisplayName>
+        <Value>129</Value>
+      </EnumEntry>
+      <EnumEntry Name="Input2Voltage" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>2uV Input, -65.5~65.5mV, 2uV / 1count</Description>
+        <DisplayName>2uV Input</DisplayName>
+        <Value>130</Value>
+      </EnumEntry>
+      <pValue>SensorTypeReg</pValue>
+    </Enumeration>
+    
+    <Enumeration Name="TemperatureTypeEnum" NameSpace="Custom">
+      <ToolTip> </ToolTip>
+      <Description> </Description>
+      <DisplayName>Temperature Type</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RW</ImposedAccessMode>
+      <EnumEntry Name="Celsius" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Celsius(°C)</Description>
+        <DisplayName>Celsius(°C)</DisplayName>
+        <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="Fahrenheit" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Fahrenheit(°F)</Description>
+        <DisplayName>Fahrenheit(°F)</DisplayName>
+        <Value>1</Value>
+      </EnumEntry>
+      <pValue>TemperatureTypeReg</pValue>
+    </Enumeration>
+
+    <Enumeration Name="ColdJunctionCompensationEnum" NameSpace="Custom">
+      <ToolTip> </ToolTip>
+      <Description> </Description>
+      <DisplayName>Compensation Type</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RW</ImposedAccessMode>
+      <EnumEntry Name="Enable_Cold_Juntion" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Enable Cold Junction Compensation</Description>
+        <DisplayName>Cold Junction Compensation</DisplayName>
+        <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="Disable_Cold_Juntion" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Disable Cold Juction Disable</Description>
+        <DisplayName>Disable Compensation</DisplayName>
+        <Value>1</Value>
+      </EnumEntry>
+      <pValue>ColdJunctionCompensationReg</pValue>
+    </Enumeration>
+
+    <Enumeration Name="DataResolutionEnum" NameSpace="Custom">
+      <ToolTip> </ToolTip>
+      <Description> </Description>
+      <DisplayName>Data Scale</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RW</ImposedAccessMode>
+      <EnumEntry Name="DataResolutionType1" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>0.1℃, ℉/bit</Description>
+        <DisplayName>Scale(X10)</DisplayName>
+        <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="DataResolutionType2" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>1℃, ℉/bitt</Description>
+        <DisplayName>Scale(X1)</DisplayName>
+        <Value>1</Value>
+      </EnumEntry>
+      <pValue>DataResolutionReg</pValue>
+    </Enumeration>
+
+    <Enumeration Name="FilterTypeEnum" NameSpace="Custom">
+      <ToolTip> </ToolTip>
+      <Description> </Description>
+      <DisplayName>Filter Type</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RW</ImposedAccessMode>
+      <EnumEntry Name="NormalFilterType" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Filter Type(Normal)</Description>
+        <DisplayName>Normal FilterType</DisplayName>
+        <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="EnhancedFilterType" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Filter Type(Enhanced)</Description>
+        <DisplayName>Enhanced FilterType</DisplayName>
+        <Value>1</Value>
+      </EnumEntry>
+      <pValue>FilterTypeReg</pValue>
+    </Enumeration>
+
+    <Enumeration Name="SW_FilterEnum" NameSpace="Custom">
+      <ToolTip> </ToolTip>
+      <Description> </Description>
+      <DisplayName>SW Filter</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RW</ImposedAccessMode>
+      <EnumEntry Name="NormalFilter" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Nomal Filter(Filter Time = 20)</Description>
+        <DisplayName>Normal Filter</DisplayName>
+        <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="FastFilter" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Fast Filter(Filter Time = 3)</Description>
+        <DisplayName>Fast Filter</DisplayName>
+        <Value>1</Value>
+      </EnumEntry>
+      <EnumEntry Name="EnhancedFilter" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Enhanced Filter(Filter Time=40)</Description>
+        <DisplayName>Enhanced Filter</DisplayName>
+        <Value>2</Value>
+      </EnumEntry>
+      <EnumEntry Name="MoreEnhancedFilter" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>More Enhanced Filter(Filter Time=80)</Description>
+        <DisplayName>More Enhanced Filter</DisplayName>
+        <Value>3</Value>
+      </EnumEntry>
+      <pValue>SWFilterReg</pValue>
+    </Enumeration>
+
+    <Integer Name="Internal_ColdJunction1_Low" NameSpace ="Custom">
+      <ToolTip>.</ToolTip>
+      <Description>Internal Cold Junction1 Offset Data Low</Description>
+      <DisplayName>Internal Cold Junction1 Offset Data Low</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <pValue>Internal_ColdJunction1_Low_Reg</pValue>
+      <Min>0</Min>
+      <Max>255</Max>
+      <Inc>1</Inc>
+      <Representation>HexNumber</Representation>
+    </Integer>
+
+    <Integer Name="Internal_ColdJunction1_High" NameSpace ="Custom">
+      <ToolTip>.</ToolTip>
+      <Description>Internal Cold Junction1 Offset Data High</Description>
+      <DisplayName>Internal Cold Junction1 Offset Data High</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <pValue>Internal_ColdJunction1_High_Reg</pValue>
+      <Min>0</Min>
+      <Max>255</Max>
+      <Inc>1</Inc>
+      <Representation>HexNumber</Representation>
+    </Integer>
+    
+    <Integer Name="Internal_ColdJunction2_Low" NameSpace ="Custom">
+      <ToolTip>.</ToolTip>
+      <Description>Internal Cold Junction2 Offset Data Low</Description>
+      <DisplayName>Internal Cold Junction2 Offset Data Low</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <pValue>Internal_ColdJunction2_Low_Reg</pValue>
+      <Min>0</Min>
+      <Max>255</Max>
+      <Inc>1</Inc>
+      <Representation>HexNumber</Representation>
+    </Integer>
+
+    <Integer Name="Internal_ColdJunction2_High" NameSpace ="Custom">
+      <ToolTip>.</ToolTip>
+      <Description>Internal Cold Junction2 Offset Data High</Description>
+      <DisplayName>Internal Cold Junction2 Offset Data High</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <pValue>Internal_ColdJunction2_High_Reg</pValue>
+      <Min>0</Min>
+      <Max>255</Max>
+      <Inc>1</Inc>
+      <Representation>HexNumber</Representation>
+    </Integer>
+
+    <Integer Name="External_ColdJunction_Low" NameSpace ="Custom">
+      <ToolTip>.</ToolTip>
+      <Description>External Cold Junction Offset Data Low</Description>
+      <DisplayName>External Cold Junction Offset Data Low</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <pValue>External_ColdJunction_Low_Reg</pValue>
+      <Min>0</Min>
+      <Max>255</Max>
+      <Inc>1</Inc>
+      <Representation>HexNumber</Representation>
+    </Integer>
+    
+    <Integer Name="External_ColdJunction_High" NameSpace ="Custom">
+      <ToolTip>.</ToolTip>
+      <Description>External Cold Junction Offset Data High</Description>
+      <DisplayName>External Cold Junction Offset Data High</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <pValue>External_ColdJunction_High_Reg</pValue>
+      <Min>0</Min>
+      <Max>255</Max>
+      <Inc>1</Inc>
+      <Representation>HexNumber</Representation>
+    </Integer>
+
+    <StructReg Comment="ConfigurationParamReg">
+      <ToolTip>.</ToolTip>
+      <Visibility>Beginner</Visibility>
+      <Address>0x0000A011</Address>
+      <Length>8</Length>
+      <AccessMode>RW</AccessMode>
+      <pPort>Device</pPort>
+      <Endianess>LittleEndian</Endianess>
+      <StructEntry Name="SensorTypeReg">
+        <LSB>0</LSB>
+        <MSB>7</MSB>
+      </StructEntry>
+      <StructEntry Name="TemperatureTypeReg">
+        <Bit>8</Bit>
+      </StructEntry>
+      <StructEntry Name="ColdJunctionCompensationReg">
+        <Bit>9</Bit>
+      </StructEntry>
+      <StructEntry Name="DataResolutionReg">
+        <Bit>10</Bit>
+      </StructEntry>
+      <StructEntry Name="FilterTypeReg">
+        <Bit>12</Bit>
+      </StructEntry>
+      <StructEntry Name="SWFilterReg">
+        <LSB>13</LSB>
+        <MSB>14</MSB>
+      </StructEntry>
+      <StructEntry Name="Internal_ColdJunction1_Low_Reg">
+        <LSB>16</LSB>
+        <MSB>23</MSB>
+      </StructEntry>
+      <StructEntry Name="Internal_ColdJunction1_High_Reg">
+        <LSB>24</LSB>
+        <MSB>31</MSB>
+      </StructEntry>
+      <StructEntry Name="Internal_ColdJunction2_Low_Reg">
+        <LSB>32</LSB>
+        <MSB>39</MSB>
+      </StructEntry>
+      <StructEntry Name="Internal_ColdJunction2_High_Reg">
+        <LSB>40</LSB>
+        <MSB>47</MSB>
+      </StructEntry>
+      <StructEntry Name="External_ColdJunction_Low_Reg">
+        <LSB>48</LSB>
+        <MSB>55</MSB>
+      </StructEntry>
+     <StructEntry Name="External_ColdJunction_High_Reg">
+        <LSB>56</LSB>
+        <MSB>63</MSB>
+      </StructEntry>
+    </StructReg>
+  </Group>
+
+  <!-- Global Nodes -->
+  <Port Name="Device">
+    <ToolTip>Port giving access to the device.</ToolTip>
+    <SwapEndianess>Yes</SwapEndianess>
+  </Port>
+  <!-- /Global Nodes-->
+</RegisterDescription>

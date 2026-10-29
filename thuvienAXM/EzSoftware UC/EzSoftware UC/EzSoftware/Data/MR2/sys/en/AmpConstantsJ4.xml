@@ -1,0 +1,1476 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Root>
+	<AmpConstants>
+		<Alarms>
+			<HelpID>192708</HelpID>
+			<DisplayWithDetailNumber>true</DisplayWithDetailNumber>
+			<Alarm Number="FF">
+				<DisplayNumber>----</DisplayNumber>
+				<Name>Not generated</Name>
+				<ReleaseMeans>0</ReleaseMeans>
+				<IsPreservedHistory>false</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<Factor detail="all"/>
+			</Alarm>
+			<Alarm Number="10">
+				<DisplayNumber/>
+				<Name>Undervoltage</Name>
+				<ReleaseMeans>7</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>600100</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>600101</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>600102</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="11">
+				<DisplayNumber/>
+				<Name>Switch setting error</Name>
+				<ReleaseMeans>1</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>600120</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>600121</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>600122</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="12">
+				<DisplayNumber/>
+				<Name>Memory error 1 (RAM)</Name>
+				<ReleaseMeans>1</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>600140</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>600141</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>600142</HelpID>
+					</Detail>
+					<Detail DetailNumber="03">
+						<HelpID>600143</HelpID>
+					</Detail>
+					<Detail DetailNumber="04">
+						<HelpID>600144</HelpID>
+					</Detail>
+					<Detail DetailNumber="05">
+						<HelpID>600145</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="13">
+				<DisplayNumber/>
+				<Name>Clock error</Name>
+				<ReleaseMeans>1</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>600160</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>600161</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>600162</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="14">
+				<DisplayNumber/>
+				<Name>Control process error</Name>
+				<ReleaseMeans>1</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>600180</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>600181</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>600182</HelpID>
+					</Detail>
+					<Detail DetailNumber="03">
+						<HelpID>600183</HelpID>
+					</Detail>
+					<Detail DetailNumber="04">
+						<HelpID>600184</HelpID>
+					</Detail>
+					<Detail DetailNumber="05">
+						<HelpID>600185</HelpID>
+					</Detail>
+					<Detail DetailNumber="06">
+						<HelpID>600186</HelpID>
+					</Detail>
+					<Detail DetailNumber="07">
+						<HelpID>600187</HelpID>
+					</Detail>
+					<Detail DetailNumber="08">
+						<HelpID>600188</HelpID>
+					</Detail>
+					<Detail DetailNumber="09">
+						<HelpID>600189</HelpID>
+					</Detail>
+					<Detail DetailNumber="0A">
+						<HelpID>600190</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="15">
+				<DisplayNumber/>
+				<Name>Memory error 2 (EEP-ROM)</Name>
+				<ReleaseMeans>1</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>600200</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>600201</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>600202</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="16">
+				<DisplayNumber/>
+				<Name>Encoder initial communication error 1</Name>
+				<ReleaseMeans>1</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>600220</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>600221</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>600222</HelpID>
+					</Detail>
+					<Detail DetailNumber="03">
+						<HelpID>600223</HelpID>
+					</Detail>
+					<Detail DetailNumber="05">
+						<HelpID>600225</HelpID>
+					</Detail>
+					<Detail DetailNumber="06">
+						<HelpID>600226</HelpID>
+					</Detail>
+					<Detail DetailNumber="07">
+						<HelpID>600227</HelpID>
+					</Detail>
+					<Detail DetailNumber="0A">
+						<HelpID>600230</HelpID>
+					</Detail>
+					<Detail DetailNumber="0B">
+						<HelpID>600231</HelpID>
+					</Detail>
+					<Detail DetailNumber="0C">
+						<HelpID>600232</HelpID>
+					</Detail>
+					<Detail DetailNumber="0D">
+						<HelpID>600233</HelpID>
+					</Detail>
+					<Detail DetailNumber="0E">
+						<HelpID>600234</HelpID>
+					</Detail>
+					<Detail DetailNumber="0F">
+						<HelpID>600235</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="17">
+				<DisplayNumber/>
+				<Name>Board error</Name>
+				<ReleaseMeans>1</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>600240</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>600241</HelpID>
+					</Detail>
+					<Detail DetailNumber="03">
+						<HelpID>600243</HelpID>
+					</Detail>
+					<Detail DetailNumber="04">
+						<HelpID>600244</HelpID>
+					</Detail>
+					<Detail DetailNumber="05">
+						<HelpID>600245</HelpID>
+					</Detail>
+					<Detail DetailNumber="06">
+						<HelpID>600246</HelpID>
+					</Detail>
+					<Detail DetailNumber="08">
+						<HelpID>600248</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="19">
+				<DisplayNumber/>
+				<Name>Memory error 3 (Flash-ROM)</Name>
+				<ReleaseMeans>1</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>600280</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>600281</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>600282</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="1A">
+				<DisplayNumber/>
+				<Name>Servo motor combination error</Name>
+				<ReleaseMeans>1</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>600300</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>600301</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>600302</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="1E">
+				<DisplayNumber/>
+				<Name>Encoder initial communication error 2</Name>
+				<ReleaseMeans>1</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>600380</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>600381</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>600382</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="1F">
+				<DisplayNumber/>
+				<Name>Encoder initial communication error 3</Name>
+				<ReleaseMeans>1</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>600400</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>600401</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>600402</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="20">
+				<DisplayNumber/>
+				<Name>Encoder normal communication error 1</Name>
+				<ReleaseMeans>1</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>600500</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>600501</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>600502</HelpID>
+					</Detail>
+					<Detail DetailNumber="03">
+						<HelpID>600503</HelpID>
+					</Detail>
+					<Detail DetailNumber="05">
+						<HelpID>600505</HelpID>
+					</Detail>
+					<Detail DetailNumber="06">
+						<HelpID>600506</HelpID>
+					</Detail>
+					<Detail DetailNumber="07">
+						<HelpID>600507</HelpID>
+					</Detail>
+					<Detail DetailNumber="09">
+						<HelpID>600509</HelpID>
+					</Detail>
+					<Detail DetailNumber="0A">
+						<HelpID>600510</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="21">
+				<DisplayNumber/>
+				<Name>Encoder normal communication error 2</Name>
+				<ReleaseMeans>1</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>600520</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>600521</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>600522</HelpID>
+					</Detail>
+					<Detail DetailNumber="03">
+						<HelpID>600523</HelpID>
+					</Detail>
+					<Detail DetailNumber="04">
+						<HelpID>600524</HelpID>
+					</Detail>
+					<Detail DetailNumber="05">
+						<HelpID>600525</HelpID>
+					</Detail>
+					<Detail DetailNumber="06">
+						<HelpID>600526</HelpID>
+					</Detail>
+					<Detail DetailNumber="09">
+						<HelpID>600529</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="24">
+				<DisplayNumber/>
+				<Name>Main circuit error</Name>
+				<ReleaseMeans>1</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>600580</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>600581</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>600582</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="25">
+				<DisplayNumber/>
+				<Name>Absolute position erased</Name>
+				<ReleaseMeans>1</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>600600</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>600601</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="27">
+				<DisplayNumber/>
+				<Name>Initial magnetic pole detection error</Name>
+				<ReleaseMeans>7</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>600640</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>600641</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>600642</HelpID>
+					</Detail>
+					<Detail DetailNumber="03">
+						<HelpID>600643</HelpID>
+					</Detail>
+					<Detail DetailNumber="04">
+						<HelpID>600644</HelpID>
+					</Detail>
+					<Detail DetailNumber="05">
+						<HelpID>600645</HelpID>
+					</Detail>
+					<Detail DetailNumber="06">
+						<HelpID>600646</HelpID>
+					</Detail>
+					<Detail DetailNumber="07">
+						<HelpID>600647</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="28">
+				<DisplayNumber/>
+				<Name>Linear encoder error 2</Name>
+				<ReleaseMeans>1</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>600660</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>600661</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="2A">
+				<DisplayNumber/>
+				<Name>Linear encoder error 1</Name>
+				<ReleaseMeans>1</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>600700</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>600701</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>600702</HelpID>
+					</Detail>
+					<Detail DetailNumber="03">
+						<HelpID>600703</HelpID>
+					</Detail>
+					<Detail DetailNumber="04">
+						<HelpID>600704</HelpID>
+					</Detail>
+					<Detail DetailNumber="05">
+						<HelpID>600705</HelpID>
+					</Detail>
+					<Detail DetailNumber="06">
+						<HelpID>600706</HelpID>
+					</Detail>
+					<Detail DetailNumber="07">
+						<HelpID>600707</HelpID>
+					</Detail>
+					<Detail DetailNumber="08">
+						<HelpID>600708</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="2B">
+				<DisplayNumber/>
+				<Name>Encoder counter error</Name>
+				<ReleaseMeans>1</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>600720</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>600721</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>600722</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="30">
+				<DisplayNumber/>
+				<Name>Regenerative error</Name>
+				<ReleaseMeans>7</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>600900</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>600901</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>600902</HelpID>
+					</Detail>
+					<Detail DetailNumber="03">
+						<HelpID>600903</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="31">
+				<DisplayNumber/>
+				<Name>Overspeed</Name>
+				<ReleaseMeans>7</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>600920</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>600921</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="32">
+				<DisplayNumber/>
+				<Name>Overcurrent</Name>
+				<ReleaseMeans>1</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>600940</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>600941</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>600942</HelpID>
+					</Detail>
+					<Detail DetailNumber="03">
+						<HelpID>600943</HelpID>
+					</Detail>
+					<Detail DetailNumber="04">
+						<HelpID>600944</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="33">
+				<DisplayNumber/>
+				<Name>Overvoltage</Name>
+				<ReleaseMeans>7</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>600960</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>600961</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="34">
+				<DisplayNumber/>
+				<Name>SSCNET receive error 1</Name>
+				<ReleaseMeans>7</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>600980</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>600981</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>600982</HelpID>
+					</Detail>
+					<Detail DetailNumber="03">
+						<HelpID>600983</HelpID>
+					</Detail>
+					<Detail DetailNumber="04">
+						<HelpID>600984</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="35">
+				<DisplayNumber/>
+				<Name>Command frequency error</Name>
+				<ReleaseMeans>7</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>601000</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>601001</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="36">
+				<DisplayNumber/>
+				<Name>SSCNET receive error 2</Name>
+				<ReleaseMeans>7</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>601020</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>601021</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="37">
+				<DisplayNumber/>
+				<Name>Parameter error</Name>
+				<ReleaseMeans>1</ReleaseMeans>
+				<IsPreservedHistory>false</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>601040</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>601041</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>601042</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="3A">
+				<DisplayNumber/>
+				<Name>Inrush current suppression circuit error</Name>
+				<ReleaseMeans>1</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>601100</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>601101</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="3E">
+				<DisplayNumber/>
+				<Name>Operation mode error</Name>
+				<ReleaseMeans>1</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>601180</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>601181</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="42">
+				<DisplayNumber/>
+				<Name>Servo/fully closed control error</Name>
+				<ReleaseMeans>7</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>601340</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>601341</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>601342</HelpID>
+					</Detail>
+					<Detail DetailNumber="03">
+						<HelpID>601343</HelpID>
+					</Detail>
+					<Detail DetailNumber="08">
+						<HelpID>601348</HelpID>
+					</Detail>
+					<Detail DetailNumber="09">
+						<HelpID>601349</HelpID>
+					</Detail>
+					<Detail DetailNumber="0A">
+						<HelpID>601350</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="45">
+				<DisplayNumber/>
+				<Name>Main circuit device overheat</Name>
+				<ReleaseMeans>7</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>601400</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>601401</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="46">
+				<DisplayNumber/>
+				<Name>Servo motor overheat</Name>
+				<ReleaseMeans>7</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>601420</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>601421</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>601422</HelpID>
+					</Detail>
+					<Detail DetailNumber="03">
+						<HelpID>601423</HelpID>
+					</Detail>
+					<Detail DetailNumber="05">
+						<HelpID>601425</HelpID>
+					</Detail>
+					<Detail DetailNumber="06">
+						<HelpID>601426</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="47">
+				<DisplayNumber/>
+				<Name>Cooling fan error</Name>
+				<ReleaseMeans>1</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>601440</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>601441</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>601442</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="50">
+				<DisplayNumber/>
+				<Name>Overload 1</Name>
+				<ReleaseMeans>7</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>601700</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>601701</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>601702</HelpID>
+					</Detail>
+					<Detail DetailNumber="03">
+						<HelpID>601703</HelpID>
+					</Detail>
+					<Detail DetailNumber="04">
+						<HelpID>601704</HelpID>
+					</Detail>
+					<Detail DetailNumber="05">
+						<HelpID>601705</HelpID>
+					</Detail>
+					<Detail DetailNumber="06">
+						<HelpID>601706</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="51">
+				<DisplayNumber/>
+				<Name>Overload 2</Name>
+				<ReleaseMeans>7</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>601720</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>601721</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>601722</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="52">
+				<DisplayNumber/>
+				<Name>Error excessive</Name>
+				<ReleaseMeans>7</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>601740</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>601741</HelpID>
+					</Detail>
+					<Detail DetailNumber="03">
+						<HelpID>601743</HelpID>
+					</Detail>
+					<Detail DetailNumber="04">
+						<HelpID>601744</HelpID>
+					</Detail>
+					<Detail DetailNumber="05">
+						<HelpID>601745</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="54">
+				<DisplayNumber/>
+				<Name>Oscillation detection</Name>
+				<ReleaseMeans>7</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>601780</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>601781</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="56">
+				<DisplayNumber/>
+				<Name>Forced stop error</Name>
+				<ReleaseMeans>7</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>601820</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="02">
+						<HelpID>601822</HelpID>
+					</Detail>
+					<Detail DetailNumber="03">
+						<HelpID>601823</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="63">
+				<DisplayNumber/>
+				<Name>STO timing error</Name>
+				<ReleaseMeans>7</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>602160</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>602161</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>602162</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="70">
+				<DisplayNumber/>
+				<Name>Load side encoder initial communication error 1</Name>
+				<ReleaseMeans>1</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>602500</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>602501</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>602502</HelpID>
+					</Detail>
+					<Detail DetailNumber="03">
+						<HelpID>602503</HelpID>
+					</Detail>
+					<Detail DetailNumber="05">
+						<HelpID>602505</HelpID>
+					</Detail>
+					<Detail DetailNumber="06">
+						<HelpID>602506</HelpID>
+					</Detail>
+					<Detail DetailNumber="07">
+						<HelpID>602507</HelpID>
+					</Detail>
+					<Detail DetailNumber="0A">
+						<HelpID>602510</HelpID>
+					</Detail>
+					<Detail DetailNumber="0B">
+						<HelpID>602511</HelpID>
+					</Detail>
+					<Detail DetailNumber="0C">
+						<HelpID>602512</HelpID>
+					</Detail>
+					<Detail DetailNumber="0D">
+						<HelpID>602513</HelpID>
+					</Detail>
+					<Detail DetailNumber="0E">
+						<HelpID>602514</HelpID>
+					</Detail>
+					<Detail DetailNumber="0F">
+						<HelpID>602515</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="71">
+				<DisplayNumber/>
+				<Name>Load side encoder general communication error 1</Name>
+				<ReleaseMeans>1</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>602520</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>602521</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>602522</HelpID>
+					</Detail>
+					<Detail DetailNumber="03">
+						<HelpID>602523</HelpID>
+					</Detail>
+					<Detail DetailNumber="05">
+						<HelpID>602525</HelpID>
+					</Detail>
+					<Detail DetailNumber="06">
+						<HelpID>602526</HelpID>
+					</Detail>
+					<Detail DetailNumber="07">
+						<HelpID>602527</HelpID>
+					</Detail>
+					<Detail DetailNumber="09">
+						<HelpID>602529</HelpID>
+					</Detail>
+					<Detail DetailNumber="0A">
+						<HelpID>602530</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="72">
+				<DisplayNumber/>
+				<Name>Load side encoder general communication error 1</Name>
+				<ReleaseMeans>1</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>602540</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>602541</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>602542</HelpID>
+					</Detail>
+					<Detail DetailNumber="03">
+						<HelpID>602543</HelpID>
+					</Detail>
+					<Detail DetailNumber="04">
+						<HelpID>602544</HelpID>
+					</Detail>
+					<Detail DetailNumber="05">
+						<HelpID>602545</HelpID>
+					</Detail>
+					<Detail DetailNumber="06">
+						<HelpID>602546</HelpID>
+					</Detail>
+					<Detail DetailNumber="09">
+						<HelpID>602549</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="74">
+				<DisplayNumber/>
+				<Name>Option card error</Name>
+				<ReleaseMeans>1</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>602580</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>602581</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>602582</HelpID>
+					</Detail>
+					<Detail DetailNumber="03">
+						<HelpID>602583</HelpID>
+					</Detail>
+					<Detail DetailNumber="04">
+						<HelpID>602584</HelpID>
+					</Detail>
+					<Detail DetailNumber="05">
+						<HelpID>602585</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="75">
+				<DisplayNumber/>
+				<Name>Option card error 2</Name>
+				<ReleaseMeans>1</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>602600</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="03">
+						<HelpID>602603</HelpID>
+					</Detail>
+					<Detail DetailNumber="04">
+						<HelpID>602604</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="8A">
+				<DisplayNumber/>
+				<Name>USB communication time-out error</Name>
+				<ReleaseMeans>7</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>603100</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>603101</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="8D">
+				<DisplayNumber/>
+				<Name>CC-Link IE communication error</Name>
+				<ReleaseMeans>7</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>603160</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>603161</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>603162</HelpID>
+					</Detail>
+					<Detail DetailNumber="03">
+						<HelpID>603163</HelpID>
+					</Detail>
+					<Detail DetailNumber="05">
+						<HelpID>603165</HelpID>
+					</Detail>
+					<Detail DetailNumber="06">
+						<HelpID>603166</HelpID>
+					</Detail>
+					<Detail DetailNumber="07">
+						<HelpID>603167</HelpID>
+					</Detail>
+					<Detail DetailNumber="08">
+						<HelpID>603168</HelpID>
+					</Detail>
+					<Detail DetailNumber="09">
+						<HelpID>603169</HelpID>
+					</Detail>
+					<Detail DetailNumber="0A">
+						<HelpID>603170</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="8E">
+				<DisplayNumber/>
+				<Name>USB communication error</Name>
+				<ReleaseMeans>7</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>false</IsWarning>
+				<HelpID>603180</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>603181</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>603182</HelpID>
+					</Detail>
+					<Detail DetailNumber="03">
+						<HelpID>603183</HelpID>
+					</Detail>
+					<Detail DetailNumber="04">
+						<HelpID>603184</HelpID>
+					</Detail>
+					<Detail DetailNumber="05">
+						<HelpID>603185</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="91">
+				<DisplayNumber/>
+				<Name>Servo amplifier overheat warning</Name>
+				<ReleaseMeans>0</ReleaseMeans>
+				<IsPreservedHistory>false</IsPreservedHistory>
+				<IsWarning>true</IsWarning>
+				<HelpID>603320</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>603321</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="92">
+				<DisplayNumber/>
+				<Name>Battery cable disconnection warning</Name>
+				<ReleaseMeans>0</ReleaseMeans>
+				<IsPreservedHistory>false</IsPreservedHistory>
+				<IsWarning>true</IsWarning>
+				<HelpID>603340</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>603341</HelpID>
+					</Detail>
+					<Detail DetailNumber="03">
+						<HelpID>603343</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="95">
+				<DisplayNumber/>
+				<Name>STO warning</Name>
+				<ReleaseMeans>0</ReleaseMeans>
+				<IsPreservedHistory>false</IsPreservedHistory>
+				<IsWarning>true</IsWarning>
+				<HelpID>603400</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>603401</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>603402</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="96">
+				<DisplayNumber/>
+				<Name>Home position setting warning</Name>
+				<ReleaseMeans>0</ReleaseMeans>
+				<IsPreservedHistory>false</IsPreservedHistory>
+				<IsWarning>true</IsWarning>
+				<HelpID>603420</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>603421</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>603422</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="9D">
+				<DisplayNumber/>
+				<Name>CC-Link IE warning 1</Name>
+				<ReleaseMeans>0</ReleaseMeans>
+				<IsPreservedHistory>false</IsPreservedHistory>
+				<IsWarning>true</IsWarning>
+				<HelpID>603660</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>603661</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>603662</HelpID>
+					</Detail>
+					<Detail DetailNumber="03">
+						<HelpID>603663</HelpID>
+					</Detail>
+					<Detail DetailNumber="04">
+						<HelpID>603664</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="9E">
+				<DisplayNumber/>
+				<Name>CC-Link IE warning 2</Name>
+				<ReleaseMeans>0</ReleaseMeans>
+				<IsPreservedHistory>false</IsPreservedHistory>
+				<IsWarning>true</IsWarning>
+				<HelpID>603680</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>603681</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="9F">
+				<DisplayNumber/>
+				<Name>Battery warning</Name>
+				<ReleaseMeans>0</ReleaseMeans>
+				<IsPreservedHistory>false</IsPreservedHistory>
+				<IsWarning>true</IsWarning>
+				<HelpID>603700</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>603701</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>603702</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="E0">
+				<DisplayNumber/>
+				<Name>Excessive regeneration warning</Name>
+				<ReleaseMeans>0</ReleaseMeans>
+				<IsPreservedHistory>false</IsPreservedHistory>
+				<IsWarning>true</IsWarning>
+				<HelpID>604100</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>604101</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="E1">
+				<DisplayNumber/>
+				<Name>Overload warning 1</Name>
+				<ReleaseMeans>0</ReleaseMeans>
+				<IsPreservedHistory>false</IsPreservedHistory>
+				<IsWarning>true</IsWarning>
+				<HelpID>604120</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>604121</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>604122</HelpID>
+					</Detail>
+					<Detail DetailNumber="03">
+						<HelpID>604123</HelpID>
+					</Detail>
+					<Detail DetailNumber="04">
+						<HelpID>604124</HelpID>
+					</Detail>
+					<Detail DetailNumber="05">
+						<HelpID>604125</HelpID>
+					</Detail>
+					<Detail DetailNumber="06">
+						<HelpID>604126</HelpID>
+					</Detail>
+					<Detail DetailNumber="07">
+						<HelpID>604127</HelpID>
+					</Detail>
+					<Detail DetailNumber="08">
+						<HelpID>604128</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="E2">
+				<DisplayNumber/>
+				<Name>Servo motor overheat warning</Name>
+				<ReleaseMeans>0</ReleaseMeans>
+				<IsPreservedHistory>false</IsPreservedHistory>
+				<IsWarning>true</IsWarning>
+				<HelpID>604140</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>604141</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="E3">
+				<DisplayNumber/>
+				<Name>Absolute position counter warning</Name>
+				<ReleaseMeans>0</ReleaseMeans>
+				<IsPreservedHistory>false</IsPreservedHistory>
+				<IsWarning>true</IsWarning>
+				<HelpID>604160</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="02">
+						<HelpID>604162</HelpID>
+					</Detail>
+					<Detail DetailNumber="05">
+						<HelpID>604165</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="E4">
+				<DisplayNumber/>
+				<Name>Parameter warning</Name>
+				<ReleaseMeans>0</ReleaseMeans>
+				<IsPreservedHistory>false</IsPreservedHistory>
+				<IsWarning>true</IsWarning>
+				<HelpID>604180</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>604181</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="E6">
+				<DisplayNumber/>
+				<Name>Servo forced stop warning</Name>
+				<ReleaseMeans>0</ReleaseMeans>
+				<IsPreservedHistory>false</IsPreservedHistory>
+				<IsWarning>true</IsWarning>
+				<HelpID>604220</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>604221</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="E7">
+				<DisplayNumber/>
+				<Name>Controller forced stop warning</Name>
+				<ReleaseMeans>0</ReleaseMeans>
+				<IsPreservedHistory>false</IsPreservedHistory>
+				<IsWarning>true</IsWarning>
+				<HelpID>604240</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>604241</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="E8">
+				<DisplayNumber/>
+				<Name>Cooling fan speed reduction warning</Name>
+				<ReleaseMeans>0</ReleaseMeans>
+				<IsPreservedHistory>false</IsPreservedHistory>
+				<IsWarning>true</IsWarning>
+				<HelpID>604260</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>604261</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>604262</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="E9">
+				<DisplayNumber/>
+				<Name>Main circuit off warning</Name>
+				<ReleaseMeans>0</ReleaseMeans>
+				<IsPreservedHistory>false</IsPreservedHistory>
+				<IsWarning>true</IsWarning>
+				<HelpID>604280</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>604281</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>604282</HelpID>
+					</Detail>
+					<Detail DetailNumber="03">
+						<HelpID>604283</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="EB">
+				<DisplayNumber/>
+				<Name>The other axis error warning</Name>
+				<ReleaseMeans>0</ReleaseMeans>
+				<IsPreservedHistory>false</IsPreservedHistory>
+				<IsWarning>true</IsWarning>
+				<HelpID>604320</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>604321</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="EC">
+				<DisplayNumber/>
+				<Name>Overload warning 2</Name>
+				<ReleaseMeans>0</ReleaseMeans>
+				<IsPreservedHistory>false</IsPreservedHistory>
+				<IsWarning>true</IsWarning>
+				<HelpID>604340</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>604341</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="ED">
+				<DisplayNumber/>
+				<Name>Output watt excess warning</Name>
+				<ReleaseMeans>0</ReleaseMeans>
+				<IsPreservedHistory>false</IsPreservedHistory>
+				<IsWarning>true</IsWarning>
+				<HelpID>604360</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>604361</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="F0">
+				<DisplayNumber/>
+				<Name>Tough drive warning</Name>
+				<ReleaseMeans>0</ReleaseMeans>
+				<IsPreservedHistory>true</IsPreservedHistory>
+				<IsWarning>true</IsWarning>
+				<HelpID>604500</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>604501</HelpID>
+					</Detail>
+					<Detail DetailNumber="03">
+						<HelpID>604503</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="F2">
+				<DisplayNumber/>
+				<Name>Drive recorder miswriting warning</Name>
+				<ReleaseMeans>0</ReleaseMeans>
+				<IsPreservedHistory>false</IsPreservedHistory>
+				<IsWarning>true</IsWarning>
+				<HelpID>604540</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>604541</HelpID>
+					</Detail>
+					<Detail DetailNumber="02">
+						<HelpID>604542</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+			<Alarm Number="F3">
+				<DisplayNumber/>
+				<Name>Oscillation detection warning</Name>
+				<ReleaseMeans>0</ReleaseMeans>
+				<IsPreservedHistory>false</IsPreservedHistory>
+				<IsWarning>true</IsWarning>
+				<HelpID>604560</HelpID>
+				<DetailInfos>
+					<Detail DetailNumber="01">
+						<HelpID>604561</HelpID>
+					</Detail>
+				</DetailInfos>
+			</Alarm>
+		</Alarms>
+		<VelocityResponse>
+			<GainPattern>1</GainPattern>
+			<UsedParameter>
+				<Enumeration id="0" name="FILT" enable="YES" type="RW"/>
+				<Enumeration id="1" name="VRFT" enable="YES" type="ReadOnly"/>
+				<Enumeration id="2" name="GD2" enable="YES" type="RW"/>
+				<Enumeration id="3" name="PG1" enable="YES" type="RW"/>
+				<Enumeration id="4" name="PG2" enable="YES" type="RW"/>
+				<Enumeration id="5" name="VG2" enable="YES" type="RW"/>
+				<Enumeration id="6" name="VIC" enable="YES" type="RW"/>
+				<Enumeration id="7" name="NH1" enable="YES" type="RW"/>
+				<Enumeration id="8" name="NHQ1" enable="YES" type="RW"/>
+				<Enumeration id="9" name="NH2" enable="YES" type="RW"/>
+				<Enumeration id="10" name="NHQ2" enable="YES" type="RW"/>
+				<Enumeration id="11" name="LPF" enable="YES" type="RW"/>
+				<Enumeration id="12" name="VRF11" enable="YES" type="ReadOnly"/>
+				<Enumeration id="13" name="VRF12" enable="YES" type="ReadOnly"/>
+				<Enumeration id="14" name="VFBF" enable="YES" type="RW"/>
+				<Enumeration id="15" name="ATU" enable="NO" type="RW"/>
+				<Enumeration id="16" name="RSP" enable="NO" type="RW"/>
+			</UsedParameter>
+			<DetailSettingView>
+				<dialog id="13000" fontsize="9" fontface="Arial" style="1073741888" position="0, 0, 171, 490">
+					<control id="12999" caption="Auto tuning mode selection" position="1, 12, 118, 12"/>
+					<control id="13003" class="BUTTON" caption="Interpolation mode" style="1073872905" position="100, 12, 71, 8" RelationID="PA08" RelationType="Parameter" RelationMask="0001"/>
+					<control id="13001" class="BUTTON" caption="Auto tuning 1" style="1342177289" position="3, 24, 71, 8"/>
+					<control id="13002" class="BUTTON" caption="Auto tuning 2" style="1342177289" position="3, 36, 73, 8"/>
+					<control id="13004" class="BUTTON" caption="Manual mode" style="1342177289" position="3, 62, 73, 8"/>
+					<control id="13005" class="BUTTON" caption="2-gain adjustment mode" style="1342177289" position="3, 49, 89, 8"/>
+					<control id="13010" caption="Response" style="1342308354" position="18, 79, 33, 11"/>
+					<control id="13011" class="EDIT" style="1350631552" position="83, 76, 33, 13" RelationID="PA09" RelationType="Parameter" RelationMask="1111"/>
+					<control id="13012" class="msctls_updown32" style="1342177460" position="104, 76, 12, 14"/>
+					<control id="13014" caption="(1-32)" position="117, 79, 55, 11" RelationID="PA09" RelationType="ParameterUnits" RelationMask="1111"/>
+					<control id="13020" caption="Load inertial moment ratio" style="1342308354" position="18, 97, 81, 8"/>
+					<control id="13021" class="EDIT" style="1350631552" position="45, 107, 43, 13" RelationID="PB06" RelationType="Parameter" RelationMask="1111"/>
+					<control id="13023" caption="times" position="90, 110, 78, 8" RelationID="PB06" RelationType="ParameterUnits" RelationMask="1111"/>
+					<control id="13030" caption="Model loop gain" style="1342308354" position="18, 123, 49, 8"/>
+					<control id="13031" class="EDIT" style="1350631552" position="45, 133, 43, 14" RelationID="PB07" RelationType="Parameter" RelationMask="1111"/>
+					<control id="13033" caption="rad/s" position="90, 137, 78, 8" RelationID="PB07" RelationType="ParameterUnits" RelationMask="1111"/>
+					<control id="13040" caption="Position loop gain" style="1342308354" position="18, 149, 55, 8"/>
+					<control id="13041" class="EDIT" style="1350631552" position="45, 159, 43, 13" RelationID="PB08" RelationType="Parameter" RelationMask="1111"/>
+					<control id="13043" caption="rad/s" position="90, 162, 78, 8" RelationID="PB08" RelationType="ParameterUnits" RelationMask="1111"/>
+					<control id="13050" caption="Speed loop gain" style="1342308354" position="18, 175, 51, 8"/>
+					<control id="13051" class="EDIT" style="1350631552" position="45, 185, 43, 13" RelationID="PB09" RelationType="Parameter" RelationMask="1111"/>
+					<control id="13053" caption="rad/s" position="90, 188, 78, 8" RelationID="PB09" RelationType="ParameterUnits" RelationMask="1111"/>
+					<control id="13060" caption="Spd. integral compen." style="1342308354" position="18, 201, 69, 8"/>
+					<control id="13061" class="EDIT" style="1350631552" position="45, 211, 43, 13" RelationID="PB10" RelationType="Parameter" RelationMask="1111"/>
+					<control id="13063" caption="ms" position="90, 214, 78, 8" RelationID="PB10" RelationType="ParameterUnits" RelationMask="1111"/>
+					<control id="13070" caption="Adaptive tuning" position="1, 232, 81, 8"/>
+					<control id="13071" class="BUTTON" caption="Filter OFF" style="1342308361" position="2, 243, 47, 10" RelationID="PB01" RelationType="Parameter" RelationMask="0001"/>
+					<control id="13072" class="BUTTON" caption="Automatic setting" style="1073741833" position="71, 245, 68, 10"/>
+					<control id="13073" class="BUTTON" caption="Manual setting" style="1342177289" position="2, 255, 59, 10"/>
+					<control id="13080" caption="Machine resonance suppression filter 1" style="1342308354" position="4, 269, 128, 9"/>
+					<control id="13081" class="EDIT" style="1350631552" position="75, 279, 32, 13" RelationID="PB13" RelationType="Parameter" RelationMask="1111"/>
+					<control id="13083" caption="Hz" position="109, 282, 54, 12" RelationID="PB13" RelationType="ParameterUnits" RelationMask="1111"/>
+					<control id="13090" caption="Notch form sel. 1" style="1342308354" position="4, 298, 55, 8"/>
+					<control id="13091" caption="Notch width" style="1342308354" position="60, 298, 43, 8"/>
+					<control id="13092" class="COMBOBOX" style="1344340227" position="105, 296, 64, 57" RelationID="PB14" RelationType="Parameter" RelationMask="0100"/>
+					<control id="13093" caption="Notch depth" style="1342308354" position="60, 312, 43, 8"/>
+					<control id="13094" class="COMBOBOX" style="1344340227" position="105, 310, 64, 51" RelationID="PB14" RelationType="Parameter" RelationMask="0010"/>
+					<control id="13100" caption="Notch form selection 2" position="1, 330, 118, 8"/>
+					<control id="13101" class="BUTTON" caption="Filter OFF" style="1342308361" position="2, 341, 47, 10" RelationID="PB16" RelationType="Parameter" RelationMask="0001"/>
+					<control id="13103" class="BUTTON" caption="Manual setting" style="1342177289" position="2, 353, 59, 10"/>
+					<control id="13120" caption="Machine resonance suppression filter 2" style="1342308354" position="4, 367, 128, 8"/>
+					<control id="13110" class="EDIT" style="1350631552" position="75, 377, 32, 13" RelationID="PB15" RelationType="Parameter" RelationMask="1111"/>
+					<control id="13112" caption="Hz" position="109, 380, 54, 12" RelationID="PB15" RelationType="ParameterUnits" RelationMask="1111"/>
+					<control id="13121" caption="Notch form sel. 2" style="1342308354" position="4, 397, 55, 8"/>
+					<control id="13122" caption="Notch width" style="1342308354" position="63, 397, 40, 8"/>
+					<control id="13123" class="COMBOBOX" style="1344340227" position="105, 395, 64, 54" RelationID="PB16" RelationType="Parameter" RelationMask="0100"/>
+					<control id="13124" caption="Notch depth" style="1342308354" position="60, 411, 43, 8"/>
+					<control id="13125" class="COMBOBOX" style="1344340227" position="105, 409, 64, 59" RelationID="PB16" RelationType="Parameter" RelationMask="0010"/>
+					<control id="13130" caption="Low-pass filter" position="1, 429, 118, 8"/>
+					<control id="13140" class="BUTTON" caption="Automatic setting" style="1342308361" position="2, 442, 68, 10" RelationID="PB23" RelationType="Parameter" RelationMask="0010"/>
+					<control id="13141" class="BUTTON" caption="Manual setting" style="1342177289" position="2, 454, 59, 10"/>
+					<control id="13142" class="BUTTON" caption="Invalid setting" style="1073741833" position="101, 442, 56, 10"/>
+					<control id="13150" caption="Low-pass filter setting" style="1342308354" position="3, 470, 73, 8"/>
+					<control id="13151" class="EDIT" style="1350631552" position="77, 467, 32, 13" RelationID="PB18" RelationType="Parameter" RelationMask="1111"/>
+					<control id="13153" caption="rad/s" position="111, 470, 60, 8" RelationID="PB18" RelationType="ParameterUnits" RelationMask="1111"/>
+				</dialog>
+			</DetailSettingView>
+		</VelocityResponse>
+	</AmpConstants>
+</Root>

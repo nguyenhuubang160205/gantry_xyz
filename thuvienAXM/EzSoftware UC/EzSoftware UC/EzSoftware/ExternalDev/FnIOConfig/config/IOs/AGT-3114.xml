@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RegisterDescription ModelName ="IO"
+                     VendorName="Crevis"
+                     ToolTip="Crevis FnIO"
+                     StandardNameSpace="None"
+                     SchemaMajorVersion="1"
+                     SchemaMinorVersion="0"
+                     SchemaSubMinorVersion="0"
+                     MajorVersion="1"
+                     MinorVersion="0"
+                     SubMinorVersion="0"
+                     ProductGuid="8BCD0E5A-9DA1-4504-BF95-5A27F2D02405"
+                     VersionGuid="D2EC627D-9311-4137-B1C6-0727CE0025E4"
+                     xmlns="http://www.genicam.org/GenApi/Version_1_0"
+                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xsi:schemaLocation="http://www.genicam.org/GenApi/Version_1_0
+                     http://www.genicam.org/GenApi/GenApiSchema_Version_1_0.xsd">
+
+  <!-- ***************************************** -->
+  <!-- RootCategory -->
+  <!-- ***************************************** -->
+  <Group Comment="Root">
+    <Category Name="Root">
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pFeature>AGT3114</pFeature>
+    </Category>
+  </Group>
+
+  <!-- ***************************************** -->
+  <!-- SubCategories -->
+  <!-- ***************************************** -->
+  <Group Comment="SubCategories">
+    <Category Name="AGT3114" NameSpace="Custom">
+      <ToolTip>Category for Device information and control.</ToolTip>
+      <Description>Category for Device information and control.</Description>
+      <DisplayName>AGT-3114</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <pFeature>CurrentRange_CH0_Enum</pFeature>
+      <pFeature>CurrentRange_CH1_Enum</pFeature>
+      <pFeature>CurrentRange_CH2_Enum</pFeature>
+      <pFeature>CurrentRange_CH3_Enum</pFeature>
+      <pFeature>FilterTimeParam</pFeature>
+    </Category>
+  </Group>
+  <!-- /SubCategories-->
+
+  <!-- Device Control -->
+  <Group Comment="DeviceControl">
+     <Enumeration Name="CurrentRange_CH0_Enum" NameSpace ="Custom">
+      <ToolTip>.</ToolTip>
+      <Description>Current Range for Channel 0 (H00: 0~20mA, H01: 4~20mA)</Description>
+      <DisplayName>AnalogRange_Ch0</DisplayName>
+      <Visibility>Beginner</Visibility>
+       <EnumEntry Name="CurrentRange1" NameSpace="Custom">
+       <ToolTip> </ToolTip>
+       <Description>0~20mA</Description>
+       <DisplayName>0~20mA</DisplayName>
+       <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="CurrentRange2" NameSpace="Custom">
+       <ToolTip> </ToolTip>
+       <Description>4~20mA</Description>
+       <DisplayName>4~20mA</DisplayName>
+       <Value>1</Value>
+      </EnumEntry>
+      <pValue>CurrentReangeCH0_Reg</pValue>
+    </Enumeration>
+
+     <Enumeration Name="CurrentRange_CH1_Enum" NameSpace ="Custom">
+      <ToolTip>.</ToolTip>
+      <Description>Current Range for Channel 1 (H00: 0~20mA, H01: 4~20mA)</Description>
+      <DisplayName>AnalogRange_Ch1</DisplayName>
+      <Visibility>Beginner</Visibility>
+       <EnumEntry Name="CurrentRange1" NameSpace="Custom">
+       <ToolTip> </ToolTip>
+       <Description>0~20mA</Description>
+       <DisplayName>0~20mA</DisplayName>
+       <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="CurrentRange2" NameSpace="Custom">
+       <ToolTip> </ToolTip>
+       <Description>4~20mA</Description>
+       <DisplayName>4~20mA</DisplayName>
+       <Value>1</Value>
+      </EnumEntry>
+      <pValue>CurrentReangeCH1_Reg</pValue>
+    </Enumeration>
+
+     <Enumeration Name="CurrentRange_CH2_Enum" NameSpace ="Custom">
+      <ToolTip>.</ToolTip>
+      <Description>Current Range for Channel 2 (H00: 0~20mA, H01: 4~20mA)</Description>
+      <DisplayName>AnalogRange_Ch2</DisplayName>
+      <Visibility>Beginner</Visibility>
+       <EnumEntry Name="CurrentRange1" NameSpace="Custom">
+       <ToolTip> </ToolTip>
+       <Description>0~20mA</Description>
+       <DisplayName>0~20mA</DisplayName>
+       <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="CurrentRange2" NameSpace="Custom">
+       <ToolTip> </ToolTip>
+       <Description>4~20mA</Description>
+       <DisplayName>4~20mA</DisplayName>
+       <Value>1</Value>
+      </EnumEntry>
+      <pValue>CurrentReangeCH2_Reg</pValue>
+    </Enumeration>
+
+    <Enumeration Name="CurrentRange_CH3_Enum" NameSpace ="Custom">
+      <ToolTip>.</ToolTip>
+      <Description>Current Range for Channel 3 (H00: 0~20mA, H01: 4~20mA)</Description>
+      <DisplayName>AnalogRange_Ch3</DisplayName>
+      <Visibility>Beginner</Visibility>
+       <EnumEntry Name="CurrentRange1" NameSpace="Custom">
+       <ToolTip> </ToolTip>
+       <Description>0~20mA</Description>
+       <DisplayName>0~20mA</DisplayName>
+       <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="CurrentRange2" NameSpace="Custom">
+       <ToolTip> </ToolTip>
+       <Description>4~20mA</Description>
+       <DisplayName>4~20mA</DisplayName>
+       <Value>1</Value>
+      </EnumEntry>
+      <pValue>CurrentReangeCH3_Reg</pValue>
+    </Enumeration>
+
+    <Integer Name="FilterTimeParam" NameSpace ="Custom">
+      <ToolTip>.</ToolTip>
+      <Description>Filter Time ( H00: Default Filter(=20) / H01: Fastest ~ / H3E: Slowest )</Description>
+      <DisplayName>Firmwarefilter</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <pValue>FilterTimeReg</pValue>
+      <Min>0</Min>
+      <Max>62</Max>
+      <Inc>1</Inc>
+      <Representation>PureNumber</Representation>
+    </Integer>
+
+    <StructReg Comment="ConfigurationParamReg">
+      <ToolTip>.</ToolTip>
+      <Visibility>Beginner</Visibility>
+      <Address>0x0000A011</Address>
+      <Length>6</Length>
+      <AccessMode>RW</AccessMode>
+      <pPort>Device</pPort>
+      <Endianess>LittleEndian</Endianess>
+      <StructEntry Name="CurrentReangeCH0_Reg">
+        <LSB>0</LSB>
+        <MSB>7</MSB>
+      </StructEntry>
+      <StructEntry Name="CurrentReangeCH1_Reg">
+        <LSB>8</LSB>
+        <MSB>15</MSB>
+      </StructEntry>
+      <StructEntry Name="CurrentReangeCH2_Reg">
+        <LSB>16</LSB>
+        <MSB>23</MSB>
+      </StructEntry>
+      <StructEntry Name="CurrentReangeCH3_Reg">
+        <LSB>24</LSB>
+        <MSB>31</MSB>
+      </StructEntry>
+      <StructEntry Name="FilterTimeReg">
+        <LSB>32</LSB>
+        <MSB>39</MSB>
+      </StructEntry>
+    </StructReg>
+  </Group>
+
+  <!-- Global Nodes -->
+  <Port Name="Device">
+    <ToolTip>Port giving access to the device.</ToolTip>
+    <SwapEndianess>Yes</SwapEndianess>
+  </Port>
+  <!-- /Global Nodes-->
+</RegisterDescription>

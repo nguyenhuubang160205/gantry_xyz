@@ -1,0 +1,3325 @@
+#/*
+# **********************************************************************
+# *
+# *     システム名  ： ＰＡＮＡＴＥＲＭ  Ｖｅｒ３．７
+# *                  （Ａ４ファミリー対応）
+# *
+# *     Copyright (c) 2005 by Industrial Motor Division  Motor Company
+# *     Matsushita Electric Industrial Co.  Ltd.
+# *
+# *     松下電器産業株式会社  モータ社
+# *     産業モータ事業部
+# *
+# *
+# *--------------------------------------------------------------------
+# *
+# *     $RCSfile: MINAS-A4N.def $ 
+# *     $Revision: 1.4 $
+# *     $Source: Z:/usr/product/FAservo/PANATERM/開発用/Panaterm-3_x/Panaterm-3_7E_Install_Maker/Panaterm/ini/def/rcs/MINAS-A4N.def $
+# *
+# *     設計    :   藤崎 好洋、平川 智久、池内 慶成
+# *     更新    :   鈴木 健一
+# *     作成    :   $Date: 2005/11/21 02:54:44 $
+# *     内容    :   ＭＩＮＡＳ－Ａ４Ｎシリーズ用定義ファイル
+# *               （CPU1:ver1.03 に対応）
+# *
+# **********************************************************************
+# */
+############################################
+#Version of the file
+############################################
+FILE VERSION,1
+DATA,1,Series basic file,"3.70.01"
+END
+############################################
+#Version of this software
+############################################
+VERSION,1
+DATA,0
+	0x103F		,#function control(when driver is connected via 232)
+	0x143F		,#function control(when driver is connected via 485)
+	0x1134		,#function control(when no driver is connects)
+#Bit0:Monitor.Bit1:Alarm.Bit2:Parameter.Bit3:Auto tuning
+#Bit4:Wave form graphic.Bit5:Frequency characteristics
+#Bit6:Positioning Parameter
+#Bit7:Positioning Monitor
+#Bit8:Model selection.Bit9:Communication control. Bit10:Axis setting. Bit11:Password.Bit12:Port selection
+#Bit14:Log window. Bit15:Control window
+END
+############################################
+#バージョン３．７での追加事項：通信速度拡張
+############################################
+EXTENTION V3.7,1
+DATA,0,6	,#ＣＯＭ通信速度の個数
+#	115200	,#通信速度
+	9600	,#通信速度
+	57600	,#通信速度
+	38400	,#通信速度
+	19200	,#通信速度
+	4800	,#通信速度
+	2400	,#通信速度
+END
+############################################
+#バージョン３．６拡張機能の制御
+############################################
+EXTENTION V3.6,1
+#Max value of Machine Stiffness at Auto-Tuning Screen.
+DATA,1,15
+END
+############################################
+#バージョン３．５拡張機能の制御
+############################################
+EXTENTION V3.5,1
+DATA,0
+####
+#ＦＦＴ測定条件のフルクローズの有無（機種毎に異なる）
+#０：なし　　１：あり
+0,
+####
+#デフォルトのＦＦＴ測定条件のフルクローズ
+#０：チェックＯＦＦ（モータ速度）
+#１：チェックＯＮ　（外部スケール速度）
+0,
+####
+#３２ビットパラメータ使用の有無（機種毎に異なる）
+#０：使用しない　　１：使用する
+0,
+####
+#３２ビットパラメータ先頭値
+0,
+####
+#３２ビットユーザーパラメータの個数
+0,
+####
+#３２ビットパラメータの個数（ユーザー＋システム）
+0
+END
+###################################################
+#バージョン3.0での変更
+###################################################
+############################################
+#測定項目の種類と表示許可
+############################################
+MEASURE ITEM,6
+#	Name					DspName			unit		Comment										Enable/Disable-CheckBox
+DATA,0,"Actual speed",		"Act speed",	"[r/min]",	"Set the actual speed measurement or not.",	1,	# Actual Speed
+DATA,1,"Torque",			"Torque",		"[%]",		"Set the torque measurement or not."		1,	# Torque
+DATA,2,"Position error",	"P-Error",		"[pulse]",	"Set the position error measurement or not.",	1,	# Pos Error
+DATA,3,"Command speed",		"Cmd speed",	"[r/min]",	"Set the commanded speed measurement or not.",	1,	# Cmd Speed
+DATA,4,"Full-closed error",	"F-Error",		"[pulse]",	"Set the full-closed error measurement or not.",	1,	# F-closed Error
+DATA,5,"In-position",		"INP",			"[ON/OFF]",	"Set the in-position measurement or not.",	1,	# In-position
+DATA,6,"Reserved",			"rsv",			"[none]",	"Not used.",								0,	# Not used
+END
+############################################
+#バージョン３．０拡張機能の制御
+############################################
+EXTENTION V3.0,1
+DATA,0
+#####
+#ポジショニング関連処理のＯＮ／ＯＦＦ
+#（設定すると、起動時にポジショニングパラメータのデフォルト値を読込ます）
+#１：ポジショニングモニタ、ポジショニングパラメータを利用する
+#０：ポジショニングモニタ、ポジショニングパラメータを利用しない
+0,	
+#####
+#波形グラフィックで、５項目から３項目選択して測定する機能の有無
+#０：ＯＦＦ
+#１：ＯＮ
+1,
+#####
+3,	#測定項目の最大同時選択数
+#####
+4,	#位置決め完了でチェックするビット（該当ビットをＯＮにした整数を設定）
+#####
+0,	#ステップ数の先頭値
+16,	#ステップ数（ユーザー）の個数
+16,	#ステップ数（ユーザー＋システム）の個数
+#####
+0,	#１６ビットポジショニングパラメータの先頭値
+0x38,	#１６ビットポジショニングパラメータ（ユーザー）の個数
+0x40,	#１６ビットポジショニングパラメータ（ユーザー＋システム）の個数
+#####
+0,	#３２ビットポジショニングパラメータの先頭値
+4,	#３２ビットポジショニングパラメータ（ユーザー）の個数
+4,	#３２ビットポジショニングパラメータ（ユーザー＋システム）の個数
+#####
+-2147483648,	#ステップ位置最小値
+2147483647,	#ステップ位置最大値
+#####
+"Set the measuring item.(can set max 3 items.)",	#測定項目フレームのツールチップテキスト
+#####
+END
+############################################
+#Serial port setting(to be reset at model setting)
+############################################
+COM PORT,1
+DATA,0
+	1	,#Port No.
+	9600	,#Baud rate
+#Time out setting at normal communication
+	500	,#Time out 1
+	10000	,#Time out 2
+	2	,#Retry times
+#Time out setting at axis scanning
+	500	,#Time out 1
+	10000	,#Time out 2
+	2	,#Retry times
+#Time out setting at model scanning(Setting at Default.def can be used in this setting.)
+	500	,#Time out 1
+	10000	,#Time out 2
+	2	,#Retry times
+#Time out setting at auto tuning complete scanning(can't be used for MSDA series.)
+	500	,#Time out 1
+	10000	,#Time out 2
+	1	,#Retry times
+END
+############################################
+#Numbers (of such as parameter)
+############################################
+MAX ITEM,1
+DATA,0
+	0xff		,#Max. item numbers
+	0x80		,#User parameters
+	0x80		,#System parameters
+	0x80		,#System parameter-starting address
+	0xB8		,#Max. parameters to be checked at writing to EEPROM
+	32		,#I/O parameters
+	14		,#Alarm display items
+	14		,#Alarm time display items
+	0x5F		,# Heading upper digit of parameter at Intel Hex file
+	2048		,#FFT points of default	
+	50		,#FFT measurement amplitudes of default
+	0		,#FFT measurement offsets of dafault
+	1		,#FFT measurement sampling rate of default
+ 	1000.00	,#Max.display frequency of frequency characteristics graph
+	0.0001666	,#FFT sampling unit(s)	
+	0.0001666	,#Wave form graphic sampling unit (s)
+	1 ,#Simultaneous measurement of multiple items at wave form graphic(1 for MSDA)
+	1		,# Display of control mode
+	1		,# Display of 1st. page of I/O
+	1		,# Display of 2nd. page of I/O
+	1		,# Display of load page
+	1		,# Display of absolute page on the screen ?
+	1		,# Display of clear on absolute page
+	1		,# Display of the current time
+	-5000		,# Lower trigger limit of wave form graphic
+	5000		,# Upper trigger limit of wave form graphic
+	1 ,# Issuance of command obtaining execution right at writing or measuring
+	2		,# Auto tuning command selection0:X 1:Z 2:A
+	20		,# Dividing value of torque at display
+END
+############################################
+#Parameter control information
+############################################
+PARA MENU,255
+#N0.00#########################################################################
+DATA,0		,#番号
+	"For manufacturer use"	,#名称
+	1	,#最小値
+	1	,#最大値
+	0x100	,#属性
+	2	,#タイプ	Bit1:ゲイン調整で使用して良い　Bit0:ゲイン調整で使用する
+	""
+	""
+	""
+	""
+#N0.01#########################################################################
+DATA,1,"LED display",0,4,0x00,2
+	"Select the data to be displayed on 7-segment LED of the front panel."
+	"0: Normal display, 1: Mechanical angle (0 - FF[hex]), 0 indicates zero position of the encoder."
+	"2: Electrical angle (0 - FF[hex]), 0 indicates the peak point of U-phase back-EMF."
+	"3: Cumulative communication error count (0 - FF[hex]), 4: Node address (MAC-ID) in decimal"
+#N0.02#########################################################################
+DATA,2,"Control mode",0,6,0x10,2
+	"Select the control mode."
+	"0: Position"
+	"1-5: Do not use"
+	"6: Full-closed"
+#N0.03#########################################################################
+DATA,3,"Torque limit selection",1,3,0,2
+	"Define the parameter for setting the torque limit."
+	"1: CW and CCW are set with Pr.5E. (CW and CCW are the same.)"
+	"2: CW Pr.5E / CCW Pr.5F"
+ 	"3: When TL SW of network command is '0'/'1', Pr.5E/Pr.5F. (CW and CCW are the same.)"
+#N0.04#########################################################################
+DATA,4,"Overtravel input inhibit",0,2,0x10,2
+	"Set the function of CW overtravel input (CWL) and CCW overtravel input (CCWL)."
+ 	"0: Overtravel input enabled (Refer to Pr.66)"
+	"1: Overtravel input disabled (However, CWL/CCWL can be monitored via network.)"
+	"2: If CWL or CCWL is opened, Overtravel inhibit input error occurs."
+#N0.05#########################################################################
+DATA,5,"For manufacturer use",0,2,0,2
+	""
+	""
+	""
+	""
+#N0.06#########################################################################
+DATA,6,"Address indicated time at power-up",0,1000,0x10,2
+	"Set time for indicating the node address at control power-up."
+	"0-6: 600[ms]"
+	"7-1000: Setting value x 100[ms]"
+	""
+#N0.07#########################################################################
+DATA,7,"Speed monitor (SP) selection",0,11,0,2
+	"Select the analog speed monitor (SP) output. ( ) represents the monitor value at approx. 6V."
+	"0-4: Actual speed (0: 47, 1: 188, 2: 750, 3: 3000, 4: 12000[r/min])"
+	"5-9: Command speed (5: 47, 6: 188, 7: 750, 8: 3000, 9: 12000[r/min])"
+	"10: Position command (0V: Active, 5V: None), 11: Gain switching (0V: 2nd gain, 5V: 1st gain)"
+#N0.08#########################################################################
+DATA,8,"Torque monitor (IM) selection",0,14,0,2
+	"Select the analog torque monitor (IM) output. ( ) represents the monitor value at approx. 3V."
+	"0: TRQ command (100[%]), 11: TRQ command (200[%]), 12: TRQ command (300[%])"
+	"1-5: Position deviation (1: 31, 2: 125, 3: 500, 4: 2000, 5: 8000[pulse])"
+	"6-10: Full-closed deviation (6: 31, 7: 125, 8: 500, 9: 2000, 10: 8000[pulse])"
+#N0.09#########################################################################
+DATA,9,"Unit of velocity",0,2,0,2
+	"Select the unit of the velocity via network."
+	"0: r/min (based on encoder)"
+	"1: pulse/s (based on encoder)"
+	"2: pulse/s (based on external scale in full-closed control, or encoder in position control)"
+#N0.0A#########################################################################
+DATA,10,"Inhibit parameter change via network",0,1,0,2
+	"Inhibits the parameter change via network."
+	"If this parameter is 1 (inhibit) and the host controller commands to change parameter,"
+	"command error is replied."
+	"0: Not inhibit, 1: Inhibit"
+#N0.0B#########################################################################
+DATA,11,"Absolute encoder setup",0,2,0x10,2
+	"Select the using method of the absolute encoder."
+	"0: Used as absolute."
+ 	"1: Used as incremental."
+	"2: Used as absolute neglecting the counter over error. "
+#N0.0C#########################################################################
+DATA,12,"Baud rate of RS232",0,5,0x10,2
+	"Set the communication speed of RS232."
+	"0: 2400[bps],  1: 4800[bps]"
+ 	"2: 9600[bps],  3: 19200[bps]"
+	"4: 38400[bps], 5: 57600[bps]"
+#N0.0D#########################################################################
+DATA,13,"Warning setup of cumulative COM error",0,32767,0x00,2
+	"If the number of cumulative communication errors is this parameter value or more, "
+	"warning No.84 occurs."
+	"When this parameter is set to 0, this function is disabled and the warning does not occur."
+	""
+#N0.0E#########################################################################
+DATA,14,"Warning setup of continuous COM error",0,32767,0x00,2
+	"If the number of continuous communication errors is this parameter value or more, "
+	"warning No.83 occurs."
+	"When this parameter is set to 0, this function is disabled and the warning does not occur."
+	"The maximum value depends on the number for detecting Err.83"
+#N0.0F#########################################################################
+DATA,15,"Update counter warning setup",0,32767,0x00,2
+	"If the update counter is not incremented properly and this situation continues "
+	"for this parameter value, warning No.86 occurs."
+	"Normally, this parameter should be set to 0 (disable)."
+	""
+#N0.10#########################################################################
+DATA,16,"1st position loop gain",0,3000,0,2
+	"Set the position loop gain."
+ 	"Unit: [1/s]"
+	"Larger value yields larger stiffness of the servo and faster in-position."
+	"Note that too large setting may result in oscillation."
+#N0.11#########################################################################
+DATA,17,"1st velocity loop gain",1,3500,0,2
+	"Set the velocity loop gain."
+	"When the inertia ratio is set correctly at Pr.20, the unit is [Hz]."
+	"Larger value yields quicker velocity response, however, may cause oscillation."
+ 	""
+#N0.12#########################################################################
+DATA,18,"1st velocity loop integration time constant",1,1000,0,2
+	"Set the time constant of velocity integration."
+	"Smaller value yields faster integration. Unit: [ms]"
+	"1-998: Integration enabled,  999: Integration disabled with holding integrated value"
+	"1000 : Integration disabled"
+#N0.13#########################################################################
+DATA,19,"1st speed detection filter",0,5,0,2
+	"Select the velocity detection filter."
+	"Larger value reduces noise from the motor, however, the response becomes lower."
+	"Normally, 0 is recommended."
+	""
+#N0.14#########################################################################
+DATA,20,"1st torque filter time constant",0,2500,0,2
+	"Set the time constant of the 1st order lag filter added to the torque command."
+	"Unit: [0.01ms]"
+	"With this setting, machine vibration may be reduced."
+	"If there is no resonance, smaller value yields quicker response time."
+#N0.15#########################################################################
+DATA,21,"Velocity feed forward",-2000,2000,0,2
+	"Set the velocity feed forward gain."
+	"Unit: [0.1%]"
+	"Use this when extremely quicker response is required."
+ 	""
+#N0.16#########################################################################
+DATA,22,"Feed forward filter time constant",0,6400,0,2
+	"Set the time constant of the 1st order lag filter added to the velocity feed forward."
+	"Unit: [0.01ms]"
+	""
+ 	""
+#N0.17#########################################################################
+DATA,23,"For manufacturer use",-32768,32767,0x80,2
+	""
+	""
+	""
+ 	""
+#N0.18#########################################################################
+DATA,24,"2nd position loop gain",0,3000,0,2
+	"This parameter has the same function as Pr.10, and is only for the gain switching."
+	"When using the gain switching, Pr.30-35 must be also set."
+	""
+	""
+#N0.19#########################################################################
+DATA,25,"2nd velocity loop gain",1,3500,0,2
+	"This parameter has the same function as Pr.11, and is only for the gain switching."
+	"When using the gain switching, Pr.30-35 must be also set."
+	""
+ 	""
+#N0.1A#########################################################################
+DATA,26,"2nd velocity loop integration time constant",1,1000,0,2
+	"This parameter has the same function as Pr.12, and is only for the gain switching."
+	"When using the gain switching, Pr.30-35 must be also set."
+	""
+ 	""
+#N0.1B#########################################################################
+DATA,27,"2nd speed detection filter",0,5,0,2
+	"This parameter has the same function as Pr.13, and is only for the gain switching."
+	"When using the gain switching, Pr.30-35 must be also set."
+	""
+ 	""
+#N0.1C#########################################################################
+DATA,28,"2nd torque filter time constant",0,2500,0,2
+	"This parameter has the same function as Pr.14, and is only for the gain switching."
+	"When using the gain switching, Pr.30-35 must be also set."
+	""
+ 	""
+#N0.1D#########################################################################
+DATA,29,"1st notch frequency",100,1500,0,2
+	"Set the 1st notch frequency of the resonance suppression filter. Unit: [Hz]"
+	"This frequency should be coincident with the resonance frequency of the machine."
+	"100-1499: Filter enabled"
+	"1500: Filter disabled"
+#N0.1E#########################################################################
+DATA,30,"1st notch width selection",0,4,0,2
+	"Select the 1st notch width of the resonance suppression filter."
+	"Larger value makes wider notch width."
+	"Normally, set to 2."
+ 	""
+#N0.1F#########################################################################
+DATA,31,"For manufacturer use",-32768,32767,0x80,2
+	""
+	""
+	""
+ 	""
+#N0.20#########################################################################
+DATA,32,"Inertia ratio",0,10000,0,3
+	"Set the ratio of load inertia to rotor inertia of the motor."
+	"Unit: [%]"
+	"Setting value = (Load inertia / Rotor inertia) x 100"
+ 	""
+#N0.21#########################################################################
+DATA,33,"Real-time auto tuning setup",0,7,0,3
+	"Defines the operation mode of the real-time auto tuning (RAT)."
+	"0: RAT disabled,  1-3: RAT enabled as normal mode"
+	"4-6: RAT enabled as vertical axis mode"
+	"7: RAT enabled without the gain switching function"
+#N0.22#########################################################################
+DATA,34,"Machine stiffness at auto tuning",0,15,0,3
+	"Set the machine stiffness at the real-time auto tuning."
+	"Larger value makes quicker response."
+	"Because sudden increase of this parameter may shock the machine, "
+	"start with smaller value and increase gradually."
+#N0.23#########################################################################
+DATA,35,"Adaptive filter mode",0,2,0,2
+	"Enables the adaptive notch filter."
+	"0: Disable (Pr.2F becomes 0)"
+	"1: Enable"
+	"2: Hold (When set to 2, the frequency of the filter is held)"
+#N0.24#########################################################################
+DATA,36,"Vibration suppression filter selection",0,5,0x10,2
+	"Select the type and the switching method of vibration suppression filter."
+	"0-2: Normal type (10 to 200Hz), 3-5: Range extended (1 to 200Hz, Adaptive filter disabled)"
+	"0, 1, 3, 4: No switching (1st and 2nd are both enabled)"
+	"2, 5: Switch by the command direction (CCW: 1st, CW: 2nd)"
+#N0.25#########################################################################
+DATA,37,"Normal auto tuning motion setup",0,7,0,2
+	"Select the motion pattern (direction and revolutions) of the normal mode auto tuning."
+	"0: 2 CCW / 2 CW,   1: 2 CW / 2 CCW,   2: 2 CCW / 2 CCW,   3: 2 CW / 2 CW"
+	"4: 1 CCW / 1 CW,   5: 1 CW / 1 CCW,   6: 1 CCW / 1 CCW,   7: 1 CW / 1 CW"
+	"(e.g.) If 0, one cycle consists of the first 2 CCW and secondly 2 CW revolutions."
+#N0.26#########################################################################
+DATA,38,"Software limit setup",0,1000,0,2
+	"Set the value of allowable over-revolution based on the position commanded range."
+	"Unit: [0.1rev.]"
+ 	"When set to 0, the software limit error is not detected."
+	""
+#N0.27#########################################################################
+DATA,39,"Velocity observer",0,1,0,2
+	"Enables the instantaneous velocity observer."
+	"0: Disable"
+	"1: Enable"
+	""
+#N0.28#########################################################################
+DATA,40,"2nd notch frequency",100,1500,0,2
+	"Set the 2nd notch frequency of the resonance suppression filter. Unit: [Hz]"
+	"This frequency should be coincident with the resonance frequency of the machine."
+	"100-1499: Filter enabled"
+	"1500: Filter disabled"
+#N0.29#########################################################################
+DATA,41,"2nd notch width selection",0,4,0,2
+	"Select the 2nd notch width of the resonance suppression filter."
+	"Larger value makes wider notch width."
+	"Normally, set to 2."
+ 	""
+#N0.2A#########################################################################
+DATA,42,"2nd notch depth selection",0,99,0,2
+	"Set the 2nd notch depth of the resonance suppression filter."
+	"Increasing the setting value reduces the notch depth and the phase delay."
+	""
+ 	""
+#N0.2B#########################################################################
+DATA,43,"1st vibration suppression frequency",0,2000,0,2
+	"Set the 1st vibration suppression frequency."
+	"Unit: [0.1Hz] The setting range depends on Pr.24."
+	"When Pr.24 is 0-2 (normal type),     0-99: Disable, 100-2000: Enable"
+	"When Pr.24 is 3-5 (range extended),   0-9: Disable,  10-2000: Enable"
+#N0.2C#########################################################################
+DATA,44,"1st vibration suppression filter",-200,2000,0,2
+	"Set the 1st vibration suppression filter."
+	"Unit: [0.1Hz] Normally, set to 0."
+ 	"Increasing the setting value makes the settling time short, "
+	"however, if torque saturation occurs, decrease the setting value."
+#N0.2D#########################################################################
+DATA,45,"2nd vibration suppression frequency",0,2000,0,2
+	"Set the 2nd vibration suppression frequency."
+	"Unit: [0.1Hz] The setting range depends on Pr.24."
+	"When Pr.24 is 0-2 (normal type),     0-99: Disable, 100-2000: Enable"
+	"When Pr.24 is 3-5 (range extended),   0-9: Disable,  10-2000: Enable"
+#N0.2E#########################################################################
+DATA,46,"2nd vibration suppression filter",-200,2000,0,2
+	"Set the 2nd vibration suppression filter."
+	"Unit: [0.1Hz] Normally, set to 0."
+ 	"Increasing the setting value makes the settling time short, "
+	"however, if torque saturation occurs, decrease the setting value."
+#N0.2F#########################################################################
+DATA,47,"Adaptive filter frequency",0,64,0x100,2
+	"Indicates the table number corresponding to the notch frequency of the adaptive filter."
+	"When Pr.23 is set to 1, this parameter is automatically set and you cannot modify."
+	"0-4: Filter disabled,  5-48: Filter enabled"
+	"49-64: Filter enabling depends on Pr.22"
+#N0.30#########################################################################
+DATA,48,"2nd gain action setup",0,1,0,2
+	"When using the gain switching function, set this parameter to 1."
+	"0: Only 1st gain (Pr.10-14)"
+	"1: Switch the 1st gain (Pr.10-14) and 2nd gain (Pr.18-1C)"
+	""
+#N0.31#########################################################################
+DATA,49,"Gain switching mode",0,10,0,2
+	"Select the trigger for the gain switching."
+	"0: 1st gain fixed, 1: 2nd gain fixed, 2: Gain SW bit of network command, "
+	"3: Torque command, 4: 1st gain fixed, 5: Velocity command, 6: Position deviation,"
+	"7: Position command, 8: Not in-position, 9: Velocity, 10: Position command and velocity."
+#N0.32#########################################################################
+DATA,50,"Gain switching delay time",0,10000,0,2
+	"When Pr.31 is set to 3 or 5-10, "
+	"set the delay time between the trigger detection and switching gain from 2nd to 1st."
+	"Unit: [0.166ms]"
+ 	""
+#N0.33#########################################################################
+DATA,51,"Gain switching level",0,20000,0,2
+	"When Pr.31 is set to 3, 5, 6, 9, or 10, set the trigger level."
+	"Unit depends on Pr.31."
+	""
+ 	""
+#N0.34#########################################################################
+DATA,52,"Gain switching hysteresis",0,20000,0,2
+	"When Pr.31 is set to 3, 5, 6, 9, or 10, set the hysteresis for trigger judgment."
+	"Unit depends on Pr.31."
+ 	""
+	""
+#N0.35#########################################################################
+DATA,53,"Position loop gain switching time",0,10000,0,2
+	"Suppresses the sudden increase of the position loop gain, "
+	"when there is a big difference between 1st and 2nd gain."
+ 	"Position loop gain increases for the period of (setting value + 1) x 0.166[ms]."
+	"In decrease case, this parameter is not applied."
+#N0.36#########################################################################
+DATA,54,"For manufacturer use",-32768,32767,0x80,2
+	""
+	""
+	""
+	""
+#N0.37#########################################################################
+DATA,55,"For manufacturer use",-32768,32767,0x80,2
+	""
+	""
+	""
+	""
+#N0.38#########################################################################
+DATA,56,"For manufacturer use",-32768,32767,0x80,2
+	""
+	""
+	""
+	""
+#N0.39#########################################################################
+DATA,57,"For manufacturer use",-32768,32767,0x80,2
+	""
+	""
+	""
+	""
+#N0.3A#########################################################################
+DATA,58,"For manufacturer use",-32768,32767,0x80,2
+	""
+	""
+	""
+ 	""
+#N0.3B#########################################################################
+DATA,59,"For manufacturer use",-32768,32767,0x80,2
+	""
+	""
+	""
+ 	""
+#N0.3C#########################################################################
+DATA,60,"For manufacturer use",-32768,32767,0x80,2
+	""
+	""
+	""
+ 	""
+#N0.3D#########################################################################
+DATA,61,"JOG speed",0,500,0,2
+	"Set the speed in JOG operation using the optional console."
+	"Unit: [r/min]"
+	""
+ 	""
+#N0.3E#########################################################################
+DATA,62,"For manufacturer use",-32768,32767,0x80,2
+	""
+	""
+	""
+ 	""
+#N0.3F#########################################################################
+DATA,63,"For manufacturer use",-32768,32767,0x80,2
+	""
+	""
+	""
+ 	""
+#N0.40#########################################################################
+DATA,64,"External servo-on enable",0,1,0x00,2
+	"Enables the external servo-on (EX-SON) input. Regardless of this setting, it is enabled"
+	"when using the normal mode auto-tuning or the frequency characteristic analysis."
+	"0: Disable (to be used as EX-IN4 instead) "
+	"1: Enable (When both active of EX-SON and Servo On of network, servo on)"
+#N0.41#########################################################################
+DATA,65,"Emergency stop enable",0,1,0x00,3
+	"Enables the emergency stop (EMG-STP) input."
+	"0: Disable"
+	"1: Enable (If EMG-STP is open, Err.87 occurs.)"
+	""
+#N0.42#########################################################################
+DATA,66,"Home input logic",0,1,0x00,3
+	"Set the logic of Home input."
+	"0: Normally closed"
+	"1: Normally open"
+	""
+#N0.43#########################################################################
+DATA,67,"Direction of motion",0,3,0x10,3
+	"Set the positive direction of data via network and the assignment of CCWL/CWL on the response."
+	"Note that on PANATERM, plus always indicates CCW."
+	"0: + is CW (byte3 bit1, 0: CCWL, CWL), 1: + is CCW (byte3 bit1, 0: CCWL, CWL)"
+	"2: + is CW (byte3 bit1, 0: CWL, CCWL), 3: + is CCW (byte3 bit1, 0: CWL, CCWL)"
+#N0.44#########################################################################
+DATA,68,"Numerator of output pulse ratio",1,32767,0x10,2
+	"Set the number of output pulses per motor revolution."
+	"Pr.45 = 0: Set the number of pulses per revolution. The resolution is (Pr.44 x 4)."
+	"Pr.45 > 0: Output pulse resolution per revolution = (Pr.44 / Pr.45) x Encoder resolution."
+	"When the source of the pulse output is the external scale, do not set Pr.45 to 0. "
+#N0.45#########################################################################
+DATA,69,"Denominator of output pulse ratio",0,32767,0x10,2
+	"Set the number of output pulses per motor revolution."
+	"Pr.45 = 0: Set the number of pulses per revolution. The resolution is (Pr.44 x 4)."
+	"Pr.45 > 0: Output pulse resolution per revolution = (Pr.44 / Pr.45) x Encoder resolution."
+	"When the source of the pulse output is the external scale, do not set Pr.45 to 0. "
+#N0.46#########################################################################
+DATA,70,"Pulse output logic inversion",0,3,0x10,2
+	"Select the source and the B-phase logic of the pulse output."
+	"When only using the external scale, 2 or 3 can be set."
+	"0: Non invert of encoder,        1: Invert of encoder"
+	"2: Non invert of external scale, 3: Invert of external scale"
+#N0.47#########################################################################
+DATA,71,"Z-phase of external scale setup",0,32767,0x10,2
+	"When the source of the pulse output is the external scale, "
+	"set an interval of Z-phase output with the number of A-phase pulses before multiplied by 4."
+	"0: Z-phase not outputted."
+ 	"1-32767: Z-phase outputted."
+#N0.48#########################################################################
+DATA,72,"For manufacturer use",10000,10000,0x00,2
+	""
+	""
+	""
+	""
+#N0.49#########################################################################
+DATA,73,"For manufacturer use",-32768,32767,0x80,2
+	""
+	""
+	""
+	""
+#N0.4A#########################################################################
+DATA,74,"For manufacturer use",0,0,0,2
+	""
+	""
+	""
+	""
+#N0.4B#########################################################################
+DATA,75,"For manufacturer use",10000,10000,0,2
+	""
+	""
+	""
+	""
+#N0.4C#########################################################################
+DATA,76,"Smoothing filter",0,7,0,2
+	"Set the 1st order lag filter added to the position command."
+	"Larger value yields smoother command, however, its delay becomes longer."
+	"0:   Filter disabled"
+ 	"1-7: Filter enabled"
+#N0.4D#########################################################################
+DATA,77,"FIR filter setup",0,31,0x10,2
+	"Set the FIR filter added to the position command."
+	"This is a moving average filter, and the number of the averaging is (setting value + 1)."
+	"Larger value yields smoother command, however, its delay becomes longer."
+ 	""
+#N0.4E#########################################################################
+DATA,78,"For manufacturer use",-32768,32767,0x80,2
+	""
+	""
+	""
+	""
+#N0.4F#########################################################################
+DATA,79,"For manufacturer use",-32768,32767,0x80,2
+	""
+	""
+	""
+	""
+#N0.50#########################################################################
+DATA,80,"For manufacturer use",10,2000,0,2
+	""
+	""
+	""
+	""
+#N0.51#########################################################################
+DATA,81,"For manufacturer use",0,1,0,2
+	""
+	""
+	""
+	""
+#N0.52#########################################################################
+DATA,82,"For manufacturer use",-2047,2047,0,2
+	""
+	""
+	""
+	""
+#N0.53#########################################################################
+DATA,83,"For manufacturer use",-20000,20000,0,2
+	""
+	""
+	""
+	""
+#N0.54#########################################################################
+DATA,84,"For manufacturer use",-20000,20000,0,2
+	""
+	""
+	""
+	""
+#N0.55#########################################################################
+DATA,85,"For manufacturer use",0,32767,0,2
+	""
+	""
+	""
+	""
+#N0.56#########################################################################
+DATA,86,"For manufacturer use",0,32767,0,2
+	""
+	""
+	""
+	""
+#N0.57#########################################################################
+DATA,87,"For manufacturer use",0,6400,0,2
+	""
+	""
+	""
+	""
+#N0.58#########################################################################
+DATA,88,"For manufacturer use",0,5000,0,2
+	""
+	""
+	""
+	""
+#N0.59#########################################################################
+DATA,89,"For manufacturer use",0,5000,0,2
+	""
+	""
+	""
+	""
+#N0.5A#########################################################################
+DATA,90,"For manufacturer use",0,500,0,2
+	""
+	""
+	""
+	""
+#N0.5B#########################################################################
+DATA,91,"For manufacturer use",0,1,0,2
+	""
+	""
+	""
+	""
+#N0.5C#########################################################################
+DATA,92,"For manufacturer use",10,100,0,2
+	""
+	""
+	""
+	""
+#N0.5D#########################################################################
+DATA,93,"For manufacturer use",0,1,0,2
+	""
+	""
+	""
+	""
+#N0.5E#########################################################################
+DATA,94,"1st torque limit",0,500,0,2
+	"Set the 1st limit of the motor output torque."
+	"Unit: [%]"
+	"For the use of this parameter, refer to Pr.03."
+ 	""
+#N0.5F#########################################################################
+DATA,95,"2nd torque limit",0,500,0,2
+	"Set the 2nd limit of the motor output torque."
+	"Unit: [%]"
+	"For the use of this parameter, refer to Pr.03."
+ 	""
+#N0.60#########################################################################
+DATA,96,"In-position range",0,32767,0,2
+	"Set the allowable pulses for in-position judgment, which is basically, "
+	"whether the position deviation is within this setting. Refer to Pr.63."
+	"The unit is resolution [pulse] of either the encoder in position control, "
+ 	"or the external scale in full-closed control."
+#N0.61#########################################################################
+DATA,97,"Zero speed",10,20000,0,2
+	"Set the threshold level of the zero speed detection."
+ 	"When the speed is lower than this setting, Zero speed is detected."
+	"Unit: [r/min]"
+	"This detection has hysteresis of 10[r/min]."
+#N0.62#########################################################################
+DATA,98,"For manufacturer use",-32768,32767,0x80,2
+	""
+	""
+	""
+	""
+#N0.63#########################################################################
+DATA,99,"In-position output setup",0,3,0,2
+	"Select the conditions for activating in-position output signal."
+	"0: Position deviation within in-pos. range. 1: Condition 0 and no position command."
+ 	"2: Condition 1 and zero speed detection."
+ 	"3: Condition 1 with holding ON state until the next position command."
+#N0.64#########################################################################
+DATA,100,"CT-offset re-calibration at servo-on",0,1,0,2
+	"Enables the re-calibration to cancel the CT-offset at turning servo on."
+	"0: Disable (Only at power-up, calibrated)"
+	"1: Enable (At both power-up and servo-on, calibrated)"
+ 	""
+#N0.65#########################################################################
+DATA,101,"Undervoltage error response at main power-off",0,1,0,2
+	"Select the action when the main power-off is detected during servo-on."
+	"0: Turn servo off according to Pr.67. "
+	"   After that, if the power is turned on, the drive will be servo-on again."
+	"1: Trip as the undervoltage error (Err.13)."
+#N0.66#########################################################################
+DATA,102,"Error response at overtravel limit",0,2,0x10,2
+	"Select the sequence at overtravel."
+	"0: Using dynamic brake, stop. After that, torque zero for the limit direction."
+	"1: Using servo free, stop. After that, torque zero for the limit direction."
+	"2: Using servo lock, stop. After that, servo lock for the limit direction."
+#N0.67#########################################################################
+DATA,103,"Error response at main power-off",0,9,0,2
+	"Select the sequence at the main power-off when Pr.65 is 0. "
+	"<in slow down  / after stop / pos. deviation>, (DB: dynamic brake, F: servo free, CLR: clear)"
+	"0, 4: <DB / DB / CLR>,   1, 5: <F / DB / CLR>,   2, 6: <DB / F / CLR>"
+	"3, 7: <F / F / CLR>,   8: <Servo-lock / DB / CLR>,   9: <Servo-lock / F / CLR>"
+#N0.68#########################################################################
+DATA,104,"Error response action",0,3,0,2
+	"Select the sequence at alarm."
+	"<in slow down  / after stop / pos. deviation>, (DB: dynamic brake, F: servo free, CLR: clear)"
+	"0: <DB / DB / CLR>,   1: <F / DB / CLR>,   2: <DB / F / CLR>,   3: <F / F / CLR>"
+	"Note that the position deviation is cleared when alarm is released."
+#N0.69#########################################################################
+DATA,105,"Sequence at servo-off",0,9,0,2
+	"Select the sequence at servo-off."
+	"<in slow down  / after stop / pos. deviation>, (DB: dynamic brake, F: servo free, CLR: clear)"
+	"0, 4: <DB / DB / CLR>,   1, 5: <F / DB / CLR>,   2, 6: <DB / F / CLR>"
+	"3, 7: <F / F / CLR>,   8: <Servo-lock / DB / CLR>,   9: <Servo-lock / F / CLR>"
+#N0.6A#########################################################################
+DATA,106,"Mechanical brake delay at motor standstill",0,100,0,2
+	"Set the time from BRK-OFF output open (i.e. braking) to servo-off"
+	"when you turn servo off at motor standstill (servo-locked)."
+	"Unit: [2ms]"
+ 	""
+#N0.6B#########################################################################
+DATA,107,"Mechanical brake delay at motor in motion",0,100,0,2
+	"Set the time from servo-off to BRK-OFF output open (i.e. braking)"
+	"when you turn servo off at motor in motion. "
+	"Unit: [2ms]"
+	"If velocity is reduced to 30 r/min or less before the setting time, BRK-OFF is forced open."
+#N0.6C#########################################################################
+DATA,108,"External regenerative resistor setup",0,3,0x10,2
+	"Select the operation of the regenerative discharge resistor and its overload protection."
+	"0: Internal resistor with protection"
+	"1: External resistor with protection, which is activated if the operating rate exceeds 10 %."
+ 	"2: External resistor without protection,   3: Resistor not used"
+#N0.6D#########################################################################
+DATA,109,"Main power-off detection time",35,1000,0x10,2
+	"Set the time from the main power shut down to the power-off judgment."
+	"Unit: [2ms]"
+	"When set to 1000, the main power-off is not detected."
+ 	""
+#N0.6E#########################################################################
+DATA,110,"Emergency stop torque setup",0,500,0,2
+	"Set the torque limit during the deceleration in the following case."
+	"Pr.66 = 2, Pr.67 = 8 or 9, Pr.69 = 8 or 9"
+	"Unit: [%]"
+	"When set to 0, the normal torque limit is used."
+#N0.6F#########################################################################
+DATA,111,"For manufacturer use",-32768,32767,0x80,2
+	""
+	""
+	""
+ 	""
+#N0.70#########################################################################
+DATA,112,"Position deviation error level",0,32767,0,2
+	"If the position deviation exceeds this setting, the error is detected."
+	"Unit is [256 x resolution] of encoder in position control, "
+ 	"or of external scale in full-closed control."
+	"When set to 0, the error is not detected."
+#N0.71#########################################################################
+DATA,113,"For manufacturer use",0,100,0,2
+	""
+	""
+	""
+	""
+#N0.72#########################################################################
+DATA,114,"Overload level",0,500,0,2
+	"Set the detection level of the overload protection. The unit is [%] based on the rated torque."
+ 	"This parameter is limited to 115[%]."
+	"When set to 0, the level is 115[%]."
+	"Normally, set to 0 except to need level down."
+#N0.73#########################################################################
+DATA,115,"Overspeed level",0,20000,0,2
+	"Set the detection level of the overspeed protection. Unit: [r/min]"
+ 	"This parameter is limited to (Max. motor speed x 1.2)."
+	"When set to 0, the level is (Max. motor speed x 1.2)."
+	"Normally, set to 0 except to need level down."
+#N0.74#########################################################################
+DATA,116,"Command update period",1,2,0x10,2
+	"Select the update period of command by the host controller in the network interface."
+	"1: 0.5ms"
+	"2: 1ms"
+	"Note that this is not the communication period, which is fixed at 0.5ms."
+#N0.75#########################################################################
+DATA,117,"For manufacturer use",-32768,32767,0x80,2
+	""
+	""
+	""
+	""
+#N0.76#########################################################################
+DATA,118,"For manufacturer use",-32768,32767,0x80,2
+	""
+	""
+	""
+	""
+#N0.77#########################################################################
+DATA,119,"For manufacturer use",-32768,32767,0x80,2
+	""
+	""
+	""
+	""
+#N0.78#########################################################################
+DATA,120,"Numerator of external scale ratio",0,32767,0x10,2
+	"Set the ratio of (encoder / external scale)."
+	"Pr.78 = 0: Set Pr.7A to the external scale resolution per motor revolution."
+	"Pr.78 > 0: Numerator = (Pr.78) x 2^(Pr.79)"
+ 	"The numerator is max. 131072, and over-setting is invalid."
+#N0.79#########################################################################
+DATA,121,"Multiplier of numerator of external scale ratio",0,17,0x10,2
+	"Set the ratio of (encoder / external scale)."
+	"Pr.78 = 0: This parameter is ignored."
+	"Pr.78 > 0: Numerator = (Pr.78) x 2^(Pr.79)"
+ 	"The numerator is max. 131072, and over-setting is invalid."
+#N0.7A#########################################################################
+DATA,122,"Denominator of external scale ratio",1,32767,0x10,2
+	"Set the ratio of (encoder / external scale)."
+	"Pr.78 = 0: Set this parameter to the external scale resolution per motor revolution."
+	"Pr.78 > 0: Set this parameter to the denominator."
+ 	""
+#N0.7B#########################################################################
+DATA,123,"Hybrid deviation error level",1,10000,0x10,2
+	"Set the tolerance of actual position gap between the encoder and the external scale."
+	"Unit: [16 x pulse] based on the external scale"
+	""
+	""
+#N0.7C#########################################################################
+DATA,124,"External scale direction",0,1,0x10,2
+	"Select polarity of the absolute data of the external scale."
+	"When the detection head moves to right (viewed from the installing side),"
+	"0: Data increases (+)."
+ 	"1: Data decreases (-)."
+#N0.7D#########################################################################
+DATA,125,"Absolute external scale setup",0,1,0x10,2
+	"Select the using method of the absolute external scale."
+	"0: Used as absolute"
+ 	"1: Used as incremental"
+	"Normally, set to 0."
+#N0.7E#########################################################################
+DATA,126,"For manufacturer use",-32768,32767,0x80,2
+	""
+	""
+ 	""
+	""
+#N0.7F#########################################################################
+#DATA,#127,#"Check-sum",#-32768,#32767,#0,#2
+DATA,127,"For manufacturer use",-32768,32767,0x100,2
+	""
+	""
+ 	""
+	""
+#N0.80#########################################################################
+DATA,128,"For manufacturer use",-32768,32767,0x18,0
+	""
+	""
+ 	""
+	""
+#N0.81#########################################################################
+DATA,129,"For manufacturer use",-32768,32767,0x18,0
+	""
+	""
+ 	""
+	""
+#N0.82#########################################################################
+DATA,130,"For manufacturer use",-32768,32767,0x18,0
+	""
+	""
+ 	""
+	""
+#N0.83#########################################################################
+DATA,131,"For manufacturer use",-32768,32767,0x18,0
+	""
+	""
+ 	""
+	""
+#N0.84#########################################################################
+DATA,132,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+ 	""
+	""
+#N0.85#########################################################################
+DATA,133,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+ 	""
+	""
+#N0.86#########################################################################
+DATA,134,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.87#########################################################################
+DATA,135,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.88#########################################################################
+DATA,136,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.89#########################################################################
+DATA,137,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.8A#########################################################################
+DATA,138,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.8B#########################################################################
+DATA,139,"For manufacturer use",-32768,32767,0x18,0
+	""
+	""
+	""
+ 	""
+#N0.8C#########################################################################
+DATA,140,"For manufacturer use",-32768,32767,0x18,0
+	""
+	""
+	""
+ 	""
+#N0.8D#########################################################################
+DATA,141,"For manufacturer use",-32768,32767,0x18,0
+	""
+	""
+	""
+ 	""
+#N0.8E#########################################################################
+DATA,142,"For manufacturer use",-32768,32767,0x18,0
+	""
+	""
+	""
+ 	""
+#N0.8F#########################################################################
+DATA,143,"For manufacturer use",-32768,32767,0x18,0
+	""
+	""
+	""
+ 	""
+#N0.90#########################################################################
+DATA,144,"For manufacturer use",-32768,32767,0x18,0
+	""
+	""
+	""
+ 	""
+#N0.91#########################################################################
+DATA,145,"For manufacturer use",-32768,32767,0x18,0
+	""
+	""
+	""
+ 	""
+#N0.92#########################################################################
+DATA,146,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.93#########################################################################
+DATA,147,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.94#########################################################################
+DATA,148,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.95#########################################################################
+DATA,149,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.96#########################################################################
+DATA,150,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.97#########################################################################
+DATA,151,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.98#########################################################################
+DATA,152,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.99#########################################################################
+DATA,153,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.9A#########################################################################
+DATA,154,"For manufacturer use",-32768,32767,0x18,0
+	""
+	""
+	""
+ 	""
+#N0.9B#########################################################################
+DATA,155,"For manufacturer use",-32768,32767,0x18,0
+	""
+	""
+ 	""
+	""
+#N0.9C#########################################################################
+DATA,156,"For manufacturer use",-32768,32767,0x08,0
+ 	""
+	""
+	""
+	""
+#N0.9D#########################################################################
+DATA,157,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.9E#########################################################################
+DATA,158,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.9F#########################################################################
+DATA,159,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.A0#########################################################################
+DATA,160,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.A1#########################################################################
+DATA,161,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.A2#########################################################################
+DATA,162,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.A3#########################################################################
+DATA,163,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.A4#########################################################################
+DATA,164,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.A5#########################################################################
+DATA,165,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.A6#########################################################################
+DATA,166,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.A7#########################################################################
+DATA,167,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.A8#########################################################################
+DATA,168,"For manufacturer use",-32768,32767,0x18,0
+	""
+	""
+	""
+ 	""
+#N0.A9#########################################################################
+DATA,169,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.AA#########################################################################
+DATA,170,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.AB#########################################################################
+DATA,171,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.AC#########################################################################
+DATA,172,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.AD#########################################################################
+DATA,173,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.AE#########################################################################
+DATA,174,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.AF#########################################################################
+DATA,175,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.B0#########################################################################
+DATA,176,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.B1#########################################################################
+DATA,177,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.B2#########################################################################
+DATA,178,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.B3#########################################################################
+DATA,179,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.B4#########################################################################
+DATA,180,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.B5#########################################################################
+DATA,181,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.B6#########################################################################
+DATA,182,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.B7#########################################################################
+DATA,183,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.B8#########################################################################
+DATA,184,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.B9#########################################################################
+DATA,185,"For manufacturer use",-32768,32767,0x108,0
+	""
+	""
+	""
+ 	""
+#N0.BA#########################################################################
+DATA,186,"For manufacturer use",-32768,32767,0x108,0
+	""
+	""
+	""
+ 	""
+#N0.BB#########################################################################
+DATA,187,"For manufacturer use",-32768,32767,0x108,0
+	""
+	""
+	""
+ 	""
+#N0.BC#########################################################################
+DATA,188,"For manufacturer use",-32768,32767,0x108,0
+	""
+	""
+	""
+ 	""
+#N0.BD#########################################################################
+DATA,189,"For manufacturer use",-32768,32767,0x108,0
+	""
+	""
+	""
+ 	""
+#N0.BE#########################################################################
+DATA,190,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.BF#########################################################################
+DATA,191,"For manufacturer use",-32768,32767,0x08,0
+	""
+	""
+	""
+ 	""
+#N0.C0#########################################################################
+DATA,192,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.C1#########################################################################
+DATA,193,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.C2#########################################################################
+DATA,194,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.C3#########################################################################
+DATA,195,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.C4#########################################################################
+DATA,196,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.C5#########################################################################
+DATA,197,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.C6#########################################################################
+DATA,198,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.C7#########################################################################
+DATA,199,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.C8#########################################################################
+DATA,200,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.C9#########################################################################
+DATA,201,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.CA#########################################################################
+DATA,202,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.CB#########################################################################
+DATA,203,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.CC#########################################################################
+DATA,204,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.CD#########################################################################
+DATA,205,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.CE#########################################################################
+DATA,206,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.CF#########################################################################
+DATA,207,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.D0#########################################################################
+DATA,208,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.D1#########################################################################
+DATA,209,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.D2#########################################################################
+DATA,210,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.D3#########################################################################
+DATA,211,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.D4#########################################################################
+DATA,212,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.D5#########################################################################
+DATA,213,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.D6#########################################################################
+DATA,214,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.D7#########################################################################
+DATA,215,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.D8#########################################################################
+DATA,216,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.D9#########################################################################
+DATA,217,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.DA#########################################################################
+DATA,218,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.DB#########################################################################
+DATA,219,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.DC#########################################################################
+DATA,220,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.DD#########################################################################
+DATA,221,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.DE#########################################################################
+DATA,222,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.DF#########################################################################
+DATA,223,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.E0#########################################################################
+DATA,224,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.E1#########################################################################
+DATA,225,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.E2#########################################################################
+DATA,226,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.E3#########################################################################
+DATA,227,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+ 	""
+	""
+#N0.E4#########################################################################
+DATA,228,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.E5#########################################################################
+DATA,229,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.E6#########################################################################
+DATA,230,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.E7#########################################################################
+DATA,231,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.E8#########################################################################
+DATA,232,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.E9#########################################################################
+DATA,233,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.EA#########################################################################
+DATA,234,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.EB#########################################################################
+DATA,235,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.EC#########################################################################
+DATA,236,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.ED#########################################################################
+DATA,237,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.EE#########################################################################
+DATA,238,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.EF#########################################################################
+DATA,239,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.F0#########################################################################
+DATA,240,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.F1#########################################################################
+DATA,241,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.F2#########################################################################
+DATA,242,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.F3#########################################################################
+DATA,243,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.F4#########################################################################
+DATA,244,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.F5#########################################################################
+DATA,245,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.F6#########################################################################
+DATA,246,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.F7#########################################################################
+DATA,247,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.F8#########################################################################
+DATA,248,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.F9#########################################################################
+DATA,249,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.FA#########################################################################
+DATA,250,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.FB#########################################################################
+DATA,251,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.FC#########################################################################
+DATA,252,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.FD#########################################################################
+DATA,253,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.FE#########################################################################
+DATA,254,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+#N0.FF#########################################################################
+DATA,255,"For manufacturer use",-32768,32767,0x148,0
+	""
+	""
+	""
+ 	""
+END
+############################################
+#Input terminals
+############################################
+IN MENU,31
+DATA,0X0,"+A Servo ON",                  " - Servo ON"
+DATA,0x1," -",                           " -"
+DATA,2,  "+A CW overtravel",             " - CW overtravel"
+DATA,3,  "+A CCW overtravel",            " - CCW overtravel"
+DATA,4,  "+A Home input",                " - Home input"
+DATA,5,  "+A EX-IN1",                    " - EX-IN1"
+DATA,6,  "+A EX-IN2",                    " - EX-IN2"
+DATA,7,  "+A EX-IN3",                    " - EX-IN3"
+DATA,8,  " -",                           " -"
+DATA,9,  " -",                           " -"               #EX-IN5
+DATA,10, " -",                           " -"               #EX-IN6
+DATA,11, " -",                           " -"
+DATA,12, " -",                           " -"
+DATA,13, " -",                           " -"
+DATA,14, " -",                           " -"
+DATA,15, "+A Emergency stop",            " - Emergency stop"
+DATA,16, " -",                           " -"
+DATA,17, " -",                           " -"
+DATA,18, "+A Homing Ctrl",               " - Homing Ctrl"
+DATA,19, "+A TL SW",                     " - TL SW"
+DATA,20, "+A Gain SW",                   " - Gain SW"
+DATA,21, " -",                           " -"
+DATA,22, " -",                           " -"
+DATA,23, "+A Servo ON",                  " - Servo ON"
+DATA,24, "+A EX-OUT1",                   " - EX-OUT1"
+DATA,25, "+A EX-OUT2",                   " - EX-OUT2"
+DATA,26, " -",                           " -"
+DATA,27, " -",                           " -"
+DATA,28, " -",                           " -"
+DATA,29, " -",                           " -"
+DATA,30, " -",                           " -"
+DATA,31, " -",                           " -"
+END
+############################################
+#Output terminal
+############################################
+"OUT MENU",31
+DATA,0, " -",                           " -"
+DATA,1, "+A Servo alarm",               " - Servo alarm"
+DATA,2, " -",                           " -"
+DATA,3, "+A Brake release",             " - Brake release"
+DATA,4, " -",                           " -"             #Zero speed detected
+DATA,5, " -",                           " -"             #Torque limited
+DATA,6, " -",                           " -"             #Within speed window
+DATA,7, "+A EX-OUT1",                   " - EX-OUT1"
+DATA,8, "+A EX-OUT2",                   " - EX-OUT2"
+DATA,9, " -",                           " -"             #At-speed
+DATA,10," -",                           " -"             #Full closed in-position
+DATA,11," -",                           " -"
+DATA,12," -",                           " -"
+DATA,13,"+A Dynamic brake action",      " - Dynamic brake action"
+DATA,14," -",                           " -"
+DATA,15," -",                           " -"
+DATA,16, "+A In Position",              " - In Position"
+DATA,17, " -",                          " -"
+DATA,18, "+A Homing Complete",          " - Homing Complete"
+DATA,19, "+A Torque Limited",           " - Torque Limited"
+DATA,20, "+A Warning",                  " - Warning"
+DATA,21, "+A Alarm",                    " - Alarm"
+DATA,22, "+A Servo Ready",              " - Servo Ready"
+DATA,23, "+A Servo Active",             " - Servo Active"
+DATA,24, "+A CWL",                      " - CWL"
+DATA,25, "+A CCWL",                     " - CCWL"
+DATA,26, "+A Home",                     " - Home"
+DATA,27, "+A EX-IN1",                   " - EX-IN1"
+DATA,28, "+A EX-IN2",                   " - EX-IN2"
+DATA,29, "+A EX-IN3",                   " - EX-IN3"
+DATA,30, "+A EX-SON / EX-IN4",          " - EX-SON / EX-IN4"
+DATA,31, "+A EMG-STP",                  " - EMG-STP"
+END
+############################################
+#Absolute encoder status bit
+############################################
+ABSO MENU,15
+DATA,0,Overspeed, -
+DATA,1,Full absolute status, -
+DATA,2,Counter error, -
+DATA,3,Counter overflow, -
+DATA,4,-,-
+DATA,5,Multi-turn error, -
+DATA,6,Battery error, -
+DATA,7,Battery alarm,-
+DATA,8,-,-
+DATA,9,-,-
+DATA,10,-,-
+DATA,11,-,-
+DATA,12,Battery error, -
+DATA,13,Error, -
+DATA,14,-,-
+DATA,15,-,-
+END
+############################################
+#Default value of user parameter
+############################################
+USER DATA     ,256          ,#Group name and max. data
+#
+DATA          ,0x00         ,1            ,# Default of MADDT1207N
+DATA          ,0x01         ,0            ,#
+DATA          ,0x02         ,0            ,#
+DATA          ,0x03         ,1            ,#
+DATA          ,0x04         ,1            ,#
+DATA          ,0x05         ,0            ,#
+DATA          ,0x06         ,0            ,#
+DATA          ,0x07         ,3            ,#
+DATA          ,0x08         ,0            ,#
+DATA          ,0x09         ,0            ,#
+DATA          ,0x0A         ,0            ,#
+DATA          ,0x0B         ,1            ,#
+DATA          ,0x0C         ,2            ,#
+DATA          ,0x0D         ,0            ,#
+DATA          ,0x0E         ,0            ,#
+DATA          ,0x0F         ,0            ,#
+DATA          ,0x10         ,63           ,#
+DATA          ,0x11         ,35           ,#
+DATA          ,0x12         ,16           ,#
+DATA          ,0x13         ,0            ,#
+DATA          ,0x14         ,65           ,#
+DATA          ,0x15         ,300          ,#
+DATA          ,0x16         ,50           ,#
+DATA          ,0x17         ,0            ,#
+DATA          ,0x18         ,73           ,#
+DATA          ,0x19         ,35           ,#
+DATA          ,0x1A         ,1000         ,#
+DATA          ,0x1B         ,0            ,#
+DATA          ,0x1C         ,65           ,#
+DATA          ,0x1D         ,1500         ,#
+DATA          ,0x1E         ,2            ,#
+DATA          ,0x1F         ,0            ,#
+DATA          ,0x20         ,250          ,#
+DATA          ,0x21         ,1            ,#
+DATA          ,0x22         ,4            ,#
+DATA          ,0x23         ,1            ,#
+DATA          ,0x24         ,0            ,#
+DATA          ,0x25         ,0            ,#
+DATA          ,0x26         ,10           ,#
+DATA          ,0x27         ,0            ,#
+DATA          ,0x28         ,1500         ,#
+DATA          ,0x29         ,2            ,#
+DATA          ,0x2A         ,0            ,#
+DATA          ,0x2B         ,0            ,#
+DATA          ,0x2C         ,0            ,#
+DATA          ,0x2D         ,0            ,#
+DATA          ,0x2E         ,0            ,#
+DATA          ,0x2F         ,0            ,#
+DATA          ,0x30         ,1            ,#
+DATA          ,0x31         ,10           ,#
+DATA          ,0x32         ,30           ,#
+DATA          ,0x33         ,50           ,#
+DATA          ,0x34         ,33           ,#
+DATA          ,0x35         ,20           ,#
+DATA          ,0x36         ,0            ,#
+DATA          ,0x37         ,0            ,#
+DATA          ,0x38         ,0            ,#
+DATA          ,0x39         ,0            ,#
+DATA          ,0x3A         ,0            ,#
+DATA          ,0x3B         ,0            ,#
+DATA          ,0x3C         ,0            ,#
+DATA          ,0x3D         ,300          ,#
+DATA          ,0x3E         ,0            ,#
+DATA          ,0x3F         ,0            ,#
+DATA          ,0x40         ,0            ,#
+DATA          ,0x41         ,1            ,#
+DATA          ,0x42         ,1            ,#
+DATA          ,0x43         ,1            ,#
+DATA          ,0x44         ,2500         ,#
+DATA          ,0x45         ,0            ,#
+DATA          ,0x46         ,0            ,#
+DATA          ,0x47         ,0            ,#
+DATA          ,0x48         ,10000        ,#
+DATA          ,0x49         ,0            ,#
+DATA          ,0x4A         ,0            ,#
+DATA          ,0x4B         ,10000        ,#
+DATA          ,0x4C         ,1            ,#
+DATA          ,0x4D         ,0            ,#
+DATA          ,0x4E         ,0            ,#
+DATA          ,0x4F         ,0            ,#
+DATA          ,0x50         ,500          ,#
+DATA          ,0x51         ,1            ,#
+DATA          ,0x52         ,0            ,#
+DATA          ,0x53         ,0            ,#
+DATA          ,0x54         ,0            ,#
+DATA          ,0x55         ,0            ,#
+DATA          ,0x56         ,0            ,#
+DATA          ,0x57         ,0            ,#
+DATA          ,0x58         ,0            ,#
+DATA          ,0x59         ,0            ,#
+DATA          ,0x5A         ,0            ,#
+DATA          ,0x5B         ,0            ,#
+DATA          ,0x5C         ,30           ,#
+DATA          ,0x5D         ,0            ,#
+DATA          ,0x5E         ,500          ,#
+DATA          ,0x5F         ,500          ,#
+DATA          ,0x60         ,131          ,#
+DATA          ,0x61         ,50           ,#
+DATA          ,0x62         ,0            ,#
+DATA          ,0x63         ,0            ,#
+DATA          ,0x64         ,0            ,#
+DATA          ,0x65         ,1            ,#
+DATA          ,0x66         ,0            ,#
+DATA          ,0x67         ,0            ,#
+DATA          ,0x68         ,0            ,#
+DATA          ,0x69         ,0            ,#
+DATA          ,0x6A         ,0            ,#
+DATA          ,0x6B         ,0            ,#
+DATA          ,0x6C         ,3            ,#
+DATA          ,0x6D         ,35           ,#
+DATA          ,0x6E         ,0            ,#
+DATA          ,0x6F         ,0            ,#
+DATA          ,0x70         ,25000        ,#
+DATA          ,0x71         ,0            ,#
+DATA          ,0x72         ,0            ,#
+DATA          ,0x73         ,0            ,#
+DATA          ,0x74         ,2            ,#
+DATA          ,0x75         ,0            ,#
+DATA          ,0x76         ,0            ,#
+DATA          ,0x77         ,0            ,#
+DATA          ,0x78         ,0            ,#
+DATA          ,0x79         ,0            ,#
+DATA          ,0x7A         ,10000        ,#
+DATA          ,0x7B         ,100          ,#
+DATA          ,0x7C         ,0            ,#
+DATA          ,0x7D         ,0            ,#
+DATA          ,0x7E         ,0            ,#
+DATA          ,0x7F         ,0            ,#
+DATA          ,0x80         ,4            ,#
+DATA          ,0x81         ,20           ,#
+DATA          ,0x82         ,255          ,#
+DATA          ,0x83         ,129          ,#
+DATA          ,0x84         ,7200         ,#
+DATA          ,0x85         ,500          ,#
+DATA          ,0x86         ,500          ,#
+DATA          ,0x87         ,115          ,#
+DATA          ,0x88         ,12700        ,#
+DATA          ,0x89         ,128          ,#
+DATA          ,0x8A         ,17           ,#
+DATA          ,0x8B         ,75           ,#
+DATA          ,0x8C         ,878          ,#
+DATA          ,0x8D         ,3136         ,#
+DATA          ,0x8E         ,3266         ,#
+DATA          ,0x8F         ,646          ,#
+DATA          ,0x90         ,769          ,#
+DATA          ,0x91         ,52           ,#
+DATA          ,0x92         ,50           ,#
+DATA          ,0x93         ,10           ,#
+DATA          ,0x94         ,0            ,#
+DATA          ,0x95         ,0            ,#
+DATA          ,0x96         ,0            ,#
+DATA          ,0x97         ,0            ,#
+DATA          ,0x98         ,16384        ,#
+DATA          ,0x99         ,512          ,#
+DATA          ,0x9A         ,75           ,#
+DATA          ,0x9B         ,1            ,#
+DATA          ,0x9C         ,0            ,#
+DATA          ,0x9D         ,-7486        ,#
+DATA          ,0x9E         ,2796         ,#
+DATA          ,0x9F         ,311          ,#
+DATA          ,0xA0         ,0            ,#
+DATA          ,0xA1         ,0            ,#
+DATA          ,0xA2         ,0            ,#
+DATA          ,0xA3         ,0            ,#
+DATA          ,0xA4         ,0            ,#
+DATA          ,0xA5         ,0            ,#
+DATA          ,0xA6         ,0            ,#
+DATA          ,0xA7         ,1            ,#
+DATA          ,0xA8         ,1000         ,#
+DATA          ,0xA9         ,50           ,#
+DATA          ,0xAA         ,-1           ,#
+DATA          ,0xAB         ,-1           ,#
+DATA          ,0xAC         ,-16418       ,#
+DATA          ,0xAD         ,4095         ,#
+DATA          ,0xAE         ,0            ,#
+DATA          ,0xAF         ,-16400       ,#
+DATA          ,0xB0         ,4095         ,#
+DATA          ,0xB1         ,0            ,#
+DATA          ,0xB2         ,-16406       ,#
+DATA          ,0xB3         ,4095         ,#
+DATA          ,0xB4         ,0            ,#
+DATA          ,0xB5         ,-16428       ,#
+DATA          ,0xB6         ,4095         ,#
+DATA          ,0xB7         ,0            ,#
+DATA          ,0xB8         ,12           ,#
+DATA          ,0xB9         ,4            ,#
+DATA          ,0xBA         ,0            ,#
+DATA          ,0xBB         ,0            ,#
+DATA          ,0xBC         ,0            ,#
+DATA          ,0xBD         ,0            ,#
+DATA          ,0xBE         ,0            ,#
+DATA          ,0xBF         ,0            ,#
+DATA          ,0xC0         ,0            ,#
+DATA          ,0xC1         ,0            ,#
+DATA          ,0xC2         ,0            ,#
+DATA          ,0xC3         ,0            ,#
+DATA          ,0xC4         ,0            ,#
+DATA          ,0xC5         ,0            ,#
+DATA          ,0xC6         ,0            ,#
+DATA          ,0xC7         ,0            ,#
+DATA          ,0xC8         ,0            ,#
+DATA          ,0xC9         ,0            ,#
+DATA          ,0xCA         ,0            ,#
+DATA          ,0xCB         ,0            ,#
+DATA          ,0xCC         ,0            ,#
+DATA          ,0xCD         ,0            ,#
+DATA          ,0xCE         ,0            ,#
+DATA          ,0xCF         ,0            ,#
+DATA          ,0xD0         ,0            ,#
+DATA          ,0xD1         ,0            ,#
+DATA          ,0xD2         ,0            ,#
+DATA          ,0xD3         ,0            ,#
+DATA          ,0xD4         ,0            ,#
+DATA          ,0xD5         ,0            ,#
+DATA          ,0xD6         ,0            ,#
+DATA          ,0xD7         ,0            ,#
+DATA          ,0xD8         ,0            ,#
+DATA          ,0xD9         ,0            ,#
+DATA          ,0xDA         ,0            ,#
+DATA          ,0xDB         ,0            ,#
+DATA          ,0xDC         ,0            ,#
+DATA          ,0xDD         ,0            ,#
+DATA          ,0xDE         ,0            ,#
+DATA          ,0xDF         ,0            ,#
+DATA          ,0xE0         ,0            ,#
+DATA          ,0xE1         ,0            ,#
+DATA          ,0xE2         ,0            ,#
+DATA          ,0xE3         ,0            ,#
+DATA          ,0xE4         ,0            ,#
+DATA          ,0xE5         ,0            ,#
+DATA          ,0xE6         ,0            ,#
+DATA          ,0xE7         ,0            ,#
+DATA          ,0xE8         ,0            ,#
+DATA          ,0xE9         ,0            ,#
+DATA          ,0xEA         ,0            ,#
+DATA          ,0xEB         ,0            ,#
+DATA          ,0xEC         ,0            ,#
+DATA          ,0xED         ,0            ,#
+DATA          ,0xEE         ,0            ,#
+DATA          ,0xEF         ,0            ,#
+DATA          ,0xF0         ,0            ,#
+DATA          ,0xF1         ,0            ,#
+DATA          ,0xF2         ,0            ,#
+DATA          ,0xF3         ,0            ,#
+DATA          ,0xF4         ,0            ,#
+DATA          ,0xF5         ,0            ,#
+DATA          ,0xF6         ,0            ,#
+DATA          ,0xF7         ,0            ,#
+DATA          ,0xF8         ,0            ,#
+DATA          ,0xF9         ,0            ,#
+DATA          ,0xFA         ,0            ,#
+DATA          ,0xFB         ,0            ,#
+DATA          ,0xFC         ,0            ,#
+DATA          ,0xFD         ,0            ,#
+DATA          ,0xFE         ,0            ,#
+DATA          ,0xFF         ,0            ,#
+END
+############################################
+#Parameter extraction
+############################################
+PARA TYPE     ,256          ,#Group name and max. data
+#
+DATA          ,0            ,2            ,#
+DATA          ,1            ,2            ,#
+DATA          ,2            ,2            ,#
+DATA          ,3            ,2            ,#
+DATA          ,4            ,2            ,#
+DATA          ,5            ,2            ,#
+DATA          ,6            ,2            ,#
+DATA          ,7            ,2            ,#
+DATA          ,8            ,2            ,#
+DATA          ,9            ,2            ,#
+DATA          ,10           ,2            ,#
+DATA          ,11           ,2            ,#
+DATA          ,12           ,2            ,#
+DATA          ,13           ,2            ,#
+DATA          ,14           ,2            ,#
+DATA          ,15           ,2            ,#
+DATA          ,16           ,2            ,#
+DATA          ,17           ,2            ,#
+DATA          ,18           ,2            ,#
+DATA          ,19           ,2            ,#
+DATA          ,20           ,2            ,#
+DATA          ,21           ,2            ,#
+DATA          ,22           ,2            ,#
+DATA          ,23           ,2            ,#
+DATA          ,24           ,2            ,#
+DATA          ,25           ,2            ,#
+DATA          ,26           ,2            ,#
+DATA          ,27           ,2            ,#
+DATA          ,28           ,2            ,#
+DATA          ,29           ,2            ,#
+DATA          ,30           ,2            ,#
+DATA          ,31           ,2            ,#
+DATA          ,32           ,3            ,#
+DATA          ,33           ,3            ,#
+DATA          ,34           ,3            ,#
+DATA          ,35           ,2            ,#
+DATA          ,36           ,2            ,#
+DATA          ,37           ,2            ,#
+DATA          ,38           ,2            ,#
+DATA          ,39           ,2            ,#
+DATA          ,40           ,2            ,#
+DATA          ,41           ,2            ,#
+DATA          ,42           ,2            ,#
+DATA          ,43           ,2            ,#
+DATA          ,44           ,2            ,#
+DATA          ,45           ,2            ,#
+DATA          ,46           ,2            ,#
+DATA          ,47           ,2            ,#
+DATA          ,48           ,2            ,#
+DATA          ,49           ,2            ,#
+DATA          ,50           ,2            ,#
+DATA          ,51           ,2            ,#
+DATA          ,52           ,2            ,#
+DATA          ,53           ,2            ,#
+DATA          ,54           ,2            ,#
+DATA          ,55           ,2            ,#
+DATA          ,56           ,2            ,#
+DATA          ,57           ,2            ,#
+DATA          ,58           ,2            ,#
+DATA          ,59           ,2            ,#
+DATA          ,60           ,2            ,#
+DATA          ,61           ,2            ,#
+DATA          ,62           ,2            ,#
+DATA          ,63           ,2            ,#
+DATA          ,64           ,2            ,#
+DATA          ,65           ,3            ,#
+DATA          ,66           ,3            ,#
+DATA          ,67           ,3            ,#
+DATA          ,68           ,2            ,#
+DATA          ,69           ,2            ,#
+DATA          ,70           ,2            ,#
+DATA          ,71           ,2            ,#
+DATA          ,72           ,2            ,#
+DATA          ,73           ,2            ,#
+DATA          ,74           ,2            ,#
+DATA          ,75           ,2            ,#
+DATA          ,76           ,2            ,#
+DATA          ,77           ,2            ,#
+DATA          ,78           ,2            ,#
+DATA          ,79           ,2            ,#
+DATA          ,80           ,2            ,#
+DATA          ,81           ,2            ,#
+DATA          ,82           ,2            ,#
+DATA          ,83           ,2            ,#
+DATA          ,84           ,2            ,#
+DATA          ,85           ,2            ,#
+DATA          ,86           ,2            ,#
+DATA          ,87           ,2            ,#
+DATA          ,88           ,2            ,#
+DATA          ,89           ,2            ,#
+DATA          ,90           ,2            ,#
+DATA          ,91           ,2            ,#
+DATA          ,92           ,2            ,#
+DATA          ,93           ,2            ,#
+DATA          ,94           ,2            ,#
+DATA          ,95           ,2            ,#
+DATA          ,96           ,2            ,#
+DATA          ,97           ,2            ,#
+DATA          ,98           ,2            ,#
+DATA          ,99           ,2            ,#
+DATA          ,100          ,2            ,#
+DATA          ,101          ,2            ,#
+DATA          ,102          ,2            ,#
+DATA          ,103          ,2            ,#
+DATA          ,104          ,2            ,#
+DATA          ,105          ,2            ,#
+DATA          ,106          ,2            ,#
+DATA          ,107          ,2            ,#
+DATA          ,108          ,2            ,#
+DATA          ,109          ,2            ,#
+DATA          ,110          ,2            ,#
+DATA          ,111          ,2            ,#
+DATA          ,112          ,2            ,#
+DATA          ,113          ,2            ,#
+DATA          ,114          ,2            ,#
+DATA          ,115          ,2            ,#
+DATA          ,116          ,2            ,#
+DATA          ,117          ,2            ,#
+DATA          ,118          ,2            ,#
+DATA          ,119          ,2            ,#
+DATA          ,120          ,2            ,#
+DATA          ,121          ,2            ,#
+DATA          ,122          ,2            ,#
+DATA          ,123          ,2            ,#
+DATA          ,124          ,2            ,#
+DATA          ,125          ,2            ,#
+DATA          ,126          ,2            ,#
+DATA          ,127          ,2            ,#
+DATA          ,128          ,0            ,#
+DATA          ,129          ,0            ,#
+DATA          ,130          ,0            ,#
+DATA          ,131          ,0            ,#
+DATA          ,132          ,0            ,#
+DATA          ,133          ,0            ,#
+DATA          ,134          ,0            ,#
+DATA          ,135          ,0            ,#
+DATA          ,136          ,0            ,#
+DATA          ,137          ,0            ,#
+DATA          ,138          ,0            ,#
+DATA          ,139          ,0            ,#
+DATA          ,140          ,0            ,#
+DATA          ,141          ,0            ,#
+DATA          ,142          ,0            ,#
+DATA          ,143          ,0            ,#
+DATA          ,144          ,0            ,#
+DATA          ,145          ,0            ,#
+DATA          ,146          ,0            ,#
+DATA          ,147          ,0            ,#
+DATA          ,148          ,0            ,#
+DATA          ,149          ,0            ,#
+DATA          ,150          ,0            ,#
+DATA          ,151          ,0            ,#
+DATA          ,152          ,0            ,#
+DATA          ,153          ,0            ,#
+DATA          ,154          ,0            ,#
+DATA          ,155          ,0            ,#
+DATA          ,156          ,0            ,#
+DATA          ,157          ,0            ,#
+DATA          ,158          ,0            ,#
+DATA          ,159          ,0            ,#
+DATA          ,160          ,0            ,#
+DATA          ,161          ,0            ,#
+DATA          ,162          ,0            ,#
+DATA          ,163          ,0            ,#
+DATA          ,164          ,0            ,#
+DATA          ,165          ,0            ,#
+DATA          ,166          ,0            ,#
+DATA          ,167          ,0            ,#
+DATA          ,168          ,0            ,#
+DATA          ,169          ,0            ,#
+DATA          ,170          ,0            ,#
+DATA          ,171          ,0            ,#
+DATA          ,172          ,0            ,#
+DATA          ,173          ,0            ,#
+DATA          ,174          ,0            ,#
+DATA          ,175          ,0            ,#
+DATA          ,176          ,0            ,#
+DATA          ,177          ,0            ,#
+DATA          ,178          ,0            ,#
+DATA          ,179          ,0            ,#
+DATA          ,180          ,0            ,#
+DATA          ,181          ,0            ,#
+DATA          ,182          ,0            ,#
+DATA          ,183          ,0            ,#
+DATA          ,184          ,0            ,#
+DATA          ,185          ,0            ,#
+DATA          ,186          ,0            ,#
+DATA          ,187          ,0            ,#
+DATA          ,188          ,0            ,#
+DATA          ,189          ,0            ,#
+DATA          ,190          ,0            ,#
+DATA          ,191          ,0            ,#
+DATA          ,192          ,0            ,#
+DATA          ,193          ,0            ,#
+DATA          ,194          ,0            ,#
+DATA          ,195          ,0            ,#
+DATA          ,196          ,0            ,#
+DATA          ,197          ,0            ,#
+DATA          ,198          ,0            ,#
+DATA          ,199          ,0            ,#
+DATA          ,200          ,0            ,#
+DATA          ,201          ,0            ,#
+DATA          ,202          ,0            ,#
+DATA          ,203          ,0            ,#
+DATA          ,204          ,0            ,#
+DATA          ,205          ,0            ,#
+DATA          ,206          ,0            ,#
+DATA          ,207          ,0            ,#
+DATA          ,208          ,0            ,#
+DATA          ,209          ,0            ,#
+DATA          ,210          ,0            ,#
+DATA          ,211          ,0            ,#
+DATA          ,212          ,0            ,#
+DATA          ,213          ,0            ,#
+DATA          ,214          ,0            ,#
+DATA          ,215          ,0            ,#
+DATA          ,216          ,0            ,#
+DATA          ,217          ,0            ,#
+DATA          ,218          ,0            ,#
+DATA          ,219          ,0            ,#
+DATA          ,220          ,0            ,#
+DATA          ,221          ,0            ,#
+DATA          ,222          ,0            ,#
+DATA          ,223          ,0            ,#
+DATA          ,224          ,0            ,#
+DATA          ,225          ,0            ,#
+DATA          ,226          ,0            ,#
+DATA          ,227          ,0            ,#
+DATA          ,228          ,0            ,#
+DATA          ,229          ,0            ,#
+DATA          ,230          ,0            ,#
+DATA          ,231          ,0            ,#
+DATA          ,232          ,0            ,#
+DATA          ,233          ,0            ,#
+DATA          ,234          ,0            ,#
+DATA          ,235          ,0            ,#
+DATA          ,236          ,0            ,#
+DATA          ,237          ,0            ,#
+DATA          ,238          ,0            ,#
+DATA          ,239          ,0            ,#
+DATA          ,240          ,0            ,#
+DATA          ,241          ,0            ,#
+DATA          ,242          ,0            ,#
+DATA          ,243          ,0            ,#
+DATA          ,244          ,0            ,#
+DATA          ,245          ,0            ,#
+DATA          ,246          ,0            ,#
+DATA          ,247          ,0            ,#
+DATA          ,248          ,0            ,#
+DATA          ,249          ,0            ,#
+DATA          ,250          ,0            ,#
+DATA          ,251          ,0            ,#
+DATA          ,252          ,0            ,#
+DATA          ,253          ,0            ,#
+DATA          ,254          ,0            ,#
+DATA          ,255          ,0            ,#
+END                                       
+############################################
+#Alarm
+############################################
+"ERROR DATA",100
+DATA,0, Other error,,
+DATA,1, Other error,,
+DATA,2, Other error,,
+DATA,3, Other error,,
+DATA,4, Other error,,
+DATA,5, Other error,,
+DATA,6, Other error,,
+DATA,7, Other error,,
+DATA,8, Other error,,
+DATA,9, Other error,,
+DATA,10, Other error,,
+DATA,11, Control power undervoltage,,
+DATA,12, Overvoltage,,
+DATA,13, Main power undervoltage,,
+DATA,14, Overcurrent,,
+DATA,15, Overheat,,
+DATA,16, Overload,,
+DATA,17, Other error,,
+DATA,18, Regenerative resistor overload,,
+DATA,19, Other error,,
+DATA,20, Other error,,
+DATA,21, Encoder communication error,,
+DATA,22, Other error,,
+DATA,23, Encoder communication data error,,
+DATA,24, Position deviation error,,
+DATA,25, Hybrid deviation error,,
+DATA,26, Overspeed,,
+DATA,27, Motion command error,,
+DATA,28, External scale data error,,
+DATA,29, Deviation counter overflow,,
+DATA,30, Other error,,
+DATA,31, Other error,,
+DATA,32, Other error,,
+DATA,33, Other error,,
+DATA,34, Software limit,,
+DATA,35, External scale communication error,,
+DATA,36, EEPROM parameter error,,
+DATA,37, EEPROM check code error,,
+DATA,38, Overtravel inhibit input error,,
+DATA,39, Analog input overvoltage,,
+DATA,40, Absolute encoder system down error,,
+DATA,41, Absolute encoder counter overflow,,
+DATA,42, Absolute encoder overspeed,,
+DATA,43, Other error,,
+DATA,44, Absolute encoder single-turn error,,
+DATA,45, Absolute encoder multi-turn error,,
+DATA,46, Other error,,
+DATA,47, Absolute encoder status error,,
+DATA,48, Encoder Z-phase error,,
+DATA,49, Encoder commutation signal error,,
+DATA,50, External scale status No.0 error,,
+DATA,51, External scale status No.1 error,,
+DATA,52, External scale status No.2 error,,
+DATA,53, External scale status No.3 error,,
+DATA,54, External scale status No.4 error,,
+DATA,55, External scale status No.5 error,,
+DATA,56, Other error,,
+DATA,57, Other error,,
+DATA,58, External scale other error,,
+DATA,59, Other error,,
+DATA,60, Other error,SELF_CHK00, built-inRAM(YCPU detection)
+DATA,61, Other error,SELF_CHK01, commonRAM(YCPU detection)
+DATA,62, Other error,SELF_CHK02,RVC offset(YCPU detection)
+DATA,63, Other error,SELF_CHK03,VF converter error(YCPU detection)
+DATA,64, Other error,SELF_CHK04,MNM1215 error
+DATA,65, CCWTL input overvoltage,,
+DATA,66, CWTL input overvoltage,,
+DATA,67, Other error,SELF_CHK07, overvoltage error(XCPU detection)
+DATA,68, Other error,SELF_CHK08, main power undervoltage(XCPU detection)
+DATA,69, Other error,SELF_CHK09, overcurrent (XCPU detection)
+DATA,70, Other error,SELF_CHK10, overheat error(XCPU detection)
+DATA,71, Other error,SELF_CHK11, regenerative discharge resistor error(XCPU detection)
+DATA,72, Other error,SELF_CHK12, external forced trip(XCPU detection)
+DATA,73, Other error,SELF_CHK13, built-inRAM(XCPU detection)
+DATA,74, Other error,SELF_CHK14, commonRAM(XCPU detection)
+DATA,75, Other error,SELF_CHK15,RVC offset adjustment error(XCPU detection)
+DATA,76, Other error,SELF_CHK16,VF converter error(XCPU detection)
+DATA,77, Other error,SELF_CHK17, stuck area error (XCPU detection)
+DATA,78, Other error,SELF_CHK18, stuck area error(YCPU detection)
+DATA,79, Other error,SELF_CHK19,
+DATA,80, Other error,,
+DATA,81, Other error,,
+DATA,82, COM invalid node-address,,
+DATA,83, COM continuous error,,
+DATA,84, COM timeout,,
+DATA,85, Other error,,
+DATA,86, COM cyclic-data not receivable,,
+DATA,87, Emergency stop inputted,,
+DATA,88, (Fun lock warning),,
+DATA,89, (External scale warning),,
+DATA,90, Other error,,
+DATA,91, Other error,,
+DATA,92, Other error,,
+DATA,93, Other error,,
+DATA,94, Encoder EEPROM verify error,,
+DATA,95, Motor auto recognition error,,
+DATA,96, SEN signal selection error,,
+DATA,97, Control mode selection error,,
+DATA,98, System error around CPU,,
+DATA,99, Other error,,
+DATA,100,"",,
+END
+############################################
+# Cautions at auto tuning
+############################################
+"AUTO MESSAGE",7
+DATA,0,"1. Motor and load that are applicable to this auto tuning are limited."
+DATA,1,"Check up the specifications."
+DATA,2,"2. Set Pr.03(Torque limit selection) to 1 in advance."
+DATA,3,"During auto tuning, the torque limit is set to maximum output torque."
+DATA,4,"3. Drive may enter the oscillation state depending on the load. Pay extra attention."
+DATA,5,"Once in oscillation, turn to servo-off (EX-SON open) immediately,"
+DATA,6,"and return the gains to the original value with the parameter set-up."
+DATA,7,"4. Read the specifications carefully before executing the auto tuning."
+#
+#Operation
+#
+DATA,9,"After setting Mechanical stiffness, click <Execute>."
+#
+#Cautions on frequency characteristics measurement
+#
+DATA,10,"- Motor speed varies intensely. Pay extra attention to the safety."
+DATA,11,"- For the worst case, measure so that you can turn to servo-off immediately."
+DATA,12,"- If the machine may be breakdown due to the hard motion, do not use this function."
+DATA,13,"- Measure with as low gain as possible."
+DATA,14,"- Larger offset may make the machine move exceeding the limit. Pay extra attention."
+DATA,15,""
+DATA,16,"If you need a help on measurement condition, click the <Help> button."
+DATA,17,"After setting the measurement condition, click the <Execute the measurement> button."
+DATA,18,""
+DATA,19,""
+#
+#Monitor screen
+#
+DATA,20,"This indicates Actual Position of the external scale. This data has the polarity that CCW is positive."
+DATA,21,"When the load rate exceeds 100%, alarm may occur. Adjust the motion pattern so as not to exceed 100%."
+DATA,22,"This indicates the load of the regenerative discharge resistor, and does not indicate the regenerative power."
+DATA,23,"This indicates Command Position. This data has the polarity that CCW is positive."
+DATA,24,"This indicates Actual Position of the encoder. This data has the polarity that CCW is positive."
+DATA,25,"In the full-closed control, the drive makes this error zero. Another position error on the right side display is not used."
+DATA,26,""
+DATA,27,""
+DATA,28,""
+DATA,29,""
+#
+#Parameter screen
+#
+DATA,30,"You can change the set-up value by pressing the Enter-key or clicking <Change of the setting value> button after entering the value."
+DATA,31,""
+DATA,32,""
+DATA,33,""
+DATA,34,""
+END
+############################################
+#Color of each line of the graph
+############################################
+"GRAPH DATA",1
+DATA,0
+	0		,# Speed
+	16711680	,# Torque
+	255		,# Error
+	16711935	,# Commanded speed
+END
+############################################
+#Control Mode
+############################################
+CTRL MODE MENU,7			,#「新規追加」
+DATA,0,"Position"			,#「新規追加」
+DATA,1,"Velocity"			,#「新規追加」
+DATA,2,"Torque"				,#「新規追加」
+DATA,3,"Full-closed"		,#「新規追加」
+DATA,4,""					,#「新規追加」
+DATA,5,""					,#「新規追加」
+DATA,6,""					,#「新規追加」
+DATA,7,""					,#「新規追加」
+DATA,8,""					,#「新規追加」
+DATA,9,""					,#「新規追加」
+DATA,10,""					,#「新規追加」
+END
+############################################
+#Meaning of the error(which the driver send back) or bit of warning byte
+############################################
+BIT NAME EXT,0
+DATA,0					,#at normal command
+	8					,# 8
+	"In-sampling, others"		,# bit 0
+	"Servo alarm, others"		,# bit 1
+	"Torque saturation, Servo-off, others"	,# bit 2
+	"Number error"				,# bit 3
+	"RS485 error"			,# bit 4
+	"Command error"			,# bit 5
+	"None definition error"		,# bit 6
+	"Error bit ON"			,# bit 7
+DATA,1					,# at auto tuning
+	8					,#8
+	"In-sampling, others"		,# bit 0
+	"Servo alarm, others"		,# bit 1
+	"Servo-off"				,# bit 2
+	"Number error"				,# bit 3
+	"RS485 error"			,# bit 4
+	"Command error"			,# bit 5
+	"None definition error"		,# bit 6
+	"Error bit ON"			,# bit 7
+DATA,2					,#at measuring frequency characteristics
+	8					,#8
+	"In-sampling, others"		,# bit 0
+	"Servo alarm, others"		,# bit 1
+	"Servo-off"				,# bit 2
+	"Number error"				,# bit 3
+	"RS485 error"			,# bit 4
+	"Command error"			,# bit 5
+	"None definition error"		,# bit 6
+	"Error bit ON"			,# bit 7
+DATA,10					,#when warning is displayed on the monitor screen
+	16					,#16
+	"Battery warning"		,# bit0
+	"Undefined"				,# bit1
+	"Undefined"				,# bit 2
+	"Undefined"				,# bit 3
+	"Undefined"				,# bit 4
+	"Regeneration warning"	,# bit 5
+	"FAN-locked warning"	,# bit 6
+	"Overload warning"		,# bit 7
+	"External scale warning",# bit 8
+	"Continuous COM warning",# bit 9
+	"Cumulative COM warning",# bit 10
+	"Update Counter warning",# bit 11
+	"Undefined"				,# bit 12
+	"Undefined"				,# bit 13
+	"Undefined"				,# bit 14
+	"Undefined"				,# bit 15
+END
+############################################
+#Parameters displayed at auto tuning
+############################################
+AUTO PARA,7			
+#1: display 0: non-display
+DATA,0,1, 1st pos. loop gain:,0X10
+DATA,1,1, 1st vel. loop gain:,0X11
+DATA,2,1, 1st vel. integration time:,0X12
+DATA,3,1, 1st spd. detection filter:,0X13
+DATA,4,1, 1st trq. filter time:,0X14
+DATA,5,1, Inertia ratio:,0X20
+DATA,6,0, unused:,0X15
+END
+############################################
+#Control mode which displays the full close pages
+############################################
+FULL CLOSE ENABLE MODE,7			
+DATA,3,1	,# Full close page displayed at mode 3
+DATA,4,1	,# Full close page displayed at mode 4
+DATA,5,1	,# Full close page displayed at mode 5
+DATA,6,1	,# Full close page displayed at mode 6
+DATA,10,1	,# Full close page displayed at mode 10
+END
+###################################################
+#バージョン3.0での変更
+###################################################
+###################################################
+############################################
+#Positioning Input terminals
+############################################
+POS IN NAME,31
+DATA, 0X0, +A POS Servo-ON, - POS Servo-ON
+DATA, 0x1, +A POS Alarm Clear, - POS Alarm Clear
+DATA, 2, +A CW Overtravel Inhibit, - CW Overtravel Inhibit
+DATA, 3, +A CCW Overtravel Inhibit, - CCW Overtravel Inhibit
+DATA, 4, +A Homing Strobe, - Homing Strobe
+DATA, 5, -  Stop signal, +A Stop signal
+DATA, 6, +A Jog forward, - Jog forward
+DATA, 7, +A Jog backward, - Jog backward
+DATA, 8, +A P1, - P1
+DATA, 9, +A P2, - P2
+DATA, 10, +A P4, - P4
+DATA, 11, +A P8 , - P8
+DATA, 12, +A P16, - P16
+DATA, 13, +A P32, - P32
+DATA, 14, +A P64 ,- P64
+DATA, 15, +A Step strobe, - Step strobe
+DATA, 16, +A Z-LS , - Z-LS
+DATA, 17, - , -
+DATA, 18, - , -
+DATA, 19, - , -
+DATA,20,"+A ","- "
+DATA,21,"+A ","- "
+DATA,22,"+A ","- "
+DATA,23,"+A ","- "
+DATA,24,"+A ","- "
+DATA,25,"+A ","- "
+DATA,26,"+A ","- "
+DATA,27,"+A ","- "
+DATA,28,"+A ","- "
+DATA,29,"+A ","- "
+DATA,30,"+A ","- "
+DATA,31,"+A ","- "
+END
+############################################
+#Positioning Output terminal
+############################################
+POS OUT NAME,31
+DATA,0,－ ,－ 
+DATA,1,－ ,－ 
+DATA,2,－ ,－ 
+DATA,3,－ ,－ 
+DATA,4,－ ,－ 
+DATA,5,－ ,－ 
+DATA,6,"+A ","- "
+DATA,7,"+A ","- "
+DATA,8,+A サーボレディ,－ サーボレディ
+DATA,9,+A サーボアラーム,－ サーボアラーム
+DATA,10+A 位置決め完了,－ 位置決め完了
+DATA,11,－ ,－ 
+DATA,12,－ ,－ 
+DATA,13,+A メカブレーキ解除,－ メカブレーキ解除
+DATA,14,- ,- ,#
+DATA,15,+A モータ動作状態 ,－ モータ動作状態
+DATA,16,"+A ","- "
+DATA,17,+A Ｐ１,－ Ｐ１
+DATA,18,+A Ｐ２,－ Ｐ２
+DATA,19,+A Ｐ４,－ Ｐ４
+DATA,20,+A Ｐ８,－ Ｐ８
+DATA,21,+A Ｐ１６,－ Ｐ１６
+DATA,22,+A Ｐ３２,－ Ｐ３２
+DATA,23,+A Ｐ６４,－ Ｐ６４
+DATA,24,"+A ","- "
+DATA,25,"+A ","- "
+DATA,26,"+A ","- "
+DATA,27,"+A ","- "
+DATA,28,"+A ","- "
+DATA,29,"+A ","- "
+DATA,30,"+A ","- "
+DATA,31,"+A ","- "
+END
+############################################
+#16bit positioning parameter control information
+############################################
+POS PARA 16 MENU,255
+#N0.00#########################################################################
+DATA,	0	,#番号
+	"1st velocity"	,#名称
+	0	,#最小値
+	5000	,#最大値
+	0x10	,#属性	
+	2	,#タイプ	Bit1:ゲイン調整で使用して良い　Bit0:ゲイン調整で使用する
+	"Select the 1st velocity."
+	""
+	""
+ 	""
+#N0.01#########################################################################
+DATA,1,"2nd velocity",0,5000,0x0010,2
+	"Select the 2nd velocity"
+	""
+ 	""
+ 	""
+#N0.02#########################################################################
+DATA,2,"3rd. velocity",0,5000,0x0010,2
+	"Select the 3rd velocity."
+	""
+	""
+ 	""
+#N0.03#########################################################################
+DATA,3,"4th. velocity",0,5000,0x0010,2
+	"Select the 4th. velocity."
+	""
+ 	""
+	""
+#N0.04#########################################################################
+DATA,4,"5th. velocity",0,5000,0x0010,2
+	"Select the 5th. velocity."
+	""
+	""
+	""
+#N0.05#########################################################################
+DATA,5,"6th. velocity",0,5000,0x0010,2
+	"Select the 6th. velocity"
+	""
+ 	""
+ 	""
+#N0.06#########################################################################
+DATA,6,"7th. velocity",0,5000,0x0010,2
+	"Select the 7th. velocity"
+	""
+	""
+ 	""
+#N0.07#########################################################################
+DATA,7,"8th. velocity",0,5000,0x0010,2
+	"Select the 8th. velocity"
+	""
+	""
+ 	""
+#N0.08#########################################################################
+DATA,8,"9th. velocity",0,5000,0x0010,2
+	"Select the 9th. velocity"
+	""
+	""
+ 	""
+#N0.09#########################################################################
+DATA,9,"10th. velocity",0,5000,0x0010,2
+	"Select the 10th. velocity."
+	""
+	""
+ 	""
+#N0.0A#########################################################################
+DATA,10,"11th. velocity",0,5000,0x0010,2
+	"Select the 11th. velocity"
+	""
+ 	""
+ 	""
+#N0.0B#########################################################################
+DATA,11,"12th. velocity",0,5000,0x0010,2
+	"Select the 12th. velocity"
+	""
+ 	""
+	""
+#N0.0C#########################################################################
+DATA,12,"13th. velocity",0,5000,0x0010,2
+	"Select the 13th. velocity"
+	""
+	""
+ 	""
+#N0.0D#########################################################################
+DATA,13,"14th. velocity",0,5000,0x0010,2
+	"Select the 14th. velocity"
+	""
+ 	""
+ 	""
+#N0.0E#########################################################################
+DATA,14,"15th. velocity",0,5000,0x0010,2
+	"Select the 15th. velocity"
+	""
+	""
+ 	""
+#N0.0F#########################################################################
+DATA,15,"16th. velocity",0,5000,0x0010,2
+	"Select the 16th. velocity"
+	""
+	""
+ 	""
+#N0.10#########################################################################
+DATA,	16	,#番号
+	"1st Acceleration"	,#名称
+	0	,#最小値
+	10000	,#最大値
+	0x10	,#属性	
+	2	,#タイプ	Bit1:ゲイン調整で使用して良い　Bit0:ゲイン調整で使用する
+	"Select the 1st acceleration "
+	""
+	""
+ 	""
+#N0.11#########################################################################
+DATA,17,"1st S-shaped acceleration",0,1000,0x10,2
+	"Select 1st S-shaped acceleration."
+	""
+ 	""
+ 	""
+#N0.12#########################################################################
+DATA,18,"1st deceleration",0,10000,0x10,2
+	"Select the 1st deceleration."
+	""
+	""
+ 	""
+#N0.13#########################################################################
+DATA,19,"1st S-shaped deceleration",0,1000,0x10,2
+	"Select the 1st S-shaped deceleration."
+	""
+ 	""
+	""
+#N0.14#########################################################################
+DATA,20,"2nd acceleration",0,10000,0x10,2
+	"Select the 2nd Acceleration."
+	""
+	""
+	""
+#N0.15#########################################################################
+DATA,21,"2nd S-shaped acceleration",0,1000,0x10,2
+	"Select the 2nd S-shaped acceleration."
+	""
+ 	""
+ 	""
+#N0.16#########################################################################
+DATA,22,"2nd deceleration",0,10000,0x10,2
+	"Select the 2nd deceleration"
+	""
+	""
+ 	""
+#N0.17#########################################################################
+DATA,23,"2nd S-shaped deceleration",0,1000,0x10,2
+	"Select the 3rd. S-shaped deceleration."
+	""
+	""
+ 	""
+#N0.18#########################################################################
+DATA,24,"3rd. acceleration",0,10000,0x10,2
+	"Select the 3rd. acceleration."
+	""
+	""
+ 	""
+#N0.19#########################################################################
+DATA,25,"3rd. S-shaped acceleration",0,1000,0x10,2
+	"Select the 3rd S-shaped acceleration."
+	""
+	""
+ 	""
+#N0.1A#########################################################################
+DATA,26,"3rd. deceleration",0,10000,0x10,2
+	"Select the 3rd. deceleration."
+	""
+ 	""
+ 	""
+#N0.1B#########################################################################
+DATA,27,"3rd. S-shaped deceleration",0,1000,0x10,2
+	"Select the 3rd. S-shaped deceleration."
+	""
+ 	""
+	""
+#N0.1C#########################################################################
+DATA,28,"4th. acceleration",0,10000,0x10,2
+	"Select the 4th. Acceleration."
+	""
+	""
+ 	""
+#N0.1D#########################################################################
+DATA,29,"4th. S-shaped acceleration",0,1000,0x10,2
+	"Select the 4th. S-shaped acceleration."
+	""
+ 	""
+ 	""
+#N0.1E#########################################################################
+DATA,30,"4th. deceleration",0,10000,0x10,2
+	"Select the 4th. deceleration."
+	""
+	""
+ 	""
+#N0.1F#########################################################################
+DATA,31,"4th. S-shaped deceleration",0,1000,0x10,2
+	"Select the 4th. S-shaped deceleration."
+	""
+	""
+ 	""
+#N0.20#########################################################################
+DATA, 32, "Homing Fast Velocity", 0, 5000, 0x0010, 2
+	"Set the fast velocity of a motion profile for the Homing."
+	"Unit: [r/min]"
+	""
+	""
+#N0.21#########################################################################
+DATA, 33, "Homing Slow Velocity", 0, 5000, 0x0010, 2
+	"Set the slow velocity of a motion profile for the Homing."
+	"Unit: [r/min]"
+	""
+	""
+#N0.22#########################################################################
+DATA, 34, "Offset Speed of Homing", 0, 5000, 0x0010, 2
+	"Set the Offset Speed for Homing."
+	"Unit: [r/min]"
+	""
+ 	""
+#N0.23#########################################################################
+DATA, 35, "Homing Acceleration", 0, 10000, 0x0010, 2
+	"Set the Homing Acceleration time for 3000[r/min]."
+	"Unit: [ms]"
+	""
+ 	""
+#N0.24#########################################################################
+DATA, 36, "Homing Deceleration", 0, 10000, 0x0010, 2
+	"Set the Homing Deceleration time for 3000[r/min]."
+	"Unit: [ms]"
+	""
+ 	""
+#N0.25#########################################################################
+DATA, 37, "Homing Direction", 0, 1, 0x10, 2
+	"Set the Homing derection."
+ 	"0: Positive direction"
+	"1: Negative direction"
+	""
+#N0.26#########################################################################
+DATA, 38, "Homing Type", 0, 3, 0x10, 2
+	"Set the Homing Type."
+	"0: Use Z-LS and Z-signal of Encoder"
+	"1: Use Z-LS signal"
+	"3: Use Z-signal of Encoder"
+#N0.27#########################################################################
+DATA, 39, "Homing Complete Type", 0, 1, 0x10, 2
+	"Set the Homing Complete Type."
+	"0: Homing Complete by Home of Machine"
+	"1: Move to Offset Position when Homing-offset is set."
+ 	""
+#N0.28#########################################################################
+DATA, 40, "Jog Speed", 0, 5000, 0x0010, 2
+	"Set the speed in Jog Action."
+	"Unit: [r/min]"
+	""
+ 	""
+#N0.29#########################################################################
+DATA, 41, "Reserved", 0, 5000, 0x10, 2
+	"reserved"
+	""
+	""
+ 	""
+#N0.2A#########################################################################
+DATA, 42, "Acceleration of Jog Action", 0, 10000, 0x10, 2
+	"Set the Acceleration time for 3000[r/min] in Jog Action."
+	"Unit: [ms]"
+	""
+ 	""
+#N0.2B#########################################################################
+DATA, 43, "S-Shaped Aceceleration of Jog Action", 0, 1000, 0x10, 2
+	"Set the time of S-Shaped acceleration in Jog Action."
+ 	"0: Linear acceleration mode"
+ 	"Unit: [ms]"
+	""
+#N0.2C#########################################################################
+DATA, 44, "Deceleration of Jog Action", 0, 10000, 0x10, 2
+	"Set the Deceleration time for 3000[r/min] in Jog Action."
+	"Unit: [ms]"
+	""
+ 	""
+#N0.2D#########################################################################
+DATA, 45, "S-Shaped Decceleration of Jog Action", 0, 1000, 0x10, 2
+	"Set the time of S-Shaped decceleration in Jog Action."
+ 	"0: Linear deceleration mode"
+ 	"Unit: [ms]"
+	""
+#N0.2E#########################################################################
+DATA, 46, "Direction of Jog Action", 0, 1, 0x10, 2
+	"Set the Direction of Jog Action."
+	""
+	""
+ 	""
+#N0.2F#########################################################################
+DATA, 47, "Backrash Speed", 0, 5000, 0x10, 2
+	"Set the Backrash Speed."
+	"When set to 0, use the speed of step motion."
+	"Unit: [r/min]"
+ 	""
+#N0.30#########################################################################
+DATA,	48	,#Number
+	"Command Position Direction"	,#Title
+	0	,#Min.
+	1	,#Max.
+	0x10	,#Attribute		
+	2	,#Type
+	"This is only for Point No. Command."
+	"Set the direction of motion."
+	"0: CCW = Positive,  CW  = Negative"
+ 	"1: CW  = Negative.  CCW = Positive"
+#N0.31#########################################################################
+DATA, 49, "Motion at STOP Signal", 0, 3, 0x10, 2
+	"This is only for Point No. Command."
+	"Set the Motion when STOP is set."
+ 	"bit0   0: Immediately stop.   1: Deceleration stop."
+ 	"bit1   0: Motor stop after deceleration.   1: Temporary stop"
+#N0.32#########################################################################
+DATA, 50, "Homing Inhibit", 0, 1, 0x10, 2
+	"This is only for Point No. Command."
+	"Set Homing Inhibit for Step motion."
+	""
+ 	""
+#N0.33#########################################################################
+DATA, 51, "Wrap Around Enable", 0, 1, 0x10, 2
+	"If 1 (enable) is selected, Wrap Around does not cause an alarm."
+	"0: Disable"
+	"1: Enable"
+	""
+#N0.34#########################################################################
+DATA, 52, "Resrved", 0, 0, 0x10, 2
+	"reserved "
+	""
+	""
+	""
+#N0.35#########################################################################
+DATA, 53, "Reserved", 0, 0, 0, 2
+	" reserved "
+	""
+ 	""
+ 	""
+#N0.36#########################################################################
+DATA, 54, "Reserved", 0, 0, 0, 2
+	" reserved "
+	""
+	""
+ 	""
+#N0.37#########################################################################
+DATA, 55, " Reserved ", 0, 0, 0, 2
+	" reserved "
+	""
+	""
+ 	""
+#N0.38#########################################################################
+DATA, 56, " Reserved ", 0, 0, 0, 2
+	" reserved "
+	""
+	""
+ 	""
+#N0.39#########################################################################
+DATA, 57, " Reserved ", 0, 0, 0, 2
+	" reserved "
+	""
+	""
+ 	""
+#N0.3A#########################################################################
+DATA, 58, " Reserved ", 0, 0, 0, 2
+	" reserved "
+	""
+ 	""
+ 	""
+#N0.3B#########################################################################
+DATA, 59, " Reserved ", 0, 0, 0, 2
+	" reserved "
+	""
+ 	""
+	""
+#N0.3C#########################################################################
+DATA, 60, " Reserved ", 0, 0, 0, 2
+	" reserved "
+	""
+	""
+ 	""
+#N0.3D#########################################################################
+DATA, 61, " Reserved ", 0, 0, 0, 2
+	" reserved "
+	""
+ 	""
+ 	""
+#N0.3E#########################################################################
+DATA, 62, " Reserved ", 0, 0, 0, 2
+	" reserved "
+	""
+	""
+ 	""
+#N0.3F#########################################################################
+DATA, 63, " Reserved ", 0, 0, 0, 2
+	" reserved "
+	""
+	""
+ 	""
+END
+############################################
+#32bit positioning parameter control information
+############################################
+POS PARA 32 MENU,255
+#N0.80#########################################################################
+DATA,	0	,#Number
+	"Offset of Home"	,#Title
+	0x80000001		,#Min.
+	0x7FFFFFFF		,#Max.
+	0x10			,#Attribute
+	2			,#Type
+	"Set the offset at home."
+	""
+	""
+ 	""
+#N0.81#########################################################################
+DATA, 1, "Positive Soft Limit Position", 0, 0x7FFFFFFF, 0x10,2
+ 	"This links to Instance Attribute #54 in Position Controller Object (#25h)."
+	"Set the position of a software limit in positive direction."
+	"Unit: [pulse]"
+	""
+#N0.82#########################################################################
+DATA, 2, "Negative Soft Limit Position", 0x80000001, 0,0x10,2
+ 	"This links to Instance Attribute #55 in Position Controller Object (#25h)."
+	"Set the position of a software limit in negative direction."
+	"Unit: [pulse]"
+	""
+#N0.83#########################################################################
+DATA, 3,"Number of Pulse", 0, 0x7FFFFFFF, 0, 2
+	""
+	""
+ 	""
+	""
+#N0.84#########################################################################
+DATA, 4, "Positive Backrash Revise", 0, 0x7FFFFFFF , 0, 2
+	""
+	""
+ 	""
+	""
+#N0.85#########################################################################
+DATA, 5, "Negative Backrash Revise", 0, 0x7FFFFFFF, 0, 2
+	""
+	""
+ 	""
+	""
+#N0.86#########################################################################
+DATA, 6, "Internal Use",0x80000000, 0x7FFFFFFF, 0x80, 2
+	""
+	""
+ 	""
+	""
+#N0.87#########################################################################
+DATA, 7, "Internal Use",0x80000000, 0x7FFFFFFF, 0x80, 2
+	""
+	""
+ 	""
+	""
+#N0.88### DeviceNet Parameter #################################################
+DATA, 8, "Target Velocity", 5000, 10923000, 0, 2
+	"Set the velocity of a motion profile for the Positioning."
+ 	"This value is set to a positive number only."
+	"Unit: [pulse/s]"
+	""
+#N0.89#########################################################################
+DATA, 9, "Acceleration", 0x00000001, 0x7FFFFFFF, 0, 2
+	"Set the acceleration of a motion profile for all operation."
+ 	"This value is set to a positive number only."
+	"Unit: [pulse/s^2]"
+	""
+#N0.8A#########################################################################
+DATA, 10, "Deceleration", 0x00000001, 0x7FFFFFFF, 0, 2
+	"Set the deceleration of a motion profile for all operation."
+ 	"This value is set to a positive number only."
+	"Unit: [pulse/s^2]"
+	""
+#N0.8B#########################################################################
+DATA, 11, "Positive Soft Limit Position", 0x80000001, 0x7FFFFFFF, 0, 2
+	"Set the position of a software limit in positive direction."
+	"Unit: [pulse]"
+	""
+	""
+#N0.8C#########################################################################
+DATA, 12, "Negative Soft Limit Position", 0x80000001, 0x7FFFFFFF, 0, 2
+	"Set the position of a software limit in negative direction."
+	"Unit: [pulse]"
+	""
+	""
+#N0.8D#########################################################################
+DATA, 13, "Max Static Following Error", 0, 0x7FFFFFFF, 0, 2
+	"Set maximum allowable value of the position error when the motor is stopped."
+	"If the position error exceeds this value at the motor standstill, "
+	"Following Error Fault (Attribute #47) is set to 1.  Unit: [pulse]"
+	""
+#N0.8E#########################################################################
+DATA, 14, "Max Dynamic Following Error", 0, 0x7FFFFFFF, 0, 2
+	"Set maximum allowable value of the position error when the motor is in motion."
+	"If the position error exceeds this value at the motor in motion, "
+	"Following Error Fault (Attribute #47) is set to 1. Unit: [pulse]"
+	""
+#N0.8F#########################################################################
+DATA, 15, "Internal Use", 0x80000000, 0x7FFFFFFF, 0x80, 2
+	""
+	""
+ 	""
+	""
+#N0.90#########################################################################
+DATA, 16, "Homing Fast Velocity", 5000, 10923000, 0, 2
+	"Set the fast velocity of a motion profile for the Homing."
+ 	"This value is set to a positive number only."
+	"Unit: [pulse/s]"
+	""
+#N0.91#########################################################################
+DATA, 17, "Homing Slow Velocity", 5000, 10923000, 0, 2
+	"Set the slow velocity of a motion profile for the Homing."
+ 	"This value is set to a positive number only."
+	"Unit: [pulse/s]"
+	""
+#N0.92#########################################################################
+DATA, 18, "Internal Use", 0x80000000, 0x7FFFFFFF, 0x80, 2
+	""
+	""
+ 	""
+	""
+#N0.93#########################################################################
+DATA, 19, "Internal Use", 0x80000000, 0x7FFFFFFF, 0x80, 2
+	""
+	""
+ 	""
+	""
+#N0.94#########################################################################
+DATA, 20, "Internal Use", 0x80000000, 0x7FFFFFFF, 0x80, 2
+	""
+	""
+ 	""
+	""
+#N0.95#########################################################################
+DATA, 21, "Internal Use", 0x80000000, 0x7FFFFFFF, 0x80, 2
+	""
+	""
+ 	""
+	""
+#N0.96#########################################################################
+DATA, 22, "Internal Use", 0x80000000, 0x7FFFFFFF, 0x80, 2
+	""
+	""
+ 	""
+	""
+#N0.97#########################################################################
+DATA, 23, "Internal Use", 0x80000000, 0x7FFFFFFF, 0x80, 2
+	""
+	""
+ 	""
+	""
+END
+############################################
+#Positioning combobox setting
+############################################
+POSITIONING COMBO,32
+#速度選択
+DATA,0x00,0,"V1",0,"Comment for V1"
+DATA,0x01,0,"V2",1,"Comment for V2"
+DATA,0x02,0,"V3",2,"Comment for V3"
+DATA,0x03,0,"V4",3,"Comment for V4"
+DATA,0x04,0,"V5",4,"Comment for V5"
+DATA,0x05,0,"V6",5,"Comment for V6"
+DATA,0x06,0,"V7",6,"Comment for V7"
+DATA,0x07,0,"V8",7,"Comment for V8"
+DATA,0x08,0,"V9",8,"Comment for V9"
+DATA,0x09,0,"V10",9,"Comment for V10"
+DATA,0x0A,0,"V11",10,"Comment for V11"
+DATA,0x0B,0,"V12",11,"Comment for V12"
+DATA,0x0C,0,"V13",12,"Comment for V13"
+DATA,0x0D,0,"V14",13,"Comment for V14"
+DATA,0x0E,0,"V15",14,"Comment for V15"
+DATA,0x0F,0,"V16",15,"Comment for V16"
+#Acceration
+DATA,0x00,1,"A1",0,"Comment for A1"
+DATA,0x01,1,"A2",1,"Comment for A2"
+DATA,0x02,1,"A3",2,"Comment for A3"
+DATA,0x03,1,"A4",3,"Comment for A4"
+#Deceleration
+DATA,0x00,2,"D1",0,"Comment for D1"
+DATA,0x01,2,"D2",1,"Comment for D2"
+DATA,0x02,2,"D3",2,"Comment for D3"
+DATA,0x03,2,"D4",3,"Comment for D4"
+#Mode
+DATA,0x00,3,"Incremental",0,"Comment for incremental"
+DATA,0x01,3,"Absolute",1,"Comment for absolute"
+DATA,0x02,3,"Rotary",2,"Comment for rotary"
+DATA,0x03,3,"Dowel time",3,"Comment dowel time"
+#Block
+DATA,0x00,4,"Single",0,"Comment for single"
+DATA,0x01,4,"Block",1,"Comment for block"
+#S-shaped Acceleration
+DATA,0x00,7,"SACC1",0,"Comment for s-shape acc 1"
+DATA,0x01,7,"SACC2",1,"Comment for s-shape acc 2"
+DATA,0x02,7,"SACC3",2,"Comment for s-shape acc 3"
+DATA,0x03,7,"SACC4",3,"Comment for s-shape acc 4"
+#S-shaped deceleration
+DATA,0x00,8,"SDEC1",0,"Comment for s-shape dec 1"
+DATA,0x01,8,"SDEC2",1,"Comment for s-shape dec 2"
+DATA,0x02,8,"SDEC3",2,"Comment for s-shape dec 3"
+DATA,0x03,8,"SDEC4",3,"Comment for s-shape dec 4"
+END
+#
+#	Data end
+#
+"DEF END",0

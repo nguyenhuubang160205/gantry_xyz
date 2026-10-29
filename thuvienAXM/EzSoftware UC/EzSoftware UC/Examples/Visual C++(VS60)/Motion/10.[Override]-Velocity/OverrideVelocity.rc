@@ -1,0 +1,267 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\OverrideVelocity.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\OverrideVelocity.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_OVERRIDEVELOCITY_DIALOG DIALOGEX 0, 0, 273, 335
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "OverrideVelocity"
+FONT 9, "±¼¸²"
+BEGIN
+    COMBOBOX        IDC_CBO_SEL_AXIS,81,7,119,325,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Select Axis No : ",IDC_STATIC,13,9,54,11,SS_CENTERIMAGE
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,7,6,259,15
+    PUSHBUTTON      "Load File",IDC_BTN_LOAD_FILE,202,7,58,14
+    GROUPBOX        "Position Monitor",IDC_STATIC,7,28,259,64
+    LTEXT           "Command Position :",IDC_STATIC,13,39,67,14,
+                    SS_CENTERIMAGE
+    LTEXT           "Feedback Position  :",IDC_STATIC,13,55,67,14,
+                    SS_CENTERIMAGE
+    RTEXT           "0.000",IDC_STC_CMD_POS,81,39,76,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    RTEXT           "0.000",IDC_STC_ACT_POS,81,55,76,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    PUSHBUTTON      "Position Clear",IDC_BTN_POS_CLEAR,202,39,58,30
+    LTEXT           "Command Velocity :",IDC_STATIC,13,71,67,14,
+                    SS_CENTERIMAGE
+    RTEXT           "0.000",IDC_STC_CMD_VEL,81,71,76,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    LTEXT           "Unit",IDC_STATIC,161,39,36,14,SS_CENTERIMAGE
+    LTEXT           "Unit",IDC_STATIC,161,55,36,14,SS_CENTERIMAGE
+    CONTROL         "Unit/Sec",IDC_STATIC,"Static",SS_SIMPLE | 
+                    SS_CENTERIMAGE | WS_GROUP,161,71,36,14
+    CONTROL         "Servo On",IDC_CHK_SERVO_ON,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,202,71,58,14
+    GROUPBOX        "< Override Velocity >",IDC_STATIC,7,230,259,98
+    LTEXT           "Target Position      :",IDC_STATIC,13,121,67,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MOVE_POS,81,121,76,14,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "Override Max Vel   :",IDC_STATIC,13,256,67,14,
+                    SS_CENTERIMAGE
+    PUSHBUTTON      "Move Target",IDC_BTN_MOVE1,202,121,58,14
+    GROUPBOX        "Position Move",IDC_STATIC,7,96,259,78
+    CONTROL         "[00] Absolute",IDC_RDO_ABS,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,83,107,57,10
+    CONTROL         "[01] Relative",IDC_RDO_REL,"Button",BS_AUTORADIOBUTTON,
+                    145,107,57,10
+    LTEXT           "Move Velocity       :",IDC_STATIC,13,137,67,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MOVE_VEL,81,137,76,14,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "Move Accel/Decel :",IDC_STATIC,13,153,67,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MOVE_ACCDEC,81,153,76,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    PUSHBUTTON      "Move Stop",IDC_BTN_MOVE_STOP,202,137,58,30
+    LTEXT           "Unit",IDC_STATIC,161,121,36,14,SS_CENTERIMAGE
+    LTEXT           "Unit/Sec",IDC_STATIC,161,137,36,14,SS_CENTERIMAGE
+    CONTROL         "Unit/Sec^2",IDC_STATIC,"Static",SS_SIMPLE | 
+                    SS_CENTERIMAGE | WS_GROUP,161,153,36,14
+    EDITTEXT        IDC_EDT_OVERRIDE_MAX_VEL,81,256,76,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Unit/Sec",IDC_STATIC,161,256,36,14,SS_CENTERIMAGE
+    PUSHBUTTON      "Set Velocity",IDC_BTN_SET_OVERRIDE_MAX_VEL,202,256,58,
+                    14
+    LTEXT           "Override Velocity    :",IDC_STATIC,13,273,67,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_OVERRIDE_VEL,81,273,76,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Unit/Sec",IDC_STATIC,161,273,36,14,SS_CENTERIMAGE
+    LTEXT           "Override Accel       :",IDC_STATIC,13,290,67,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_OVERRIDE_ACC,81,290,76,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Unit/Sec^2",IDC_STATIC,161,290,36,14,SS_CENTERIMAGE
+    PUSHBUTTON      "Override",IDC_BTN_SET_OVERRIDE,202,273,58,48
+    GROUPBOX        "Jog(Velocity) Move",IDC_STATIC,7,178,259,47
+    LTEXT           "Jog Velocity          :",IDC_STATIC,13,189,67,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_JOG_VEL,81,189,76,14,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "Jog Accel/Decel    :",IDC_STATIC,13,205,67,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_JOG_ACCDEC,81,205,76,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    PUSHBUTTON      "Velocity Move",IDC_BTN_JOG_MOVE,202,189,58,14
+    LTEXT           "Unit/Sec",IDC_STATIC,161,189,36,14,SS_CENTERIMAGE
+    CONTROL         "Unit/Sec^2",IDC_STATIC,"Static",SS_SIMPLE | 
+                    SS_CENTERIMAGE | WS_GROUP,161,205,36,14
+    PUSHBUTTON      "Velocity Stop",IDC_BTN_JOG_MOVE_STOP,202,205,58,14
+    LTEXT           "Override Decel       :",IDC_STATIC,13,307,67,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_OVERRIDE_DEC,81,307,76,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Unit/Sec^2",IDC_STATIC,161,307,36,14,SS_CENTERIMAGE
+    RTEXT           "xxx.xxx",IDC_STC_OVERRIDE_MAX_VEL,81,240,74,14,
+                    SS_CENTERIMAGE
+    LTEXT           "Valid Over Max Vel :",IDC_STATIC,13,240,89,14,
+                    SS_CENTERIMAGE
+    LTEXT           "Unit/Sec",IDC_STATIC,161,240,36,14,SS_CENTERIMAGE
+    CONTROL         "Over Only Vel",IDC_CHK_OVERRIDE_ONLY_VEL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,202,240,58,10
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204b0"
+        BEGIN
+            VALUE "Comments", "(2011.03.28 compiled r1.0) for EzSoftwareRM\0"
+            VALUE "CompanyName", "Ajinextek\0"
+            VALUE "FileDescription", "OverrideVelocity Example\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "OverrideVelocity\0"
+            VALUE "LegalCopyright", "Copyright (C) 2011 AJINEXTEK Co,. LTD.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "OverrideVelocity.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "OverrideVelocity\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_OVERRIDEVELOCITY_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 266
+        VERTGUIDE, 13
+        VERTGUIDE, 260
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 328
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\OverrideVelocity.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

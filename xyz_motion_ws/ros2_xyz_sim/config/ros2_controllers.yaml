@@ -1,0 +1,34 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 1000  # 1000 Hz = 1ms Realtime Loop
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    xyz_position_controller:
+      type: position_controllers/JointGroupPositionController
+
+    gazebo_ros2_control:
+      pid_gains:
+        joint_x:
+          p: 800000.0
+          i: 80.0
+          d: 2000.0
+          i_clamp: 15.0
+        joint_y:
+          p: 800000.0
+          i: 80.0
+          d: 2000.0
+          i_clamp: 15.0
+        joint_z:
+          p: 600000.0
+          i: 180.0
+          d: 1400.0
+          i_clamp: 45.0
+
+xyz_position_controller:
+  ros__parameters:
+    joints:
+      - joint_x
+      - joint_y
+      - joint_z

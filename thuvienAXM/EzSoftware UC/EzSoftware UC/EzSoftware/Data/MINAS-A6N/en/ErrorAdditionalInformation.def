@@ -1,0 +1,35 @@
+#Name,Size,display form,scaling,unit
+Contol mode,2,#0,1,-
+Motor speed,2,#####0,1,r/min
+Position cotrol speed,2,#####0,1,r/min
+Velocity control command,2,#####0,1,r/min
+Torque control,2,###0.0,0.05,%
+Position deviation command,4,##########0,1,Command unit
+Motor position,4,##########0,1,Encoder unit
+Hybrid deviation ,4,##########0,1,Command unit
+Input port (Logical signal),4,##########0,1,-
+Output port (Logical signal),4,##########0,1,-
+Analog input,2,#####0,1,AD value
+Maker uses,2,#####0,1,-
+Maker uses,2,#####0,1,-
+Over-load ratio,2,###0.0,0.2,%
+Regenerative load factor,2,###0,1,%
+P and N of the power supply ,2,###0,1,V
+Driver temperature,2,###0,1,degree
+Warning flag,2,#####0,1,-
+Inertia ratio,2,#####0,1,%
+Maker uses,2,###0.0,0.2,%
+Maker uses,2,###0.0,0.2,%
+Maker uses,2,###0.0,0.2,%
+Encoder temperature,2,#####0,1,degree
+Maker uses,2,#####0,1,-
+Maker uses,2,#####0,1,-
+Maker uses,2,#####0,1,-
+U-phase current detector,2,#####0,1,AD value
+W-phase current detector,2,#####0,1,AD value
+Maker uses,2,#####0,1,-
+Maker uses,2,#####0,1,-
+Encoder single-revolution data,4,##########0,1,Encoder unit
+Encoder communication error continuation outbreak number of times,2,#####0,1,times
+External scale communication error continuation outbreak number of times,2,#####0,1,times
+Maker uses,2,#####0,1,-

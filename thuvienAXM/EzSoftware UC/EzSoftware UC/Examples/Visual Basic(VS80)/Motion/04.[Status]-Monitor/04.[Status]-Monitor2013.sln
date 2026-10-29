@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "04.[Status]-Monitor", "04.[Status]-Monitor2013.vbproj", "{6DFEF5D1-C67D-4597-A4D0-458971A8064A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6DFEF5D1-C67D-4597-A4D0-458971A8064A}.Debug|x86.ActiveCfg = Debug|x86
+		{6DFEF5D1-C67D-4597-A4D0-458971A8064A}.Debug|x86.Build.0 = Debug|x86
+		{6DFEF5D1-C67D-4597-A4D0-458971A8064A}.Release|x86.ActiveCfg = Release|x86
+		{6DFEF5D1-C67D-4597-A4D0-458971A8064A}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

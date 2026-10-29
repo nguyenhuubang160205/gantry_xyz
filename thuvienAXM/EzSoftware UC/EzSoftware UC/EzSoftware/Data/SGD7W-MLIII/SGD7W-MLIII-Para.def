@@ -1,0 +1,2217 @@
+#[No]			[Name]	[Verify]	[Unit]	[Min]	[Max]	[Default]	[Rotary]	[Linear]	
+[All constant number]											
+[Function Selection(Pn0xx-)]											
+Pn000,			"Basic Function Selections 0",	"1",	"",	"",	"",	"0000H"	"1",	"1"	
+	0:		"Direction Selection",								
+		"0000",	"Use CCW as the forward direction.",								
+		"0001",	"Use CW as the forward direction. (Reverse Rotation Mode)",								
+	1:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Rotary/Linear Startup Selection When Encoder Is Not Connected",								
+		"0000",	"Start as a rotary encoder.",								
+		"0001",	"Start as a linear encoder.",								
+Pn001,			"Application Function Selections 1"	"1",	"",	"",	"",	"0000H"	"1",	"1"	
+	0:		"Servo OFF or Alarm Group 1 Stopping Method",								
+		"0000",	"Stop the motor by applying the dynamic brake.",								
+		"0001",	"Stop the motor by the applying dynamic brake and then release the dynamic brake.",								
+		"0002",	"Coast the motor to a stop without the dynamic brake.",								
+	1:		"Overtravel Stopping Method",								
+		"0000",	"Apply the dynamic brake or coast the motor to a stop (use the stopping method set in Pn001 = n.oooX).",								
+		"0001",	"Decelerate the motor to a stop using the torque set in Pn406 as the maximum torque and then servo-lock the motor.",								
+		"0002",	"Decelerate the motor to a stop using the torque set in Pn406 as the maximum torque and then let the motor coast.",								
+		"0003",	"Decelerate the motor to a stop using the deceleration time set in Pn30A and then servo-lock the motor.",								
+		"0004",	"Decelerate the motor to a stop using the deceleration time set in Pn30A and then let the motor coast.",								
+	2:		"Main Circuit Power Supply AC/DC Input Selection",								
+		"0000",	"Input AC power as the main circuit power supply using the L1, L2, and L3 terminals (do not use shared converter).",								
+		"0001",	"Input DC power as the main circuit power supply using the B1/(+) and (-) 2 terminals or the B1 and (-) 2 terminals (use an external converter or the shared converter).",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn002,			"Application Function Selections 2",	"1",	"",	"",	"",	"0011H"	"1",	"1"	
+	0:		"MECHATROLINK Command Position and Speed Control Option",								
+		"0000",	"Reserved parameter (Do not change.)",								
+		"0001",	"Use TLIM as the torque limit.",								
+		"0002",	"Reserved parameter (Do not change.)",								
+		"0003",	"Reserved parameter (Do not change.)",								
+	1:		"Torque Control Option",								
+		"0000",	"Reserved parameter (Do not change.)",								
+		"0001",	"Use the speed limit for torque control (VLIM) as the speed limit.",								
+	2:		"Absolute Encoder Usage",								
+		"0000",	"Use the absolute encoder as an absolute encoder.",								
+		"0001",	"Use the absolute encoder as an incremental encoder.",								
+		"0002",	"Uses absolute encoder as an absolute encoder for a single rotation.",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn006,			"Application Function Selections 6",	"0",	"",	"",	"",	"0002H"	"1",	"1"	
+	0,1:		"Analog Monitor 1 Signal Selection",								
+		"0000",	"Motor speed (1 V/1000 min-1 )",								
+		"0001",	"Speed reference (1 V/1000 min-1)",								
+		"0002",	"Torque reference (1 V/100% rated torque)",								
+		"0003",	"Position deviation (0.05 V/reference unit)",								
+		"0004",	"Position amplifier deviation (after electronic gear) (0.05 V/encoder pulse unit)",								
+		"0005",	"Position reference speed (1 V/1,000 min-1)",								
+		"0006",	"Reserved parameter (Do not change.)",								
+		"0007",	"Load-motor position deviation (0.01 V/reference unit)",								
+		"0008",	"Positioning completion (positioning completed: 5 V, positioning not completed: 0 V)",								
+		"0009",	"Speed feedforward (1 V/1,000 min-1)",								
+		"000A",	"Torque feedforward (1 V/100% rated torque)",								
+		"000B",	"Active gain (1st gain: 1 V, 2nd gain: 2 V)",								
+		"000C",	"Completion of position reference distribution (completed: 5 V, not completed: 0 V)",								
+		"000E",	"Reserved parameter (Do not change.)",								
+		"000F",	"Reserved parameter (Do not change.)",								
+		"0010",	"Main circuit DC voltage",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Output Axis Selections",								
+		"0000",	"Output the data of A axis.",								
+		"0001",	"Output the data of B axis.",								
+Pn007,			"Application Function Selections 7",	"0",	"",	"",	"",	"0000H"	"1",	"1"	
+	0,1:		"Analog Monitor 2 Signal Selection",								
+		"0000",	"Motor speed (1 V/1,000 min-1 )",								
+		"0001",	"Speed reference (1 V/1,000 min-1)",								
+		"0002",	"Torque reference (1 V/100% rated torque)",								
+		"0003",	"Position deviation (0.05 V/reference unit)",								
+		"0004",	"Position amplifier deviation (after electronic gear) (0.05 V/encoder pulse unit)",								
+		"0005",	"Position reference speed (1 V/1,000 min-1)",								
+		"0006",	"Reserved parameter (Do not change.)",								
+		"0007",	"Load-motor position deviation (0.01 V/reference unit)",								
+		"0008",	"Positioning completion (positioning completed: 5 V, positioning not completed: 0 V)",								
+		"0009",	"Speed feedforward (1 V/1,000 min-1)",								
+		"000A",	"Torque feedforward (1 V/100% rated torque)",								
+		"000B",	"Active gain (1st gain: 1 V, 2nd gain: 2 V)",								
+		"000C",	"Completion of position reference distribution (completed: 5 V, not completed: 0 V)",								
+		"000E",	"Reserved parameter (Do not change.)",								
+		"000F",	"Reserved parameter (Do not change.)",								
+		"0010",	"Main circuit DC voltage",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Output Axis Selections",								
+		"0000",	"Output the data of A axis.",								
+		"0001",	"Output the data of B axis.",								
+Pn008,			"Application Function Selections 8",	"1",	"",	"",	"",	"4000H"	"1",	"1"	
+	0:		"Low Battery Voltage Alarm/Warning Selection",								
+		"0000",	"Output alarm (A.830) for low battery voltage.",								
+		"0001",	"Output warning (A.930) for low battery voltage.",								
+	1:		"Function Selection for Undervoltage",								
+		"0000",	"Do not detect undervoltage.",								
+		"0001",	"Detect undervoltage warning and limit torque at host controller.",								
+		"0002",	"Detect undervoltage warning and limit torque with Pn424 and Pn425 (i.e., only in SERVOPACK).",								
+	2:		"Warning Detection Selection",								
+		"0000",	"Detects warning.",								
+		"0001",	"Do not detect warnings except for A.971.",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0004",	"Reserved parameter (Do not change.)",								
+Pn009,			"Application Function Selections 9",	"1",	"",	"",	"",	"0010H"	"1",	"1"	
+	0:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	1:		"Current Control Mode Selection",								
+		"0000",	"Use current control mode 1.",								
+		"0001",	"Use current control mode 2.",								
+	2:		"Speed Detection Method Selection",								
+		"0000",	"Use speed detection 1.",								
+		"0001",	"Use speed detection 2.",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn00A,			"Application Function Selections A",	"1",	"",	"",	"",	"0001H"	"1",	"1"	
+	0:		"Motor Stopping Method for Group 2 Alarms",								
+		"0000",	"Apply the dynamic brake or coast the motor to a stop (use the stopping method set in Pn001 = n.oooX).",								
+		"0001",	"Decelerate the motor to a stop using the torque set in Pn406 as the maximum torque and then apply the dynamic brake.",								
+		"0002",	"Decelerate the motor to a stop using the torque set in Pn406 as the maximum torque and then let the motor coast.",								
+		"0003",	"Decelerate the motor to a stop using the deceleration time set in Pn30A and then apply the dynamic brake.",								
+		"0004",	"Decelerate the motor to a stop using the deceleration time set in Pn30A and then let the motor coast.",								
+	1:		"Stopping Method for Forced Stops",								
+		"0000",	"Apply the dynamic brake or coast the motor to a stop (use the stopping method set in Pn001 = n.oooX).",								
+		"0001",	"Decelerate the motor to a stop using the torque set in Pn406 as the maximum torque and then apply the dynamic brake.",								
+		"0002",	"Decelerate the motor to a stop using the torque set in Pn406 as the maximum torque and then let the motor coast.",								
+		"0003",	"Decelerate the motor to a stop using the deceleration time set in Pn30A and then apply the dynamic brake.",								
+		"0004",	"Decelerate the motor to a stop using the deceleration time set in Pn30A and then let the motor coast.",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn00B,			"Application Function Selections B",	"1",	"",	"",	"",	"0000H"	"1",	"1"	
+	0:		"Operator Parameter Display Selection",								
+		"0000",	"Display only setup parameters.",								
+		"0001",	"Display all parameters.",								
+	1:		"Motor Stopping Method for Group 2 Alarms",								
+		"0000",	"Stops the motor by setting the speed reference to ""0"".",								
+		"0001",	"Apply the dynamic brake or coast the motor to a stop (use the stopping method set in Pn001 = n.oooX).",								
+		"0002",	"Set the stopping method with Pn00A = n.oooX.",								
+	2:		"Power Input Selection for Three-phase SERVOPACK",								
+		"0000",	"Use a three-phase power supply input.",								
+		"0001",	"Use a three-phase power supply input and as a single-phase power supply input.",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn00C,			"Application Function Selections C",	"1",	"",	"",	"",	"0000H"	"1",	"1"	
+	0:		"Function Selection for Test without a Motor",								
+		"0000",	"Disable tests without a motor.",								
+		"0001",	"Enable tests without a motor.",								
+	1:		"Encoder Resolution for Test without Motor",								
+		"0000",	"Use 13 bits.",								
+		"0001",	"Use 20 bits.",								
+		"0002",	"Use 22 bits.",								
+		"0003",	"Use 24 bits.",								
+	2:		"Encoder Type Selection for Tests without a Motor",								
+		"0000",	"Use an incremental encoder.",								
+		"0001",	"Use an absolute encoder.",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn00D,			"Application Function Selections D",	"1",	"",	"",	"",	"0000H"	"1",	"1"	
+	0:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	1:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Overtravel Warning Detection Selection",								
+		"0000",	"Do not detect overtravel warnings.",								
+		"0001",	"Detect overtravel warnings.",								
+Pn00E,			"Application Function Selections E",	"1",	"",	"",	"",	"0000H"	"1",	"1"	
+	0:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	1:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn00F,			"Application Function Selections F",	"1",	"",	"",	"",	"0000H"	"1",	"1"	
+	0:		"Preventative Maintenance Warning Selection",								
+		"0000",	"Do not detect preventative maintenance warnings.",								
+		"0001",	"Detect preventative maintenance warnings.",								
+	1:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn010,			"Reserved parameter (Do not change.)",	"0",	"",	"0000H",	"007FH",	"0000H"	"1",	"1"	
+Pn080,			"Application Function Selections 80",	"1",	"",	"",	"",	"0000H"	"1",	"1"	
+	0:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	1:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn081,			"Application Function Selections 81",	"1",	"",	"",	"",	"0000H"	"1",	"1"	
+	0:		"Phase-C Pulse Output Selection",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	1:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+[Gain(Pn1xx-)]											
+Pn100,			"Speed Loop Gain",	"0",	"0.1:Hz",	"10",	"20000",	"400"	"1",	"1"	
+Pn101,			"Speed Loop Integral Time Constant",	"0",	"0.01:ms",	"15",	"51200",	"2000"	"1",	"1"	
+Pn102,			"Position Loop Gain",	"0",	"0.1:/s",	"10",	"20000",	"400"	"1",	"1"	
+Pn103,			"Moment of Inertia Ratio",	"0",	":%",	"0",	"20000",	"100"	"1",	"1"	
+Pn104,			"Second Speed Loop Gain",	"0",	"0.1:Hz",	"10",	"20000",	"400"	"1",	"1"	
+Pn105,			"Second Speed Loop Integral Time Constant",	"0",	"0.01:ms",	"15",	"51200",	"2000"	"1",	"1"	
+Pn106,			"Second Position Loop Gain",	"0",	"0.1:/s",	"10",	"20000",	"400"	"1",	"1"	
+Pn109,			"Feedforward",	"0",	":%",	"0",	"100",	"0"	"1",	"1"	
+Pn10A,			"Feedforward Filter Time Constant",	"0",	"0.01:ms",	"0",	"6400",	"0"	"1",	"1"	
+Pn10B,			"Gain Application Slecection",	"1",	"",	"",	"",	"0000H"	"1",	"1"	
+	0:		"Mode Switching Selection",								
+		"0000",	"Use the internal torque reference as the condition (level setting: Pn10C).",								
+		"0001",	"Use the speed reference as the condition (level setting: Pn10D).",								
+		"0002",	"Use the acceleration reference as the condition (level setting: Pn10E).",								
+		"0003",	"Use the position deviation as the condition (level setting: Pn10F).",								
+		"0004",	"Do not use mode switching.",								
+	1:		"Speed Loop Control Method",								
+		"0000",	"PI control",								
+		"0001",	"I-P control",								
+		"0002",	"Reserved parameter (Do not change.)",								
+		"0003",	"Reserved parameter (Do not change.)",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn10C,			"Mode Switching Level for Torque Reference" ,	"0",	":%",	"0",	"800",	"200"	"1",	"1"	
+Pn10D,			"Mode Switching Level for Speed Reference" ,	"0",	":min-1",	"0",	"10000",	"0"	"1",	"0"	
+Pn10E,			"Mode Switching Level for Acceleration" ,	"0",	":min-1/s",	"0",	"30000",	"0"	"1",	"0"	
+Pn10F,			"Mode Switching Level for Position Deviation" ,	"0",	":reference units",	"0",	"10000",	"0"	"1",	"1"	
+Pn11F,			"Position Integral Time Constant" ,	"0",	"0.1:ms",	"0",	"50000",	"0"	"1",	"1"	
+Pn121,			"Friction Compensation Gain" ,	"0",	":%",	"10",	"1000",	"100"	"1",	"1"	
+Pn122,			"Second Friction Compensation Gain" ,	"0",	":%",	"10",	"1000",	"100"	"1",	"1"	
+Pn123,			"Friction Compensation Coefficient" ,	"0",	":%",	"0",	"100",	"0"	"1",	"1"	
+Pn124,			"Friction Compensation Frequency Correction" ,	"0",	"0.1:Hz",	"-10000",	"10000",	"0"	"1",	"1"	
+Pn125,			"Friction Compensation Gain Correction" ,	"0",	":%",	"1",	"1000",	"100"	"1",	"1"	
+Pn131,			"Gain Switching Time 1" ,	"0",	":ms",	"0",	"65535",	"0"	"1",	"1"	
+Pn132,			"Gain Switching Time 2" ,	"0",	":ms",	"0",	"65535",	"0"	"1",	"1"	
+Pn135,			"Gain Switching Waiting Time 1" ,	"0",	":ms",	"0",	"65535",	"0"	"1",	"1"	
+Pn136,			"Gain Switching Waiting Time 2" ,	"0",	":ms",	"0",	"65535",	"0"	"1",	"1"	
+Pn139,			"Automatic Gain Switching Selections 1",	"0",	"",	"",	"",	"0000H"	"1",	"1"	
+	0:		"Gain Switching Selection",								
+		"0000",	"Use manual gain switching. The gain is switched manually with G-SEL in the servo command output signals (SVCMD_IO)",								
+		"0001",	"Reserved parameter (Do not change.)",								
+		"0002",	"Use automatic gain switching pattern 1.",								
+	1:		"Gain Switching Condition A",								
+		"0000",	"/COIN (Positioning Completion Output) signal turns ON.",								
+		"0001",	"/COIN (Positioning Completion Output) signal turns OFF.",								
+		"0002",	"/NEAR (Near Output) signal turns ON.",								
+		"0003",	"/NEAR (Near Output) signal turns OFF.",								
+		"0004",	"Position reference filter output is 0 and reference pulse input is OFF.",								
+		"0005",	"Position reference pulse input is ON",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn13D,			"Current Gain Level" ,	"0",	":%",	"100",	"2000",	"2000"	"1",	"1"	
+Pn140,			"Model Following Control Related Selections",	"0",	"",	"",	"",	"0100H"	"1",	"1"	
+	0:		"Model Following Control Selection",								
+		"0000",	"Do not use model following control.",								
+		"0001",	"Use model following control.",								
+	1:		"Vibration Suppression Selection",								
+		"0000",	"Do not perform vibration suppression.",								
+		"0001",	"Perform vibration suppression for a specific frequency.",								
+		"0002",	"Perform vibration suppression for two specific frequencies.",								
+	2:		"Vibration Suppression Adjustment Selection",								
+		"0000",	"Do not adjust vibration suppression automatically during execution of autotuning without a host reference, autotuning with a host reference, and custom tuning.",								
+		"0001",	"Adjust vibration suppression automatically during execution of autotuning without a host reference, autotuning with a host reference, and custom tuning.",								
+	3:		"Speed Feedforward (VFF)/Torque Feedforward (TFF) Selection",								
+		"0000",	"Do not use model following control and speed/torque feedforward together.",								
+		"0001",	"Use model following control and speed/torque feedforward together.",								
+Pn141,			"Model Following Control Gain" ,	"0",	"0.1:/s",	"10",	"20000",	"500"	"1",	"1"	
+Pn142,			"Model Following Control Correction" ,	"0",	"0.1:%",	"500",	"2000",	"1000"	"1",	"1"	
+Pn143,			"Model Following Control Bias in the Forward Direction" ,	"0",	"0.1:%",	"0",	"10000",	"1000"	"1",	"1"	
+Pn144,			"Model Following Control Bias in the Reverse Direction" ,	"0",	"0.1:%",	"0",	"10000",	"1000"	"1",	"1"	
+Pn145,			"Vibration Suppression 1 Frequency A" ,	"0",	"0.1:Hz",	"10",	"2500",	"500"	"1",	"1"	
+Pn146,			"Vibration Suppression 1 Frequency B" ,	"0",	"0.1:Hz",	"10",	"2500",	"700"	"1",	"1"	
+Pn147,			"Model Following Control Speed Feedforward Compensation" ,	"0",	"0.1:%",	"0",	"10000",	"1000"	"1",	"1"	
+Pn148,			"Second Model Following Control Gain" ,	"0",	"0.1:/s",	"10",	"20000",	"500"	"1",	"1"	
+Pn149,			"Second Model Following Control Correction" ,	"0",	"0.1:%",	"500",	"2000",	"1000"	"1",	"1"	
+Pn14A,			"Vibration Suppression 2 Frequency" ,	"0",	"0.1:Hz",	"10",	"2000",	"800"	"1",	"1"	
+Pn14B,			"Vibration Suppression 2 Correction" ,	"0",	":%",	"10",	"1000",	"100"	"1",	"1"	
+Pn14F,			"Control-Related Selections",	"1",	"",	"",	"",	"0011H"	"1",	"0"	
+	0:		"Model Following Control Type Selection",								
+		"0000",	"Use model following control type 1.",								
+		"0001",	"Use model following control type 2.",								
+	1:		"Tuning-less Type Selection",								
+		"0000",	"Use tuning-less type 1.",								
+		"0001",	"Use tuning-less type 2.",								
+		"0002",	"Use tuning-less type 3.",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn160,			"Anti-Resonance Control Related Selections",	"0",	"",	"",	"",	"0010H"	"1",	"1"	
+	0:		"Anti-Resonance Control Selection",								
+		"0000",	"Do not use anti-resonance control.",								
+		"0001",	"Use anti-resonance control.",								
+	1:		"Anti-Resonance Control Adjustment Selection",								
+		"0000",	"Do not adjust anti-resonance control automatically during execution of autotuning without a host reference, autotuning with a host reference, and custom tuning.",								
+		"0001",	"Adjust anti-resonance control automatically during execution of autotuning without a host reference, autotuning with a host reference, and custom tuning.",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn161,			"Anti-Resonance Frequency" ,	"0",	"0.1:Hz",	"10",	"20000",	"1000"	"1",	"1"	
+Pn162,			"Anti-Resonance Gain Correction" ,	"0",	":%",	"1",	"1000",	"100"	"1",	"1"	
+Pn163,			"Anti-Resonance Damping Gain" ,	"0",	":%",	"0",	"300",	"0"	"1",	"1"	
+Pn164,			"Anti-Resonance Filter Time Constant 1 Correction" ,	"0",	"0.01:ms",	"-1000",	"1000",	"0"	"1",	"1"	
+Pn165,			"Anti-Resonance Filter Time Constant 2 Correction" ,	"0",	"0.01:ms",	"-1000",	"1000",	"0"	"1",	"1"	
+Pn166,			"Anti-Resonance Damping Gain 2" ,	"0",	":%",	"0",	"1000",	"0"	"1",	"1"	
+Pn170,			"Tuning-less Function Related Selections",	"0",	"",	"",	"",	"1401H"	"1",	"1"	
+	0:		"Tuning-less Selection",								
+		"0000",	"Disable tuning-less function.",								
+		"0001",	"Enable tuning-less function.",								
+	1:		"Speed Control Method",								
+		"0000",	"Use for speed control.",								
+		"0001",	"Use for speed control and use host controller for position control.",								
+	2:		"Rigidity Level",								
+		"0000",	"Tuning-less Level 0",								
+		"0001",	"Tuning-less Level 1",								
+		"0002",	"Tuning-less Level 2",								
+		"0003",	"Tuning-less Level 3",								
+		"0004",	"Tuning-less Level 4",								
+		"0005",	"Tuning-less Level 5",								
+		"0006",	"Tuning-less Level 6",								
+		"0007",	"Tuning-less Level 7",								
+	3:		"Tuning-less Load Level",								
+		"0000",	"Tuning-less Load Level 0",								
+		"0001",	"Tuning-less Load Level 1",								
+		"0002",	"Tuning-less Load Level 2",								
+[Position(Pn2xx-)]											
+Pn205,			"Multiturn Limit" ,	"1",	":Rev",	"0",	"65535",	"65535"	"1",	"0"	
+Pn207,			"Position Control Function Selections",	"1",	"",	"",	"",	"0010H"	"1",	"1"	
+	0:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	1:		"Reserved parameter (Do not change.)",								
+		"0001",	"Reserved parameter (Do not change.)",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"/COIN (Positioning Completion Output) Signal Output Timing",								
+		"0000",	"Output when the absolute value of the position deviation is the same or less than the setting of Pn522 (Positioning Completed Width).",								
+		"0001",	"Output when the absolute value of the position error is the same or less than the setting of Pn522 (Positioning Completed Width) and the reference after the position reference filter is 0.",								
+		"0002",	"Output when the absolute value of the position error is the same or less than the setting of Pn522 (Positioning Completed Width) and the reference input is 0.",								
+Pn20A,			"Reserved parameter (Do not change.)",	"1",	"",	"4",	"1048576",	"32768"	"1",	"0"	
+Pn20E,			"Electronic Gear Ratio (Numerator)" ,	"1",	"",	"1",	"1073741824",	"16"	"1",	"1"	
+Pn210,			"Electronic Gear Ratio (Denominator)" ,	"1",	"",	"1",	"1073741824",	"1"	"1",	"1"	
+Pn212,			"Number of Encoder Output Pulses" ,	"1",	":P/Rev",	"16",	"1073741824",	"2048"	"1",	"0"	
+Pn216,			"Reserved parameter (Do not change.)" ,	"0",	"0.1:ms",	"0",	"65535",	"0"	"1",	"1"	
+Pn217,			"Reserved parameter (Do not change.)" ,	"0",	"0.1:ms",	"0",	"10000",	"0"	"1",	"1"	
+Pn22A,			"Reserved parameter (Do not change.)",	"1",	"",	"",	"",	"0000H"	"1",	"0"	
+	0:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	1:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn230,			"Position Control Expansion Function Selections",	"1",	"",	"",	"",	"0000H"	"1",	"0"	
+	0:		"Backlash Compensation Direction",								
+		"0000",	"Compensate forward references.",								
+		"0001",	"Compensate reverse references.",								
+	1:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn231,			"Backlash Compensation",	"0",	"0.1:reference units",	"-500000",	"500000",	"0"	"1",	"0"	
+Pn233,			"Backlash Compensation Time Constant",	"0",	"0.01:ms",	"0",	"65535",	"0"	"1",	"0"	
+Pn240,			"Reserved parameter (Do not change.)",	"0",	":ms",	"0",	"0",	"0"	"1",	"0"	
+Pn281,			"Encoder Output Resolution" ,	"1",	":Edge/Pitch",	"1",	"4096",	"20"	"1",	"1"	
+[Speed(Pn3xx-)]											
+Pn304,			"Jogging Speed",	"0",	":min-1",	"0",	"10000",	"500"	"1",	"1"	
+Pn305,			"Jogging Speed Soft Start Acceleration Time",	"0",	":ms",	"0",	"10000",	"0"	"1",	"1"	
+Pn306,			"Soft Start Deceleration Time",	"0",	":ms",	"0",	"10000",	"0"	"1",	"1"	
+Pn308,			"Speed Feedback Filter Time Constant",	"0",	"0.01:ms",	"0",	"65535",	"0"	"1",	"1"	
+Pn30A,			"Deceleration Time for Servo OFF and Forced Stops",	"0",	":ms",	"0",	"10000",	"0"	"1",	"1"	
+Pn30C,			"Speed Feedforward Average Movement Time",	"0",	"0.1:ms",	"0",	"5100",	"0"	"1",	"1"	
+Pn310,			"Vibration Detection Selections",	"0",	"",	"",	"",	"0000H"	"1",	"1"	
+	0:		"Vibration Detection Selection",								
+		"0000",	"Do not detect vibration.",								
+		"0001",	"Output a warning (A.911) if vibration is detected.",								
+		"0002",	"Output an alarm (A.520) if vibration is detected.",								
+	1:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn311,			"Vibration Detection Sensitivity",	"0",	":%",	"50",	"500",	"100"	"1",	"1"	
+Pn312,			"Vibration Detection Level",	"0",	":min-1",	"0",	"5000",	"50"	"1",	"0"	
+Pn316,			"Maximum Motor Speed",	"1",	":min-1",	"0",	"65535",	"10000"	"1",	"0"	
+Pn324,			"Moment of Inertia Calculation Starting Level",	"0",	":%",	"0",	"20000",	"300"	"1",	"1"	
+[Torque(Pn4xx-)]											
+Pn401,			"First Stage First Torque Reference Filter Time Constant",	"0",	"0.01:ms",	"0",	"65535",	"100"	"1",	"1"	
+Pn402,			"Forward Torque Limit",	"0",	":%",	"0",	"800",	"800"	"1",	"0"	
+Pn403,			"Reverse Torque Limit",	"0",	":%",	"0",	"800",	"800"	"1",	"0"	
+Pn404,			"Forward External Torque Limit",	"0",	":%",	"0",	"800",	"100"	"1",	"1"	
+Pn405,			"Reverse External Torque Limit",	"0",	":%",	"0",	"800",	"100"	"1",	"1"	
+Pn406,			"Emergency Stop Torque",	"0",	":%",	"0",	"800",	"800"	"1",	"1"	
+Pn407,			"Speed Limit during Torque Control",	"0",	":min-1",	"0",	"10000",	"10000"	"1",	"0"	
+Pn408,			"Torque-Related Function Selections",	"1",	"",	"",	"",	"0000H"	"1",	"1"	
+	0:		"Notch Filter Selection 1",								
+		"0000",	"Disable first stage notch filter.",								
+		"0001",	"Enable first stage notch filter.",								
+	1:		"Speed Limit Selection",								
+		"0000",	"Use the smaller of the maximum motor speed and the setting of Pn407 or Pn480 as the speed limit.",								
+		"0001",	"Use the smaller of the overspeed alarm detection speed and the setting of Pn407 or Pn480 as the speed limit.",								
+	2:		"Notch Filter Selection 2",								
+		"0000",	"Disable second stage notch filter.",								
+		"0001",	"Enable second stage notch filter.",								
+	3:		"Friction Compensation Function Selection",								
+		"0000",	"Disable friction compensation.",								
+		"0001",	"Enable friction compensation.",								
+Pn409,			"First Stage Notch Filter Frequency",	"0",	":Hz",	"50",	"5000",	"5000"	"1",	"1"	
+Pn40A,			"First Stage Notch Filter Q Value",	"0",	"0.01:",	"50",	"1000",	"70"	"1",	"1"	
+Pn40B,			"First Stage Notch Filter Depth",	"0",	"0.001:",	"0",	"1000",	"0"	"1",	"1"	
+Pn40C,			"Second Stage Notch Filter Frequency",	"0",	":Hz",	"50",	"5000",	"5000"	"1",	"1"	
+Pn40D,			"Second Stage Notch Filter Q Value",	"0",	"0.01:",	"50",	"1000",	"70"	"1",	"1"	
+Pn40E,			"Second Stage Notch Filter Depth",	"0",	"0.001:",	"0",	"1000",	"0"	"1",	"1"	
+Pn40F,			"Second Stage Second Torque Reference Filter Frequency",	"0",	":Hz",	"100",	"5000",	"5000"	"1",	"1"	
+Pn410,			"Second Stage Second Notch Filter Q Value",	"0",	"0.01:",	"50",	"100",	"50"	"1",	"1"	
+Pn412,			"First Stage Second Torque Reference Filter Time Constant",	"0",	"0.01:ms",	"0",	"65535",	"100"	"1",	"1"	
+Pn416,			"Torque-Related Function Selections 2",	"0",	"",	"",	"",	"0000H"	"1",	"1"	
+	0:		"Notch Filter Selection 3",								
+		"0000",	"Disable third stage notch filter.",								
+		"0001",	"Enable third stage notch filter.",								
+	1:		"Notch Filter Selection 4",								
+		"0000",	"Disable fourth stage notch filter.",								
+		"0001",	"Enable fourth stage notch filter.",								
+	2:		"Notch Filter Selection 5",								
+		"0000",	"Disable fifth stage notch filter.",								
+		"0001",	"Enable fifth stage notch filter.",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn417,			"Third Stage Notch Filter Frequency",	"0",	":Hz",	"50",	"5000"	"5000"	"1",	"1"	
+Pn418,			"Third Stage Notch Filter Q Value",	"0",	"0.01:",	"50",	"1000",	"70"	"1",	"1"	
+Pn419,			"Third Stage Notch Filter Depth",	"0",	"0.001:",	"0",	"1000",	"0"	"1",	"1"	
+Pn41A,			"Fourth Stage Notch Filter Frequency",	"0",	":Hz",	"50",	"5000"	"5000"	"1",	"1"	
+Pn41B,			"Fourth Stage Notch Filter Q Value",	"0",	"0.01:",	"50",	"1000",	"70"	"1",	"1"	
+Pn41C,			"Fourth Stage Notch Filter Depth",	"0",	"0.001:",	"0",	"1000",	"0"	"1",	"1"	
+Pn41D,			"Fifth Stage Notch Filter Frequency",	"0",	":Hz",	"50",	"5000"	"5000"	"1",	"1"	
+Pn41E,			"Fifth Stage Notch Filter Q Value",	"0",	"0.01:",	"50",	"1000",	"70"	"1",	"1"	
+Pn41F,			"Fifth Stage Notch Filter Depth",	"0",	"0.001:",	"0",	"1000",	"0"	"1",	"1"	
+Pn423,			"Torque Compensation Related Function Selections",	"0",	"",	"",	"",	"0000H"	"1",	"1"	
+	0:		"Torque Ripple Compensation Function Selection",								
+		"0000",	"Disable torque ripple compensation.",								
+		"0001",	"Enable torque ripple compensation.",								
+	1:		"Ripple Compensation Information Disagreement Warning Detection Selection",								
+		"0000",	"Detect A.942 alarms.",								
+		"0001",	"Do not detect A.942 alarms.",								
+	2:		"Speed Ripple Compensation Enable Condition Selection",								
+		"0000",	"Speed reference",								
+		"0001",	"Motor speed",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn424,			"Torque Limit at Main Circuit Voltage Drop",	"0",	":%",	"0",	"100",	"50"	"1",	"1"	
+Pn425,			"Release Time for Torque Limit at Main Circuit Voltage Drop",	"0",	":ms",	"0",	"1000",	"100"	"1",	"1"	
+Pn426,			"Torque Feedforward Average Movement Time",	"0",	"0.1:ms",	"0",	"5100",	"0",	"1",	"1"	
+Pn427,			"Ripple Compensation Effective Speed",	"0",	":min-1",	"0",	"10000",	"0",	"1",	"1"	
+Pn456,			"Sweep Torque Reference Amplitude",	"0",	":%",	"1",	"800",	"15"	"1",	"1"	
+Pn460,			"Notch Filter Adjustment Selections 1",	"0",	"",	"",	"",	"0101H"	"1",	"1"	
+	0:		"Notch Filter Adjustment Selection 1",								
+		"0000",	"Do not adjust the first stage notch filter automatically during execution of autotuning without a host reference, autotuning with a host reference, and custom tuning.",								
+		"0001",	"Adjust the first stage notch filter automatically during execution of autotuning without a host reference, autotuning with a host reference, and custom tuning.",								
+	1:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	2:		"Notch Filter Adjustment Selection 2",								
+		"0000",	"Do not adjust the second stage notch filter automatically during execution of autotuning without a host reference, autotuning with a host reference, and custom tuning.",								
+		"0001",	"Adjust the second stage notch filter automatically during execution of autotuning without a host reference, autotuning with a host reference, and custom tuning.",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn481,			"Reserved parameter (Do not change.)",	"0",	"0.1:Hz",	"10",	"20000",	"400",	"1",	"1"	
+Pn482,			"Reserved parameter (Do not change.)",	"0",	"0.01:ms",	"15",	"51200",	"3000",	"1",	"1"	
+Pn486,			"Reserved parameter (Do not change.)",	"0",	":ms",	"0",	"100",	"25",	"1",	"1"	
+Pn487,			"Reserved parameter (Do not change.)",	"0",	":ms",	"0",	"300",	"0",	"1",	"1"	
+Pn488,			"Reserved parameter (Do not change.)",	"0",	":ms",	"50",	"500",	"100",	"1",	"1"	
+Pn490,			"Reserved parameter (Do not change.)",	"0",	":%",	"0",	"20000",	"100",	"1",	"1"	
+Pn495,			"Reserved parameter (Do not change.)",	"0",	":%",	"0",	"200",	"100",	"1",	"1"	
+Pn498,			"Reserved parameter (Do not change.)",	"0",	":deg",	"0",	"30",	"10",	"1",	"1"	
+[Sequence(Pn5xx-)]											
+Pn502,			"Rotation Detection Level",	"0",	":min-1",	"1",	"10000",	"20",	"1",	"0"	
+Pn503,			"Speed Coincidence Detection Signal Output Width",	"0",	":min-1",	"0",	"100",	"10",	"1",	"0"	
+Pn506,			"Brake Reference-Servo OFF Delay Time",	"0",	"10:ms",	"0",	"50",	"0",	"1",	"1"	
+Pn507,			"Brake Reference Output Speed Level",	"0",	":min-1",	"0",	"10000",	"100",	"1",	"0"	
+Pn508,			"Servo OFF-Brake Command Waiting Time",	"0",	"10:ms",	"10",	"100",	"50",	"1",	"1"	
+Pn509,			"Momentary Power Interruption Hold Time",	"0",	":ms",	"20",	"50000",	"20",	"1",	"1"	
+Pn51B,			"Reserved parameter (Do not change.)",	"0",	"",	"0",	"1073741824",	"1000",	"1",	"0"	
+Pn51E,			"Position Deviation Overflow Warning Level",	"0",	":%",	"10",	"100",	"100",	"1",	"1"	
+Pn520,			"Position Deviation Overflow Alarm Level",	"0",	":reference units",	"1",	"1073741823",	"5242880",	"1",	"1"	
+Pn522,			"Positioning Completed Width",	"0",	":reference units",	"0",	"1073741824",	"7",	"1",	"1"	
+Pn524,			"Near Signal Width"	"0",	":reference units",	"1",	"1073741824",	"1073741824",	"1",	"1"	
+Pn526,			"Position Deviation Overflow Alarm Level at Servo ON",	"0",	":reference units",	"1",	"1073741823",	"5242880",	"1",	"1"	
+Pn528,			"Position Deviation Overflow Warning Level at Servo ON"	"0",	":%",	"10",	"100",	"100",	"1",	"1"	
+Pn529,			"Speed Limit Level at Servo ON",	"0",	":min-1",	"0",	"10000",	"10000",	"1",	"0"	
+Pn52A,			"Reserved parameter (Do not change.)",	"0",	"",	"0",	"100",	"20"	"1",	"0"	
+Pn52B,			"Overload Warning Level",	"0",	":%",	"1",	"100",	"20"	"1",	"1"	
+Pn52C,			"Base Current Derating at Motor Overload Detection",	"1",	":%",	"10",	"100",	"100",	"1",	"1"	
+Pn52F,			"Reserved parameter (Do not change.)",	"0",	"",	"0000H",	"0FFFH",	"0FFFH"	"1",	"1"	
+Pn530,			"Program Jogging-Related Selections",	"0",	"",	"",	"",	"0000H"	"1",	"1"	
+	0:		"Program Jogging Operation Pattern",								
+		"0000",	"(Waiting time in Pn535 -> Forward by travel distance in Pn531) -> Number of movements in Pn536",								
+		"0001",	"(Waiting time in Pn535 -> Reverse by travel distance in Pn531) -> Number of movements in Pn536",								
+		"0002",	"(Waiting time in Pn535 -> Forward by travel distance in Pn531) -> Number of movements in Pn536 -> (Waiting time in Pn535 -> Reverse by travel distance in Pn531) -> Number of movements in Pn536",								
+		"0003",	"(Waiting time in Pn535 -> Reverse by travel distance in Pn531) -> Number of movements in Pn536 -> (Waiting time in Pn535 -> Forward by travel distance in Pn531) -> Number of movements in Pn536",								
+		"0004",	"(Waiting time in Pn535 -> Forward by travel distance in Pn531 -> Waiting time in Pn535 -> Reserve by travel distance in Pn531) -> Number of movements in Pn536",								
+		"0005",	"(Waiting time in Pn535 -> Forward by travel distance in Pn531 -> Waiting time in Pn535 -> Forward by travel distance in Pn531) -> Number of movements in Pn536",								
+	1:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn531,			"Program Jogging Travel Distance",	"0",	":reference units",	"1",	"1073741824",	"32768",	"1",	"1"	
+Pn533,			"Program Jogging Movement Speed",	"0",	":min-1",	"1",	"10000",	"500",	"1",	"0"	
+Pn534,			"Program Jogging Acceleration/Deceleration Time",	"0",	":ms",	"2",	"10000",	"100",	"1",	"1"	
+Pn535,			"Program Jogging Waiting Time",	"0",	":ms",	"0",	"10000",	"100",	"1",	"1"	
+Pn536,			"Program Jogging Number of Movements",	"0",	":times",	"0",	"1000", 	"1",	"1",	"1"	
+Pn548,			"Specified Alarm Number for Tracing",	"0",	"",	"0000H",	"FFFFH", 	"0000H",	"1",	"1"	
+Pn550,			"Analog Monitor 1 Offset Voltage",	"0",	"0.1:V",	"-10000",	"10000",	"0",	"1",	"1"	
+Pn551,			"Analog Monitor 2 Offset Voltage",	"0",	"0.1:V",	"-10000",	"10000",	"0",	"1",	"1"	
+Pn552,			"Analog Monitor 1 Magnification",	"0",	"0.01:times",	"-10000",	"10000",	"100",	"1",	"1"	
+Pn553,			"Analog Monitor 2 Magnification",	"0",	"0.01:times",	"-10000",	"10000",	"100",	"1",	"1"	
+Pn55A,			"Power Consumption Monitor Unit Time",	"0",	":min",	"1",	"1440",	"1",	"1",	"1"	
+Pn560,			"Residual Vibration Detection Width",	"0",	"0.1:%",	"1",	"3000",	"400",	"1",	"1"	
+Pn561,			"Overshoot Detection Level",	"0",	":%",	"0",	"100",	"100",	"1",	"1"	
+Pn587,			"Reserved parameter (Do not change.)",	"0",	"",	"",	"",	"0000H",	"1",	"1"	
+	0:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	1:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn600,			"Regenerative Resistor Capacity",	"0",	"10:W",	"0",	"5",	"0",	"1",	"1",	
+Pn601,			"Dynamic Brake Resistor Capacity",	"0",	"10:W",	"0",	"5",	"0",	"1",	"0"	
+Pn603,			"Regenerative Resistor Capacity",	"0",	"10:m omega", 	"0",	"65535",	"0",	"1",	"0"	
+Pn604,			"Dynamic Brake Resistance",	"0",	"10:m omega", 	"0",	"65535",	"0",	"1",	"0"	
+Pn621,			"Reserved parameter (Do not change.)",	"1",	"", 	"",	"",	"0000H",	"1",	"0"	
+	0:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	1:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn622,			"Reserved parameter (Do not change.)",	"0",	"",	"0001H",	"7530H",	"2710H",	"1",	"0"	
+Pn623,			"Reserved parameter (Do not change.)",	"0",	"",	"1",	"30000",	"10000",	"1",	"0"	
+Pn624,			"Reserved parameter (Do not change.)",	"0",	"",	"0",	"10000",	"10",	"1",	"0"	
+Pn625,			"Reserved parameter (Do not change.)",	"0",	"",	"0",	"10000",	"100",	"1",	"0"	
+Pn626,			"Reserved parameter (Do not change.)",	"0",	"",	"1",	"1073741823",	"100",	"1",	"0"	
+Pn628,			"Reserved parameter (Do not change.)",	"0",	"",	"0",	"10000",	"10",	"1",	"0"	
+[I/O Sign]											
+Pn50A,			"Input Signal Selection 1",	"1",	"",	"",	"",	"0881H"	"1",	"1"	
+	0:		"Input Signal Allocation Mode",								
+		"0000",	"Reserved parameter (Do not change.)",								
+		"0001",	"Use the Sigma-7S interchangeable I/O signal allocation (Pn50A-Pn5**).",								
+		"0002",	"Use the multi axis I/O signal allocation (Pn590-Pn5**).",								
+	1:		"Reserved parameter (Do not change.)",								
+		"0008",	"Reserved parameter (Do not change.)",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0008",	"Reserved parameter (Do not change.)",								
+	3:		"P-OT (Forward Drive Prohibit) Signal Allocation",								
+		"0000",	"A axis:Enable forward drive when CN1-3 input signal is ON (closed). B axis:Enable forward drive when CN1-9 input signal is ON (closed).",								
+		"0001",	"A axis:Enable forward drive when CN1-4 input signal is ON (closed). B axis:Enable forward drive when CN1-10 input signal is ON (closed).",								
+		"0002",	"A axis:Enable forward drive when CN1-5 input signal is ON (closed). B axis:Enable forward drive when CN1-11 input signal is ON (closed).",								
+		"0003",	"A axis:Enable forward drive when CN1-6 input signal is ON (closed). B axis:Enable forward drive when CN1-12 input signal is ON (closed).",								
+		"0004",	"A axis:Enable forward drive when CN1-7 input signal is ON (closed). B axis:Enable forward drive when CN1-13 input signal is ON (closed).",								
+		"0005",	"A axis:Enable forward drive when CN1-8 input signal is ON (closed). B axis:Enable forward drive when CN1-14 input signal is ON (closed).",								
+		"0006",	"Reserved parameter (Do not change.)",								
+		"0007",	"Set the signal to always prohibit forward drive.",								
+		"0008",	"Set the signal to always enable forward drive.",								
+		"0009",	"A axis:Enable forward drive when CN1-3 input signal is OFF (open). B axis:Enable forward drive when CN1-9 input signal is OFF (open).",								
+		"000A",	"A axis:Enable forward drive when CN1-4 input signal is OFF (open). B axis:Enable forward drive when CN1-10 input signal is OFF (open).",								
+		"000B",	"A axis:Enable forward drive when CN1-5 input signal is OFF (open). B axis:Enable forward drive when CN1-11 input signal is OFF (open).",								
+		"000C",	"A axis:Enable forward drive when CN1-6 input signal is OFF (open). B axis:Enable forward drive when CN1-12 input signal is OFF (open).",								
+		"000D",	"A axis:Enable forward drive when CN1-7 input signal is OFF (open). B axis:Enable forward drive when CN1-13 input signal is OFF (open).",								
+		"000E",	"A axis:Enable forward drive when CN1-8 input signal is OFF (open). B axis:Enable forward drive when CN1-14 input signal is OFF (open).",								
+		"000F",	"Reserved parameter (Do not change.)",								
+Pn50B,			"Input Signal Selection 2",	"1",	"",	"",	"",	"8881H"	"1",	"1"	
+	0:		"N-OT (Reverse Drive Prohibit) Signal Allocation",								
+		"0000",	"A axis:Enable forward drive when CN1-3 input signal is ON (closed). B axis:Enable forward drive when CN1-9 input signal is ON (closed).",								
+		"0001",	"A axis:Enable forward drive when CN1-4 input signal is ON (closed). B axis:Enable forward drive when CN1-10 input signal is ON (closed).",								
+		"0002",	"A axis:Enable forward drive when CN1-5 input signal is ON (closed). B axis:Enable forward drive when CN1-11 input signal is ON (closed).",								
+		"0003",	"A axis:Enable forward drive when CN1-6 input signal is ON (closed). B axis:Enable forward drive when CN1-12 input signal is ON (closed).",								
+		"0004",	"A axis:Enable forward drive when CN1-7 input signal is ON (closed). B axis:Enable forward drive when CN1-13 input signal is ON (closed).",								
+		"0005",	"A axis:Enable forward drive when CN1-8 input signal is ON (closed). B axis:Enable forward drive when CN1-14 input signal is ON (closed).",								
+		"0006",	"Reserved parameter (Do not change.)",								
+		"0007",	"Set the signal to always prohibit forward drive.",								
+		"0008",	"Set the signal to always enable forward drive.",								
+		"0009",	"A axis:Enable forward drive when CN1-3 input signal is OFF (open). B axis:Enable forward drive when CN1-9 input signal is OFF (open).",								
+		"000A",	"A axis:Enable forward drive when CN1-4 input signal is OFF (open). B axis:Enable forward drive when CN1-10 input signal is OFF (open).",								
+		"000B",	"A axis:Enable forward drive when CN1-5 input signal is OFF (open). B axis:Enable forward drive when CN1-11 input signal is OFF (open).",								
+		"000C",	"A axis:Enable forward drive when CN1-6 input signal is OFF (open). B axis:Enable forward drive when CN1-12 input signal is OFF (open).",								
+		"000D",	"A axis:Enable forward drive when CN1-7 input signal is OFF (open). B axis:Enable forward drive when CN1-13 input signal is OFF (open).",								
+		"000E",	"A axis:Enable forward drive when CN1-8 input signal is OFF (open). B axis:Enable forward drive when CN1-14 input signal is OFF (open).",								
+		"000F",	"Reserved parameter (Do not change.)",								
+	1:		"Reserved parameter (Do not change.)",								
+		"0008",	"Reserved parameter (Do not change.)",								
+	2:		"/P-CL (Forward External Torque Limit Input) Signal Allocation",								
+		"0000",	"A axis:Active when CN1-3 input signal is ON (closed). B axis:Active when CN1-9 input signal is ON (closed).",								
+		"0001",	"A axis:Active when CN1-4 input signal is ON (closed). B axis:Active when CN1-10 input signal is ON (closed).",								
+		"0002",	"A axis:Active when CN1-5 input signal is ON (closed). B axis:Active when CN1-11 input signal is ON (closed).",								
+		"0003",	"A axis:Active when CN1-6 input signal is ON (closed). B axis:Active when CN1-12 input signal is ON (closed).",								
+		"0004",	"A axis:Active when CN1-7 input signal is ON (closed). B axis:Active when CN1-13 input signal is ON (closed).",								
+		"0005",	"A axis:Active when CN1-8 input signal is ON (closed). B axis:Active when CN1-14 input signal is ON (closed).",								
+		"0006",	"Reserved parameter (Do not change.)",								
+		"0007",	"The signal is always active.",								
+		"0008",	"The signal is always inactive.",								
+		"0009",	"A axis:Active when CN1-3 input signal is OFF (open). B axis:Active when CN1-9 input signal is OFF (open).",								
+		"000A",	"A axis:Active when CN1-4 input signal is OFF (open). B axis:Active when CN1-10 input signal is OFF (open).",								
+		"000B",	"A axis:Active when CN1-5 input signal is OFF (open). B axis:Active when CN1-11 input signal is OFF (open).",								
+		"000C",	"A axis:Active when CN1-6 input signal is OFF (open). B axis:Active when CN1-12 input signal is OFF (open).",								
+		"000D",	"A axis:Active when CN1-7 input signal is OFF (open). B axis:Active when CN1-13 input signal is OFF (open).",								
+		"000E",	"A axis:Active when CN1-8 input signal is OFF (open). B axis:Active when CN1-14 input signal is OFF (open).",								
+		"000F",	"Reserved parameter (Do not change.)",								
+	3:		"/N-CL (Reverse External Torque Limit Input) Signal Allocation",								
+		"0000",	"A axis:Active when CN1-3 input signal is ON (closed). B axis:Active when CN1-9 input signal is ON (closed).",								
+		"0001",	"A axis:Active when CN1-4 input signal is ON (closed). B axis:Active when CN1-10 input signal is ON (closed).",								
+		"0002",	"A axis:Active when CN1-5 input signal is ON (closed). B axis:Active when CN1-11 input signal is ON (closed).",								
+		"0003",	"A axis:Active when CN1-6 input signal is ON (closed). B axis:Active when CN1-12 input signal is ON (closed).",								
+		"0004",	"A axis:Active when CN1-7 input signal is ON (closed). B axis:Active when CN1-13 input signal is ON (closed).",								
+		"0005",	"A axis:Active when CN1-8 input signal is ON (closed). B axis:Active when CN1-14 input signal is ON (closed).",								
+		"0006",	"Reserved parameter (Do not change.)",								
+		"0007",	"The signal is always active.",								
+		"0008",	"The signal is always inactive.",								
+		"0009",	"A axis:Active when CN1-3 input signal is OFF (open). B axis:Active when CN1-9 input signal is OFF (open).",								
+		"000A",	"A axis:Active when CN1-4 input signal is OFF (open). B axis:Active when CN1-10 input signal is OFF (open).",								
+		"000B",	"A axis:Active when CN1-5 input signal is OFF (open). B axis:Active when CN1-11 input signal is OFF (open).",								
+		"000C",	"A axis:Active when CN1-6 input signal is OFF (open). B axis:Active when CN1-12 input signal is OFF (open).",								
+		"000D",	"A axis:Active when CN1-7 input signal is OFF (open). B axis:Active when CN1-13 input signal is OFF (open).",								
+		"000E",	"A axis:Active when CN1-8 input signal is OFF (open). B axis:Active when CN1-14 input signal is OFF (open).",								
+		"000F",	"Reserved parameter (Do not change.)",								
+Pn50E,			"Output Signal Selection 1",	"1",	"",	"",	"",	"0000H"	"1",	"1"	
+	0:		"/COIN (Positioning Completion Output) Signal Allocation",								
+		"0000",	"Disabled (the above signal output is not used).",								
+		"0001",	"A axis:Output the signal from the CN1-23 or CN1-24 output terminal. B axis:Output the signal from the CN1-25 or CN1-26 output terminal.",								
+		"0002",	"A axis:Output the signal from the CN1-27 or CN1-28 output terminal. B axis:Output the signal from the CN1-29 or CN1-30 output terminal.",								
+		"0003",	"Reserved parameter (Do not change.)",								
+		"0004",	"Reserved parameter (Do not change.)",								
+		"0005",	"Reserved parameter (Do not change.)",								
+		"0006",	"Reserved parameter (Do not change.)",								
+	1:		"/V-CMP (Speed Coincidence Detection Output) Signal Allocation",								
+		"0000",	"Disabled (the above signal output is not used).",								
+		"0001",	"A axis:Output the signal from the CN1-23 or CN1-24 output terminal. B axis:Output the signal from the CN1-25 or CN1-26 output terminal.",								
+		"0002",	"A axis:Output the signal from the CN1-27 or CN1-28 output terminal. B axis:Output the signal from the CN1-29 or CN1-30 output terminal.",								
+		"0003",	"Reserved parameter (Do not change.)",								
+		"0004",	"Reserved parameter (Do not change.)",								
+		"0005",	"Reserved parameter (Do not change.)",								
+		"0006",	"Reserved parameter (Do not change.)",								
+	2:		"/TGON (Rotation Detection Output) Signal Allocation",								
+		"0000",	"Disabled (the above signal output is not used).",								
+		"0001",	"A axis:Output the signal from the CN1-23 or CN1-24 output terminal. B axis:Output the signal from the CN1-25 or CN1-26 output terminal.",								
+		"0002",	"A axis:Output the signal from the CN1-27 or CN1-28 output terminal. B axis:Output the signal from the CN1-29 or CN1-30 output terminal.",								
+		"0003",	"Reserved parameter (Do not change.)",								
+		"0004",	"Reserved parameter (Do not change.)",								
+		"0005",	"Reserved parameter (Do not change.)",								
+		"0006",	"Reserved parameter (Do not change.)",								
+	3:		"/S-RDY (Servo Ready) Signal Allocation",								
+		"0000",	"Disabled (the above signal output is not used).",								
+		"0001",	"A axis:Output the signal from the CN1-23 or CN1-24 output terminal. B axis:Output the signal from the CN1-25 or CN1-26 output terminal.",								
+		"0002",	"A axis:Output the signal from the CN1-27 or CN1-28 output terminal. B axis:Output the signal from the CN1-29 or CN1-30 output terminal.",								
+		"0003",	"Reserved parameter (Do not change.)",								
+		"0004",	"Reserved parameter (Do not change.)",								
+		"0005",	"Reserved parameter (Do not change.)",								
+		"0006",	"Reserved parameter (Do not change.)",								
+Pn50F,			"Output Signal Selection 2",	"1",	"",	"",	"",	"0100H"	"1",	"1"	
+	0:		"/CLT (Torque Limit Detection Output) Signal Allocation",								
+		"0000",	"Disabled (the above signal output is not used).",								
+		"0001",	"A axis:Output the signal from the CN1-23 or CN1-24 output terminal. B axis:Output the signal from the CN1-25 or CN1-26 output terminal.",								
+		"0002",	"A axis:Output the signal from the CN1-27 or CN1-28 output terminal. B axis:Output the signal from the CN1-29 or CN1-30 output terminal.",								
+		"0003",	"Reserved parameter (Do not change.)",								
+		"0004",	"Reserved parameter (Do not change.)",								
+		"0005",	"Reserved parameter (Do not change.)",								
+		"0006",	"Reserved parameter (Do not change.)",								
+	1:		"/VLT (Speed Limit Detection) Signal Allocation",								
+		"0000",	"Disabled (the above signal output is not used).",								
+		"0001",	"A axis:Output the signal from the CN1-23 or CN1-24 output terminal. B axis:Output the signal from the CN1-25 or CN1-26 output terminal.",								
+		"0002",	"A axis:Output the signal from the CN1-27 or CN1-28 output terminal. B axis:Output the signal from the CN1-29 or CN1-30 output terminal.",								
+		"0003",	"Reserved parameter (Do not change.)",								
+		"0004",	"Reserved parameter (Do not change.)",								
+		"0005",	"Reserved parameter (Do not change.)",								
+		"0006",	"Reserved parameter (Do not change.)",								
+	2:		"/BK (Brake Output) Signal Allocation",								
+		"0000",	"Disabled (the above signal output is not used).",								
+		"0001",	"A axis:Output the signal from the CN1-23 or CN1-24 output terminal. B axis:Output the signal from the CN1-25 or CN1-26 output terminal.",								
+		"0002",	"A axis:Output the signal from the CN1-27 or CN1-28 output terminal. B axis:Output the signal from the CN1-29 or CN1-30 output terminal.",								
+		"0003",	"Reserved parameter (Do not change.)",								
+		"0004",	"Reserved parameter (Do not change.)",								
+		"0005",	"Reserved parameter (Do not change.)",								
+		"0006",	"Reserved parameter (Do not change.)",								
+	3:		"/WARN (Warning Output) Signal Allocation",								
+		"0000",	"Disabled (the above signal output is not used).",								
+		"0001",	"A axis:Output the signal from the CN1-23 or CN1-24 output terminal. B axis:Output the signal from the CN1-25 or CN1-26 output terminal.",								
+		"0002",	"A axis:Output the signal from the CN1-27 or CN1-28 output terminal. B axis:Output the signal from the CN1-29 or CN1-30 output terminal.",								
+		"0003",	"Reserved parameter (Do not change.)",								
+		"0004",	"Reserved parameter (Do not change.)",								
+		"0005",	"Reserved parameter (Do not change.)",								
+		"0006",	"Reserved parameter (Do not change.)",								
+Pn510,			"Output Signal Selection 3",	"1",	"",	"",	"",	"0000H"	"1",	"1"	
+	0:		"/NEAR (Near Output) Signal Allocation",								
+		"0000",	"Disabled (the above signal output is not used).",								
+		"0001",	"A axis:Output the signal from the CN1-23 or CN1-24 output terminal. B axis:Output the signal from the CN1-25 or CN1-26 output terminal.",								
+		"0002",	"A axis:Output the signal from the CN1-27 or CN1-28 output terminal. B axis:Output the signal from the CN1-29 or CN1-30 output terminal.",								
+		"0003",	"Reserved parameter (Do not change.)",								
+		"0004",	"Reserved parameter (Do not change.)",								
+		"0005",	"Reserved parameter (Do not change.)",								
+		"0006",	"Reserved parameter (Do not change.)",								
+	1:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn511,			"Input Signal Selection 5",	"1",	"",	"",	"",	"5432H"	"1",	"1"	
+	0:		"/DEC (Origin Return Deceleration Switch Input) Signal Allocation",								
+		"0000",	"A axis:Active when CN1-3 input signal is ON (closed). B axis:Active when CN1-9 input signal is ON (closed).",								
+		"0001",	"A axis:Active when CN1-4 input signal is ON (closed). B axis:Active when CN1-10 input signal is ON (closed).",								
+		"0002",	"A axis:Active when CN1-5 input signal is ON (closed). B axis:Active when CN1-11 input signal is ON (closed).",								
+		"0003",	"A axis:Active when CN1-6 input signal is ON (closed). B axis:Active when CN1-12 input signal is ON (closed).",								
+		"0004",	"A axis:Active when CN1-7 input signal is ON (closed). B axis:Active when CN1-13 input signal is ON (closed).",								
+		"0005",	"A axis:Active when CN1-8 input signal is ON (closed). B axis:Active when CN1-14 input signal is ON (closed).",								
+		"0006",	"Reserved parameter (Do not change.)",								
+		"0007",	"The signal is always active.",								
+		"0008",	"The signal is always inactive.",								
+		"0009",	"A axis:Active when CN1-3 input signal is OFF (open). B axis:Active when CN1-9 input signal is OFF (open).",								
+		"000A",	"A axis:Active when CN1-4 input signal is OFF (open). B axis:Active when CN1-10 input signal is OFF (open).",								
+		"000B",	"A axis:Active when CN1-5 input signal is OFF (open). B axis:Active when CN1-11 input signal is OFF (open).",								
+		"000C",	"A axis:Active when CN1-6 input signal is OFF (open). B axis:Active when CN1-12 input signal is OFF (open).",								
+		"000D",	"A axis:Active when CN1-7 input signal is OFF (open). B axis:Active when CN1-13 input signal is OFF (open).",								
+		"000E",	"A axis:Active when CN1-8 input signal is OFF (open). B axis:Active when CN1-14 input signal is OFF (open).",								
+		"000F",	"Reserved parameter (Do not change.)",								
+	1:		"/EXT1 (External Latch Input 1) Signal Allocation",								
+		"0000",	"The signal is always inactive.",								
+		"0001",	"The signal is always inactive.",								
+		"0002",	"The signal is always inactive.",								
+		"0003",	"A axis:Active when CN1-6 input signal is ON (closed). B axis:Active when CN1-12 input signal is ON (closed).",								
+		"0004",	"A axis:Active when CN1-7 input signal is ON (closed). B axis:Active when CN1-13 input signal is ON (closed).",								
+		"0005",	"A axis:Active when CN1-8 input signal is ON (closed). B axis:Active when CN1-14 input signal is ON (closed).",								
+		"0006",	"The signal is always inactive.",								
+		"0007",	"The signal is always inactive.",								
+		"0008",	"The signal is always inactive.",								
+		"0009",	"The signal is always inactive.",								
+		"000A",	"The signal is always inactive.",								
+		"000B",	"The signal is always inactive.",								
+		"000C",	"A axis:Active when CN1-6 input signal is OFF (open). B axis:Active when CN1-12 input signal is OFF (open).",								
+		"000D",	"A axis:Active when CN1-7 input signal is OFF (open). B axis:Active when CN1-13 input signal is OFF (open).",								
+		"000E",	"A axis:Active when CN1-8 input signal is OFF (open). B axis:Active when CN1-14 input signal is OFF (open).",								
+		"000F",	"The signal is always inactive.",								
+	2:		"/EXT2 (External Latch Input 2) Signal Allocation",								
+		"0000",	"The signal is always inactive.",								
+		"0001",	"The signal is always inactive.",								
+		"0002",	"The signal is always inactive.",								
+		"0003",	"A axis:Active when CN1-6 input signal is ON (closed). B axis:Active when CN1-12 input signal is ON (closed).",								
+		"0004",	"A axis:Active when CN1-7 input signal is ON (closed). B axis:Active when CN1-13 input signal is ON (closed).",								
+		"0005",	"A axis:Active when CN1-8 input signal is ON (closed). B axis:Active when CN1-14 input signal is ON (closed).",								
+		"0006",	"The signal is always inactive.",								
+		"0007",	"The signal is always inactive.",								
+		"0008",	"The signal is always inactive.",								
+		"0009",	"The signal is always inactive.",								
+		"000A",	"The signal is always inactive.",								
+		"000B",	"The signal is always inactive.",								
+		"000C",	"A axis:Active when CN1-6 input signal is OFF (open). B axis:Active when CN1-12 input signal is OFF (open).",								
+		"000D",	"A axis:Active when CN1-7 input signal is OFF (open). B axis:Active when CN1-13 input signal is OFF (open).",								
+		"000E",	"A axis:Active when CN1-8 input signal is OFF (open). B axis:Active when CN1-14 input signal is OFF (open).",								
+		"000F",	"The signal is always inactive.",								
+	3:		"/EXT3 (External Latch Input 3) Signal Allocation",								
+		"0000",	"The signal is always inactive.",								
+		"0001",	"The signal is always inactive.",								
+		"0002",	"The signal is always inactive.",								
+		"0003",	"A axis:Active when CN1-6 input signal is ON (closed). B axis:Active when CN1-12 input signal is ON (closed).",								
+		"0004",	"A axis:Active when CN1-7 input signal is ON (closed). B axis:Active when CN1-13 input signal is ON (closed).",								
+		"0005",	"A axis:Active when CN1-8 input signal is ON (closed). B axis:Active when CN1-14 input signal is ON (closed).",								
+		"0006",	"The signal is always inactive.",								
+		"0007",	"The signal is always inactive.",								
+		"0008",	"The signal is always inactive.",								
+		"0009",	"The signal is always inactive.",								
+		"000A",	"The signal is always inactive.",								
+		"000B",	"The signal is always inactive.",								
+		"000C",	"A axis:Active when CN1-6 input signal is OFF (open). B axis:Active when CN1-12 input signal is OFF (open).",								
+		"000D",	"A axis:Active when CN1-7 input signal is OFF (open). B axis:Active when CN1-13 input signal is OFF (open).",								
+		"000E",	"A axis:Active when CN1-8 input signal is OFF (open). B axis:Active when CN1-14 input signal is OFF (open).",								
+		"000F",	"The signal is always inactive.",								
+Pn512,			"Output Signal Inverse Settings",	"1",	"",	"",	"",	"0000H"	"1",	"1"	
+	0:		"Output Signal Inversion for CN1-23 and CN1-24 and CN1-25 and CN1-26 Termina. (A axis:CN1-23 and CN-24, B axis:CN1-25 and CN1-26)",								
+		"0000",	"The signal is not inverted.",								
+		"0001",	"The signal is inverted.",								
+	1:		"Output Signal Inversion for CN1-27 and CN1-28 and CN1-29 and CN1-30 Termina. (A axis:CN1-27 and CN-28, B axis:CN1-29 and CN1-30)",								
+		"0000",	"The signal is not inverted.",								
+		"0001",	"The signal is inverted.",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn513,			"Reserved parameter (Do not change.)",	"1",	"",	"",	"",	"0000H"	"1",	"1"	
+	0:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	1:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn514,			"Output Signal Selections 4",	"1",	"",	"",	"",	"0000H"	"1",	"1"	
+	0:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	1:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	2:		"PM (Preventative Maintenance Output) Signal Allocation",								
+		"0000",	"Disabled (the above signal output is not used).",								
+		"0001",	"A axis:Output the signal from the CN1-23 or CN1-24 output terminal. B axis:Output the signal from the CN1-25 or CN1-26 output terminal.",								
+		"0002",	"A axis:Output the signal from the CN1-27 or CN1-28 output terminal. B axis:Output the signal from the CN1-29 or CN1-30 output terminal.",								
+		"0003",	"Output the signal from the CN1-25 or CN1-26 output terminal.",								
+		"0004",	"Reserved parameter (Do not change.)",								
+		"0005",	"Reserved parameter (Do not change.)",								
+		"0006",	"Reserved parameter (Do not change.)",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn516,			"Input Signal Selections 7",	"1",	"",	"",	"",	"8888H"	"1",	"0"	
+	0:		"FSTP (Forced Stop Input) Signal Allocation",								
+		"0000",	"A axis:Enable drive when CN1-3 input signal is ON (closed). B axis:Enable drive when CN1-9 input signal is ON (closed).",								
+		"0001",	"A axis:Enable drive when CN1-4 input signal is ON (closed). B axis:Enable drive when CN1-10 input signal is ON (closed).",								
+		"0002",	"A axis:Enable drive when CN1-5 input signal is ON (closed). B axis:Enable drive when CN1-11 input signal is ON (closed).",								
+		"0003",	"A axis:Enable drive when CN1-6 input signal is ON (closed). B axis:Enable drive when CN1-12 input signal is ON (closed).",								
+		"0004",	"A axis:Enable drive when CN1-7 input signal is ON (closed). B axis:Enable drive when CN1-13 input signal is ON (closed).",								
+		"0005",	"A axis:Enable drive when CN1-8 input signal is ON (closed). B axis:Enable drive when CN1-14 input signal is ON (closed).",								
+		"0006",	"Reserved parameter (Do not change.)",								
+		"0007",	"Set the signal to always prohibit drive (always force the motor to stop).",								
+		"0008",	"Set the signal to always enable drive (always disable forcing the motor to stop).",								
+		"0009",	"A axis:Enable drive when CN1-3 input signal is OFF (open). B axis:Enable drive when CN1-9 input signal is OFF (open).",								
+		"000A",	"A axis:Enable drive when CN1-4 input signal is OFF (open). B axis:Enable drive when CN1-10 input signal is OFF (open).",								
+		"000B",	"A axis:Enable drive when CN1-5 input signal is OFF (open). B axis:Enable drive when CN1-11 input signal is OFF (open).",								
+		"000C",	"A axis:Enable drive when CN1-6 input signal is OFF (open). B axis:Enable drive when CN1-12 input signal is OFF (open).",								
+		"000D",	"A axis:Enable drive when CN1-7 input signal is OFF (open). B axis:Enable drive when CN1-13 input signal is OFF (open).",								
+		"000E",	"A axis:Enable drive when CN1-8 input signal is OFF (open). B axis:Enable drive when CN1-14 input signal is OFF (open).",								
+		"000F",	"Reserved parameter (Do not change.)",								
+	1:		"Reserved parameter (Do not change.)",								
+		"0008",	"Reserved parameter (Do not change.)",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0008",	"Reserved parameter (Do not change.)",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0008",	"Reserved parameter (Do not change.)",								
+Pn518,			"Output Signal Selections 7",	"1",	"",	"",	"",	"0000H"	"1",	"0"	
+	0:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	1:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn519,			"Reserved parameter (Do not change.)",	"1",	"",	"",	"",	"8888H"	"1",	"0"	
+	0:		"Reserved parameter (Do not change.)",								
+		"0008",	"Reserved parameter (Do not change.)",								
+	1:		"Reserved parameter (Do not change.)",								
+		"0008",	"Reserved parameter (Do not change.)",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0008",	"Reserved parameter (Do not change.)",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0008",	"Reserved parameter (Do not change.)",								
+Pn590,			"P-OT Signal Allocation",	"1",	"",	"",	"",	"1003H",	"1",	"1"	
+	0,1,2:		"Allocation Pin Number",								
+		"0003",	"CN1-3",								
+		"0004",	"CN1-4",								
+		"0005",	"CN1-5",								
+		"0006",	"CN1-6",								
+		"0007",	"CN1-7",								
+		"0008",	"CN1-8",								
+		"0009",	"CN1-9",								
+		"0010",	"CN1-10",								
+		"0011",	"CN1-11",								
+		"0012",	"CN1-12",								
+		"0013",	"CN1-13",								
+		"0014",	"CN1-14",								
+	3:		"Polarity Selections",								
+		"0000",	"Set the signal to always enable forward drive.",								
+		"0001",	"Active when input signal is ON (closed).",								
+		"0002",	"Active when input signal is OFF (open).",								
+		"0003",	"Set the signal to always prohibit forward drive.",								
+Pn591,			"N-OT Signal Allocation",	"1",	"",	"",	"",	"1004H",	"1",	"1"	
+	0,1,2:		"Allocation Pin Number",								
+		"0003",	"CN1-3",								
+		"0004",	"CN1-4",								
+		"0005",	"CN1-5",								
+		"0006",	"CN1-6",								
+		"0007",	"CN1-7",								
+		"0008",	"CN1-8",								
+		"0009",	"CN1-9",								
+		"0010",	"CN1-10",								
+		"0011",	"CN1-11",								
+		"0012",	"CN1-12",								
+		"0013",	"CN1-13",								
+		"0014",	"CN1-14",								
+	3:		"Polarity Selections",								
+		"0000",	"Set the signal to always enable reverse drive.",								
+		"0001",	"Active when input signal is ON (closed).",								
+		"0002",	"Active when input signal is OFF (open).",								
+		"0003",	"Set the signal to always prohibit reverse drive.",								
+Pn592,			"/DEC Signal Allocation",	"1",	"",	"",	"",	"1005H",	"1",	"1"	
+	0,1,2:		"Allocation Pin Number",								
+		"0003",	"CN1-3",								
+		"0004",	"CN1-4",								
+		"0005",	"CN1-5",								
+		"0006",	"CN1-6",								
+		"0007",	"CN1-7",								
+		"0008",	"CN1-8",								
+		"0009",	"CN1-9",								
+		"0010",	"CN1-10",								
+		"0011",	"CN1-11",								
+		"0012",	"CN1-12",								
+		"0013",	"CN1-13",								
+		"0014",	"CN1-14",								
+	3:		"Polarity Selections",								
+		"0000",	"The signal is always inactive.",								
+		"0001",	"Active when input signal is ON (closed).",								
+		"0002",	"Active when input signal is OFF (open).",								
+		"0003",	"The signal is always active.",								
+Pn593,			"/EXT1 Signal Allocation",	"1",	"",	"",	"",	"1006H",	"1",	"1"	
+	0,1,2:		"Allocation Pin Number",								
+		"0003",	"The signal is always inactive.",								
+		"0004",	"The signal is always inactive.",								
+		"0005",	"The signal is always inactive.",								
+		"0006",	"CN1-6",								
+		"0007",	"CN1-7",								
+		"0008",	"CN1-8",								
+		"0009",	"The signal is always inactive.",								
+		"000A",	"The signal is always inactive.",								
+		"000B",	"The signal is always inactive.",								
+		"000C",	"CN1-12",								
+		"000D",	"CN1-13",								
+		"000E",	"CN1-14",								
+	3:		"Polarity Selections",								
+		"0000",	"The signal is always inactive.",								
+		"0001",	"Active when input signal is ON (closed).",								
+		"0002",	"Active when input signal is OFF (open).",								
+Pn594,			"/EXT2 Signal Allocation",	"1",	"",	"",	"",	"1007H",	"1",	"1"	
+	0,1,2:		"Allocation Pin Number",								
+		"0003",	"The signal is always inactive.",								
+		"0004",	"The signal is always inactive.",								
+		"0005",	"The signal is always inactive.",								
+		"0006",	"CN1-6",								
+		"0007",	"CN1-7",								
+		"0008",	"CN1-8",								
+		"0009",	"The signal is always inactive.",								
+		"000A",	"The signal is always inactive.",								
+		"000B",	"The signal is always inactive.",								
+		"000C",	"CN1-12",								
+		"000D",	"CN1-13",								
+		"000E",	"CN1-14",								
+	3:		"Polarity Selections",								
+		"0000",	"The signal is always inactive.",								
+		"0001",	"Active when input signal is ON (closed).",								
+		"0002",	"Active when input signal is OFF (open).",								
+Pn595,			"/EXT3 Signal Allocation",	"1",	"",	"",	"",	"1008H",	"1",	"1"	
+	0,1,2:		"Allocation Pin Number",								
+		"0003",	"The signal is always inactive.",								
+		"0004",	"The signal is always inactive.",								
+		"0005",	"The signal is always inactive.",								
+		"0006",	"CN1-6",								
+		"0007",	"CN1-7",								
+		"0008",	"CN1-8",								
+		"0009",	"The signal is always inactive.",								
+		"000A",	"The signal is always inactive.",								
+		"000B",	"The signal is always inactive.",								
+		"000C",	"CN1-12",								
+		"000D",	"CN1-13",								
+		"000E",	"CN1-14",								
+	3:		"Polarity Selections",								
+		"0000",	"The signal is always inactive.",								
+		"0001",	"Active when input signal is ON (closed).",								
+		"0002",	"Active when input signal is OFF (open).",								
+Pn597,			"FSTP Signal Allocation",	"1",	"",	"",	"",	"0000H",	"1",	"1"	
+	0,1,2:		"Allocation Pin Number",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Polarity Selections",								
+		"0000",	"Set the signal to always enable drive (always disable forcing the motor to stop).",								
+		"0001",	"Enable drive when input signal is ON (closed).",								
+		"0002",	"Enable drive when input signal is OFF (open).",								
+		"0003",	"Set the signal to always prohibit drive (always force the motor to stop).",								
+Pn598,			"/P-CL Signal Allocation",	"1",	"",	"",	"",	"0000H",	"1",	"1"	
+	0,1,2:		"Allocation Pin Number",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Polarity Selections",								
+		"0000",	"The signal is always inactive.",								
+		"0001",	"Active when input signal is ON (closed).",								
+		"0002",	"Active when input signal is OFF (open).",								
+		"0003",	"The signal is always active.",								
+Pn599,			"/N-CL Signal Allocation",	"1",	"",	"",	"",	"0000H",	"1",	"1"	
+	0,1,2:		"Allocation Pin Number",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Polarity Selections",								
+		"0000",	"The signal is always inactive.",								
+		"0001",	"Active when input signal is ON (closed).",								
+		"0002",	"Active when input signal is OFF (open).",								
+		"0003",	"The signal is always active.",								
+Pn59A,			"Reserved parameter (Do not change.)",	"1",	"",	"0000H",	"2019H",	"0000H",	"1",	"1"	
+Pn59B,			"Reserved parameter (Do not change.)",	"1",	"",	"0000H",	"2019H",	"0000H",	"1",	"1"	
+Pn59C,			"Reserved parameter (Do not change.)",	"1",	"",	"0000H",	"3019H",	"0000H",	"1",	"1"	
+Pn59D,			"Reserved parameter (Do not change.)",	"1",	"",	"0000H",	"3019H",	"0000H",	"1",	"1"	
+Pn5B0,			"/COIN Signal Allocation",	"1",	"",	"",	"",	"0000H",	"1",	"1"	
+	0,1,2:		"Allocation Pin Number",								
+		"0000",	"Reserved (Do not change.)",								
+	3:		"Polarity Selections",								
+		"0000",	"Disabled (the above signal output is not used).",								
+		"0001",	"Output the signal",								
+		"0002",	"Output of reversing signal.",								
+Pn5B1,			"/V-CMP Signal Allocation",	"1",	"",	"",	"",	"0000H",	"1",	"1"	
+	0,1,2:		"Allocation Pin Number",								
+		"0000",	"Reserved (Do not change.)",								
+	3:		"Polarity Selections",								
+		"0000",	"Disabled (the above signal output is not used).",								
+		"0001",	"Output the signal",								
+		"0002",	"Output of reversing signal.",								
+Pn5B2,			"/TGON Signal Allocation",	"1",	"",	"",	"",	"0000H",	"1",	"1"	
+	0,1,2:		"Allocation Pin Number",								
+		"0000",	"Reserved (Do not change.)",								
+	3:		"Polarity Selections",								
+		"0000",	"Disabled (the above signal output is not used).",								
+		"0001",	"Output the signal",								
+		"0002",	"Output of reversing signal.",								
+Pn5B3,			"/S-RDY Signal Allocation",	"1",	"",	"",	"",	"0000H",	"1",	"1"	
+	0,1,2:		"Allocation Pin Number",								
+		"0000",	"Reserved (Do not change.)",								
+	3:		"Polarity Selections",								
+		"0000",	"Disabled (the above signal output is not used).",								
+		"0001",	"Output the signal",								
+		"0002",	"Output of reversing signal.",								
+Pn5B4,			"/CLT Signal Allocation",	"1",	"",	"",	"",	"0000H",	"1",	"1"	
+	0,1,2:		"Allocation Pin Number",								
+		"0000",	"Reserved (Do not change.)",								
+	3:		"Polarity Selections",								
+		"0000",	"Disabled (the above signal output is not used).",								
+		"0001",	"Output the signal",								
+		"0002",	"Output of reversing signal.",								
+Pn5B5,			"/VLT Signal Allocation",	"1",	"",	"",	"",	"0000H",	"1",	"1"	
+	0,1,2:		"Allocation Pin Number",								
+		"0000",	"Reserved (Do not change.)",								
+	3:		"Polarity Selections",								
+		"0000",	"Disabled (the above signal output is not used).",								
+		"0001",	"Output the signal",								
+		"0002",	"Output of reversing signal.",								
+Pn5B6,			"/BK Signal Allocation",	"1",	"",	"",	"",	"1023H",	"1",	"1"	
+	0,1,2:		"Allocation Pin Number",								
+		"0023",	"CN1-23",								
+		"0025",	"CN1-25",								
+		"0027",	"CN1-27",								
+		"0029",	"CN1-29",								
+		"0031",	"CN1-31",								
+	3:		"Polarity Selections",								
+		"0000",	"Disabled (the above signal output is not used).",								
+		"0001",	"Output the signal",								
+		"0002",	"Output of reversing signal.",								
+Pn5B7,			"/WARN Signal Allocation",	"1",	"",	"",	"",	"0000H",	"1",	"1"	
+	0,1,2:		"Allocation Pin Number",								
+		"0000",	"Reserved (Do not change.)",								
+	3:		"Polarity Selections",								
+		"0000",	"Disabled (the above signal output is not used).",								
+		"0001",	"Output the signal",								
+		"0002",	"Output of reversing signal.",								
+Pn5B8,			"/NEAR Signal Allocation",	"1",	"",	"",	"",	"0000H",	"1",	"1"	
+	0,1,2:		"Allocation Pin Number",								
+		"0000",	"Reserved (Do not change.)",								
+	3:		"Polarity Selections",								
+		"0000",	"Disabled (the above signal output is not used).",								
+		"0001",	"Output the signal",								
+		"0002",	"Output of reversing signal.",								
+Pn5B9,			"Reserved parameter (Do not change.)",	"1",	"",	"0000H",	"2039H",	"0000H",	"1",	"1"	
+Pn5BA,			"Reserved parameter (Do not change.)",	"1",	"",	"0000H",	"2039H",	"0000H",	"1",	"1"	
+Pn5BB,			"Reserved parameter (Do not change.)",	"1",	"",	"0000H",	"2039H",	"0000H",	"1",	"1"	
+Pn5BC,			"/PM Signal Allocation",	"1",	"",	"",	"",	"0000H",	"1",	"1"	
+	0,1,2:		"Allocation Pin Number",								
+		"0000",	"Reserved (Do not change.)",								
+	3:		"Polarity Selections",								
+		"0000",	"Disabled (the above signal output is not used).",								
+		"0001",	"Output the signal",								
+		"0002",	"Output of reversing signal.",								
+Pn5BD,			"Reserved parameter (Do not change.)",	"1",	"",	"0000H",	"2039H",	"0000H",	"1",	"1"	
+Pn5BE,			"Reserved parameter (Do not change.)",	"1",	"",	"0000H",	"2039H",	"0000H",	"1",	"1"	
+[Mechatrolink(Pn8xx-)]											
+Pn800,			"Communication Controls",	"0",	"",	"",	"",	"1040H"	"1",	"1"	
+	0:		"MECHATROLINK Communications Check Mask for Debugging",								
+		"0000",	"Do not mask.",								
+		"0001",	"Ignore MECHATROLINK communications errors (A.E60).",								
+		"0002",	"Ignore WDT errors (A.E50).",								
+		"0003",	"Ignore both MECHATROLINK communications errors (A.E60) and WDT errors (A.E50).",								
+	1:		"Warning Check Masks",								
+		"0000",	"Do not mask.",								
+		"0001",	"Ignores data setting warning(A.94x).",								
+		"0002",	"Ignores command warning(A.95x).",								
+		"0003",	"Ignore both A.94x and A.95x warnings.",								
+		"0004",	"Ignore communications warnings (A.96x).",								
+		"0005",	"Ignore both A.94x and A.96x warnings.",								
+		"0006",	"Ignore both A.95x and A.96x warnings.",								
+		"0007",	"Ignore A.94x, A.95x, and A.96x warnings.",								
+		"0008",	"Ignore data setting warnings (A.97A and A.97B).",								
+		"0009",	"Ignore A.94x, A.97A, and A.97B warnings.",								
+		"000A",	"Ignore A.95x, A.97A, and A.97B warnings.",								
+		"000B",	"Ignore A.94x, A.95x, A.97A, and A.97B warnings.",								
+		"000C",	"Ignore A.96x, A.97A, and A.97B warnings.",								
+		"000D",	"Ignore A.94x, A.96x, A.97A, and A.97B warnings.",								
+		"000E",	"Ignore A.95x, A.96x, A.97A, and A.97B warnings.",								
+		"000F",	"Ignore A.94x, A.95x, A.96x, A.97A, and A.97B warnings.",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Automatic Warning Clear Selection for Debugging",								
+		"0000",	"Retain warnings for debugging.",								
+		"0001",	"Automatically clear warnings (MECHATROLINK-III specification).",								
+Pn801,			"Application Function Selections 6 (Software Limits)",	"0",	"",	"",	"",	"0003H"	"1",	"1"	
+	0:		"Software Limit Selection",								
+		"0000",	"Enable both forward and reverse software limits.",								
+		"0001",	"Disable forward software limit.",								
+		"0002",	"Disable reverse software limit.",								
+		"0003",	"Disable both forward and reverse software limits.",								
+	1:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	2:		"Software Limit Check for References",								
+		"0000",	"Do not perform software limit checks for references.",								
+		"0001",	"Perform software limit checks for references.",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn802,			"Reserved parameter (Do not change.)",	"0",	"",	"",	"",	"0000H"	"1",	"1"	
+	0:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	1:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn803,			"Origin Range",	"0",	":reference units",	"0",	"250",	"10"	"1",	"1"	
+Pn804,			"Forward Software Limit",	"0",	":reference units",	"-1073741823",	"1073741823",	"1073741823"	"1",	"1"	
+Pn806,			"Reverse Software Limit",	"0",	":reference units",	"-1073741823",	"1073741823",	"-1073741823"	"1",	"1"	
+Pn808,			"Absolute Encoder Origin Offset",	"0",	":reference units",	"-1073741823",	"1073741823",	"0"	"1",	"1"	
+Pn80A,			"First Stage Linear Acceleration Constant",	"0",	"10000:reference units/s2",	"1",	"65535",	"100"	"1",	"1"	
+Pn80B,			"Second Stage Linear Acceleration Constant",	"0",	"10000:reference units/s2",	"1",	"65535",	"100"	"1",	"1"	
+Pn80C,			"Acceleration Constant Switching Speed",	"0",	"100:reference units/s",	"0",	"65535",	"0"	"1",	"1"	
+Pn80D,			"First Stage Linear Acceleration Constant",	"0",	"10000:reference units/s2",	"1",	"65535",	"100"	"1",	"1"	
+Pn80E,			"Second Stage Linear Acceleration Constant",	"0",	"10000:reference units/s2",	"1",	"65535",	"100"	"1",	"1"	
+Pn80F,			"Deceleration Constant Switching Speed",	"0",	"100:reference units/s",	"0",	"65535",	"0"	"1",	"1"	
+Pn810,			"Exponential Acceleration/Deceleration Bias",	"0",	"100:reference units/s",	"0",	"65535",	"0"	"1",	"1"	
+Pn811,			"Exponential Acceleration/Deceleration Time Constant",	"0",	"0.1:ms",	"0",	"5100",	"0"	"1",	"1"	
+Pn812,			"Movement Average Time",	"0",	"0.1:ms",	"0",	"5100",	"0"	"1",	"1"	
+Pn813,			"Reserved parameter (Do not change.)",	"0",	"",	"0000H",	"FFFH",	"0000H"	"1",	"1"	
+Pn814,			"External Positioning Final Travel Distance",	"0",	":reference units",	"-1073741823",	"1073741823",	"100"	"1",	"1"	
+Pn816,			"Origin Return Mode Settings",	"0",	"",	"",	"",	"0000H"	"1",	"1"	
+	0:		"Origin Return Direction",								
+		"0000",	"Return in forward direction.",								
+		"0001",	"Return in reverse direction.",								
+	1:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn817,			"Origin Approach Speed 1",	"0",	"100:reference units/s",	"0",	"65535",	"50"	"1",	"1"	
+Pn818,			"Origin Approach Speed 2",	"0",	"100:reference units/s",	"0",	"65535",	"5"	"1",	"1"	
+Pn819,			"Final Travel Distance for Origin Return",	"0",	":reference units",	"-1073741823",	"1073741823",	"100"	"1",	"1"	
+Pn81B,			"Reserved parameter (Do not change.)",	"0",	"",	"0",	"65535",	"0"	"1",	"1"	
+Pn81C,			"Reserved parameter (Do not change.)",	"0",	"",	"0",	"65535",	"0"	"1",	"1"	
+Pn81D,			"Reserved parameter (Do not change.)",	"0",	"",	"0",	"65535",	"0"	"1",	"1"	
+Pn81E,			"Input Signal Monitor Selections",	"0",	"",	"",	"",	"0000H"	"1",	"1"	
+	0:		"IO12 Signal Mapping",								
+		"0000",	"Do not map.",								
+		"0001",	"Monitor CN1-1 input terminal.",								
+		"0002",	"Monitor CN1-2 input terminal.",								
+		"0003",	"Monitor CN1-3 input terminal.",								
+		"0004",	"Monitor CN1-4 input terminal.",								
+		"0005",	"Monitor CN1-5 input terminal.",								
+		"0006",	"Monitor CN1-6 input terminal.",								
+		"0007",	"Monitor CN1-11 input terminal.",								
+		"0008",	"Monitor CN1-12 input terminal.",								
+		"0009",	"Monitor CN1-13 input terminal.",								
+		"000A",	"Monitor CN1-14 input terminal.",								
+		"000B",	"Monitor CN1-15 input terminal.",								
+		"000C",	"Monitor CN1-16 input terminal.",								
+	1:		"IO13 Signal Mapping",								
+		"0000",	"Do not map.",								
+		"0001",	"Monitor CN1-1 input terminal.",								
+		"0002",	"Monitor CN1-2 input terminal.",								
+		"0003",	"Monitor CN1-3 input terminal.",								
+		"0004",	"Monitor CN1-4 input terminal.",								
+		"0005",	"Monitor CN1-5 input terminal.",								
+		"0006",	"Monitor CN1-6 input terminal.",								
+		"0007",	"Monitor CN1-11 input terminal.",								
+		"0008",	"Monitor CN1-12 input terminal.",								
+		"0009",	"Monitor CN1-13 input terminal.",								
+		"000A",	"Monitor CN1-14 input terminal.",								
+		"000B",	"Monitor CN1-15 input terminal.",								
+		"000C",	"Monitor CN1-16 input terminal.",								
+	2:		"IO14 Signal Mapping",								
+		"0000",	"Do not map.",								
+		"0001",	"Monitor CN1-1 input terminal.",								
+		"0002",	"Monitor CN1-2 input terminal.",								
+		"0003",	"Monitor CN1-3 input terminal.",								
+		"0004",	"Monitor CN1-4 input terminal.",								
+		"0005",	"Monitor CN1-5 input terminal.",								
+		"0006",	"Monitor CN1-6 input terminal.",								
+		"0007",	"Monitor CN1-11 input terminal.",								
+		"0008",	"Monitor CN1-12 input terminal.",								
+		"0009",	"Monitor CN1-13 input terminal.",								
+		"000A",	"Monitor CN1-14 input terminal.",								
+		"000B",	"Monitor CN1-15 input terminal.",								
+		"000C",	"Monitor CN1-16 input terminal.",								
+	3:		"IO15 Signal Mapping",								
+		"0000",	"Do not map.",								
+		"0001",	"Monitor CN1-1 input terminal.",								
+		"0002",	"Monitor CN1-2 input terminal.",								
+		"0003",	"Monitor CN1-3 input terminal.",								
+		"0004",	"Monitor CN1-4 input terminal.",								
+		"0005",	"Monitor CN1-5 input terminal.",								
+		"0006",	"Monitor CN1-6 input terminal.",								
+		"0007",	"Monitor CN1-11 input terminal.",								
+		"0008",	"Monitor CN1-12 input terminal.",								
+		"0009",	"Monitor CN1-13 input terminal.",								
+		"000A",	"Monitor CN1-14 input terminal.",								
+		"000B",	"Monitor CN1-15 input terminal.",								
+		"000C",	"Monitor CN1-16 input terminal.",								
+Pn81F,			"Command Data Allocations",	"1",	"",	"",	"",	"0010H",	"1",	"1"	
+	0:		"Option Field Allocation",								
+		"0000",	"Disable option field allocation.",								
+		"0001",	"Enable option field allocation.",								
+	1:		"Position Control Command TFF/TLIM Allocation",								
+		"0000",	"Disable allocation.",								
+		"0001",	"Enable allocation.",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn820,			"Forward Latching Area",	"0",	":reference units",	"-2147483648",	"2147483647",	"0",	"1",	"1"	
+Pn822,			"Reverse Latching Area",	"0",	":reference units",	"-2147483648",	"2147483647",	"0",	"1",	"1"	
+Pn824,			"Option Monitor 1 Selection",	"0",	"",	"",	"",	"0000H",	"1",	"1"	
+	0,1,2,3:		"Option Monitor 1 Selection",								
+		"0000",	"Motor speed [1000000 hex/overspeed detection speed]",								
+		"0001",	"Speed reference [1000000 hex/overspeed detection speed]",								
+		"0002",	"Torque [1000000 hex/maximum torque]",								
+		"0003",	"Position deviation (lower 32 bits) [reference units]",								
+		"0004",	"Position deviation (upper 32 bits) [reference units]",								
+		"0005",	"Reserved parameter (Do not change.)",								
+		"0006",	"Reserved parameter (Do not change.)",								
+		"000A",	"Encoder count (lower 32 bits) [reference units]",								
+		"000B",	"Encoder count (upper 32 bits) [reference units]",								
+		"000C",	"FPG count (lower 32 bits) [reference units]",								
+		"000D",	"FPG count (upper 32 bits) [reference units]",								
+		"0010",	"Un000: Motor speed [min-1]",								
+		"0011",	"Un001: Speed Reference [min-1]",								
+		"0012",	"Un002: Torque Reference [%]",								
+		"0013",	"Un003: Rotational Angle 1 [encoder pulses] Encoder pulses from the phase-C origin displayed in decimal",								
+		"0014",	"Un004: Rotational Angle 2 [deg] Electrical angle from polarity origin",								
+		"0015",	"Un005: Input Signal Monitor",								
+		"0016",	"Un006: Output Signal Monitor",								
+		"0017",	"Un007: Input Reference Speed[min-1]",								
+		"0018",	"Un008: Position Deviation [reference units]",								
+		"0019",	"Un009: Accumulated Load Ratio [%]",								
+		"001A",	"Un00A: Regenerative Load Ratio [%]",								
+		"001B",	"Un00B: Dynamic Brake Resistor Power Consumption [%]",								
+		"001C",	"Un00C: Input Reference Pulse Counter [reference units]",								
+		"001D",	"Un00D: Feedback Pulse Counter [encoder pulses]",								
+		"001E",	"Un00E: Fully-closed Loop Feedback Pulse Counter [external encoder resolution]",								
+		"001F",	"Reserved parameter (Do not change.)",								
+		"0023",	"Initial multiturn data [Rev]",								
+		"0024",	"Initial incremental data [pulses]",								
+		"0027",	"Reserved parameter (Do not change.)",								
+		"0040",	"Un025: SERVOPACK Installation Environment Monitor",								
+		"0041",	"Un026: Servomotor Installation Environment Monitor",								
+		"0042",	"Built-in fan consumed life ratio",								
+		"0043",	"Capacitor consumed life ratio",								
+		"0044",	"Surge prevention circuit consumed life ratio",								
+		"0045",	"Dynamic brake circuit consumed life ratio",								
+		"0046",	"Un032: Instantaneous Power",								
+		"0047",	"Un033: Power Consumption",								
+		"0048",	"Un034: Cumulative Power Consumption",								
+		"0080",	"Previous value of latched feedback position (LPOS1) [encoder pulse]",								
+		"0081",	"Previous value of latched feedback position (LPOS2) [encoder pulses]",								
+		"0084",	"Continuous Latch Status (EX STATUS)",								
+Pn825,			"Option Monitor 2 Selection",	"0",	"",	"",	"",	"0000H"	"1",	"1"	
+	0,1,2,3:		"Option Monitor 2 Selection",								
+		"0000",	"Motor speed [1000000 hex/overspeed detection speed]",								
+		"0001",	"Speed reference [1000000 hex/overspeed detection speed]",								
+		"0002",	"Torque [1000000 hex/maximum torque]",								
+		"0003",	"Position deviation (lower 32 bits) [reference units]",								
+		"0004",	"Position deviation (upper 32 bits) [reference units]",								
+		"0005",	"Reserved parameter (Do not change.)",								
+		"0006",	"Reserved parameter (Do not change.)",								
+		"000A",	"Encoder count (lower 32 bits) [reference units]",								
+		"000B",	"Encoder count (upper 32 bits) [reference units]",								
+		"000C",	"FPG count (lower 32 bits) [reference units]",								
+		"000D",	"FPG count (upper 32 bits) [reference units]",								
+		"0010",	"Un000: Motor speed [min-1]",								
+		"0011",	"Un001: Speed Reference [min-1]",								
+		"0012",	"Un002: Torque Reference [%]",								
+		"0013",	"Un003: Rotational Angle 1 [encoder pulses] Encoder pulses from the phase-C origin displayed in decimal",								
+		"0014",	"Un004: Rotational Angle 2 [deg] Electrical angle from polarity origin",								
+		"0015",	"Un005: Input Signal Monitor",								
+		"0016",	"Un006: Output Signal Monitor",								
+		"0017",	"Un007: Input Reference Speed[min-1]",								
+		"0018",	"Un008: Position Deviation [reference units]",								
+		"0019",	"Un009: Accumulated Load Ratio [%]",								
+		"001A",	"Un00A: Regenerative Load Ratio [%]",								
+		"001B",	"Un00B: Dynamic Brake Resistor Power Consumption [%]",								
+		"001C",	"Un00C: Input Reference Pulse Counter [reference units]",								
+		"001D",	"Un00D: Feedback Pulse Counter [encoder pulses]",								
+		"001E",	"Un00E: Fully-closed Loop Feedback Pulse Counter [external encoder resolution]",								
+		"001F",	"Reserved parameter (Do not change.)",								
+		"0023",	"Initial multiturn data [Rev]",								
+		"0024",	"Initial incremental data [pulses]",								
+		"0027",	"Reserved parameter (Do not change.)",								
+		"0040",	"Un025: SERVOPACK Installation Environment Monitor",								
+		"0041",	"Un026: Servomotor Installation Environment Monitor",								
+		"0042",	"Built-in fan consumed life ratio",								
+		"0043",	"Capacitor consumed life ratio",								
+		"0044",	"Surge prevention circuit consumed life ratio",								
+		"0045",	"Dynamic brake circuit consumed life ratio",								
+		"0046",	"Un032: Instantaneous Power",								
+		"0047",	"Un033: Power Consumption",								
+		"0048",	"Un034: Cumulative Power Consumption",								
+		"0080",	"Previous value of latched feedback position (LPOS1) [encoder pulse]",								
+		"0081",	"Previous value of latched feedback position (LPOS2) [encoder pulses]",								
+		"0084",	"Continuous Latch Status (EX STATUS)",								
+Pn827,			"Linear Deceleration Constant 1 for Stopping",	"0",	"10000:reference units/s2",	"1",	"65535",	"100"	"1",	"1"	
+Pn829,			"SVOFF Waiting Time (for SVOFF at Deceleration to Stop)",	"0",	"10:ms",	"0",	"65535",	"0"	"1",	"1"	
+Pn82A,			"Option Field Allocations 1",	"1",	"",	"",	"",	"1813H"	"1",	"1"	
+	0:		"ACCFIL bit position",								
+		"0000",	"The position of the allocated bit is specified. (D0)",								
+		"0001",	"The position of the allocated bit is specified. (D1)",								
+		"0002",	"The position of the allocated bit is specified. (D2)",								
+		"0003",	"The position of the allocated bit is specified. (D3)",								
+		"0004",	"The position of the allocated bit is specified. (D4)",								
+		"0005",	"The position of the allocated bit is specified. (D5)",								
+		"0006",	"The position of the allocated bit is specified. (D6)",								
+		"0007",	"The position of the allocated bit is specified. (D7)",								
+		"0008",	"The position of the allocated bit is specified. (D8)",								
+		"0009",	"The position of the allocated bit is specified. (D9)",								
+		"000A",	"The position of the allocated bit is specified. (D10)",								
+		"000B",	"The position of the allocated bit is specified. (D11)",								
+		"000C",	"The position of the allocated bit is specified. (D12)",								
+		"000D",	"The position of the allocated bit is specified. (D13)",								
+		"000E",	"The position of the allocated bit is specified. (D14)",								
+	1:		"ACCFIL bit allocation",								
+		"0000",	"Disable ACCFIL bit allocation.",								
+		"0001",	"Enable ACCFIL bit allocation.",								
+	2:		"G_SEL bit position",								
+		"0000",	"The position of the allocated bit is specified. (D0)",								
+		"0001",	"The position of the allocated bit is specified. (D1)",								
+		"0002",	"The position of the allocated bit is specified. (D2)",								
+		"0003",	"The position of the allocated bit is specified. (D3)",								
+		"0004",	"The position of the allocated bit is specified. (D4)",								
+		"0005",	"The position of the allocated bit is specified. (D5)",								
+		"0006",	"The position of the allocated bit is specified. (D6)",								
+		"0007",	"The position of the allocated bit is specified. (D7)",								
+		"0008",	"The position of the allocated bit is specified. (D8)",								
+		"0009",	"The position of the allocated bit is specified. (D9)",								
+		"000A",	"The position of the allocated bit is specified. (D10)",								
+		"000B",	"The position of the allocated bit is specified. (D11)",								
+		"000C",	"The position of the allocated bit is specified. (D12)",								
+		"000D",	"The position of the allocated bit is specified. (D13)",								
+		"000E",	"The position of the allocated bit is specified. (D14)",								
+	3:		"G_SEL bit allocation",								
+		"0000",	"Disable G_SEL bit allocation.",								
+		"0001",	"Enable G_SEL bit allocation.",								
+Pn82B,			"Option Field Allocations 2",	"1",	"",	"",	"",	"1D1CH"	"1",	"1"	
+	0:		"V_PPI bit position",								
+		"0000",	"The position of the allocated bit is specified. (D0)",								
+		"0001",	"The position of the allocated bit is specified. (D1)",								
+		"0002",	"The position of the allocated bit is specified. (D2)",								
+		"0003",	"The position of the allocated bit is specified. (D3)",								
+		"0004",	"The position of the allocated bit is specified. (D4)",								
+		"0005",	"The position of the allocated bit is specified. (D5)",								
+		"0006",	"The position of the allocated bit is specified. (D6)",								
+		"0007",	"The position of the allocated bit is specified. (D7)",								
+		"0008",	"The position of the allocated bit is specified. (D8)",								
+		"0009",	"The position of the allocated bit is specified. (D9)",								
+		"000A",	"The position of the allocated bit is specified. (D10)",								
+		"000B",	"The position of the allocated bit is specified. (D11)",								
+		"000C",	"The position of the allocated bit is specified. (D12)",								
+		"000D",	"The position of the allocated bit is specified. (D13)",								
+		"000E",	"The position of the allocated bit is specified. (D14) ",								
+		"000F",	"The position of the allocated bit is specified. (D15) ",								
+	1:		"V_PPI bit allocation",								
+		"0000",	"Disable V_PPI bit allocation.",								
+		"0001",	"Enable V_PPI bit allocation.",								
+	2:		"P_PI_CLR bit position",								
+		"0000",	"The position of the allocated bit is specified. (D0)",								
+		"0001",	"The position of the allocated bit is specified. (D1)",								
+		"0002",	"The position of the allocated bit is specified. (D2)",								
+		"0003",	"The position of the allocated bit is specified. (D3)",								
+		"0004",	"The position of the allocated bit is specified. (D4)",								
+		"0005",	"The position of the allocated bit is specified. (D5)",								
+		"0006",	"The position of the allocated bit is specified. (D6)",								
+		"0007",	"The position of the allocated bit is specified. (D7)",								
+		"0008",	"The position of the allocated bit is specified. (D8)",								
+		"0009",	"The position of the allocated bit is specified. (D9)",								
+		"000A",	"The position of the allocated bit is specified. (D10)",								
+		"000B",	"The position of the allocated bit is specified. (D11)",								
+		"000C",	"The position of the allocated bit is specified. (D12)",								
+		"000D",	"The position of the allocated bit is specified. (D13)",								
+		"000E",	"The position of the allocated bit is specified. (D14) ",								
+		"000F",	"The position of the allocated bit is specified. (D15) ",								
+	3:		"P_PI_CLR bit allocation",								
+		"0000",	"Disable P_PI_CLR bit allocation.",								
+		"0001",	"Enable P_PI_CLR bit allocation.",								
+Pn82C,			"Option Field Allocations 3",	"1",	"",	"",	"",	"1F1EH"	"1",	"1"	
+	0:		"P_CL bit position",								
+		"0000",	"The position of the allocated bit is specified. (D0)",								
+		"0001",	"The position of the allocated bit is specified. (D1)",								
+		"0002",	"The position of the allocated bit is specified. (D2)",								
+		"0003",	"The position of the allocated bit is specified. (D3)",								
+		"0004",	"The position of the allocated bit is specified. (D4)",								
+		"0005",	"The position of the allocated bit is specified. (D5)",								
+		"0006",	"The position of the allocated bit is specified. (D6)",								
+		"0007",	"The position of the allocated bit is specified. (D7)",								
+		"0008",	"The position of the allocated bit is specified. (D8)",								
+		"0009",	"The position of the allocated bit is specified. (D9)",								
+		"000A",	"The position of the allocated bit is specified. (D10)",								
+		"000B",	"The position of the allocated bit is specified. (D11)",								
+		"000C",	"The position of the allocated bit is specified. (D12)",								
+		"000D",	"The position of the allocated bit is specified. (D13)",								
+		"000E",	"The position of the allocated bit is specified. (D14) ",								
+		"000F",	"The position of the allocated bit is specified. (D15) ",								
+	1:		"P_CL bit allocation",								
+		"0000",	"Disable P_CL bit allocation.",								
+		"0001",	"Enable P_CL bit allocation.",								
+	2:		"N_CL bit position",								
+		"0000",	"The position of the allocated bit is specified. (D0)",								
+		"0001",	"The position of the allocated bit is specified. (D1)",								
+		"0002",	"The position of the allocated bit is specified. (D2)",								
+		"0003",	"The position of the allocated bit is specified. (D3)",								
+		"0004",	"The position of the allocated bit is specified. (D4)",								
+		"0005",	"The position of the allocated bit is specified. (D5)",								
+		"0006",	"The position of the allocated bit is specified. (D6)",								
+		"0007",	"The position of the allocated bit is specified. (D7)",								
+		"0008",	"The position of the allocated bit is specified. (D8)",								
+		"0009",	"The position of the allocated bit is specified. (D9)",								
+		"000A",	"The position of the allocated bit is specified. (D10)",								
+		"000B",	"The position of the allocated bit is specified. (D11)",								
+		"000C",	"The position of the allocated bit is specified. (D12)",								
+		"000D",	"The position of the allocated bit is specified. (D13)",								
+		"000E",	"The position of the allocated bit is specified. (D14) ",								
+		"000F",	"The position of the allocated bit is specified. (D15) ",								
+	3:		"N_CL bit allocation",								
+		"0000",	"Disable N_CL bit allocation.",								
+		"0001",	"Enable N_CL bit allocation.",								
+Pn82D,			"Option Field Allocations 4",	"1",	"",	"",	"",	"0000H"	"1",	"1"	
+	0:		"BANK_SEL bit position",								
+		"0000",	"The position of the allocated bit is specified. (D0)",								
+		"0001",	"The position of the allocated bit is specified. (D1)",								
+		"0002",	"The position of the allocated bit is specified. (D2)",								
+		"0003",	"The position of the allocated bit is specified. (D3)",								
+		"0004",	"The position of the allocated bit is specified. (D4)",								
+		"0005",	"The position of the allocated bit is specified. (D5)",								
+		"0006",	"The position of the allocated bit is specified. (D6)",								
+		"0007",	"The position of the allocated bit is specified. (D7)",								
+		"0008",	"The position of the allocated bit is specified. (D8)",								
+		"0009",	"The position of the allocated bit is specified. (D9)",								
+		"000A",	"The position of the allocated bit is specified. (D10)",								
+		"000B",	"The position of the allocated bit is specified. (D11)",								
+		"000C",	"The position of the allocated bit is specified. (D12)",								
+	1:		"BANK_SEL bit allocation",								
+		"0000",	"Disable BANK_SEL bit allocation.",								
+		"0001",	"Enable BANK_SEL bit allocation.",								
+	2:		"LT_DISABLE bit position",								
+		"0000",	"The position of the allocated bit is specified. (D0)",								
+		"0001",	"The position of the allocated bit is specified. (D1)",								
+		"0002",	"The position of the allocated bit is specified. (D2)",								
+		"0003",	"The position of the allocated bit is specified. (D3)",								
+		"0004",	"The position of the allocated bit is specified. (D4)",								
+		"0005",	"The position of the allocated bit is specified. (D5)",								
+		"0006",	"The position of the allocated bit is specified. (D6)",								
+		"0007",	"The position of the allocated bit is specified. (D7)",								
+		"0008",	"The position of the allocated bit is specified. (D8)",								
+		"0009",	"The position of the allocated bit is specified. (D9)",								
+		"000A",	"The position of the allocated bit is specified. (D10)",								
+		"000B",	"The position of the allocated bit is specified. (D11)",								
+		"000C",	"The position of the allocated bit is specified. (D12)",								
+		"000D",	"The position of the allocated bit is specified. (D13)",								
+		"000E",	"The position of the allocated bit is specified. (D14) ",								
+		"000F",	"The position of the allocated bit is specified. (D15) ",								
+	3:		"LT_DISABLE bit allocation",								
+		"0000",	"Disable LT_DISABLE bit allocation.",								
+		"0001",	"Enable LT_DISABLE bit allocation.",								
+Pn82E,			"Option Field Allocations 5",	"1",	"",	"",	"",	"0000H"	"1",	"1"	
+	0:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	1:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	2:		"OUT_SIGNAL bit position",								
+		"0000",	"The position of the allocated bit is specified. (D0)",								
+		"0001",	"The position of the allocated bit is specified. (D1)",								
+		"0002",	"The position of the allocated bit is specified. (D2)",								
+		"0003",	"The position of the allocated bit is specified. (D3)",								
+		"0004",	"The position of the allocated bit is specified. (D4)",								
+		"0005",	"The position of the allocated bit is specified. (D5)",								
+		"0006",	"The position of the allocated bit is specified. (D6)",								
+		"0007",	"The position of the allocated bit is specified. (D7)",								
+		"0008",	"The position of the allocated bit is specified. (D8)",								
+		"0009",	"The position of the allocated bit is specified. (D9)",								
+		"000A",	"The position of the allocated bit is specified. (D10)",								
+		"000B",	"The position of the allocated bit is specified. (D11)",								
+		"000C",	"The position of the allocated bit is specified. (D12)",								
+		"000D",	"The position of the allocated bit is specified. (D13)",								
+	3:		"OUT_SIGNAL bit allocation",								
+		"0000",	"Disable OUT_SIGNAL bit allocation.",								
+		"0001",	"Enable OUT_SIGNAL bit allocation.",								
+Pn833,			"Motion Setting",	"1",	"",	"",	"",	"0000H"	"1",	"1"	
+	0:		"Linear Acceleration/Deceleration Constant Selection",								
+		"0000",	"Use Pn80A to Pn80F and Pn827. (The settings of Pn834 to Pn840 are ignored.)",								
+		"0001",	"Use Pn834 to Pn840. (The settings of Pn80A to Pn80F and Pn827 are ignored.)",								
+	1:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn834,			"First Stage Linear Acceleration Constant 2",	"0",	"10000:reference units/s2",	"1",	"20971520",	"100"	"1",	"1"	
+Pn836,			"Second Stage Linear Acceleration Constant 2",	"0",	"10000:reference units/s2",	"1",	"20971520",	"100"	"1",	"1"	
+Pn838,			"Acceleration Constant Switching Speed 2",	"0",	":reference units/s",	"0",	"2097152000",	"0"	"1",	"1"	
+Pn83A,			"First Stage Linear Deceleration Constant 2",	"0",	"10000:reference units/s2",	"1",	"20971520",	"100"	"1",	"1"	
+Pn83C,			"Second Stage Linear Deceleration Constant 2",	"0",	"10000:reference units/s2",	"1",	"20971520",	"100"	"1",	"1"	
+Pn83E,			"Deceleration Constant Switching Speed 2",	"0",	":reference units/s",	"0",	"2097152000",	"0"	"1",	"1"	
+Pn840,			"Linear Deceleration Constant 2 for Stopping",	"0",	"10000:reference units/s2",	"1",	"20971520",	"100"	"1",	"1"	
+Pn842,			"Second Origin Approach Speed 1",	"0",	"100:reference units/s",	"0",	"20971520",	"0"	"1",	"1"	
+Pn844,			"Second Origin Approach Speed 2",	"0",	"100:reference units/s",	"0",	"20971520",	"0"	"1",	"1"	
+Pn850,			"Number of Latch Sequences",	"0",	"",	"0",	"8",	"0"	"1",	"1"	
+Pn851,			"Continuous Latch Sequence Count",	"0",	"",	"0",	"255",	"0"	"1",	"1"	
+Pn852,			"Latch Sequence 1 to 4 Settings",	"0",	"",	"",	"",	"0000H"	"1",	"1"	
+	0:		"Latch Sequence 1 Signal Selection",								
+		"0000",	"Phase C",								
+		"0001",	"EXT1 signal",								
+		"0002",	"EXT2 signal",								
+		"0003",	"EXT3 signal",								
+	1:		"Latch Sequence 2 Signal Selection",								
+		"0000",	"Phase C",								
+		"0001",	"EXT1 signal",								
+		"0002",	"EXT2 signal",								
+		"0003",	"EXT3 signal",								
+	2:		"Latch Sequence 3 Signal Selection",								
+		"0000",	"Phase C",								
+		"0001",	"EXT1 signal",								
+		"0002",	"EXT2 signal",								
+		"0003",	"EXT3 signal",								
+	3:		"Latch Sequence 4 Signal Selection",								
+		"0000",	"Phase C",								
+		"0001",	"EXT1 signal",								
+		"0002",	"EXT2 signal",								
+		"0003",	"EXT3 signal",								
+Pn853,			"Latch Sequence 5 to 8 Settings",	"0",	"",	"",	"",	"0000H"	"1",	"1"	
+	0:		"Latch Sequence 5 Signal Selection",								
+		"0000",	"Phase C",								
+		"0001",	"EXT1 signal",								
+		"0002",	"EXT2 signal",								
+		"0003",	"EXT3 signal",								
+	1:		"Latch Sequence 6 Signal Selection",								
+		"0000",	"Phase C",								
+		"0001",	"EXT1 signal",								
+		"0002",	"EXT2 signal",								
+		"0003",	"EXT3 signal",								
+	2:		"Latch Sequence 7 Signal Selection",								
+		"0000",	"Phase C",								
+		"0001",	"EXT1 signal",								
+		"0002",	"EXT2 signal",								
+		"0003",	"EXT3 signal",								
+	3:		"Latch Sequence 8 Signal Selection",								
+		"0000",	"Phase C",								
+		"0001",	"EXT1 signal",								
+		"0002",	"EXT2 signal",								
+		"0003",	"EXT3 signal",								
+Pn860,			"SVCMD_IO Input Signal Monitor Allocations 1",	"0",	"",	"",	"",	"0000H"	"1",	"0"	
+	0:		"Bit position of CN1-13 input terminal monitor",								
+		"0000",	"0bit",								
+		"0001",	"1bit",								
+		"0002",	"2bit",								
+		"0003",	"3bit",								
+		"0004",	"4bit",								
+		"0005",	"5bit",								
+		"0006",	"6bit",								
+		"0007",	"7bit",								
+	1:		"Bit allocation for CN1-13 input terminal monitor.",								
+		"0000",	"Disable bit allocation for CN1-13 input terminal.",								
+		"0001",	"Enable bit allocation for CN1-13 input terminal.",								
+	2:		"Bit position of CN1-7 input terminal monitor",								
+		"0000",	"0bit",								
+		"0001",	"1bit",								
+		"0002",	"2bit",								
+		"0003",	"3bit",								
+		"0004",	"4bit",								
+		"0005",	"5bit",								
+		"0006",	"6bit",								
+		"0007",	"7bit",								
+	3:		"Bit allocation for CN1-7 input terminal monitor.",								
+		"0000",	"Disable bit allocation for CN1-7 input terminal.",								
+		"0001",	"Enable bit allocation for CN1-7 input terminal.",								
+Pn861,			"SVCMD_IO Input Signal Monitor Allocations 2",	"0",	"",	"",	"",	"0000H"	"1",	"0"	
+	0:		"Bit position of CN1-8 input terminal monitor",								
+		"0000",	"0bit",								
+		"0001",	"1bit",								
+		"0002",	"2bit",								
+		"0003",	"3bit",								
+		"0004",	"4bit",								
+		"0005",	"5bit",								
+		"0006",	"6bit",								
+		"0007",	"7bit",								
+	1:		"Bit allocation for CN1-8 input terminal monitor.",								
+		"0000",	"Disable bit allocation for CN1-8 input terminal.",								
+		"0001",	"Enable bit allocation for CN1-8 input terminal.",								
+	2:		"Bit position of CN1-9 input terminal monitor",								
+		"0000",	"0bit",								
+		"0001",	"1bit",								
+		"0002",	"2bit",								
+		"0003",	"3bit",								
+		"0004",	"4bit",								
+		"0005",	"5bit",								
+		"0006",	"6bit",								
+		"0007",	"7bit",								
+	3:		"Bit allocation for CN1-9 input terminal monitor.",								
+		"0000",	"Disable bit allocation for CN1-9 input terminal.",								
+		"0001",	"Enable bit allocation for CN1-9 input terminal.",								
+Pn862,			"SVCMD_IO Input Signal Monitor Allocations 3",	"0",	"",	"",	"",	"0000H"	"1",	"0"	
+	0:		"Bit position of CN1-10 input terminal monitor",								
+		"0000",	"0bit",								
+		"0001",	"1bit",								
+		"0002",	"2bit",								
+		"0003",	"3bit",								
+		"0004",	"4bit",								
+		"0005",	"5bit",								
+		"0006",	"6bit",								
+		"0007",	"7bit",								
+	1:		"Bit allocation for CN1-10 input terminal monitor.",								
+		"0000",	"Disable bit allocation for CN1-10 input terminal.",								
+		"0001",	"Enable bit allocation for CN1-10 input terminal.",								
+	2:		"Bit position of CN1-11 input terminal monitor",								
+		"0000",	"0bit",								
+		"0001",	"1bit",								
+		"0002",	"2bit",								
+		"0003",	"3bit",								
+		"0004",	"4bit",								
+		"0005",	"5bit",								
+		"0006",	"6bit",								
+		"0007",	"7bit",								
+	3:		"Bit allocation for CN1-11 input terminal monitor.",								
+		"0000",	"Disable bit allocation for CN1-11 input terminal.",								
+		"0001",	"Enable bit allocation for CN1-11 input terminal.",								
+Pn863,			"SVCMD_IO Input Signal Monitor Allocations 4",	"0",	"",	"",	"",	"0000H"	"1",	"0"	
+	0:		"Bit position of CN1-12 input terminal monitor",								
+		"0000",	"0bit",								
+		"0001",	"1bit",								
+		"0002",	"2bit",								
+		"0003",	"3bit",								
+		"0004",	"4bit",								
+		"0005",	"5bit",								
+		"0006",	"6bit",								
+		"0007",	"7bit",								
+	1:		"Bit allocation for CN1-12 input terminal monitor.",								
+		"0000",	"Disable bit allocation for CN1-12 input terminal.",								
+		"0001",	"Enable bit allocation for CN1-12 input terminal.",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn864,			"SVCMD_IO Input Signal Monitor Allocations 5",	"0",	"",	"",	"",	"0000H"	"1",	"0"	
+	0:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	1:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn865,			"SVCMD_IO Input Signal Monitor Allocations 6",	"0",	"",	"",	"",	"0000H"	"1",	"0"	
+	0:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	1:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn866,			"SVCMD_IO Input Signal Monitor Allocations 7",	"0",	"",	"",	"",	"0000H"	"1",	"0"	
+	0:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	1:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn868,			"SVCMD_IO Output Signal Monitor Allocations 1",	"0",	"",	"",	"",	"0000H"	"1",	"0"	
+	0:		"Output Signal Monitor Allocation for CN1-1 and CN1-2 (SVCMD-IO)",								
+		"0000",	"Set CN1-1/CN1-2 output terminal monitor to D24 (IO1_STS1).",								
+		"0001",	"Set CN1-1/CN1-2 output terminal monitor to D25 (IO2_STS1).",								
+		"0002",	"Set CN1-1/CN1-2 output terminal monitor to D26 (IO3_STS1).",								
+		"0003",	"Set CN1-1/CN1-2 output terminal monitor to D27 (IO4_STS1).",								
+		"0004",	"Set CN1-1/CN1-2 output terminal monitor to D28 (IO5_STS1).",								
+		"0005",	"Set CN1-1/CN1-2 output terminal monitor to D29 (IO6_STS1).",								
+		"0006",	"Set CN1-1/CN1-2 output terminal monitor to D30 (IO7_STS1).",								
+		"0007",	"Set CN1-1/CN1-2 output terminal monitor to D31 (IO8_STS1).",								
+	1:		"Output Signal Monitor Selection for CN1-1 and CN1-2",								
+		"0000",	"Disable allocation for CN1-1/CN1-2 output signal monitor.",								
+		"0001",	"Enable allocation for CN1-1/CN1-2 output signal monitor.",								
+	2:		"Output Signal Monitor Allocation for CN1-23 and CN1-24 (SVCMD-IO)",								
+		"0000",	"Set CN1-1/CN1-2 output terminal monitor to D24 (IO1_STS1).",								
+		"0001",	"Set CN1-1/CN1-2 output terminal monitor to D25 (IO2_STS1).",								
+		"0002",	"Set CN1-1/CN1-2 output terminal monitor to D26 (IO3_STS1).",								
+		"0003",	"Set CN1-1/CN1-2 output terminal monitor to D27 (IO4_STS1).",								
+		"0004",	"Set CN1-1/CN1-2 output terminal monitor to D28 (IO5_STS1).",								
+		"0005",	"Set CN1-1/CN1-2 output terminal monitor to D29 (IO6_STS1).",								
+		"0006",	"Set CN1-1/CN1-2 output terminal monitor to D30 (IO7_STS1).",								
+		"0007",	"Set CN1-1/CN1-2 output terminal monitor to D31 (IO8_STS1).",								
+	3:		"Output Signal Monitor Selection for CN1-23 and CN1-24",								
+		"0000",	"Disable allocation for CN1-23/CN1-24 output signal monitor.",								
+		"0001",	"Enable allocation for CN1-23/CN1-24 output signal monitor.",								
+Pn869,			"SVCMD_IO Output Signal Monitor Allocations 2",	"0",	"",	"",	"",	"0000H"	"1",	"0"	
+	0:		"Output Signal Monitor Allocation for CN1-25 and CN1-26 (SVCMD-IO)",								
+		"0000",	"Set CN1-1/CN1-2 output terminal monitor to D24 (IO1_STS1).",								
+		"0001",	"Set CN1-1/CN1-2 output terminal monitor to D25 (IO2_STS1).",								
+		"0002",	"Set CN1-1/CN1-2 output terminal monitor to D26 (IO3_STS1).",								
+		"0003",	"Set CN1-1/CN1-2 output terminal monitor to D27 (IO4_STS1).",								
+		"0004",	"Set CN1-1/CN1-2 output terminal monitor to D28 (IO5_STS1).",								
+		"0005",	"Set CN1-1/CN1-2 output terminal monitor to D29 (IO6_STS1).",								
+		"0006",	"Set CN1-1/CN1-2 output terminal monitor to D30 (IO7_STS1).",								
+		"0007",	"Set CN1-1/CN1-2 output terminal monitor to D31 (IO8_STS1).",								
+	1:		"Output Signal Monitor Selection for CN1-25 and CN1-26",								
+		"0000",	"Disable allocation for CN1-25/CN1-26 output signal monitor.",								
+		"0001",	"Enable allocation for CN1-25/CN1-26 output signal monitor.",								
+	2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Reserved parameter (Do not change.)",								
+Pn880,			"Station Address Monitor",	"0",	"",	"0003H",	"00EFH",	"0000H"	"2",	"0"	
+Pn881,			"Set Transmission Byte Count Monitor [bytes]",	"0",	"",	"17",	"48",	"0"	"2",	"0"	
+Pn882,			"Transmission Cycle Setting Monitor [0.25 us]",	"0",	"",	"0",	"65535",	"0"	"2",	"0"	
+Pn883,			"Communications Cycle Setting Monitor [transmission cycles]",	"0",	"",	"0",	"32",	"0"	"2",	"0"	
+Pn88A,			"MECHATROLINK Receive Error Counter Monitor",	"0",	"",	"0",	"65535",	"0"	"2",	"0"	
+Pn890,			"Command Data Monitor during Alarm/Warning",	"0",	"",	"00000000H"	"FFFFFFFFH"	"00000000H"	"2",	"0"	
+Pn892,			"Command Data Monitor during Alarm/Warning",	"0",	"",	"00000000H"	"FFFFFFFFH"	"00000000H"	"2",	"0"	
+Pn894,			"Command Data Monitor during Alarm/Warning",	"0",	"",	"00000000H"	"FFFFFFFFH"	"00000000H"	"2",	"0"	
+Pn896,			"Command Data Monitor during Alarm/Warning",	"0",	"",	"00000000H"	"FFFFFFFFH"	"00000000H"	"2",	"0"	
+Pn898,			"Command Data Monitor during Alarm/Warning",	"0",	"",	"00000000H"	"FFFFFFFFH"	"00000000H"	"2",	"0"	
+Pn89A,			"Command Data Monitor during Alarm/Warning",	"0",	"",	"00000000H"	"FFFFFFFFH"	"00000000H"	"2",	"0"	
+Pn89C,			"Command Data Monitor during Alarm/Warning",	"0",	"",	"00000000H"	"FFFFFFFFH"	"00000000H"	"2",	"0"	
+Pn89E,			"Command Data Monitor during Alarm/Warning",	"0",	"",	"00000000H"	"FFFFFFFFH"	"00000000H"	"2",	"0"	
+Pn8A0,			"Command Data Monitor during Alarm/Warning",	"0",	"",	"00000000H"	"FFFFFFFFH"	"00000000H"	"2",	"0"	
+Pn8A2,			"Command Data Monitor during Alarm/Warning",	"0",	"",	"00000000H"	"FFFFFFFFH"	"00000000H"	"2",	"0"	
+Pn8A4,			"Command Data Monitor during Alarm/Warning",	"0",	"",	"00000000H"	"FFFFFFFFH"	"00000000H"	"2",	"0"	
+Pn8A6,			"Command Data Monitor during Alarm/Warning",	"0",	"",	"00000000H"	"FFFFFFFFH"	"00000000H"	"2",	"0"	
+Pn8A8,			"Response Data Monitor during Alarm/Warning",	"0",	"",	"00000000H"	"FFFFFFFFH"	"00000000H"	"2",	"0"	
+Pn8AA,			"Response Data Monitor during Alarm/Warning",	"0",	"",	"00000000H"	"FFFFFFFFH"	"00000000H"	"2",	"0"	
+Pn8AC,			"Response Data Monitor during Alarm/Warning",	"0",	"",	"00000000H"	"FFFFFFFFH"	"00000000H"	"2",	"0"	
+Pn8AE,			"Response Data Monitor during Alarm/Warning",	"0",	"",	"00000000H"	"FFFFFFFFH"	"00000000H"	"2",	"0"	
+Pn8B0,			"Response Data Monitor during Alarm/Warning",	"0",	"",	"00000000H"	"FFFFFFFFH"	"00000000H"	"2",	"0"	
+Pn8B2,			"Response Data Monitor during Alarm/Warning",	"0",	"",	"00000000H"	"FFFFFFFFH"	"00000000H"	"2",	"0"	
+Pn8B4,			"Response Data Monitor during Alarm/Warning",	"0",	"",	"00000000H"	"FFFFFFFFH"	"00000000H"	"2",	"0"	
+Pn8B6,			"Response Data Monitor during Alarm/Warning",	"0",	"",	"00000000H"	"FFFFFFFFH"	"00000000H"	"2",	"0"	
+Pn8B8,			"Response Data Monitor during Alarm/Warning",	"0",	"",	"00000000H"	"FFFFFFFFH"	"00000000H"	"2",	"0"	
+Pn8BA,			"Response Data Monitor during Alarm/Warning",	"0",	"",	"00000000H"	"FFFFFFFFH"	"00000000H"	"2",	"0"	
+Pn8BC,			"Response Data Monitor during Alarm/Warning",	"0",	"",	"00000000H"	"FFFFFFFFH"	"00000000H"	"2",	"0"	
+Pn8BE,			"Response Data Monitor during Alarm/Warning",	"0",	"",	"00000000H"	"FFFFFFFFH"	"00000000H"	"2",	"0"	
+Pn900,			"Number of Parameter Banks",	"1",	"",	"0",	"16",	"0"	"1",	"0"	
+Pn901,			"Number of Parameter Bank Members",	"1",	"",	"0",	"15",	"0"	"1",	"0"	
+Pn902,			"Parameter Bank Member Definition",	"1",	"",	"0000H",	"08FFH",	"0000H"	"1",	"0"	
+Pn903,			"Parameter Bank Member Definition",	"1",	"",	"0000H",	"08FFH",	"0000H"	"1",	"0"	
+Pn904,			"Parameter Bank Member Definition",	"1",	"",	"0000H",	"08FFH",	"0000H"	"1",	"0"	
+Pn905,			"Parameter Bank Member Definition",	"1",	"",	"0000H",	"08FFH",	"0000H"	"1",	"0"	
+Pn906,			"Parameter Bank Member Definition",	"1",	"",	"0000H",	"08FFH",	"0000H"	"1",	"0"	
+Pn907,			"Parameter Bank Member Definition",	"1",	"",	"0000H",	"08FFH",	"0000H"	"1",	"0"	
+Pn908,			"Parameter Bank Member Definition",	"1",	"",	"0000H",	"08FFH",	"0000H"	"1",	"0"	
+Pn909,			"Parameter Bank Member Definition",	"1",	"",	"0000H",	"08FFH",	"0000H"	"1",	"0"	
+Pn90A,			"Parameter Bank Member Definition",	"1",	"",	"0000H",	"08FFH",	"0000H"	"1",	"0"	
+Pn90B,			"Parameter Bank Member Definition",	"1",	"",	"0000H",	"08FFH",	"0000H"	"1",	"0"	
+Pn90C,			"Parameter Bank Member Definition",	"1",	"",	"0000H",	"08FFH",	"0000H"	"1",	"0"	
+Pn90D,			"Parameter Bank Member Definition",	"1",	"",	"0000H",	"08FFH",	"0000H"	"1",	"0"	
+Pn90E,			"Parameter Bank Member Definition",	"1",	"",	"0000H",	"08FFH",	"0000H"	"1",	"0"	
+Pn90F,			"Parameter Bank Member Definition",	"1",	"",	"0000H",	"08FFH",	"0000H"	"1",	"0"	
+Pn910,			"Parameter Bank Member Definition",	"1",	"",	"0000H",	"08FFH",	"0000H"	"1",	"0"	
+Pn920,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn921,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn922,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn923,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn924,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn925,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn926,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn927,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn928,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn929,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn92A,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn92B,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn92C,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn92D,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn92E,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn92F,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn930,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn931,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn932,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn933,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn934,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn935,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn936,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn937,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn938,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn939,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn93A,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn93B,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn93C,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn93D,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn93E,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn93F,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn940,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn941,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn942,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn943,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn944,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn945,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn946,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn947,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn948,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn949,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn94A,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn94B,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn94C,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn94D,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn94E,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn94F,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn950,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn951,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn952,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn953,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn954,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn955,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn956,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn957,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn958,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn959,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn95A,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn95B,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn95C,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn95D,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn95E,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+Pn95F,			"Parameter Bank Data (Not saved in nonvolatile memory.)",	"0",	"",	"0000H",	"FFFFH",	"0000H"	"1",	"0"	
+[Common Parameters(PnAxx-)]											
+01-PnA02,			"Encoder Type Selection (read only)",	"0",	"",	"00000000H",	"00000001H",	"00000000H"	"2",	"0"	
+	0:		"Encoder Type Selection (read only)",								
+		"0000",	"Absolute encoder",								
+		"0001",	"Incremental encoder",								
+02-PnA04,			"Motor Type Selection (read only)",	"0",	"",	"00000000H",	"00000001H",	"00000000H"	"2",	"0"	
+	0:		"Motor Type Selection (read only)",								
+		"0000",	"Rotary Servomotor",								
+		"0001",	"Linear Servomotor",								
+03-PnA06,			"Semi-closed/Fullyclosed Selection (read only)",	"0",	"",	"00000000H",	"00000001H",	"00000000H"	"2",	"0"	
+	0:		"Semi-closed/Fullyclosed Selection (read only)",								
+		"0000",	"Semi-closed",								
+		"0001",	"Fully-closed",								
+04-PnA08,			"Rated Motor Speed (read only)",	"0",	":min-1",	"0",	"4294967295",	"0"	"2",	"0"	
+05-PnA0A,			"Maximum Output Speed (read only)",	"0",	":min-1",	"0",	"4294967295",	"0"	"2",	"0"	
+06-PnA0C,			"Speed Multiplier (read only)",	"0",	"",	"-1073741823",	"1073741823",	"0"	"2",	"0"	
+07-PnA0E,			"Rated Torque (read only)",	"0",	":Nm",	"0",	"4294967295",	"0"	"2",	"0"	
+08-PnA10,			"Maximum Output Torque (read only)",	"0",	":Nm",	"0",	"4294967295",	"0"	"2",	"0"	
+09-PnA12,			"Torque Multiplier (read only)",	"0",	"",	"-1073741823",	"1073741823",	"0"	"2",	"0"	
+0A-PnA14,			"Resolution (read only)",	"0",	":Pulse/rev",	"0",	"4294967295",	"0"	"2",	"0"	
+21-PnA42,			"Electronic Gear Ratio (Numerator)",	"1",	"",	"1",	"1073741824",	"1"	"1",	"0"	
+22-PnA44,			"Electronic Gear Ratio (Denominator)",	"1",	"",	"1",	"1073741824",	"1"	"1",	"0"	
+23-PnA46,			"Absolute Encoder Origin Offset",	"0",	":reference units",	"-1073741823",	"1073741823",	"0"	"1",	"0"	
+24-PnA48,			"Multiturn Limit Setting",	"1",	":Rev",	"0",	"65535",	"65535"	"1",	"0"	
+25-PnA4A,			"Limit Setting",	"1",	"",	"",	"",	"00000000H",	"1",	"0"	
+	0:		"P-OT",								
+		"0000",	"Enabled",								
+		"0001",	"Disabled",								
+	1:		"N-OT",								
+		"0000",	"Enabled",								
+		"0001",	"Disabled",								
+	3-2:		"Reserved parameter (do not change.)",								
+		"0000",	"Disabled",								
+	4:		"P-SOT",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	5:		"N-SOT",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	6:		"Reserved parameter (do not change.)",								
+		"0000",	"Disabled",								
+	15-7:		"Reserved parameter (do not change.)",								
+		"0000",	"Disabled",								
+	31-16:		"Reserved parameter (do not change.)",								
+		"0000",	"Disabled",								
+26-PnA4C,			"Forward Software Limit",	"0",	":reference units",	"-1073741823",	"1073741823",	"1073741823",	"1",	"0"	
+27-PnA4E,			"Reserved parameter (do not change.)",	"0",	"",	"0"	"0"	"0"	"2",	"0"	
+28-PnA50,			"Reverse Software Limit",	"0",	":reference units",	"-1073741823",	"1073741823",	"1073741823",	"1",	"0"	
+29-PnA52,			"Reserved parameter (do not change.)",	"0",	"",	"0"	"0"	"0"	"2",	"0"	
+41-PnA82,			"Speed Unit Selection",	"1",	"",	"00000000H",	"00000001H",	"00000000H"	"1",	"0"	
+	0:		"Speed Unit Selection",								
+		"0000",	"Reference units/s",								
+		"0001",	"Reference units/min",								
+		"0002",	"Percentage (%) of rated speed",								
+		"0003",	"min-1",								
+		"0004",	"Maximum speed/40000000 hex",								
+42-PnA84,			"Speed Base Unit Selection",	"1",	"",	"-3",	"3",	"0"	"1",	"0"	
+43-PnA86,			"Position Unit¡¡Selection",	"1",	"",	"00000000H",	"00000000H",	"00000000H"	"1",	"0"	
+	0:		"Position Unit¡¡Selection",								
+		"0000",	"Reference units",								
+44-PnA88,			"Position Unit¡¡Selection",	"1",	"",	"0"	"0"	"0"	"2",	"0"	
+45-PnA8A,			"Acceleration Unit Selection",	"1",	"",	"00000000H",	"00000000H",	"00000000H"	"2",	"0"	
+	0:		"Acceleration Unit Selection",								
+		"0000",	"Reference units/s2",								
+46-PnA8C,			"Acceleration Base Unit Selection",	"1",	"",	"4",	"6",	"4"	"1",	"0"	
+47-PnA8E,			"Torque Unit Selection",	"1",	"",	"00000001H",	"00000002H",	"00000001H",	"1",	"0"	
+	0:		"Torque Unit Selection",								
+		"0000",	"Percentage (%) of rated torque",								
+		"0001",	"Maximum torque/40000000 hex",								
+48-PnA90,			"Torque Base Unit Selection",	"1",	"",	"-5",	"0",	"0"	"1",	"0"	
+49-PnA92,			"Supported Unit Systems (read only)",	"0",	"",	"",	"",	"0601011FH",	"2",	"0"	
+	0:		"Referecne units/s",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	1:		"Referecne units/min",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	2:		"Percentage (%) of rated speed",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	3:		"min-1 (rpm)",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	4:		"Maximun motor speed/4000000 hex",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	7-5:		"Reserved parameter (do not change.)",								
+		"0000",	"Disabled",								
+	8:		"Reference units",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	15-9:		"Reserved parameter (do not change.)",								
+		"0000",	"Disabled",								
+	16:		"Reference units/s2",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	17:		"ms (acceleration time required to reach rated speed) (0: Disabled)",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	23-18:		"Reserved parameter (do not change.)",								
+		"0000",	"Disabled",								
+	24:		"Nm",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	25:		"Percentaeg (%) of rated torque",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	26:		"Maximun motor torque/40000000 hex",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	31-27:		"Reserved parameter (do not change.)",								
+		"0000",	"Disabled",								
+61-PnAC2,			"Speed Loop Gain",	"0",	"0.001:Hz",	"00003E8H",	"001E8480H",	"00009C40H"	"1",	"0"	
+62-PnAC4,			"Speed Loop Integral Time Constant",	"0",	":us",	"150",	"512000",	"20000"	"1",	"0"	
+63-PnAC6,			"Position Loop Gain",	"0",	"0.001:/s",	"1000",	"2000000",	"40000"	"1",	"0"	
+64-PnAC8,			"Feedforward Compensation",	"0",	":%",	"0",	"100",	"0"	"1",	"0"	
+65-PnACA,			"Position Loop Integral Time Constant",	"0",	":us",	"0",	"5000000",	"0"	"1",	"0"	
+66-PnACC,			"Positioning Completed Width",	"0",	":reference units",	"0",	"1073741824",	"7"	"1",	"0"	
+67-PnACE,			"Near Signal Width",	"0",	":reference units",	"1",	"1073741824",	"1073741824",	"1",	"0"	
+81-PnB02,			"Exponential Acceleration/Deceleration Time Constant",	"0",	":us",	"0",	"510000",	"0"	"1",	"0"	
+82-PnB04,			"Average Movement Time",	"0",	":us",	"0",	"510000",	"0"	"1",	"0"	
+83-PnB06,			"External Positioning Final Travel Distance",	"0",	":reference units",	"-1073741823",	"1073741823",	"100",	"1",	"0"	
+84-PnB08,			"Origin Approach Speed",	"0",	"0.001:min-1",	"0",	"1073741823",	"5000",	"1",	"0"	
+85-PnB0A,			"Origin Return Creep Speed",	"0",	"0.001:min-1",	"0",	"1073741823",	"500",	"1",	"0"	
+86-PnB0C,			"Final Travel Distance for Origin Return",	"0",	":reference units",	"-1073741823",	"1073741823",	"100",	"1",	"0"	
+87-PnB0E,			"Fixed Monitor Selection 1",	"0",	"",	"00000000H",	"0000000FH",	"00000001H"	"1",	"0"	
+	0:		"Fixed Monitor Selection 1",								
+		"0000",	"APOS",								
+		"0001",	"CPOS",								
+		"0002",	"PERR",								
+		"0003",	"LPOS1",								
+		"0004",	"LPOS2",								
+		"0005",	"FSPD",								
+		"0006",	"CSPD",								
+		"0007",	"TRQ",								
+		"0008",	"ALARM",								
+		"0009",	"MPOS",								
+		"000A",	"Reserved (undefined value).",								
+		"000B",	"Reserved (undefined value).",								
+		"000C",	"CMN1 (common monitor 1)",								
+		"000D",	"CMN2 (common monitor 2)",								
+		"000E",	"OMN1 (optional monitor 1)",								
+		"000F",	"OMN2 (optional monitor 2)",								
+88-PnB10,			"Fixed Monitor Selection 2",	"0",	"",	"00000000H",	"0000000FH",	"00000000H"	"1",	"0"	
+	0:		"Fixed Monitor Selection 2",								
+		"0000",	"APOS",								
+		"0001",	"CPOS",								
+		"0002",	"PERR",								
+		"0003",	"LPOS1",								
+		"0004",	"LPOS2",								
+		"0005",	"FSPD",								
+		"0006",	"CSPD",								
+		"0007",	"TRQ",								
+		"0008",	"ALARM",								
+		"0009",	"MPOS",								
+		"000A",	"Reserved (undefined value).",								
+		"000B",	"Reserved (undefined value).",								
+		"000C",	"CMN1 (common monitor 1)",								
+		"000D",	"CMN2 (common monitor 2)",								
+		"000E",	"OMN1 (optional monitor 1)",								
+		"000F",	"OMN2 (optional monitor 2)",								
+89-PnB12,			"SEL_MON (CMN1) Monitor Selection 1",	"0",	"",	"00000000H",	"00000006H",	"00000000H"	"1",	"0"	
+	0:		"SEL_MON (CMN1) Monitor Selection 1",								
+		"0000",	"TPOS (target position in reference coordinate system)",								
+		"0001",	"IPOS (reference position in reference coordinate system)",								
+		"0002",	"POS_OFFSET (offset set in POS_SET (Set Coordinate System) command)",								
+		"0003",	"TSPD (target speed)",								
+		"0004",	"SPD_LIM (speed limit)",								
+		"0005",	"TRQ_LIM (torque limit)",								
+		"0006",	"SV_STAT (servo actual operating status)",								
+8A-PnB14,			"SEL_MON (CMN1) Monitor Selection 2",	"0",	"",	"00000000H",	"00000006H",	"00000000H"	"1",	"0"	
+	0:		"SEL_MON (CMN1) Monitor Selection 2",								
+		"0000",	"TPOS (target position in reference coordinate system)",								
+		"0001",	"IPOS (reference position in reference coordinate system)",								
+		"0002",	"POS_OFFSET (offset set in POS_SET (Set Coordinate System) command)",								
+		"0003",	"TSPD (target speed)",								
+		"0004",	"SPD_LIM (speed limit)",								
+		"0005",	"TRQ_LIM (torque limit)",								
+		"0006",	"SV_STAT (servo actual operating status)",								
+8B-PnB16,			"Origin Detection Width",	"0",	":reference units",	"0",	"250",	"10"	"1",	"0"	
+8C-PnB18,			"Forward Torque Limit",	"0",	":%",	"0",	"800",	"100"	"1",	"0"	
+8D-PnB1A,			"Reverse Torque Limit",	"0",	":%",	"0",	"800",	"100"	"1",	"0"	
+8E-PnB1C,			"Zero Speed Detection Range",	"0",	"0.001:min-1",	"1000",	"10000000",	"20000"	"1",	"0"	
+8F-PnB1E,			"Speed Coincidence Signal Detection Width",	"0",	"0.001:min-1",	"0",	"100000",	"10000",	"1",	"0"	
+90-PnB20,			"Servo Command Control Field Enable/Disable Selections",	"0",	"",	"",	"",	"0FFF3F3FH",	"2",	"0"	
+	0:		"CMD_PAUSE",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	1:		"CMD_CANCEL",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	3-2:		"STOP_MODE",								
+		"0000",	"Disabled",								
+		"0003",	"Enabled",								
+	5-4:		"ACCFIL",								
+		"0000",	"Disabled",								
+		"0003",	"Enabled",								
+	7-6:		"Reserved parameter (Do not change.)",								
+		"0000",	"Disabled",								
+	8:		"LT_REQ1",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	9:		"LT_REQ2",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	11-10:		"LT_SEL1",								
+		"0000",	"Disabled",								
+		"0003",	"Enabled",								
+	13-12:		"LT_SEL2",								
+		"0000",	"Disabled",								
+		"0003",	"Enabled",								
+	15-14:		"Reserved parameter (Do not change.)",								
+		"0000",	"Disabled",								
+	19-16:		"SEL_MON1",								
+		"0000",	"Disabled",								
+		"000F",	"Enabled",								
+	23-20:		"SEL_MON2",								
+		"0000",	"Disabled",								
+		"000F",	"Enabled",								
+	27-24:		"SEL_MON3",								
+		"0000",	"Disabled",								
+		"000F",	"Enabled",								
+	31-28:		"Reserved parameter (Do not change.)",								
+		"0000",	"Disabled",								
+91-PnB22,			"Servo Command Status Field Enable/Disable Selections",	"0",	"",	"",	"",	"0FFF3F33H",	"2",	"0"	
+	0:		"CMD_PAUSE_CMP",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	1:		"CMD_CANCEL_CMP",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	3-2:		"Reserved parameter (Do not change.)",								
+		"0000",	"Disabled",								
+	5-4:		"ACCFIL",								
+		"0000",	"Disabled",								
+		"0003",	"Enabled",								
+	7-6:		"Reserved parameter (Do not change.)",								
+		"0000",	"Disabled",								
+	8:		"LT_CMP1",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	9:		"LT_CMP2",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	10:		"POS_RDY",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	11:		"PON",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	12:		"M_RDY",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	13:		"SV_ON",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	15-14:		"Reserved parameter (Do not change.)",								
+		"0000",	"Disabled",								
+	19-16:		"SEL_MON1",								
+		"0000",	"Disabled",								
+		"000F",	"Enabled",								
+	23-20:		"SEL_MON2",								
+		"0000",	"Disabled",								
+		"000F",	"Enabled",								
+	27-24:		"SEL_MON3",								
+		"0000",	"Disabled",								
+		"000F",	"Enabled",								
+	31-28:		"Reserved parameter (Do not change.)",								
+		"0000",	"Disabled",								
+92-PnB24,			"Output Bit Enable/Disable Selections",	"0",	"",	"",	"",	"007F01F0H",	"2",	"0"	
+	2-0:		"Reserved parameter (Do not change.)",								
+		"0000",	"Disabled",								
+	3:		"Reserved parameter (Do not change.)",								
+		"0000",	"Disabled",								
+	4:		"V_PPI",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	5:		"P_PPI",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	6:		"P_CL",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	7:		"N_CL",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	8:		"G_SEL",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	11-9:		"G_SEL",								
+		"0000",	"Disabled",								
+		"0007",	"Enabled",								
+	15-12:		"Reserved parameter (Do not change.)",								
+		"0000",	"Disabled",								
+	19-16:		"BANK_SEL",								
+		"0000",	"Disabled",								
+		"000F",	"Enabled",								
+	22-20:		"SO1 to SO2",								
+		"0000",	"Disabled",								
+		"0007",	"Enabled",								
+	23:		"Reserved parameter (Do not change.)",								
+		"0000",	"Disabled",								
+	31-24:		"Reserved parameter (Do not change.)",								
+		"0000",	"Disabled",								
+93-PnB26,			"Input Bit Enable/Disable Selections",	"0",	"",	"",	"",	"FF0FFEFEH",	"2",	"0"	
+	0:		"Reserved parameter (Do not change.)",								
+		"0000",	"Disabled",								
+	1:		"DEC",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	2:		"P_OT",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	3:		"N_OT",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	4:		"EXT1",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	5:		"EXT2",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	6:		"EXT3",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	7:		"ESTP",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	8:		"Reserved parameter (Do not change.)",								
+		"0000",	"Disabled",								
+	9:		"BRK_ON",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	10:		"P-SOT",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	11:		"N-SOT",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	12:		"DEN",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	13:		"NEAR",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	14:		"PSET",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	15:		"ZPOINT",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	16:		"T_LIM",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	17:		"V_LIM",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	18:		"V_CMP",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	19:		"ZSPD",								
+		"0000",	"Disabled",								
+		"0001",	"Enabled",								
+	23-20:		"Reserved parameter (Do not change.)",								
+		"0000",	"Disabled",								
+	31-24:		"I0_STS1 to I0_STS8",								
+		"0000",	"Disabled",								
+		"00FF",	"Enabled",								
+											
+[differ from constant]											

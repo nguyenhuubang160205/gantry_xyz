@@ -1,0 +1,35 @@
+#Name,Size,display form,scaling,unit
+Contol mode,2,#0,1,гн
+Motor speed,2,#####0,1,mm/s
+Position cotrol speed,2,#####0,1,mm/s
+Velocity control command,2,#####0,1,mm/s
+Thrust control,2,###0.0,0.05,%
+Position deviation command,4,##########0,1,Command unit
+Motor position,4,##########0,1,FB scale unit
+Maker uses,4,##########0,1,гн
+Input port (Logical signal),4,##########0,1,гн
+Output port (Logical signal),4,##########0,1,гн
+Analog input,2,#####0,1,AD value
+Maker uses,2,#####0,1,гн
+Maker uses,2,#####0,1,гн
+Over-load ratio,2,###0.0,0.2,%
+Regenerative load factor,2,###0,1,%
+P and N of the power supply ,2,###0,1,V
+Driver temperature,2,###0,1,degree
+Warning flag,2,#####0,1,гн
+Mass ratio,2,#####0,1,%
+Maker uses,2,###0.0,0.2,%
+Maker uses,2,###0.0,0.2,%
+Maker uses,2,###0.0,0.2,%
+Maker uses,2,#####0,1,гн
+Maker uses,2,#####0,1,гн
+Maker uses,2,#####0,1,гн
+Maker uses,2,#####0,1,гн
+U-phase current detector,2,#####0,1,AD value
+W-phase current detector,2,#####0,1,AD value
+Maker uses,2,#####0,1,гн
+Maker uses,2,#####0,1,гн
+Maker uses,4,##########0,1,гн
+Maker uses,2,#####0,1,гн
+Feedback scale Accumulated communication error counts,2,#####0,1,times
+Maker uses,2,#####0,1,гн

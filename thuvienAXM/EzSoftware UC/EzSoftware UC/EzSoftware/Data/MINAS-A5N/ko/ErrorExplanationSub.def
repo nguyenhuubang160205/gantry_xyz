@@ -1,0 +1,248 @@
+#메인,서브,명칭,원인,처치
+0,0,정상,정상,정상
+11,0,제어 전원 부족 전압 보호,제어 전원 컨버터부의 P-N간 전압이 떨어져 규정치 이하가 됨,커넥터 또는 단자대의 제어 전원선간 전압을 확인.
+,,,(1) 전원 전압이 낮음. 순간 정전 발생.,(1) 전원 전압 업 전원을 바꾼다.
+,,,(2) 전원 용량 부족…주전원이 온일 때의 돌입 전류에 의해 전원 전압이 떨어짐.,(2) 전원 용량을 늘린다.
+,,,(3) 서보 앰프 고장(회로가 고장),(3) 새 서보 앰프로 교체한다.
+12,0,과전압 보호,컨버터부의 P-N간 전압이 규정치 이상이 됨,"커넥터(L1, L2, L3)의 선간 전압을 확인."
+,,,(1) 전원 전압이 허용 입력 전력 범위를 초과. 진상 콘덴서와 UPS(무정전 전원 장치)에 의한 전압 상승.,(1) 전압을 올바르게 입력한다. 진상 콘덴서를 제거한다.
+,,,(2) 회생 저항 단선,(2) 서보 앰프의 단자 B1-B2 사이에 설치된 외장형 저항의 저항값을 테스터로 측정하고 ∞이면 단선. 외장형 저항을 교환한다.
+,,,(3) 외장형 회생 저항이 부적절하여 회생 에너지를 흡수하지 못함.,(3) 지정된 회생 저항값 W수로 변경한다.
+,,,(4) 서보 앰프 고장(회로가 고장),(4) 새 서보 앰프로 교체한다.
+13,0,주전원 부족 전압 보호(PN),서보 온 중에 주전원 컨버터부의 P-N간 전압이 떨어져 규정치 이하가 됨,커넥터의 주전원 선간 전압을 확인.
+,,,(1) 전원 전압이 낮음. 순간 정전 발생.,(1) 전원 전압 용량 업. 전원을 바꾼다. 주전원의 전자 접촉기가 떨어진 원인을 제거하고 다시 전원을 투입한다.
+,,,(2) 전원 용량 부족…주전원이 온일 때의 돌입 전류에 의해 전원 전압이 떨어짐.,(2) 전원 용량을 늘린다. 전원 용량은 '서보 앰프와 적용 주변 기기 일람'을 참조
+,,,(3) 결상…3상 입력 사양의 서보 앰프가 단상 전원으로 운전됨.,"(3) 전원의 각 상(L1, L2, L3)을 올바르게 연결한다."
+,,,(4) 서보 앰프 고장(회로가 고장),(4) 새 서보 앰프로 교체한다.
+13,1,주전원 부족 전압 보호(AC),Pr5.08 '주전원 오프 시 LV 트립 선택'=1인 경우에 주전원 L1-L3간이 Pr5.09 '주전원 오프 검출 시간'으로 설정된 시간 이상 순간 정전됨.,커넥터의 주전원 선간 전압을 확인.
+,,,(1) 전원 전압이 낮음. 순간 정전 발생.,(1) 전원 전압 용량 업. 전원을 바꾼다. 주전원의 전자 접촉기가 떨어진 원인을 제거하고 다시 전원을 투입한다.
+,,,(2) 순간 정전 발생,(2) Pr5.09 '주전원 오프 검출 시간'을 길게 설정한다. 전원의 각 상을 올바르게 설정한다.
+,,,(3) 전원 용량 부족…주전원이 온일 때의 돌입 전류에 의해 전원 전압이 떨어짐.,(3) 전원 용량을 늘린다. 전원 용량은 '서보 앰프와 적용 주변 기기 일람'을 참조
+,,,(4) 결상…3상 입력 사양의 서보 앰프가 단상 전원으로 운전됨.,(4) 단상 100V 및 단상 200V인 경우 L1과 L3에 접속되어 있는지 확인한다.
+,,,(5) 서보 앰프 고장(회로가 고장),(5) 새 서보 앰프로 교체한다.
+14,0,과전류 보호,컨버터부에 흐르는 전류가 규정치를 초과.,배선의 단락?지락을 확인.
+,,,"(1) 서보 앰프 고장(회로, IGBT의 결함 등)",(1) 모터선을 제거하고 서보 온하여 즉시 발생하면 새(동작 중) 서보 앰프로 교체한다.
+,,,(2) 모터선(U/V/W상)이 단락됨.,(2) 모터선이 상간에 단락되어 있지 않는가. 커넥터의 리드선 수염을 확인. 모터선을 올바르게 연결한다.
+,,,(3) 모터선이 지락됨.,(3) 모터선과 모터 접지선 사이의 절연 저항을 확인. 절연 불량인 경우 모터 교체.
+,,,(4) 모터가 파손됨.,(4) 모터의 각 선간 저항의 균형을 확인하고 균형이 맞지 않으면 모터 교체.
+,,,(5) 모터선 접촉 불량.,(5) 모터 연결 커넥터의 핀이 빠져 있는지 확인하고 느슨하거나 빠져 있으면 확실하게 고정시킨다.
+,,,(6) 빈번한 서보 온?오프 때문에 다이나믹 브레이크용 릴레이가 용착됨.,(6) 서보 앰프를 교체한다. 서보 온?오프를 통한 운전?정지를 그만둔다.
+,,,(7) 모터와 서보 앰프의 조합이 올바르지 않음.,(7) 모터?서보 앰프의 품번(용량)을 명판으로 확인하고 서보 앰프에 맞는 모터로 바꾼다.
+,,,(8) 펄스 입력과 서보 온의 타이밍이 똑같거나 펄스 입력이 더 빠름.,(8) 서보 온 후 100ms 이상 기다리고 나서 펄스를 입력한다.
+,,,(9) 다이나믹 브레이크 회로 과열,(9) 서보 온?오프를 통한 운전?정지를 그만둔다. 고속 운전 시 다이나믹 브레이크가 작동한 경우 3분 정도의 정지 시간을 둔다.
+14,1,IPＭ 이상 보호,컨버터부에 흐르는 전류가 규정치를 초과.,배선의 단락?지락을 확인.
+,,,"(1) 서보 앰프 고장(회로, IGBT의 결함 등)",(1) 모터선을 제거하고 서보 온하여 즉시 발생하면 새(동작 중) 서보 앰프로 교체한다.
+,,,(2) 모터선(U/V/W상)이 단락됨.,(2) 모터선이 상간에 단락되어 있지 않는가. 커넥터의 리드선 수염을 확인. 모터선을 올바르게 연결한다.
+,,,(3) 모터선이 지락됨.,(3) 모터선과 모터 접지선 사이의 절연 저항을 확인. 절연 불량인 경우 모터 교체.
+,,,(4) 모터가 파손됨.,(4) 모터의 각 선간 저항의 균형을 확인하고 균형이 맞지 않으면 모터 교체.
+,,,(5) 모터선 접촉 불량.,(5) 모터 연결 커넥터의 핀이 빠져 있는지 확인하고 느슨하거나 빠져 있으면 확실하게 고정시킨다.
+,,,(6) 빈번한 서보 온?오프 때문에 다이나믹 브레이크용 릴레이가 용착됨.,(6) 서보 앰프를 교체한다. 서보 온?오프를 통한 운전?정지를 그만둔다.
+,,,(7) 모터와 서보 앰프의 조합이 올바르지 않음.,(7) 모터?서보 앰프의 품번(용량)을 명판으로 확인하고 서보 앰프에 맞는 모터로 바꾼다.
+,,,(8) 펄스 입력과 서보 온의 타이밍이 똑같거나 펄스 입력이 더 빠름.,(8) 서보 온 후 100ms 이상 기다리고 나서 펄스를 입력한다.
+,,,(9) 다이나믹 브레이크 회로 과열,(9) 서보 온?오프를 통한 운전?정지를 그만둔다. 고속 운전 시 다이나믹 브레이크가 작동한 경우 3분 정도의 정지 시간을 둔다.
+15,0,과열 보호,"서보 앰프의 방열기, 파워 소자의 온도가 규정치를 초과.",서보 앰프의 사용 온도 범위를 확인.
+,,,(1) 서보 앰프 사용 온도가 규정치를 초과.,(1) 서보 앰프의 사용 온도 및 냉각 조건을 개선한다.
+,,,(2) 과부하 상태에서 사용.,"(2) 서보 앰프, 모터의 용량 업. 가감속 시간을 길게 설정한다. 부하를 줄인다."
+16,0,과중부하 보호(과부하 보호),토크 지령 실동값이 Pr5.12 '과중부하 수준 설정'에 설정되어 있는 과부하 수준을 초과.,아날로그 출력 등으로 토크(전류) 파형이 발진되고 상하로 크게 흔들리고 있지 않은지 확인. 과부하 경고 표시 및 부하율을 전면 패널 또는 통신으로 확인.
+,,,(1) 부하가 크고 실효 토크가 정격 토크를 초과하여 오랫동안 운전을 계속함.,"(1) 서보 앰프, 모터의 용량 업. 가감속 시간을 길게 설정한다. 부하를 줄인다."
+,,,"(2) 게인 조정 불량으로 인한 발진, 헌팅 동작. 모터의 진동, 이상음. Pr0.04 '관성비'의 설정값 이상.",(2) 게인을 재조정.
+,,,"(3) 모터의 오배선, 단선.",(3) 모터선을 배선도대로 연결한다. 케이블을 교체한다.
+,,,(4) 기계와 부딪쳤거나 기계가 갑자기 무거워짐. 기계의 뒤틀림,(4) 기계의 뒤틀림을 제거한다. 부하를 줄인다.
+,,,(5) 전자 브레이크가 작동된 상태에서 모터를 움직임.,(5) 브레이크 단자 전압을 측정. 브레이크를 개방한다.
+,,,(6) 여러 대를 배선할 때 모터선을 다른 축과 잘못 연결하여 배선이 잘못됨.,"(6) 모터선, 인코더선을 축별로 올바르게 배선한다."
+,,,(7) Pr5.12 '과중부하 수준 설정'이 너무 낮음.,(7) Pr5.12 '과중부하 수준 설정'=0으로 설정한다(모터에서 허용되는 최대값을 설정).
+18,0,회생 과부하 보호,회생 에너지가 회생 저항 처리 능력을 초과.,전면 패널 등에서 회생 저항 부하율을 확인. 연속적 회생 제동 용도로는 사용할 수 없습니다.
+,,,(1) 부하 관성대에 의해 감속 중인 회생 에너지로 인해 컨버터 전압이 상승하고 회생 저항 에너지 흡수 부족으로 이상 검출치까지 상승.,"(1) 운전 패턴 확인(속도 모니터). 회생 저항 부하율 및 과회생 경고 표시를 확인. 모터, 서보 앰프 용량 향상, 감속 시간을 완만하게 한다. 회생 저항을 외부에 설치."
+,,,(2) 모터 회전 수가 높기 때문에 소정 감속 시간으로 회생 에너지를 전부 흡수할 수 없다.,"(2) 운전 패턴 확인(속도 모니터). 회생 저항 부하율 및 과회생 경고 표시를 확인. 모터, 서보 앰프 용량 향상, 감속 시간을 완만하게 한다. 모터 회전 수를 줄인다. 회생 저항을 외부에 설치."
+,,,(3) 외장형 저항의 동작 한계가 10% 듀티로 제한되어 있음.,(3) Pr0.16 '회생 저항 외장 설정'을 변경한다.
+18,1,회생 트랜지스터 이상 보호,서보 앰프의 회생 구동용 트랜지스터 고장을 검지함.,서보 앰프를 교환하십시오.
+21,0,인코더 통신 단선 이상 보호,인코더와 서보 앰프의 통신이 일정 횟수 끊겨 배선 검출 기능이 작동.,인코더선 결선을 연결된 대로 배선한다. 커넥터 핀 연결 오류를 정정한다.
+21,1,인코더 통신 이상 보호,인코더 데이터가 통신 이상이 됨. 주로 노이즈에 의한 데이터 이상. 인코더 선은 연결되어 있으나 통신 데이터 이상이 발생.,인코더 전원 전압 DC5V±5%(4.75～5.25V)를 확보한다. 특히 인코더선이 긴 경우 주의하십시오.
+,,,,모터선과 인코더선이 함께 결속되어 있다면 분리한다.
+,,,,인코더의 실드선을 FG에 연결한다.
+23,0,인코더 통신 데이터 이상 보호,인코더로부터의 데이터가 통신 이상이 아님에도 불구하고 데이터 내용에 이상이 발견됨. 주로 노이즈에 의한 데이터 이상. 인코더 선은 연결되어 있으나 통신 데이터 이상이 발생.,인코더 전원 전압 DC5V±5%(4.75～5.25V)를 확보한다. 특히 인코더선이 긴 경우 주의하십시오.
+,,,,모터선과 인코더선이 함께 결속되어 있다면 분리한다.
+,,,,인코더의 실드선을 FG에 연결한다.
+24,0,위치 편차 과대 보호,위치 편차 펄스가 Pr0.14 '위치 편차 과대 설정'의 설정을 초과.,모터 동작을 확인.
+,,,(1) 모터의 움직임이 지령을 따르지 않음.,(1) 위치 지령 펄스에 따라 모터가 회전하는지 확인.
+,,,,토크 모니터로 출력 토크가 포화되어 있지 않은지 확인. 게인을 조정한다.
+,,,,"Pr0.13 '제1 토크 한계', Pr5.22 '제2 토크 한계'을 최대화한다."
+,,,,인코더를 배선도대로 결선한다. 가감속 시간을 길게 설정한다. 부하를 줄이고 속도를 낮춘다.
+,,,(2) Pr0.14 '위치 편차 과대 설정'의 수치가 작음.,(2) Pr0.14 '위치 편자 과대 설정'의 설정값을 크게 한다. 또는 0으로 설정하고 비활성화한다.
+24,1,속도 편차 과대 보호,내부 위치 지령 속도와 실제로 속도의 차이(속도 편차)Pr6.02 '속도 편차 과대 설정'의 설정을 초과.,내부위치 지령 속도의 가속 시간과 감속 시간을 길게 한다. 또는 게인 조정에 의해 추종성을 향상시킨다.
+,,,"주) 지령 펄스 입력 금지(INH)이나 정방향/부방향구동 금지 입력에 의한 즉시정지등, 내부위치 지령 속도가 강제적으로 0이 될 경우는, 그 순간에 속도편차가 커집니다. ",Pr6.02 '속도 편차 과대 설정'의 설정값을 크게 한다. 또는 0으로 설정하고 비활성화한다.
+,,,"또, 내부 위치 지령 속도의 시작 때도 속도편차가 커지므로, 충분히 여유를 가진 설정으로 해 주십시오.",
+25,0,하이브리드 편차 과대 보호,풀클로즈 제어 시에 외부 스케일에 의한 부하 위치와 인코더에 의한 모터 위치가 Pr3.28 '하이브리드 편차 과대 설정'에서 설정된 펄스 수 이상 어긋남.,부하를 움직였을 때 모터 위치(인코더 피드백 수치)의 변화와 부하 위치(외부 스케일 피드백 수치)의 변화가 동일한 부호임을 확인한다.
+,,,,모터와 부하의 연결을 확인한다.
+,,,,외부 스케일과 서보 앰프의 연결을 확인한다.
+,,,,"외부 스케일 분주 분자(Pr.3.24), 분모(Pr3.25), 외부 스케일 방향 반전(Pr3.26)이 올바르게 설정되어 있는지 확인한다."
+26,0,과속도 보호,모터 회전 속도가 Pr5.13 '과속도 수준 설정'의 설정값을 초과.,게인 조정 불량으로 인해 오버 슈트가 발생한 경우 게인을 조정한다.
+,,,,과대한 속도 지령을 부여하지 않는다.
+,,,,지령 펄스 입력 주파수 및 분주?체배비를 확인.
+,,,,인코더선을 결선도대로 배선한다.
+,,,,Pr5.13 '과속도 수준 설정'을 0으로 한다. (모터 최고 회전 수×1.2로 설정)
+26,1,제 2 과속도 보호,알람 발생 시의 즉시 정지 시 모터 속도가 Pr6.15 '제2 과속도 수준 설정'을 초과.,게인 조정 불량으로 인해 오버 슈트가 발생한 경우 게인을 조정한다.
+,,,,과대한 속도 지령을 부여하지 않는다.
+,,,,지령 펄스 입력 주파수 및 분주?체배비를 확인.
+,,,,인코더선을 결선도대로 배선한다.
+,,,,Pr6.15 '제2 과속도 수준 설정'의 설정값을 정정한다.
+27,1,절대적 취소 보호,Multi-turn clear of absolute encoder is made through USB communication (PANATERM).,Check if multi-turn clear of absolute encoder has been made through USB communication.
+,,,,"Note) Checking is for the purpose of safety and not the cause of error. Multi-turn clearing through RTEX communication does not cause an alarm. However, be sure to reset the control power."
+27,4,커맨드 이상 보호,Position command variation (value after electronic gear) exceeds the specified value.,Check whether the position command was significantly changed due to cyclic position control (CP).
+,,,,Check electronic gear ratio.
+27,5,커맨드 생성 이상 보호,Position command generation process exceeded the computation range.,Make sure that the electronic gear ratio and velocity control conform to limit requirements.
+27,6,동작 지령 경합 보호,FFT operated only by the driver: RTEX communication was established during trial run.,FFT: check if RTEX was established during trial run.
+27,7,위치 정보 초기화 이상,"During validation mode of attribute C parameter of reset command of RTEX communication, servo was turned ON.",Check to see that the servo is OFF during validation mode of attribute C parameter of reset command of RTEX communication.
+28,0,펄스 재생 한계 보호,펄스 재생 출력 주파수가 한계를 초과.,"Pr0.11 '1회전당 출력 펄스 수', Pr5.03 '펄스 출력 분주 분모'의 설정값을 확인."
+,,,,"검출을 무효화할 경우, Pr5.33 '펄스 재생 한계 유효'를 0으로 설정하십시오."
+29,1,카운터 오버플로 보호 1,"After turning on of control power in absolute mode, after CONFIG, after FFT or after trial run: during position information initialization process, absolute encoder (absolute scale) position (pulse unit)/electronic gear ratio exceeded ±2^31 (2147483648).",Check the operation range at the position of absolute encoder (absolute scale) and electronic gear ratio.
+29,2,카운터 오버플로 보호 2,Position deviation in unit of pulse has exceeded ±2^29 (536870912).,Check that the motor runs as per the position command pulses.
+,,,"Or, position deviation in unit of command has exceeded ±2^30 (1073741824).",Check that the output toque has not saturated in torque monitor.
+,,,,Make a gain adjustment.
+,,,,Set up maximum value to torque limit setting.
+,,,,Make a wiring connection of the encoder as per the wiring diagram.
+29,3,카운터 오버플로 보호 3,Pr8.15 (Return to home final running distance) x electronic gear ratio has exceeded ±2^31 (2147483648).,Review the Pr8.15 (Return to home final running distance) and the electronic gear ratio.
+30,0,안전 입력 보호,안전 입력 1 또는 안전 입력 2 중 적어도 하나의 입력 포토커플러가 OFF됨.,"안전 입력 1, 2의 입력 배선 상태를 확인한다."
+33,0,입력 중복 할당 이상 1 보호,"입력 신호(SI1, SI2, SI3, SI4) 기능 할당으로 중복 설정 있음.",커넥터 핀에 대한 기능 할당을 올바르게 설정하십시오.
+33,1,입력 중복 할당 이상 2 보호,"입력 신호(SI5, SI6, SI7, SI8) 기능 할당으로 중복 설정 있음.",커넥터 핀에 대한 기능 할당을 올바르게 설정하십시오.
+33,2,입력 기능 번호 이상 1 보호,"입력 신호(SI1, SI2, SI3, SI4) 기능 할당으로 미정의 번호 지정 있음.",커넥터 핀에 대한 기능 할당을 올바르게 설정하십시오.
+33,3,입력 기능 번호 이상 2 보호,"입력 신호(SI5, SI6, SI7, SI8)의 기능 할당으로 미정의 번호 지정 있음.",커넥터 핀에 대한 기능 할당을 올바르게 설정하십시오.
+33,4,출력 기능 번호 이상 1 보호,출력 신호(SO1) 기능 할당으로 미정의 번호 지정 있음.,커넥터 핀에 대한 기능 할당을 올바르게 설정하십시오.
+33,5,출력 기능 번호 이상 2 보호,출력 신호(SO2) 기능 할당으로 미정의 번호 지정 있음.,커넥터 핀에 대한 기능 할당을 올바르게 설정하십시오.
+33,8,래치 입력 할당 이상,"Error has occurred during function assignment of latch correction pins (SI5, SI6, and SI7).",커넥터 핀에 대한 기능 할당을 올바르게 설정하십시오.
+,,,(1) EXT1 must be allocated to SI5. EXT2 to SI6 and EXT3 to SI7: but these are assigned to other pins.,
+,,,(2) HOME is allocated to SI6 or SI7; POT is allocated to SI5 or SI7; NOT is allocated to SI5 ot SI6.,
+,,,(3) Function is allocated to b-contact.,
+,,,(4) Function not allocated to one or more control modes.,
+34,0,모터 가동 범위 설정 이상 보호,위치 지령 입력 범위에 대해 모터가 Pr5.14 '모터 가동 범위 설정'에 설정된 모터 동작 가능 범위를 초과.,모터 동작을 확인.
+,,,(1) 게인이 적당하지 않음.,"(1) 게인(위치 루프 게인과 속도 루프 게인의 균형), 관성비를 확인한다."
+,,,(2) Pr5.14 '모터 가동 범위 설정'의 설정값이 작음.,(2) Pr5.14 '모터 가동 범위 설정'의 설정값을 크게 한다. 또는 설정값을 0으로 하고 보호 기능을 비활성화한다.
+36,0,EEPROM 매개변수 이상 보호,전원 투입 시 EEPROM에서 데이터를 불러왔을 때 매개변수 저장 영역의 데이터가 손상되어 있음.,모든 매개변수를 재설정한다.
+,,,,여러 번 반복하여 발생한다면 고장일 가능성이 있으므로 서보 앰프를 교환한다. 구입처로 연락하십시오.
+36,1,EEPROM 매개변수 이상 보호,전원 투입 시 EEPROM에 접속했을 때 이상이 발견됨.,모든 매개변수를 재설정한다.
+,,,,여러 번 반복하여 발생한다면 고장일 가능성이 있으므로 서보 앰프를 교환한다. 구입처로 연락하십시오.
+36,2,EEPROM 매개변수 이상 보호,전원 투입 시 EEPROM에서 데이터를 불러왔을 때 매개변수 저장 영역의 데이터가 손상되어 있음.,모든 매개변수를 재설정한다.
+,,,,여러 번 반복하여 발생한다면 고장일 가능성이 있으므로 서보 앰프를 교환한다. 구입처로 연락하십시오.
+37,0,EEPROM 체크 코드 이상 보호,전원 투입 시 EEPROM에서 데이터를 불러왔을 때 EEPROM 입력 확인 데이터가 손상되어 있음.,"고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+37,1,EEPROM 체크 코드 이상 보호,전원 투입 시 EEPROM에서 데이터를 불러왔을 때 출하 매개변수 저장 영역의 데이터가 손상되어 있음.,"고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+37,2,EEPROM 체크 코드 이상 보호,전원 투입 시 EEPROM에서 데이터를 불러왔을 때 시스템 매개변수 저장 영역의 데이터가 손상되어 있음.,"고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+38,0,구동 금지 입력 보호 1,Pr5.04 '구동 금지 입력 설정'=0인 경우 정방향/부방향 구동 금지 입력(POT/NOT)이 모두 ON됨.,"정방향/부방향 구동 금지 입력에 연결된 스위치, 전선, 전원에 이상이 없는지 확인."
+,,,Pr5.04 '구동 금지 입력 설정'=2인 경우 정방향/부방향 구동 금지 입력 중 하나가 ON됨.,제어용 신호 전원(DC12~24V)의 상승이 늦지 않는지 확인.
+38,1,구동 금지 입력 보호 2,"RTEX communication is OFF with Pr5.04 '구동 금지 입력 설정' = 0, and POT or NOT is ON, and then operation command (ex. trial run, FFT) is given through USB communication.","정방향/부방향 구동 금지 입력에 연결된 스위치, 전선, 전원에 이상이 없는지 확인."
+,,,"Or, POT or NOT is turned ON while the system is operating according to the command given through USB communication.",제어용 신호 전원(DC12~24V)의 상승이 늦지 않는지 확인.
+38,2,구동 금지 입력 보호 3,"With POT allocated to SI6 or NOT to SI7, Pr5.04 '구동 금지 입력 설정' is set to a value other than 1 (무효).","When POT is allocated to SI6 or NOT allocated to SI7, make sure that Pr5.04 '구동 금지 입력 설정' is set to 1 (무효)."
+40,0,앱솔루트 시스템 다운 이상 보호,앱솔루트 인코더를 앱솔루트 인코더로 사용한 경우에 인코더에 대한 공급 전원 및 배터리 전원이 다운되고 내장된 콘덴서 전압이 규정치 이하로 떨어짐.,배터리용 전원 연결 후 앱솔루트 인코더를 클리어한다.
+,,,,※앱솔루트 인코더를 클리어하지 않으면 서보 앰프의 알람을 클리어할 수 없습니다.
+41,0,앱솔루트 카운터 오버 이상 보호,앱솔루트 인코더의 다회전 카운터가 규정치를 초과.,Pr0.15 '앱솔루트 인코더 설정'을 적절한 값으로 설정한다.
+,,,,기계 원점으로부터의 이동량을 ±32767회전 이내로 한다.
+42,0,앱솔루트 과속 이상 보호,정전된 앱솔루트 인코더에 밧데리 전원만 공급되었을 때 모터 회전 속도가 규정치를 초과.,인코더측 전원 전압(5V±5%)을 확인한다.
+,,,,인코더 커넥터의 연결 상태를 확인한다.
+,,,,※앱솔루트 인코더를 클리어하지 않으면 알람을 클리어할 수 없습니다.
+43,0,인코더 초기화 이상 보호,인코더 초기화 시 이상이 검출됨.,모터를 교환한다.
+44,0,앱솔루트 1회전 카운터 이상 보호,앱솔루트 인코더에서 1회전 카운터 이상을 검출함.,모터를 교환한다.
+,,,인크리멘탈 인코더의 1회전 카운터 이상을 검출함.,
+45,0,앱솔루트 다회전 카운터 이상 보호,앱솔루트 인코더로 다회전 카운터 이상을 검출함,모터를 교환한다.
+,,,인크리멘탈 인코더의 AB상 원신호 이상을 검출함.,
+46,0,(앱솔루트 기타 이상),제어 회로가 과대한 노이즈 등으로 오작동함. 서보 앰프의 자기 진단 기능이 작동하고 서보 앰프 내부에 어떤 이상이 발생.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+47,0,앱솔루트 상태 이상 보호,전원 투입 시 인코더가 규정치 이상으로 회전함.,전원 투입 시에는 모터가 움직이지 않도록 한다.
+48,0,인코더 Ｚ상 이상 보호,시리얼 인크리멘탈 인코더의 Z상 펄스 누락이 검출됨. 인코더 고장.,모터를 교환한다.
+49,0,인코더 CS상 이상 보호,인크리멘탈 인코더의 CS 신호 논리 이상이 검출됨. 인코더 고장.,모터를 교환한다.
+50,0,외부 스케일 결선 이상 보호,외부 스케일과 서보 앰프의 통신이 일정 횟수 끊겨 단선 검출 기능이 작동됨.,"외부 스케일 결선을 올바르게 배선한다.
+커넥터 핀 연결 오류를 정정한다."
+50,1,외부 스케일 통신 데이터 이상 보호,외부 스케일 데이터가 통신 이상이 됨. 주로 노이즈에 인한 데이터 이상.,외부 스케일의 전원 전압 DC5V±5%(4.75～5.25V)를 확보한다. 특히 외부 스케일 연결 케이블이 긴 경우 주의하십시오.
+,,,외부 스케일 연결 케이블은 연결되어 있으나 통신 데이터 이상이 발생함.,모터선과 외부 스케일 연결 케이블이 함께 결속되어 있다면 분리한다.
+,,,,실드를 FＧ에 연결한다.
+50,2,(외부 스케일 통신 데이터 이상 보호),외부 스케일과 서보 앰프의 통신 데이터가 올바르지 않다.,커넥터 핀 연결 오류를 정정한다.
+51,0,외부 스케일 상태 이상 보호 0,외부 스케일의 에러 코드 비트 0이 1이 됨. 자세한 사항은 외부 스케일 사양을 확인하십시오.,이상 원인을 제거한 후 외부 스케일 에러를 클리어하십시오. 그 후 제어 전원을 재투입하십시오.
+51,1,외부 스케일 상태 이상 보호 1,외부 스케일의 에러 코드 비트 1이 1이 됨. 자세한 사항은 외부 스케일 사양을 확인하십시오.,이상 원인을 제거한 후 외부 스케일 에러를 클리어하십시오. 그 후 제어 전원을 재투입하십시오.
+51,2,외부 스케일 상태 이상 보호 2,외부 스케일의 에러 코드 비트 2가 1이 됨. 자세한 사항은 외부 스케일 사양을 확인하십시오.,이상 원인을 제거한 후 외부 스케일 에러를 클리어하십시오. 그 후 제어 전원을 재투입하십시오.
+51,3,외부 스케일 상태 이상 보호 3,외부 스케일의 에러 코드 비트 3이 1이 됨. 자세한 사항은 외부 스케일 사양을 확인하십시오.,이상 원인을 제거한 후 외부 스케일 에러를 클리어하십시오. 그 후 제어 전원을 재투입하십시오.
+51,4,외부 스케일 상태 이상 보호 4,외부 스케일의 에러 코드 비트 4가 1이 됨. 자세한 사항은 외부 스케일 사양을 확인하십시오.,이상 원인을 제거한 후 외부 스케일 에러를 클리어하십시오. 그 후 제어 전원을 재투입하십시오.
+51,5,외부 스케일 상태 이상 보호 5,외부 스케일의 에러 코드 비트 5가 1이 됨. 자세한 사항은 외부 스케일 사양을 확인하십시오.,이상 원인을 제거한 후 외부 스케일 에러를 클리어하십시오. 그 후 제어 전원을 재투입하십시오.
+51,6,(외부 스케일 상태 이상 보호 6),외부 스케일의 에러 코드 비트 6이 1이 됨. 자세한 사항은 외부 스케일 사양을 확인하십시오.,이상 원인을 제거한 후 외부 스케일 에러를 클리어하십시오. 그 후 제어 전원을 재투입하십시오.
+51,7,(외부 스케일 상태 이상 보호 7),외부 스케일의 에러 코드 비트 7이 1이 됨. 자세한 사항은 외부 스케일 사양을 확인하십시오.,이상 원인을 제거한 후 외부 스케일 에러를 클리어하십시오. 그 후 제어 전원을 재투입하십시오.
+51,8,(외부 스케일 기타 이상),제어 회로가 과대한 노이즈 등으로 오작동함. 서보 앰프의 자기 진단 기능이 작동하고 서보 앰프 내부에 어떤 이상이 발생.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+55,0,A상 결선 이상 보호,외부 스케일 A상에 단선 등의 이상이 발생.,외부 스케일 A상 결선을 확인한다.
+55,1,B상 결선 이상 보호,외부 스케일 B상에 결선 등의 이상이 발생.,외부 스케일 B상 결선을 확인한다.
+55,2,Ｚ상 결선 이상 보호,외부 스케일 Ｚ상에 결선 등의 이상이 발생.,외부 스케일 Ｚ상 결선을 확인한다.
+70,0,(U상 전류 검출기 이상),제어 회로가 과대한 노이즈 등으로 오작동함. 서보 앰프의 자기 진단 기능이 작동하고 서보 앰프 내부에 어떤 이상이 발생.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+70,1,(W상 전류 검출기 이상),제어 회로가 과대한 노이즈 등으로 오작동함. 서보 앰프의 자기 진단 기능이 작동하고 서보 앰프 내부에 어떤 이상이 발생.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+70,2,(전류 검출기 설정 이상),제어 회로가 과대한 노이즈 등으로 오작동함. 서보 앰프의 자기 진단 기능이 작동하고 서보 앰프 내부에 어떤 이상이 발생.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+72,0,(서멀 이상),제어 회로가 과대한 노이즈 등으로 오작동함. 서보 앰프의 자기 진단 기능이 작동하고 서보 앰프 내부에 어떤 이상이 발생.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+73,0,(Vdc 검출기 이상),제어 회로가 과대한 노이즈 등으로 오작동함. 서보 앰프의 자기 진단 기능이 작동하고 서보 앰프 내부에 어떤 이상이 발생.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+76,0,(내장 RAM 이상),제어 회로가 과대한 노이즈 등으로 오작동함. 서보 앰프의 자기 진단 기능이 작동하고 서보 앰프 내부에 어떤 이상이 발생.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+76,1,(내장 ROM 이상),제어 회로가 과대한 노이즈 등으로 오작동함. 서보 앰프의 자기 진단 기능이 작동하고 서보 앰프 내부에 어떤 이상이 발생.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+77,0,(스택 영역 이상),제어 회로가 과대한 노이즈 등으로 오작동함. 서보 앰프의 자기 진단 기능이 작동하고 서보 앰프 내부에 어떤 이상이 발생.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+78,0,(인코더 EEPROM 베리파이 이상),제어 회로가 과대한 노이즈 등으로 오작동함. 서보 앰프의 자기 진단 기능이 작동하고 서보 앰프 내부에 어떤 이상이 발생.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+82,0,RTEX 노드 주소 설정 이상 보호,"On power up of the control power, node address setting rotary switch on the servo drive has been set to a value outside the valid value.",Check the setting of the node address setting switch.
+,,,,Set node address setting switch to a value within the range of 0 and 31 and then turn on control power to the servo driver.
+83,0,RTEX 연속 통신 이상 보호 1,An error with the reading data received by a local node continued for a specified period.,Check the communication cable for excessive noise.
+,,,"Note) This alarm assumes an error if CRC error, receiving failure, or cyclic data error occurs.","Check the communication cable for length, layout arrangement and connections."
+,,,,Communication cable must be category 5-e or higher (6 or higher grade is recommended) shielded twisted pair cable (STPC) specified by TIA/EIA-568.
+,,,,"Replace the cable with the one recommended as above, if not a recommended one."
+,,,,Attach the ferrite core to the cable if effective.
+83,1,RTEX 연속 통신 이상 보호 2,Reading error of the data delivered to the local node was continued for predetermined period.,Check the communication cable for excessive noise.
+,,,"Note) This error is set by occurs either for CRC error, received missing and cyclic data error.","Check the communication cable for length, layout arrangement and connections."
+,,,,Communication cable must be category 5-e or higher (6 or higher grade is recommended) shielded twisted pair cable (STPC) specified by TIA/EIA-568.
+,,,,"Replace the cable with the one recommended as above, if not a recommended one."
+,,,,Attach the ferrite core to the cable if effective.
+84,0,RTEX 통신 시간 초과 이상 보호,No communication data was received and no signal to start receive interrupt handling was received from MNM1221 (RTEX communication control ASIC) for a specified period.,Check to see that the cable is disconnected or broken.
+,,,,"Check that the upstream node is ready for transmission (power is ON, not reset)."
+,,,,Make sure that the host device can transmit the signal at the correct timing and speed.
+,,,,The communication cycle set by Pr7.20 (RTEX 통신 사이클 선택) must match the transmission cycle of the host device.
+,,,,Check the communication cable for excessive noise.
+,,,,"Check the communication cable for length, layout arrangement and connections."
+,,,,Communication cable must be category 5-e or higher (6 or higher grade is recommended) shielded twisted pair cable (STPC) specified by TIA/EIA-568.
+,,,,"Replace the cable with the one recommended as above, if not a recommended one."
+,,,,Attach the ferrite core to the cable if effective.
+84,3,RTEX 동기화 및 초기화 이상 보호,Error occurred during communication and servo sync and initialization process.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+84,5,RTEX 통신 사이클 이상 보호,"Although the NMNI221 (RTEX communication control ASIC) output a receive interrupt handling start signal, communication and servo went out of synchronizationdue to an output frequency problem with the signal.",Make sure that the host device can transmit the signal at the correct timing and speed.
+,,,,The communication cycle set by Pr 7.20 (RTEX 통신 사이클 선택) must match the transmission cycle of the host device.
+,,,,Check the communication cable for excessive noise.
+,,,,"Check the communication cable for length, layout arrangement and connections."
+,,,,Communication cable must be category 5-e or higher (6 or higher grade is recommended) shielded twisted pair cable (STPC) specified by TIA/EIA-568.
+,,,,"Replace the cable with the one recommended as above, if not a recommended one."
+,,,,Attach the ferrite core to the cable if effective.
+86,0,RTEX 주기적 데이터 이상 보호 1,"A problem with the data (C/R and MAC-ID) in the cyclic command area, or a problem with the Sub_Chk in 32-byte 86 mode continued for a specified period.",Check the data in the cyclic command field (at location as described on the left column).
+,,,,Check process performed on the host device.
+86,1,RTEX 주기적 데이터 이상 보호 2,A problem with cyclic command code continued for a specified period.,Check the data in the cyclic command field (at location as described on the left column).
+,,,,Check process performed on the host device.
+87,0,강제 알람 입력 보호,강제 알람 입력(E-STOP)이 입력됨.,강제 알람 입력(E-STOP) 배선을 확인한다.
+90,2,RTEX 다축 간 동기화 이상 보호,Communication error occurred or communication was lost during transition to synchronization establishment in full synchronization mode.,Check the communication cable for excessive noise.
+,,,,"Check the communication cable for length, layout arrangement and connections."
+,,,,Communication cable must be category 5-e or higher (6 or higher grade is recommended) shielded twisted pair cable (STPC) specified by TIA/EIA-568.
+,,,,"Replace the cable with the one recommended as above, if not a recommended one."
+,,,,Attach the ferrite core to the cable if effective.
+91,1,RTEX 명령 이상 보호,"Inconsistency in communication frequency, semi-close/full-close, and combination of 16/32 byte mode and control mode.",Check the process of upper device for any problem.
+,,,Control mode was switched at intervals shorter than 2 ms.,
+,,,"Control mode was changed during profile position latch positioning/profile home position return (Type_Code = 12h, 13h, 31h, 32h, 33h).",
+,,,Control mode was changed while non-cyclic command (Busy = 1) was processed.,
+,,,"Home position return command (4h) was executed during profile position latch positioning/profile home position return (Type_Code = 12h, 13h, 31h, 32h, 33h).",
+,,,"Initialization mode (Type_Code = 1??h, 31h) for home position return command (4h) was performed during profile positioning/profile continuous rotation (Type_Code = 10h, 11h, 20h).",
+,,,Type_Code was changed during profile position control (pp).,
+92,0,인코더 데이터 복구 이상 보호,"In the absolute mode with semi-closed control, internal position data has not been correctly initialized.",인코더 전원 전압 DC5V±5%(4.75~5.25V)를 확보한다. 특히 인코더선이 긴 경우 주의하십시오.
+,,,,모터선과 인코더선이 함께 결속되어 있다면 분리한다.
+,,,,인코더의 실드선을 FG에 연결한다.
+92,1,외부 스케일 데이터 복구 이상 보호,"In the absolute mode with full-closed control, internal position data has not been correctly initialized.",외부 스케일의 전원 전압 DC5V±5%(4.75~5.25V)를 확보한다. 특히 외부 스케일 연결 케이블이 긴 경우 주의하십시오.
+,,,,모터선과 외부 스케일 연결 케이블이 함께 결속되어 있다면 분리한다.
+,,,,실드를 FＧ에 연결한다.
+93,0,매개변수 설정 이상 보호 1,Electronic gear ratio exceeds the allowable range.,Check the setting value of the parameter.
+,,,,Electronic gear ratio must be in the range 1/1000 to 1000.
+93,2,매개변수 설정 이상 보호 2,External scale ratio exceeds acceptable range.,Check the setting value of the parameter.
+,,,,External scale ratio must be in the range 1/40 to 160.
+93,3,외부 스케일 접속 이상 보호,The communication type of the connected external scale (serial communication model) does not match the type selected through Pr3.23 '외부 스케일 타입 선택'.,Set Pr3.23 '외부 스케일 타입 선택' to the type of external scale connected.
+93,5,매개변수 설정 이상 보호 4,The combination conditions of Pr7.20 (RTEX 통신 사이클 선택) and Pr7.21 (RTEX command update period) are not met.,Check settings of the parameters.
+,,,,"For correct setting conditions, refer to the technical document, Specification of RTEX communication."
+94,2,원점 복귀 이상 보호,An error with profile home position return occurred.,Check sensor installation status etc. for any problem.
+95,0,모터 자동 인식 이상 보호,모터와 서보 앰프가 매치되지 않음.,취급 설명서에 기재된 서보 앰프와 모터를 올바르게 조합하여 사용한다.
+95,1,모터 자동 인식 이상 보호,모터와 서보 앰프가 매치되지 않음.,취급 설명서에 기재된 서보 앰프와 모터를 올바르게 조합하여 사용한다.
+95,2,모터 자동 인식 이상 보호,모터와 서보 앰프가 매치되지 않음.,취급 설명서에 기재된 서보 앰프와 모터를 올바르게 조합하여 사용한다.
+95,3,모터 자동 인식 이상 보호,모터와 서보 앰프가 매치되지 않음.,취급 설명서에 기재된 서보 앰프와 모터를 올바르게 조합하여 사용한다.
+95,4,모터 자동 인식 이상 보호,모터와 서보 앰프가 매치되지 않음.,취급 설명서에 기재된 서보 앰프와 모터를 올바르게 조합하여 사용한다.
+96,0,(MNM1223 이상),제어 회로가 과대한 노이즈 등으로 오작동함. 서보 앰프의 자기 진단 기능이 작동하고 서보 앰프 내부에 어떤 이상이 발생.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+97,0,(제어 모드 설정 이상),제어 회로가 과대한 노이즈 등으로 오작동함. 서보 앰프의 자기 진단 기능이 작동하고 서보 앰프 내부에 어떤 이상이 발생.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+98,0,(자기 진단 이상),제어 회로가 과대한 노이즈 등으로 오작동함. 서보 앰프의 자기 진단 기능이 작동하고 서보 앰프 내부에 어떤 이상이 발생.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+98,1,RTEX 하드웨어 이상 보호 1,Fault is determined in RTEX communication related peripheral device.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+98,2,RTEX 하드웨어 이상 보호 2,Fault is determined in RTEX communication related peripheral device.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+98,3,RTEX 하드웨어 이상 보호 3,Fault is determined in RTEX communication related peripheral device.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."
+99,0,(기타 이상),제어 회로가 과대한 노이즈 등으로 오작동함. 서보 앰프의 자기 진단 기능이 작동하고 서보 앰프 내부에 어떤 이상이 발생.,"전원을 끄고 다시 켠다. 그래도 표시가 나타나고 에러가 발생하는 경우에는 고장일 가능성이 있습니다. 사용을 중지하고 모터, 서보 앰프를 교환하십시오."

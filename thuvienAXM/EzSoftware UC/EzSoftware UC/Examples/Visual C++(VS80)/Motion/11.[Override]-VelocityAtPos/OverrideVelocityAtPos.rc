@@ -1,0 +1,286 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\OverrideVelocityAtPos.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\OverrideVelocityAtPos.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_OVERRIDEVELOCITYATPOS_DIALOG DIALOGEX 0, 0, 273, 335
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "OverrideVelocityAtPos"
+FONT 9, "±¼¸²"
+BEGIN
+    COMBOBOX        IDC_CBO_SEL_AXIS,78,7,121,325,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Select Axis No : ",IDC_STATIC,13,9,54,11,SS_CENTERIMAGE
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,7,6,259,15
+    PUSHBUTTON      "Load File",IDC_BTN_LOAD_FILE,202,7,58,14
+    GROUPBOX        "Position Monitor",IDC_STATIC,7,27,259,63
+    LTEXT           "Command Position:",IDC_STATIC,13,38,64,14,
+                    SS_CENTERIMAGE
+    LTEXT           "Feedback Position :",IDC_STATIC,13,54,64,14,
+                    SS_CENTERIMAGE
+    RTEXT           "0.000",IDC_STC_CMD_POS,78,38,80,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    RTEXT           "0.000",IDC_STC_ACT_POS,78,54,80,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    PUSHBUTTON      "Position Setting",IDC_BTN_POS_SET,202,54,58,14
+    LTEXT           "Command Velocity:",IDC_STATIC,13,70,64,14,
+                    SS_CENTERIMAGE
+    RTEXT           "0.000",IDC_STC_CMD_VEL,78,70,80,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    LTEXT           "Unit",IDC_STATIC,161,38,36,14,SS_CENTERIMAGE
+    LTEXT           "Unit",IDC_STATIC,161,54,36,14,SS_CENTERIMAGE
+    CONTROL         "Unit/Sec",IDC_STATIC,"Static",SS_SIMPLE | 
+                    SS_CENTERIMAGE | WS_GROUP,161,70,36,14
+    CONTROL         "Servo On",IDC_CHK_SERVO_ON,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,202,70,58,14
+    EDITTEXT        IDC_EDT_SET_POS,202,38,58,14,ES_RIGHT | ES_AUTOHSCROLL
+    GROUPBOX        "< Override Velocity At Position >",IDC_STATIC,7,95,259,
+                    233
+    LTEXT           "Target Position     :",IDC_STATIC,13,121,64,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MOVE_POS,78,121,80,14,ES_RIGHT | ES_AUTOHSCROLL
+    PUSHBUTTON      "Override At Pos",IDC_BTN_OVER_VEL_AT_POS,202,137,58,46
+    LTEXT           "Move Velocity      :",IDC_STATIC,13,137,64,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MOVE_VEL,78,137,80,14,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "Move Acceleration:",IDC_STATIC,13,153,64,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MOVE_ACC,78,153,80,14,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "Move Deceleration:",IDC_STATIC,13,169,64,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MOVE_DEC,78,169,80,14,ES_RIGHT | ES_AUTOHSCROLL
+    PUSHBUTTON      "Move Stop",IDC_BTN_STOP,202,185,58,28
+    LTEXT           "Unit/Sec",IDC_STATIC,161,137,36,14,SS_CENTERIMAGE
+    CONTROL         "Unit/Sec^2",IDC_STATIC,"Static",SS_SIMPLE | 
+                    SS_CENTERIMAGE | WS_GROUP,161,153,36,14
+    LTEXT           "Unit",IDC_STATIC,161,121,36,14,SS_CENTERIMAGE
+    CONTROL         "Unit/Sec^2",IDC_STATIC,"Static",SS_SIMPLE | 
+                    SS_CENTERIMAGE | WS_GROUP,161,169,36,14
+    LTEXT           "Compare Target   :",IDC_STATIC,13,217,64,14,
+                    SS_CENTERIMAGE
+    COMBOBOX        IDC_CBO_CAMP_TARGET,78,217,121,83,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Override Mode     :",IDC_STATIC,13,238,62,14,
+                    SS_CENTERIMAGE
+    COMBOBOX        IDC_CBO_OVER_MODE,78,238,121,75,CBS_DROPDOWNLIST | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Override Position  :",IDC_STATIC,13,185,64,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_OVER_POS,78,185,80,14,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_OVER_VEL,78,201,80,14,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "Override Velocity  :",IDC_STATIC,13,201,64,14,
+                    SS_CENTERIMAGE
+    LTEXT           "Unit/Sec",IDC_STATIC,161,201,36,14,SS_CENTERIMAGE
+    LTEXT           "Unit",IDC_STATIC,161,185,36,14,SS_CENTERIMAGE
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,78,233,121,2
+    LISTBOX         IDC_LST_OVER_DATA,78,254,121,47,LBS_NOINTEGRALHEIGHT | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP,WS_EX_RIGHT
+    LTEXT           "Multi List(Pos,Vel):",IDC_STATIC,13,254,63,14,
+                    SS_CENTERIMAGE
+    LTEXT           "Override (Pos:Vel):",IDC_STATIC,13,308,62,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_OVER_POS_ADD,78,308,58,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_EDT_OVER_VEL_ADD,141,308,58,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL | WS_DISABLED
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,13,303,247,2
+    PUSHBUTTON      "All Clear Item",IDC_BTN_OVER_DATA_CLR,202,286,58,14,
+                    WS_DISABLED
+    CONTROL         "Override Vel At Multi Pos Use",IDC_CHK_OVER_MULTI,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,78,109,106,8
+    PUSHBUTTON      "Multi At Pos",IDC_BTN_OVER_VEL_AT_MPOS,202,217,58,65,
+                    WS_DISABLED
+    PUSHBUTTON      "<< Add Item   ",IDC_BTN_OVER_DATA_ADD,202,308,58,14,
+                    WS_DISABLED
+    CONTROL         "[00] Absolute",IDC_RDO_ABS,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,202,109,57,10
+    CONTROL         "[01] Relative",IDC_RDO_REL,"Button",BS_AUTORADIOBUTTON,
+                    202,121,57,10
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204b0"
+        BEGIN
+            VALUE "Comments", "(2011.03.28 compiled r1.0) for EzSoftwareRM\0"
+            VALUE "CompanyName", "Ajinextek\0"
+            VALUE "FileDescription", "OverrideVelocityAtPos Example\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "OverrideVelocityAtPos\0"
+            VALUE "LegalCopyright", "Copyright (C) 2011 AJINEXTEK Co,. LTD.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "OverrideVelocityAtPos.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "OverrideVelocityAtPos\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_OVERRIDEVELOCITYATPOS_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 266
+        VERTGUIDE, 13
+        VERTGUIDE, 260
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 328
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_OVERRIDEVELOCITYATPOS_DIALOG DLGINIT
+BEGIN
+    IDC_CBO_CAMP_TARGET, 0x403, 12, 0
+0x3030, 0x203a, 0x4f43, 0x4d4d, 0x4e41, 0x0044, 
+    IDC_CBO_CAMP_TARGET, 0x403, 11, 0
+0x3130, 0x203a, 0x4341, 0x5554, 0x4c41, "\000" 
+    IDC_CBO_OVER_MODE, 0x403, 23, 0
+0x3030, 0x203a, 0x564f, 0x5245, 0x4952, 0x4544, 0x505f, 0x534f, 0x535f, 
+0x4154, 0x5452, "\000" 
+    IDC_CBO_OVER_MODE, 0x403, 21, 0
+0x3130, 0x203a, 0x564f, 0x5245, 0x4952, 0x4544, 0x505f, 0x534f, 0x455f, 
+0x444e, "\000" 
+    0
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\OverrideVelocityAtPos.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,284 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\StatusMonitor.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\StatusMonitor.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_STATUSMONITOR_DIALOG DIALOGEX 0, 0, 273, 335
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "StatusMonitor"
+FONT 9, "±¼¸²"
+BEGIN
+    COMBOBOX        IDC_CBO_SEL_AXIS,68,7,132,325,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Select Axis No : ",IDC_STATIC,13,9,54,11,SS_CENTERIMAGE
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,7,6,259,15
+    GROUPBOX        "Mechanical Status",IDC_STATIC,7,28,259,105
+    CHECKBOX        "",IDC_CHK_MECH_BIT_00,13,40,16,8,WS_DISABLED | NOT 
+                    WS_TABSTOP
+    CHECKBOX        "",IDC_CHK_MECH_BIT_01,13,53,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_MECH_BIT_04,13,66,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_MECH_BIT_05,13,79,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_MECH_BIT_06,13,92,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_MECH_BIT_07,13,105,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_MECH_BIT_08,13,118,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_MECH_BIT_09,139,40,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_MECH_BIT_10,139,53,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_MECH_BIT_11,139,66,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_MECH_BIT_12,139,79,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_MECH_BIT_13,139,92,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_MECH_BIT_14,139,105,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_MECH_BIT_17,139,118,16,8,WS_DISABLED
+    GROUPBOX        "Motion End Status",IDC_STATIC,7,137,259,106
+    CHECKBOX        "",IDC_CHK_END_BIT_00,13,149,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_END_BIT_01,13,162,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_END_BIT_04,13,175,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_END_BIT_05,13,188,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_END_BIT_06,13,201,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_END_BIT_07,13,214,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_END_BIT_08,13,227,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_END_BIT_09,139,149,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_END_BIT_10,139,162,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_END_BIT_11,139,175,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_END_BIT_15,139,188,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_END_BIT_28,139,201,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_END_BIT_30,139,214,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_END_BIT_31,139,227,16,8,WS_DISABLED
+    GROUPBOX        "Drive Status",IDC_STATIC,7,248,259,80
+    CHECKBOX        "",IDC_CHK_DRIVE_BIT_00,13,259,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_DRIVE_BIT_01,13,272,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_DRIVE_BIT_02,13,285,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_DRIVE_BIT_03,13,298,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_DRIVE_BIT_04,13,312,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_DRIVE_BIT_05,139,259,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_DRIVE_BIT_06,139,272,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_DRIVE_BIT_07,139,285,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_DRIVE_BIT_10,139,298,16,8,WS_DISABLED
+    CHECKBOX        "",IDC_CHK_DRIVE_BIT_11,139,312,16,8,WS_DISABLED
+    PUSHBUTTON      "Load File",IDC_BTN_LOAD_FILE,202,7,58,14
+    LTEXT           "Bit 00: Positive End Limit State",IDC_STATIC,24,40,104,
+                    8
+    LTEXT           "Bit 01: Negative End Limit State",IDC_STATIC,24,53,102,
+                    8
+    LTEXT           "Bit 04: Alarm Signal State",IDC_STATIC,24,66,82,8
+    LTEXT           "Bit 05: Inposition Signal State",IDC_STATIC,24,79,94,8
+    LTEXT           "Bit 06: Emergency Signal State",IDC_STATIC,24,92,100,8
+    LTEXT           "Bit 07: Home Signal State",IDC_STATIC,24,105,82,8
+    LTEXT           "Bit 08: Z Phase Signal State",IDC_STATIC,24,118,91,8
+    LTEXT           "Bit 09: Encoder Up Signal State",IDC_STATIC,150,40,101,
+                    8
+    LTEXT           "Bit 10: Encoder Dn Signal State",IDC_STATIC,150,53,101,
+                    8
+    LTEXT           "Bit 11: EXPP(MPG) Signal State",IDC_STATIC,150,66,103,8
+    LTEXT           "Bit 12: EXMP(MPG) Signal State",IDC_STATIC,150,79,105,8
+    LTEXT           "Bit 13: SQSTR 1 Signal State",IDC_STATIC,150,92,92,8
+    LTEXT           "Bit 14: SQSTR 2 Signal State",IDC_STATIC,150,105,92,8
+    LTEXT           "Bit 17: MODE Signal State",IDC_STATIC,150,118,84,8
+    LTEXT           "Bit 00: Exit by positive end limit",IDC_STATIC,24,150,
+                    102,8
+    LTEXT           "Bit 01: Exit by negative end limit",IDC_STATIC,24,163,
+                    104,8
+    LTEXT           "Bit 04: Exit by positive SW E-Stop",IDC_STATIC,24,176,
+                    109,8
+    LTEXT           "Bit 05: Exit by negative SW E-Stop",IDC_STATIC,24,189,
+                    111,8
+    LTEXT           "Bit 06: Exit by positive SW S-Stop",IDC_STATIC,24,202,
+                    109,8
+    LTEXT           "Bit 07: Exit by negative SW S-Stop",IDC_STATIC,24,215,
+                    111,8
+    LTEXT           "Bit 08: Exit by servo alarm signal",IDC_STATIC,24,228,
+                    107,8
+    LTEXT           "Bit 09: Exit by emergency signal",IDC_STATIC,150,150,
+                    106,8
+    LTEXT           "Bit 10: Exit by EMG stop CMD",IDC_STATIC,150,163,98,8
+    LTEXT           "Bit 11: Exit by slow stop CMD",IDC_STATIC,150,176,97,8
+    LTEXT           "Bit 15: Encoder input error",IDC_STATIC,150,189,84,8
+    LTEXT           "Bit 28: Current/Last move direction",IDC_STATIC,150,202,
+                    113,8
+    LTEXT           "Bit 30: Abnormal drive stop",IDC_STATIC,150,215,87,8
+    LTEXT           "Bit 31: Interpolation data error ",IDC_STATIC,150,228,
+                    97,8
+    LTEXT           "Bit 00: BUSY (In drive move)",IDC_STATIC,24,260,92,8
+    LTEXT           "Bit 01: DOWN (In deceleration)",IDC_STATIC,24,273,99,8
+    LTEXT           "Bit 02: CONST (In constant speed)",IDC_STATIC,24,286,
+                    113,8
+    LTEXT           "Bit 03: UP (in acceleration)",IDC_STATIC,24,299,87,8
+    LTEXT           "Bit 04: In move of continuous drive",IDC_STATIC,24,313,
+                    112,8
+    LTEXT           "Bit 05: In move of assigned drive",IDC_STATIC,150,260,
+                    106,8
+    LTEXT           "Bit 06: In move of MPG drive",IDC_STATIC,150,273,92,8
+    LTEXT           "Bit 07: In move of home drive",IDC_STATIC,150,286,95,8
+    LTEXT           "Bit 10: In move of slave drive",IDC_STATIC,150,299,94,8
+    LTEXT           "Bit 11: Direction of motor drive",IDC_STATIC,150,313,97,
+                    8
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204b0"
+        BEGIN
+            VALUE "Comments", "(2011.03.28 compiled r1.0) for EzSoftwareRM\0"
+            VALUE "CompanyName", "Ajinextek\0"
+            VALUE "FileDescription", "StatusMonitor Example\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "StatusMonitor\0"
+            VALUE "LegalCopyright", "Copyright (C) 2011 AJINEXTEK Co,. LTD.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "StatusMonitor.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "StatusMonitor\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_STATUSMONITOR_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 266
+        VERTGUIDE, 13
+        VERTGUIDE, 24
+        VERTGUIDE, 139
+        VERTGUIDE, 150
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 328
+        HORZGUIDE, 42
+        HORZGUIDE, 259
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\StatusMonitor.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,15 @@
+# Warning No. (Hex),Name,Cause,Treatment
+00,Normal,Normal,Normal
+A0,Over-load warning,Load factor is 85% or more the protection level.,Check the load factor. Set up longer acceleration/deceleration time. Lower the load.
+A1,Over-regeneration warning,Regenerative load factor is 85% or more the protection level.,Check the regeneration load factor. Set up longer acceleration/deceleration time. Lower the load.
+A3,Fan warning,Fan has stopped for 1 sec.,Check the turn of the fan. Replace the fan.
+A6,Oscillation detection warning,Oscillation or vibration is detected.,Make a gain adjustment.
+A7,Lifetime warning,Life expectancy of capacity or fan becomes short.,Replace the driver.
+A8,Feedback scale warning,The feedback scale has detected the warning.,Replace the external feedback device.
+A9,Feedback scale communication warning,The number of successive feedback scale communication errors has exceed the specified value.,Examine the possibility of the noise.
+AC,Deterioration diagnosis warning,Load characteristic estimates and torque command under constant speed has exceeded the set range.,Replace the driver.
+C0,RTEX continuous error warning,The No. of detected continuous reading errors (CRC error) of the data delivered to the local node reaches the number specified by Pr7.26 (RTEX continuous error warning setup) warning setting.,Check the setup value of Pr7.26. Check the connection of connector. Replace the cable.
+C1,RTEX accumulated error warning,The accumulated number of detected reading errors (CRC error) of the data delivered to the local node reaches the number specified by Pr7.27 (RTEX accumulated error warning setup) warning setting.,Check the setup value of Pr7.27. Check the connection of connector. Replace the cable.
+C2,RTEX_Update_Counter error warning,"Accumulated amount exceeded the times specified by Pr7.28 (RTEX_Update_Counter error warning setup), so that Update_Counter was not updated.",Check the setup value of Pr7.28. In the host controller to verify that the RTEX_Update_Counter is incremented successful.
+C3,Main power off warning,"When setting of Pr7.14 (Main power off warning detection time) is 10 - 1999, instantaneous power interruption occurs between L1 and L3 and lasts for a time longer than the setting of Pr7.14.","Check the setting. Measure connector (L1, L2, and L3) line voltages. Correctly connect each phase of the power supply (L1, L2, and L3). Replace the driver."
+D2,PANATERM command execution warning,"When bit0 of Pr7.99 (RTEX function extended setup 6) is 1 RTEX communication was established, the operation command (such as test run and FFT) by setup support software (PANATERM) was executed.","Check the setup value of Pr7.99. Check the operation command (Test run, FFT, Z-phase search, Pin assign) by USB communication."

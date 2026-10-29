@@ -1,0 +1,65 @@
+#Pin No.,Signal type,Assign change right or wrong,combination pin number,contact,Signal code of Position control,Signal name of Position control,Signal code of Velocity control,Signal name of Velocity control,Signal code of Thrust control,Signal name of Thrust control,Signal code of Full-closed control,Signal name of Full-closed control
+1,LI,NG,,,EX-SON,External servo on input,EX-SON,External servo on input,EX-SON,External servo on input,EX-SON,External servo on input
+2,LI,NG,,,,,,,,,,
+3,LI,NG,,,NOT,Negative direction over-travel inhibition input,NOT,Negative direction over-travel inhibition input,NOT,Negative direction over-travel inhibition input,NOT,Negative direction over-travel inhibition input
+4,LI,NG,,,POT,Positive direction over-travel inhibition input,POT,Positive direction over-travel inhibition input,POT,Positive direction over-travel inhibition input,POT,Positive direction over-travel inhibition input
+5,LI,NG,,,,,,,,,,
+6,LI,NG,,,,,,,,,,
+7,LI,NG,,,,,,,,,,
+8,LI,NG,,,E-STOP,Forced alarm input,E-STOP,Forced alarm input,E-STOP,Forced alarm input,E-STOP,Forced alarm input
+9,LI,NG,,,,,,,,,,
+10,LI,NG,,,,,,,,,,
+11,LI,NG,,,,,,,,,,
+12,LI,NG,,,,,,,,,,
+13,LI,NG,,,,,,,,,,
+14,LI,NG,,,,,,,,,,
+15,LI,NG,,,,,,,,,,
+16,LI,NG,,,,,,,,,,
+17,LI,NG,,,,,,,,,,
+18,LI,NG,,,,,,,,,,
+19,LI,NG,,,,,,,,,,
+20,LI,NG,,,,,,,,,,
+21,LI,NG,,,,,,,,,,
+22,LI,NG,,,,,,,,,,
+23,LI,NG,,,,,,,,,,
+24,LI,NG,,,,,,,,,,
+25,LI,NG,,,,,,,,,,
+26,LI,NG,,,,,,,,,,
+27,LI,NG,,,,,,,,,,
+28,LI,NG,,,SF1,Safety input 1,SF1,Safety input 1,SF1,Safety input 1,SF1,Safety input 1
+29,LI,NG,,,SF2,Safety input 2,SF2,Safety input 2,SF2,Safety input 2,SF2,Safety input 2
+30,LI,NG,,,,,,,,,,
+31,LI,NG,,,,,,,,,,
+32,LI,NG,,,,,,,,,,
+33,LO,NG,,,S-RDY,Servo-Ready output,S-RDY,Servo-Ready output,S-RDY,Servo-Ready output,S-RDY,Servo-Ready output
+34,LO,NG,,,ALM,Servo-Alarm output,ALM,Servo-Alarm output,ALM,Servo-Alarm output,ALM,Servo-Alarm output
+35,LO,NG,,,INP,Positioning complete,,,,,INP,Positioning complete
+36,LO,NG,,,BRK-OFF,External brake release signal,BRK-OFF,External brake release signal,BRK-OFF,External brake release signal,BRK-OFF,External brake release signal
+37,LO,NG,,,ZSP,Zero-speed detection output signal,ZSP,Zero-speed detection output signal,ZSP,Zero-speed detection output signal,ZSP,Zero-speed detection output signal
+38,LO,NG,,,TLC,Thrust in-limit signal output,TLC,Thrust in-limit signal output,TLC,Thrust in-limit signal output,TLC,Thrust in-limit signal output
+39,LO,NG,,,,,V-COIN,Speed coincidence output,V-COIN,Speed coincidence output,,
+40,LO,NG,,,CS-CMP,Magnet pole position estimation completion output ,CS-CMP,Magnet pole position estimation completion output ,CS-CMP,Magnet pole position estimation completion output ,,
+41,LO,NG,,,,,,,,,,
+42,LO,NG,,,,,AT-SPEED,Speed arrival output,AT-SPEED,Speed arrival output,,
+43,LO,NG,,,,,,,,,EX_COIN,Full-closed positioning complete output
+44,LO,NG,,,REGBON,Over-regeneration Tr on output,REGBON,Over-regeneration Tr on output,REGBON,Over-regeneration Tr on output,REGBON,Over-regeneration Tr on output
+45,LO,NG,,,RYON,Rush current preventive relay on output,RYON,Rush current preventive relay on output,RYON,Rush current preventive relay on output,RYON,Rush current preventive relay on output
+46,LO,NG,,,DBRK,Dynamic brake output,DBRK,Dynamic brake output,DBRK,Dynamic brake output,DBRK,Dynamic brake output
+47,LO,NG,,,SRST,Power latch reset output,SRST,Power latch reset output,SRST,Power latch reset output,SRST,Power latch reset output
+48,LO,NG,,,FREE,Servo-Free output,FREE,Servo-Free output,FREE,Servo-Free output,FREE,Servo-Free output
+49,LO,NG,,,WARN1,Alarm output 1,WARN1,Alarm output 1,WARN1,Alarm output 1,WARN1,Alarm output 1
+50,LO,NG,,,WARN2,Alarm output 2,WARN2,Alarm output 2,WARN2,Alarm output 2,WARN2,Alarm output 2
+51,LO,NG,,,P-CMD,Positional command ON/OFF output,,,,,P-CMD,Positional command ON/OFF output
+52,LO,NG,,,INP2,Positioning complete 2,,,,,INP2,Positioning complete 2
+53,LO,NG,,,,,,,V-LIMIT,Speed in-limit output,,
+54,LO,NG,,,ALM-ATB,Alarm attribute output,ALM-ATB,Alarm attribute output,ALM-ATB,Alarm attribute output,ALM-ATB,Alarm attribute output
+55,LO,NG,,,,,V-CMD,Speed command ON/OFF output,,,,
+56,LO,NG,,,O-EDM,Safety EDM output,O-EDM,Safety EDM output,O-EDM,Safety EDM output,O-EDM,Safety EDM output
+57,LO,NG,,,,,,,,,,
+58,LO,NG,,,,,,,,,,
+59,LO,NG,,,,,,,,,,
+60,LO,NG,,,,,,,,,,
+61,LO,NG,,,,,,,,,,
+62,LO,NG,,,,,,,,,,
+63,LO,NG,,,,,,,,,,
+64,LO,NG,,,,,,,,,,

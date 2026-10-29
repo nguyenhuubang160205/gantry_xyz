@@ -1,0 +1,2 @@
+note)
+You have to make sure that the connection map correctly follows the direction of servo (step) deivers maker.

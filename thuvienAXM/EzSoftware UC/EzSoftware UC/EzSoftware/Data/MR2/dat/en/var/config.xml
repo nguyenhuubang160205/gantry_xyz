@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Root>
+	<Config>
+		<BackGroundColor>0</BackGroundColor>
+		<GridColor>34816</GridColor>
+		<AnalyzerBackGroundColor>0</AnalyzerBackGroundColor>
+		<AnalyzerGridColor>6710886</AnalyzerGridColor>
+		<ClampColor>255</ClampColor>
+		<MonitorDisplayFontSize>10</MonitorDisplayFontSize>
+		<MonitorDisplayRowHight>15</MonitorDisplayRowHight>
+		<WorkspacePath/>
+		<InvokeWorkspaceHome/>
+		<InvokeWorkspaceName/>
+		<InvokeProjectName/>
+		<InvokeProjectPath>C:\Users\Poby\Documents\aaa.ezmr</InvokeProjectPath>
+		<InvokeProjectFormat>0</InvokeProjectFormat>
+		<SetupInfo>
+			<ampType>MR-J4-B</ampType>
+			<optionUnit>No Connection</optionUnit>
+			<channel>00</channel>
+			<connection>USB</connection>
+			<baudRate>AUTO</baudRate>
+			<serialPort>AUTO</serialPort>
+			<hasChannelCheck>true</hasChannelCheck>
+			<hasParityCheck>true</hasParityCheck>
+			<isSettingAuto>false</isSettingAuto>
+			<isMulti-ax>false</isMulti-ax>
+		</SetupInfo>
+		<SecretFunctionConfig/>
+		<GraphCursorMode>0</GraphCursorMode>
+		<SaveGraphHistory>true</SaveGraphHistory>
+		<SaveAnalyzerHistory>true</SaveAnalyzerHistory>
+	</Config>
+</Root>

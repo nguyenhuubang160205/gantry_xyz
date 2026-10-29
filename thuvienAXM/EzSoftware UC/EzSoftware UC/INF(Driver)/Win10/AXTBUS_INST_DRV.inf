@@ -1,0 +1,477 @@
+[Version]
+Signature           = $Windows NT$
+Provider            = "AJINEXTEK Co.,Ltd."
+Class               = AJINEXTEK
+ClassGuid           = {cfb15040-5bc7-11d3-b194-0060b0efd4ab}
+CatalogFile         = axtbus_inst_drv.cat
+CatalogFile.NTamd64 = axtbus_inst_drv64.cat
+DriverVer	    = 03/09/2021, 7.25.1.0
+DriverPackageType   = PlugAndPlay
+
+[Manufacturer]
+%AXT% = AXTList, NTamd64
+
+[ClassInstall32]
+Addreg=AddHwClass
+
+[AddHwClass]
+HKR,,,,%ClassName%
+HKR,,Icon,,"-5"
+
+;-----------------------------------------------------------
+; Device identification for 32-bit Windows
+;-----------------------------------------------------------
+[AXTList]
+%DeviceDescBasePCIeMotion%     = DDInstall_PCIe,          PCI\VEN_1C34&DEV_9056&SUBSYS_00865977
+%DeviceDescBasePCIe%  	       = DDInstall_PCIe,          PCI\VEN_1C34&DEV_9056&SUBSYS_00095977
+%DeviceDescBasePCIe%  	       = DDInstall_PCIe,          PCI\VEN_1C34&DEV_9056&SUBSYS_000A5977
+%DeviceDescBasePCIe%  	       = DDInstall_PCIe,          PCI\VEN_10b5&DEV_9056&SUBSYS_000A5977
+%DeviceDescBasePCIeDIOE%       = DDInstall_PCIe,          PCI\VEN_1C34&DEV_9056&SUBSYS_000B5977
+%DeviceDescBasePCIeDIO%        = DDInstall_PCIe,          PCI\VEN_1C34&DEV_9056&SUBSYS_00445977
+%DeviceDescBasePCIeDIO%        = DDInstall_PCIe,          PCI\VEN_1C34&DEV_9056&SUBSYS_00545977
+%DeviceDescBasePCIeDIO%        = DDInstall_PCIe,          PCI\VEN_1C34&DEV_9056&SUBSYS_00645977
+%DeviceDescBase%               = DDInstall_R1604,         PCI\VEN_10b5&DEV_9030&SUBSYS_00035977
+%DeviceDescBase%               = DDInstall_R1604,         PCI\VEN_1c34&DEV_9030&SUBSYS_00035977
+%DeviceDescBase%               = DDInstall_R1604,         PCI\VEN_10b5&DEV_9030&SUBSYS_00045977
+%DeviceDescBase%               = DDInstall_R1604,         PCI\VEN_1c34&DEV_9030&SUBSYS_00045977
+%DeviceDescRtex%               = DDInstall_R1604,         PCI\VEN_10b5&DEV_9030&SUBSYS_00C15977
+%DeviceDescRtexPCIe%           = DDInstall_PCIe,          PCI\VEN_1C34&DEV_9056&SUBSYS_00CC5977
+%DeviceDescRtexPCIe%           = DDInstall_PCIe,          PCI\VEN_1C34&DEV_9056&SUBSYS_00CD5977
+%DeviceDescRtexPCIe%           = DDInstall_PCIe,          PCI\VEN_1C34&DEV_9056&SUBSYS_00CE5977
+%DeviceDescRtexPCIe%           = DDInstall_PCIe,          PCI\VEN_1C34&DEV_9056&SUBSYS_00CF5977
+%DeviceDescMLII%               = DDInstall_R1604,         PCI\VEN_10b5&DEV_9030&SUBSYS_00C55977
+%DeviceDescMLIIIPCI%           = DDInstall_R1604,         PCI\VEN_10b5&DEV_9030&SUBSYS_00C75977
+%DeviceDescMLIIIIOPCI%         = DDInstall_R1604,         PCI\VEN_10b5&DEV_9030&SUBSYS_00D45977
+%DeviceDescMLIIIPCIe%          = DDInstall_PCIe,          PCI\VEN_1C34&DEV_9056&SUBSYS_00C85977
+%DeviceDescSIIIH%              = DDInstall_R1604,         PCI\VEN_1c34&DEV_9030&SUBSYS_00CA5977
+%DeviceDescBase%               = DDInstall_AXTPCIB,       PCI\VEN_10b5&DEV_9050&SUBSYS_00035977
+%DeviceDescBase%               = DDInstall_AXTPCIB,       PCI\VEN_10b5&DEV_9050&SUBSYS_00045977
+%DeviceDescBase%               = DDInstall_AXTPCIB,       PCI\VEN_1C34&DEV_9050&SUBSYS_00035977
+%DeviceDescBase%               = DDInstall_AXTPCIB,       PCI\VEN_1C34&DEV_9050&SUBSYS_00045977
+%DeviceDescBaseDio%            = DDInstall_AXTPCIB,       PCI\VEN_10b5&DEV_9050&SUBSYS_00435977
+%DeviceDescBaseDio%            = DDInstall_AXTPCIB,       PCI\VEN_10b5&DEV_9050&SUBSYS_00535977
+%DeviceDescBaseDio%            = DDInstall_AXTPCIB,       PCI\VEN_10b5&DEV_9050&SUBSYS_00635977
+%DeviceDescBaseDioE%           = DDInstall_AXTPCIB,       PCI\VEN_10b5&DEV_9050&SUBSYS_00835977
+%DeviceDescBaseMotion%         = DDInstall_AXTPCIB,       PCI\VEN_1c34&DEV_9050&SUBSYS_00825977
+%DeviceDescBaseMotion%         = DDInstall_AXTPCIB,       PCI\VEN_1c34&DEV_9050&SUBSYS_00845977
+%DeviceDescBaseMotion%         = DDInstall_AXTPCIB,       PCI\VEN_10b5&DEV_9050&SUBSYS_00845977
+%DeviceDescBaseMotion%         = DDInstall_AXTPCIB,       PCI\VEN_10b5&DEV_9050&SUBSYS_00855977
+%DeviceDescBaseAio%            = DDInstall_AXTPCIB,       PCI\VEN_10b5&DEV_9050&SUBSYS_00935977
+%DeviceDescBaseRtexIo%         = DDInstall_R32IORtex,     PCI\VEN_104c&DEV_A106&SUBSYS_00000000
+%DeviceDescSIIIHPCIe%          = DDInstall_R32xxSIIIH,    PCI\VEN_1C34&DEV_6674&SUBSYS_00D05977
+%DeviceDescSIIIHPCIeADV%       = DDInstall_R32xxSIIIH,    PCI\VEN_1C34&DEV_6674&SUBSYS_00D15977
+%DeviceDescMLIIIPCIeSMP%       = DDInstall_R32xxSIIIH,    PCI\VEN_1C34&DEV_6674&SUBSYS_00D55977
+%DeviceDescSIIIHPCIeSMP%       = DDInstall_R32xxSIIIH,    PCI\VEN_1C34&DEV_6674&SUBSYS_00D65977
+%DeviceDescRTEXPCIeSMP%        = DDInstall_R32xxSIIIH,    PCI\VEN_1C34&DEV_6674&SUBSYS_00D75977
+%DeviceDescECATPCIeSMP%        = DDInstall_R32xxSIIIH,    PCI\VEN_1C34&DEV_6674&SUBSYS_00D85977
+%DeviceDescMLIIIPCISMP%        = DDInstall_R32xxSIIIH,    PCI\VEN_1C34&DEV_6674&SUBSYS_00D95977
+%DeviceDescSIIIHPCISMP%        = DDInstall_R32xxSIIIH,    PCI\VEN_1C34&DEV_6674&SUBSYS_00DA5977
+%DeviceDescRTEXPCISMP%         = DDInstall_R32xxSIIIH,    PCI\VEN_1C34&DEV_6674&SUBSYS_00DB5977
+%DeviceDescECATPCISMP%         = DDInstall_R32xxSIIIH,    PCI\VEN_1C34&DEV_6674&SUBSYS_00DC5977
+%DeviceDescBasePCIeL%  	       = DDInstall_AXTEC30,       PCI\VEN_1C34&DEV_EC30&SUBSYS_00095977
+%DeviceDescBasePCIeL%  	       = DDInstall_AXTEC30,       PCI\VEN_1C34&DEV_EC30&SUBSYS_000A5977
+%DeviceDescBasePCIeDIOEL%      = DDInstall_AXTEC30,       PCI\VEN_1C34&DEV_EC30&SUBSYS_000B5977
+%DeviceDescBasePCIeDIOL%       = DDInstall_AXTEC30,       PCI\VEN_1C34&DEV_EC30&SUBSYS_00445977
+%DeviceDescBasePCIeDIOL%       = DDInstall_AXTEC30,       PCI\VEN_1C34&DEV_EC30&SUBSYS_00545977
+%DeviceDescBasePCIeDIOL%       = DDInstall_AXTEC30,       PCI\VEN_1C34&DEV_EC30&SUBSYS_00645977
+%DeviceDescBasePCIeMotionL%    = DDInstall_AXTEC30,       PCI\VEN_1C34&DEV_EC30&SUBSYS_00865977
+%DeviceDescBasePCIeMotionL%    = DDInstall_AXTEC30,       PCI\VEN_1C34&DEV_EC30&SUBSYS_00875977
+%DeviceDescBasePCIeLLP%	       = DDInstall_AXTEC30,    	  PCI\VEN_1C34&DEV_EC30&SUBSYS_10095977
+
+;-----------------------------------------------------------
+; Device identification for 64-bit Windows
+;-----------------------------------------------------------
+[AXTList.NTamd64]
+%DeviceDescBasePCIeMotion64%   = DDInstall_PCIe_64,       PCI\VEN_1C34&DEV_9056&SUBSYS_00865977
+%DeviceDescBasePCIe64%         = DDInstall_PCIe_64,       PCI\VEN_1C34&DEV_9056&SUBSYS_00095977
+%DeviceDescBasePCIe64%         = DDInstall_PCIe_64,       PCI\VEN_10b5&DEV_9056&SUBSYS_000A5977
+%DeviceDescBasePCIe64%         = DDInstall_PCIe_64,       PCI\VEN_1C34&DEV_9056&SUBSYS_000A5977
+%DeviceDescBasePCIeDIOE64%     = DDInstall_PCIe_64,       PCI\VEN_1C34&DEV_9056&SUBSYS_000B5977
+%DeviceDescBasePCIeDIO64%      = DDInstall_PCIe_64,       PCI\VEN_1C34&DEV_9056&SUBSYS_00445977
+%DeviceDescBasePCIeDIO64%      = DDInstall_PCIe_64,       PCI\VEN_1C34&DEV_9056&SUBSYS_00545977
+%DeviceDescBasePCIeDIO64%      = DDInstall_PCIe_64,       PCI\VEN_1C34&DEV_9056&SUBSYS_00645977
+%DeviceDescBase64%             = DDInstall_R1604_64,      PCI\VEN_10b5&DEV_9030&SUBSYS_00035977
+%DeviceDescBase64%             = DDInstall_R1604_64,      PCI\VEN_1c34&DEV_9030&SUBSYS_00035977
+%DeviceDescBase64%             = DDInstall_R1604_64,      PCI\VEN_10b5&DEV_9030&SUBSYS_00045977
+%DeviceDescBase64%             = DDInstall_R1604_64,      PCI\VEN_1c34&DEV_9030&SUBSYS_00045977
+%DeviceDescRtex64%             = DDInstall_R1604_64,      PCI\VEN_10b5&DEV_9030&SUBSYS_00C15977
+%DeviceDescRtexPCIe64%         = DDInstall_PCIe_64,       PCI\VEN_1C34&DEV_9056&SUBSYS_00CC5977
+%DeviceDescRtexPCIe64%         = DDInstall_PCIe_64,       PCI\VEN_1C34&DEV_9056&SUBSYS_00CD5977
+%DeviceDescRtexPCIe64%         = DDInstall_PCIe_64,       PCI\VEN_1C34&DEV_9056&SUBSYS_00CE5977
+%DeviceDescRtexPCIe64%         = DDInstall_PCIe_64,       PCI\VEN_1C34&DEV_9056&SUBSYS_00CF5977
+%DeviceDescMLII64%             = DDInstall_R1604_64,      PCI\VEN_10b5&DEV_9030&SUBSYS_00C55977
+%DeviceDescMLIIIPCI64%         = DDInstall_R1604_64,      PCI\VEN_10b5&DEV_9030&SUBSYS_00C75977
+%DeviceDescMLIIIIOPCI64%       = DDInstall_R1604_64,      PCI\VEN_10b5&DEV_9030&SUBSYS_00D45977
+%DeviceDescMLIIIPCIe64%        = DDInstall_PCIe_64,       PCI\VEN_1C34&DEV_9056&SUBSYS_00C85977
+%DeviceDescSIIIH64%            = DDInstall_R1604_64,      PCI\VEN_1c34&DEV_9030&SUBSYS_00CA5977
+%DeviceDescBase64%             = DDInstall_AXTPCIB_64,    PCI\VEN_10b5&DEV_9050&SUBSYS_00035977
+%DeviceDescBase64%             = DDInstall_AXTPCIB_64,    PCI\VEN_10b5&DEV_9050&SUBSYS_00045977
+%DeviceDescBase64%             = DDInstall_AXTPCIB_64,    PCI\VEN_1C34&DEV_9050&SUBSYS_00035977
+%DeviceDescBase64%             = DDInstall_AXTPCIB_64,    PCI\VEN_1C34&DEV_9050&SUBSYS_00045977
+%DeviceDescBaseDio64%          = DDInstall_AXTPCIB_64,    PCI\VEN_10b5&DEV_9050&SUBSYS_00435977
+%DeviceDescBaseDio64%          = DDInstall_AXTPCIB_64,    PCI\VEN_10b5&DEV_9050&SUBSYS_00535977
+%DeviceDescBaseDio64%          = DDInstall_AXTPCIB_64,    PCI\VEN_10b5&DEV_9050&SUBSYS_00635977
+%DeviceDescBaseDioE64%         = DDInstall_AXTPCIB_64,    PCI\VEN_10b5&DEV_9050&SUBSYS_00835977
+%DeviceDescBaseMotion64%       = DDInstall_AXTPCIB_64,    PCI\VEN_1c34&DEV_9050&SUBSYS_00825977
+%DeviceDescBaseMotion64%       = DDInstall_AXTPCIB_64,    PCI\VEN_1c34&DEV_9050&SUBSYS_00845977
+%DeviceDescBaseMotion64%       = DDInstall_AXTPCIB_64,    PCI\VEN_10b5&DEV_9050&SUBSYS_00845977
+%DeviceDescBaseMotion64%       = DDInstall_AXTPCIB_64,    PCI\VEN_10b5&DEV_9050&SUBSYS_00855977
+%DeviceDescBaseAio64%          = DDInstall_AXTPCIB_64,    PCI\VEN_10b5&DEV_9050&SUBSYS_00935977
+%DeviceDescBaseRtexIo64%       = DDInstall_R32IORtex_64,  PCI\VEN_104c&DEV_A106&SUBSYS_00000000
+%DeviceDescSIIIHPCIe64%        = DDInstall_R32xxSIIIH_64, PCI\VEN_1C34&DEV_6674&SUBSYS_00D05977
+%DeviceDescSIIIHPCIe64ADV%     = DDInstall_R32xxSIIIH_64, PCI\VEN_1C34&DEV_6674&SUBSYS_00D15977
+%DeviceDescMLIIIPCIe64SMP%     = DDInstall_R32xxSIIIH_64, PCI\VEN_1C34&DEV_6674&SUBSYS_00D55977
+%DeviceDescSIIIHPCIe64SMP%     = DDInstall_R32xxSIIIH_64, PCI\VEN_1C34&DEV_6674&SUBSYS_00D65977
+%DeviceDescRTEXPCIe64SMP%      = DDInstall_R32xxSIIIH_64, PCI\VEN_1C34&DEV_6674&SUBSYS_00D75977
+%DeviceDescECATPCIe64SMP%      = DDInstall_R32xxSIIIH_64, PCI\VEN_1C34&DEV_6674&SUBSYS_00D85977
+%DeviceDescMLIIIPCI64SMP%      = DDInstall_R32xxSIIIH_64, PCI\VEN_1C34&DEV_6674&SUBSYS_00D95977
+%DeviceDescSIIIHPCI64SMP%      = DDInstall_R32xxSIIIH_64, PCI\VEN_1C34&DEV_6674&SUBSYS_00DA5977
+%DeviceDescRTEXPCI64SMP%       = DDInstall_R32xxSIIIH_64, PCI\VEN_1C34&DEV_6674&SUBSYS_00DB5977
+%DeviceDescECATPCI64SMP%       = DDInstall_R32xxSIIIH_64, PCI\VEN_1C34&DEV_6674&SUBSYS_00DC5977
+%DeviceDescBasePCIeL64%        = DDInstall_AXTEC30_64,    PCI\VEN_1C34&DEV_EC30&SUBSYS_00095977
+%DeviceDescBasePCIeL64%        = DDInstall_AXTEC30_64,    PCI\VEN_1C34&DEV_EC30&SUBSYS_000A5977
+%DeviceDescBasePCIeDIOEL64%    = DDInstall_AXTEC30_64,    PCI\VEN_1C34&DEV_EC30&SUBSYS_000B5977
+%DeviceDescBasePCIeDIOL64%     = DDInstall_AXTEC30_64,    PCI\VEN_1C34&DEV_EC30&SUBSYS_00445977
+%DeviceDescBasePCIeDIOL64%     = DDInstall_AXTEC30_64,    PCI\VEN_1C34&DEV_EC30&SUBSYS_00545977
+%DeviceDescBasePCIeDIOL64%     = DDInstall_AXTEC30_64,    PCI\VEN_1C34&DEV_EC30&SUBSYS_00645977
+%DeviceDescBasePCIeMotionL64%  = DDInstall_AXTEC30_64,    PCI\VEN_1C34&DEV_EC30&SUBSYS_00865977
+%DeviceDescBasePCIeMotionL64%  = DDInstall_AXTEC30_64,    PCI\VEN_1C34&DEV_EC30&SUBSYS_00875977
+%DeviceDescBasePCIeLLP64%      = DDInstall_AXTEC30_64,    PCI\VEN_1C34&DEV_EC30&SUBSYS_10095977
+
+[CopyFiles_AXTPCIB]
+Axt9050_32bit.sys,,,0x00000004
+
+[CopyFiles_R1604]
+Axt9030_32bit.sys,,,0x00000004
+
+[CopyFiles_R32IORtex]
+Axt6205_32bit.sys,,,0x00000004
+
+[CopyFiles_R32xxSIIIH]
+Axt6674_32bit.sys,,,0x00000004
+
+[CopyFiles_AXTPCIEB]
+Axt8311_32bit.sys,,,0x00000004
+
+[CopyFiles_AXTEC30]
+AxtEC30_32bit.sys,,,0x00000004
+
+[CopyFiles_AXTPCIB_64BIT]
+Axt9050_64bit.sys,,,0x00000004
+
+[CopyFiles_R1604_64BIT]
+Axt9030_64bit.sys,,,0x00000004
+
+[CopyFiles_R32IORtex_64BIT]
+Axt6205_64bit.sys,,,0x00000004
+
+[CopyFiles_R32xxSIIIH_64BIT]
+Axt6674_64bit.sys,,,0x00000004
+
+[CopyFiles_AXTPCIEB_64BIT]
+Axt8311_64bit.sys,,,0x00000004
+
+[CopyFiles_AXTEC30_64BIT]
+AxtEC30_64bit.sys,,,0x00000004
+
+;[CopyFiles_Inf]
+;AXTINSTHWr01.inf,,,0x00000004
+
+[DDInstall_AXTPCIB.NT]
+AddReg    = AddRegistry_NT_AXTPCIB
+;CopyFiles = CopyFiles_AXTPCIB, CopyFiles_Inf
+CopyFiles = CopyFiles_AXTPCIB
+
+[DDInstall_R1604.NT]
+AddReg    = AddRegistry_NT_R1604
+;CopyFiles = CopyFiles_R1604, CopyFiles_Inf
+CopyFiles = CopyFiles_R1604
+
+[DDInstall_R32IORtex.NT]
+AddReg    = AddRegistry_NT_R32IORtex
+CopyFiles = CopyFiles_R32IORtex
+
+[DDInstall_R32xxSIIIH.NT]
+AddReg    = AddRegistry_NT_R32xxSIIIH
+CopyFiles = CopyFiles_R32xxSIIIH
+
+[DDInstall_R32xxSIIIH_64.NT]
+AddReg    = AddRegistry_NT_R32xxSIIIH_64
+CopyFiles = CopyFiles_R32xxSIIIH_64BIT
+
+[DDInstall_PCIe.NT]
+AddReg    = AddRegistry_NT_AXTPCIEB
+;CopyFiles =CopyFiles_AXTPCIEB,CopyFiles_Inf
+CopyFiles = CopyFiles_AXTPCIEB
+
+[DDInstall_AXTEC30.NT]
+AddReg    = AddRegistry_NT_AXTEC30
+CopyFiles = CopyFiles_AXTEC30
+
+[DDInstall_AXTPCIB_64.NT]
+AddReg    = AddRegistry_NT_AXTPCIB_64
+;CopyFiles = CopyFiles_AXTPCIB, CopyFiles_Inf
+CopyFiles = CopyFiles_AXTPCIB_64BIT
+
+[DDInstall_R1604_64.NT]
+AddReg    = AddRegistry_NT_R1604_64
+;CopyFiles = CopyFiles_R1604, CopyFiles_Inf
+CopyFiles = CopyFiles_R1604_64BIT
+
+[DDInstall_R32IORtex_64.NT]
+AddReg    = AddRegistry_NT_R32IORtex_64
+;CopyFiles = CopyFiles_R32IORtex_64BIT, CopyFiles_Inf
+CopyFiles = CopyFiles_R32IORtex_64BIT
+
+[DDInstall_PCIe_64.NT]
+AddReg    = AddRegistry_NT_AXTPCIEB_64
+;CopyFiles =CopyFiles_AXTPCIEB,CopyFiles_Inf
+CopyFiles = CopyFiles_AXTPCIEB_64BIT
+
+[DDInstall_AXTEC30_64.NT]
+AddReg    = AddRegistry_NT_AXTEC30_64
+CopyFiles = CopyFiles_AXTEC30_64BIT
+
+[DDInstall_AXTPCIB.NT.Services]
+AddService = AXTPCIB, 0x00000002, Service_Inst_AXTPCIB
+
+[DDInstall_R1604.NT.Services]
+AddService = AXTR1604, 0x00000002, Service_Inst_R1604
+
+[DDInstall_R32IORtex.NT.Services]
+AddService = AXTR32IORtex, 0x00000002, Service_Inst_R32IORtex
+
+[DDInstall_R32xxSIIIH.NT.Services]
+AddService = AXTR32xxSIIIH, 0x00000002, Service_Inst_R32xxSIIIH
+
+[DDInstall_PCIe.NT.Services]
+AddService = AXTPCIEB, 0x00000002, Service_Inst_AXTPCIEB
+
+[DDInstall_AXTEC30.NT.Services]
+AddService = AXTEC30, 0x00000002, Service_Inst_AXTEC30
+
+[DDInstall_AXTPCIB_64.NT.Services]
+AddService = AXTPCIB_64, 0x00000002, Service_Inst_AXTPCIB_64
+
+[DDInstall_R1604_64.NT.Services]
+AddService = AXTR1604_64, 0x00000002, Service_Inst_R1604_64
+
+[DDInstall_R32IORtex_64.NT.Services]
+AddService = AXTR32IORtex_64, 0x00000002, Service_Inst_R32IORtex_64
+
+[DDInstall_R32xxSIIIH_64.NT.Services]
+AddService = AXTR32xxSIIIH_64, 0x00000002, Service_Inst_R32xxSIIIH_64
+
+[DDInstall_PCIe_64.NT.Services]
+AddService = AXTPCIEB_64, 0x00000002, Service_Inst_AXTPCIEB_64
+
+[DDInstall_AXTEC30_64.NT.Services]
+AddService = AXTEC30_64, 0x00000002, Service_Inst_AXTEC30_64
+
+[AddRegistry_NT_AXTPCIB]
+HKLM,System\CurrentControlSet\Services\AXTPCIB,PhysicalMemoryCacheable,0x00010003,0x0
+
+[AddRegistry_NT_R1604]
+HKLM,System\CurrentControlSet\Services\AXTR1604,PhysicalMemoryCacheable,0x00010003,0x0
+
+[AddRegistry_NT_R32IORtex]
+HKLM,System\CurrentControlSet\Services\AXTR32IORtex,PhysicalMemoryCacheable,0x00010003,0x0
+
+[AddRegistry_NT_R32xxSIIIH]
+HKLM,System\CurrentControlSet\Services\AXTR32xxSIIIH,PhysicalMemoryCacheable,0x00010003,0x0
+
+[AddRegistry_NT_AXTPCIEB]
+HKLM,System\CurrentControlSet\Services\AXTPCIEB,PhysicalMemoryCacheable,0x00010003,0x0
+
+[AddRegistry_NT_AXTPCIB_64]
+HKLM,System\CurrentControlSet\Services\AXTPCIB_64,PhysicalMemoryCacheable,0x00010003,0x0
+
+[AddRegistry_NT_R1604_64]
+HKLM,System\CurrentControlSet\Services\AXTR1604_64,PhysicalMemoryCacheable,0x00010003,0x0
+
+[AddRegistry_NT_R32IORtex_64]
+HKLM,System\CurrentControlSet\Services\AXTR32IORtex_64,PhysicalMemoryCacheable,0x00010003,0x0
+
+[AddRegistry_NT_R32xxSIIIH_64]
+HKLM,System\CurrentControlSet\Services\AXTR32xxSIIIH_64,PhysicalMemoryCacheable,0x00010003,0x0
+
+[AddRegistry_NT_AXTPCIEB_64]
+HKLM,System\CurrentControlSet\Services\AXTPCIEB_64,PhysicalMemoryCacheable,0x00010003,0x0
+
+[AddRegistry_NT_AXTEC30]
+HKLM,System\CurrentControlSet\Services\AXTEC30,PhysicalMemoryCacheable,0x00010003,0x0
+
+[AddRegistry_NT_AXTEC30_64]
+HKLM,System\CurrentControlSet\Services\AXTEC30_64,PhysicalMemoryCacheable,0x00010003,0x0
+
+[Service_Inst_R1604]
+ServiceType    = 1
+StartType      = 3
+ErrorControl   = 0
+ServiceBinary  = %12%\Axt9030_32bit.sys
+
+[Service_Inst_R32IORtex]
+ServiceType    = 1
+StartType      = 3
+ErrorControl   = 0
+ServiceBinary  = %12%\Axt6205_32bit.sys
+
+[Service_Inst_R32xxSIIIH]
+ServiceType    = 1
+StartType      = 3
+ErrorControl   = 0
+ServiceBinary  = %12%\Axt6674_32bit.sys
+
+[Service_Inst_AXTPCIB]
+ServiceType    = 1
+StartType      = 3
+ErrorControl   = 0
+ServiceBinary  = %12%\Axt9050_32bit.sys
+
+[Service_Inst_AXTPCIEB]
+ServiceType    = 1
+StartType      = 3
+ErrorControl   = 0
+ServiceBinary  = %12%\Axt8311_32bit.sys
+
+[Service_Inst_AXTEC30]
+ServiceType    = 1
+StartType      = 3
+ErrorControl   = 0
+ServiceBinary  = %12%\AxtEC30_32bit.sys
+
+[Service_Inst_R1604_64]
+ServiceType    = 1
+StartType      = 3
+ErrorControl   = 0
+ServiceBinary  = %12%\Axt9030_64bit.sys
+
+[Service_Inst_R32IORtex_64]
+ServiceType    = 1
+StartType      = 3
+ErrorControl   = 0
+ServiceBinary  = %12%\Axt6205_64bit.sys
+
+[Service_Inst_R32xxSIIIH_64]
+ServiceType    = 1
+StartType      = 3
+ErrorControl   = 0
+ServiceBinary  = %12%\Axt6674_64bit.sys
+
+[Service_Inst_AXTPCIB_64]
+ServiceType    = 1
+StartType      = 3
+ErrorControl   = 0
+ServiceBinary  = %12%\Axt9050_64bit.sys
+
+[Service_Inst_AXTPCIEB_64]
+ServiceType    = 1
+StartType      = 3
+ErrorControl   = 0
+ServiceBinary  = %12%\Axt8311_64bit.sys
+
+[Service_Inst_AXTEC30_64]
+ServiceType    = 1
+StartType      = 3
+ErrorControl   = 0
+ServiceBinary  = %12%\AxtEC30_64bit.sys
+
+;-----------------------------------------------------------
+; Source file information
+;-----------------------------------------------------------
+
+[SourceDisksNames]
+1 = %DiskId%,
+;2 = %DiskId%,,,\INST
+
+[SourceDisksFiles]
+Axt8311_32bit.sys = 1
+Axt8311_64bit.sys = 1
+Axt9030_32bit.sys = 1
+Axt9030_64bit.sys = 1
+Axt9050_32bit.sys = 1
+Axt9050_64bit.sys = 1
+Axt6205_32bit.sys = 1
+Axt6205_64bit.sys = 1
+Axt6674_32bit.sys = 1
+Axt6674_64bit.sys = 1
+AxtEC30_32bit.sys = 1
+AxtEC30_64bit.sys = 1
+
+
+[DestinationDirs]
+;CopyFiles_Inf    = 17
+DefaultDestDir   = 12
+
+;-----------------------------------------------------------
+; String information
+;-----------------------------------------------------------
+
+[Strings]
+ClassName                  = "AJINEXTEK Co.,Ltd."
+DiskId                     = "AjinExtek AXT_PCIxB Installation Disk"
+AXT                        = "Ajinextek Co., Ltd."
+DeviceDescBasePCIeMotion   = "AjinExtek AXT_PCIeB_Nx04"
+DeviceDescBasePCIe         = "AjinExtek AXT_PCIeB_BExR"
+DeviceDescBasePCIeDIO      = "AjinExtek AXT_PCIeB_Dx64R"
+DeviceDescBasePCIeDIOE     = "AjinExtek AXT_PCIeB_BEHD"
+DeviceDescBase             = "AjinExtek AXT_PCIB_BPxR"
+DeviceDescBaseDio          = "AjinExtek AXT_PCIB_Dx64R"
+DeviceDescBaseDioE         = "AjinExtek AXT_PCIB_BPHD"
+DeviceDescBaseAio          = "AjinExtek AXT_PCIB_AIO1602HR"
+DeviceDescBaseMotion       = "AjinExtek AXT_PCIB_Nx04"
+DeviceDescRtex             = "AjinExtek AXT_PCIB_RTEX"
+DeviceDescRtexPCIe         = "AjinExtek AXT_PCIeB_RTEX_Nx04"
+DeviceDescBaseRtexIo	   = "AjinExtek AXT_PCIB_RTEX_IO"
+DeviceDescRTEXPCIeSMP      = "AjinExtek AXT_PCIeB_RTEX_SMP"
+DeviceDescRTEXPCISMP       = "AjinExtek AXT_PCIB_RTEX_SMP"
+DeviceDescMLII             = "AjinExtek AXT_PCIB_MLII"
+DeviceDescMLIIIPCI         = "AjinExtek AXT_PCIB_MLIII"
+DeviceDescMLIIIIOPCI       = "AjinExtek AXT_PCIB_MLIII_IO"
+DeviceDescMLIIIPCIe        = "AjinExtek AXT_PCIeB_MLIII"
+DeviceDescMLIIIPCIeSMP     = "AjinExtek AXT_PCIeB_MLIII_SMP"
+DeviceDescMLIIIPCISMP      = "AjinExtek AXT_PCIB_MLIII_SMP"
+DeviceDescSIIIH            = "AjinExtek AXT_PCIB_SSCNETIII/H"
+DeviceDescSIIIHPCIe        = "AjinExtek AXT_PCIeB_SSCNETIII/H"
+DeviceDescSIIIHPCIeADV     = "AjinExtek AXT_PCIeB_SSCNETIII/H"
+DeviceDescSIIIHPCIeSMP     = "AjinExtek AXT_PCIeB_SSCNETIII/H_SMP"
+DeviceDescSIIIHPCISMP      = "AjinExtek AXT_PCIB_SSCNETIII/H_SMP"
+DeviceDescECATPCIeSMP      = "AjinExtek AXT_PCIeB_ECAT_SMP"
+DeviceDescECATPCISMP       = "AjinExtek AXT_PCIB_ECAT_SMP"
+DeviceDescBasePCIeMotionL  = "AjinExtek AXT_LPCIeB_Nx04"
+DeviceDescBasePCIeDIOL     = "AjinExtek AXT_LPCIeB_Dx64R"
+DeviceDescBasePCIeL        = "AjinExtek AXT_PCIeB_LBExR"
+DeviceDescBasePCIeDIOEL    = "AjinExtek AXT_PCIeB_LBEHD"
+DeviceDescBasePCIeLLP	   = "AjinExtek AXT_PCIeB_LBEHR_LP"
+DeviceDescBasePCIeMotion64 = "AjinExtek AXT_PCIeB_Nx04(64-Bit)"
+DeviceDescBasePCIe64       = "AjinExtek AXT_PCIeB_BExR(64-Bit)"
+DeviceDescBasePCIeDIO64    = "AjinExtek AXT_PCIeB_Dx64R(64-Bit)"
+DeviceDescBasePCIeDIOE64   = "AjinExtek AXT_PCIeB_BEHD(64-Bit)"
+DeviceDescBase64           = "AjinExtek AXT_PCIB_BPxR(64-Bit)"
+DeviceDescBaseDio64        = "AjinExtek AXT_PCIB_Dx64R(64-Bit)"
+DeviceDescBaseDioE64       = "AjinExtek AXT_PCIB_BPHD(64-Bit)"
+DeviceDescBaseAio64        = "AjinExtek AXT_PCIB_AIO1602HR(64-Bit)"
+DeviceDescBaseMotion64     = "AjinExtek AXT_PCIB_Nx04(64-Bit)"
+DeviceDescRtex64           = "AjinExtek AXT_PCIB_RTEX(64-Bit)"
+DeviceDescRtexPCIe64       = "AjinExtek AXT_PCIeB_RTEX(64-Bit)"
+DeviceDescBaseRtexIo64	   = "AjinExtek AXT_PCIB_RTEX_IO(64-Bit)"
+DeviceDescRTEXPCIe64SMP    = "AjinExtek AXT_PCIeB_RTEX_SMP(64-Bit)"
+DeviceDescRTEXPCI64SMP     = "AjinExtek AXT_PCIB_RTEX_SMP(64-Bit)"
+DeviceDescMLII64           = "AjinExtek AXT_PCIB_MLII(64-Bit)"
+DeviceDescMLIIIPCI64       = "AjinExtek AXT_PCIB_MLIII(64-Bit)"
+DeviceDescMLIIIIOPCI64     = "AjinExtek AXT_PCIB_MLIII_IO(64-Bit)"
+DeviceDescMLIIIPCIe64      = "AjinExtek AXT_PCIeB_MLIII(64-Bit)"
+DeviceDescMLIIIPCIe64SMP   = "AjinExtek AXT_PCIeB_MLIII_SMP(64-Bit)"
+DeviceDescMLIIIPCI64SMP    = "AjinExtek AXT_PCIB_MLIII_SMP(64-Bit)"
+DeviceDescSIIIH64          = "AjinExtek AXT_PCIB_SSCNETIII/H(64-Bit)"
+DeviceDescSIIIHPCIe64      = "AjinExtek AXT_PCIeB_SSCNETIII/H(64-Bit)"
+DeviceDescSIIIHPCIe64ADV   = "AjinExtek AXT_PCIeB_SSCNETIII/H(64-Bit)"
+DeviceDescSIIIHPCIe64SMP   = "AjinExtek AXT_PCIeB_SSCNETIII/H_SMP(64-Bit)"
+DeviceDescSIIIHPCI64SMP    = "AjinExtek AXT_PCIB_SSCNETIII/H_SMP(64-Bit)"
+DeviceDescECATPCIe64SMP    = "AjinExtek AXT_PCIeB_ECAT_SMP(64-Bit)"
+DeviceDescECATPCI64SMP     = "AjinExtek AXT_PCIB_ECAT_SMP(64-Bit)"
+DeviceDescBasePCIeMotionL64	= "AjinExtek AXT_LPCIeB_Nx04(64-Bit)"
+DeviceDescBasePCIeDIOL64   	= "AjinExtek AXT_LPCIeB_Dx64R(64-Bit)"
+DeviceDescBasePCIeL64      	= "AjinExtek AXT_PCIeB_LBExR(64-Bit)"
+DeviceDescBasePCIeDIOEL64  	= "AjinExtek AXT_PCIeB_LBEHD(64-Bit)"
+DeviceDescBasePCIeLLP64  	= "AjinExtek AXT_PCIeB_LBEHR_LP(64-Bit)"

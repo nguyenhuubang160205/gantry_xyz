@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "07.[Move]-MultiAxes", "07.[Move]-MultiAxes2013.vbproj", "{53632E7E-EDC6-482A-8397-84B1ED80AEA2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53632E7E-EDC6-482A-8397-84B1ED80AEA2}.Debug|x86.ActiveCfg = Debug|x86
+		{53632E7E-EDC6-482A-8397-84B1ED80AEA2}.Debug|x86.Build.0 = Debug|x86
+		{53632E7E-EDC6-482A-8397-84B1ED80AEA2}.Release|x86.ActiveCfg = Release|x86
+		{53632E7E-EDC6-482A-8397-84B1ED80AEA2}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,17 @@
+#경고 번호(16진),명칭,원인,대책
+00,정상,정상,정상
+A0,과중부하 경고,부하율이 보호 수준의 85% 이상,부하율을 확인한다 가속도를 완화한다. 부하를 줄인다.
+A1,과회생 경고,회생 부하율이 보호 수준의 85% 이상,회생 부하율을 확인한다. 가속도를 완화한다. 부하를 줄인다.
+A2,배터리 경고,배터리 전압 3.2V 이하,배터리 전압을 확인한다. 배터리를 교환한다.
+A3,팬 경고,팬 정지 상태가 1초간 지속됨,팬 회전을 확인한다. 팬을 교환한다.
+A4,인코더 통신 경고,인코더 통신 이상 연속 발생 횟수가 규정치를 초과,노이즈 가능성을 검토한다.
+A5,인코더 과열 경고,인코더가 과열 경고를 검출함,모터 사용 환경을 확인한다.
+A6,발진 검출 경고,발진 상태를 검출함,게인을 낮춘다.
+A7,수명 검출 경보,콘덴서 또는 팬의 잔여 수명이 규정치 이하로 떨어짐,앰프를 교체한다.
+A8,외부 스케일 이상 경고,외부 스케일이 경고를 검출함,외부 스케일을 교환한다.
+A9,외부 스케일 통신 경고,외부 스케일 통신 이상 연속 발생 횟수가 규정치를 초과,노이즈 가능성을 검토한다.
+C0,RTEX 연속 통신 이상 경고,The No. of detected continuous reading errors (CRC error) of the data delivered to the local node reaches the number specified by Pr7.26 (RTEX 연속 통신 이상 경고 설정) warning setting.,Pr7.26의 설정을 확인한다. 커넥터의 결선 상태 확인. 통신 케이블을 교환한다.
+C1,RTEX 누적 통신 이상 경고,The accumulated number of detected reading errors (CRC error) of the data delivered to the local node reaches the number specified by Pr 7.27 (RTEX 누적 통신 이상 경고 설정) warning setting.,Pr7.27의 설정을 확인한다. 커넥터의 결선 상태 확인. 통신 케이블을 교환한다.
+C2,RTEX_Update_Counter 이상 경고,"Accumulated amount exceeded the times specified by Pr7.28 (RTEX_Update_Counter 이상 경고 설정), so that Update_Counter was not updated.",Pr7.28의 설정을 확인한다. In the host controller to verify that the RTEX_Update_Counter is incremented successful.
+C3,주전원 오프 경고,"When setting of Pr7.14 (주전원 오프 경고 검출 시간) is 10-1999,instantaneous power interruption occurs between L1 and L3 and lasts for a time longer than the setting of Pr7.14.","Pr7.14의 설정을 확인한다.
+커넥터(L1, L2, L3)의 선간 전압을 확인. 전원의 각 상(L1, L2, L3)을 올바르게 연결한다. 앰프를 교체한다."

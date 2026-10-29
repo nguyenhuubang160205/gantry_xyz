@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RegisterDescription ModelName ="IO"
+                     VendorName="Crevis"
+                     ToolTip="Crevis FnIO"
+                     StandardNameSpace="None"
+                     SchemaMajorVersion="1"
+                     SchemaMinorVersion="0"
+                     SchemaSubMinorVersion="0"
+                     MajorVersion="1"
+                     MinorVersion="0"
+                     SubMinorVersion="0"
+                     ProductGuid="8BCD0E5A-9DA1-4504-BF95-5A27F2D02405"
+                     VersionGuid="D2EC627D-9311-4137-B1C6-0727CE0025E4"
+                     xmlns="http://www.genicam.org/GenApi/Version_1_0"
+                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xsi:schemaLocation="http://www.genicam.org/GenApi/Version_1_0
+                     http://www.genicam.org/GenApi/GenApiSchema_Version_1_0.xsd">
+
+  <!-- ***************************************** -->
+  <!-- RootCategory -->
+  <!-- ***************************************** -->
+  <Group Comment="Root">
+    <Category Name="Root">
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pFeature>AGT4114</pFeature>
+    </Category>
+  </Group>
+
+  <!-- ***************************************** -->
+  <!-- SubCategories -->
+  <!-- ***************************************** -->
+  <Group Comment="SubCategories">
+    <Category Name="AGT4114" NameSpace="Custom">
+      <ToolTip>Category for Device information and control.</ToolTip>
+      <Description>Category for Device information and control.</Description>
+      <DisplayName>AGT-4114</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <pFeature>FaultActionChannel0_Enum</pFeature>
+      <pFeature>FaultActionChannel1_Enum</pFeature>
+      <pFeature>FaultActionChannel2_Enum</pFeature>
+      <pFeature>FaultActionChannel3_Enum</pFeature>
+      <pFeature>FaultValueEnum</pFeature>
+    </Category>
+  </Group>
+  <!-- /SubCategories-->
+
+  <!-- Device Control -->
+  <Group Comment="DeviceControl">
+    <Enumeration Name="FaultActionChannel0_Enum" NameSpace ="Custom">
+      <ToolTip>.</ToolTip>
+      <Description>IO Fault Action Channel 0</Description>
+      <DisplayName>IO Fault Action Channel 0</DisplayName>
+      <Visibility>Beginner</Visibility>
+       <EnumEntry Name="FaultValue" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Fault Value</Description>
+        <DisplayName>Fault Value</DisplayName>
+        <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="HoldLastState" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Hold Last State</Description>
+        <DisplayName>Hold Last State</DisplayName>
+        <Value>1</Value>
+      </EnumEntry>
+      <EnumEntry Name="LowLimit" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Low Limit</Description>
+        <DisplayName>Low Limit</DisplayName>
+        <Value>2</Value>
+      </EnumEntry>
+      <EnumEntry Name="HighLimit" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>High Limit</Description>
+        <DisplayName>High Limit</DisplayName>
+        <Value>3</Value>
+      </EnumEntry>
+      <pValue>FaultValueCH0Reg</pValue>
+    </Enumeration>
+
+    <Enumeration Name="FaultActionChannel1_Enum" NameSpace ="Custom">
+      <ToolTip>.</ToolTip>
+      <Description>IO Fault Action Channel 1</Description>
+      <DisplayName>IO Fault Action Channel 1</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <EnumEntry Name="FaultValue" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Fault Value</Description>
+        <DisplayName>Fault Value</DisplayName>
+        <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="HoldLastState" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Hold Last State</Description>
+        <DisplayName>Hold Last State</DisplayName>
+        <Value>1</Value>
+      </EnumEntry>
+      <EnumEntry Name="LowLimit" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Low Limit</Description>
+        <DisplayName>Low Limit</DisplayName>
+        <Value>2</Value>
+      </EnumEntry>
+      <EnumEntry Name="HighLimit" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>High Limit</Description>
+        <DisplayName>High Limit</DisplayName>
+        <Value>3</Value>
+      </EnumEntry>
+      <pValue>FaultValueCH1Reg</pValue>
+    </Enumeration>
+
+    <Enumeration Name="FaultActionChannel2_Enum" NameSpace ="Custom">
+      <ToolTip>.</ToolTip>
+      <Description>IO Fault Action Channel 2</Description>
+      <DisplayName>IO Fault Action Channel 2</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <EnumEntry Name="FaultValue" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Fault Value</Description>
+        <DisplayName>Fault Value</DisplayName>
+        <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="HoldLastState" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Hold Last State</Description>
+        <DisplayName>Hold Last State</DisplayName>
+        <Value>1</Value>
+      </EnumEntry>
+      <EnumEntry Name="LowLimit" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Low Limit</Description>
+        <DisplayName>Low Limit</DisplayName>
+        <Value>2</Value>
+      </EnumEntry>
+      <EnumEntry Name="HighLimit" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>High Limit</Description>
+        <DisplayName>High Limit</DisplayName>
+        <Value>3</Value>
+      </EnumEntry>
+      <pValue>FaultValueCH2Reg</pValue>
+    </Enumeration>
+
+    <Enumeration Name="FaultActionChannel3_Enum" NameSpace ="Custom">
+      <ToolTip>.</ToolTip>
+      <Description>IO Fault Action Channel 3</Description>
+      <DisplayName>IO Fault Action Channel 3</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <EnumEntry Name="FaultValue" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Fault Value</Description>
+        <DisplayName>Fault Value</DisplayName>
+        <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="HoldLastState" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Hold Last State</Description>
+        <DisplayName>Hold Last State</DisplayName>
+        <Value>1</Value>
+      </EnumEntry>
+      <EnumEntry Name="LowLimit" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>Low Limit</Description>
+        <DisplayName>Low Limit</DisplayName>
+        <Value>2</Value>
+      </EnumEntry>
+      <EnumEntry Name="HighLimit" NameSpace="Custom">
+        <ToolTip> </ToolTip>
+        <Description>High Limit</Description>
+        <DisplayName>High Limit</DisplayName>
+        <Value>3</Value>
+      </EnumEntry>
+      <pValue>FaultValueCH3Reg</pValue>
+    </Enumeration>
+
+    <Integer Name="FaultValueEnum" NameSpace ="Custom">
+      <ToolTip>.</ToolTip>
+      <Description>IO Fault Value(0~4095)</Description>
+      <DisplayName>IO Fault Value</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <pValue>FaultValue_Reg</pValue>
+      <Min>0</Min>
+      <Max>4095</Max>
+      <Inc>1</Inc>
+      <Representation>PureNumber</Representation>
+    </Integer>
+
+    <StructReg Comment="ConfigurationParamReg">
+      <ToolTip>.</ToolTip>
+      <Visibility>Beginner</Visibility>
+      <Address>0x0000A011</Address>
+      <Length>4</Length>
+      <AccessMode>RW</AccessMode>
+      <pPort>Device</pPort>
+      <Endianess>LittleEndian</Endianess>
+      <StructEntry Name="FaultValueCH0Reg">
+        <LSB>0</LSB>
+        <MSB>1</MSB>
+      </StructEntry>
+      <StructEntry Name="FaultValueCH1Reg">
+        <LSB>2</LSB>
+        <MSB>3</MSB>
+      </StructEntry>
+      <StructEntry Name="FaultValueCH2Reg">
+        <LSB>4</LSB>
+        <MSB>5</MSB>
+      </StructEntry>
+      <StructEntry Name="FaultValueCH3Reg">
+        <LSB>6</LSB>
+        <MSB>7</MSB>
+      </StructEntry>
+      <StructEntry Name="FaultValue_Reg">
+        <LSB>16</LSB>
+        <MSB>27</MSB>
+      </StructEntry>
+    </StructReg>
+  </Group>
+
+  <!-- Global Nodes -->
+  <Port Name="Device">
+    <ToolTip>Port giving access to the device.</ToolTip>
+    <SwapEndianess>Yes</SwapEndianess>
+  </Port>
+  <!-- /Global Nodes-->
+</RegisterDescription>

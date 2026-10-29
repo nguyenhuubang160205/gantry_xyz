@@ -1,0 +1,277 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\MoveSingleAxis.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\MoveSingleAxis.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MOVESINGLEAXIS_DIALOG DIALOGEX 0, 0, 273, 335
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "MoveSingleAxis"
+FONT 9, "±¼¸²"
+BEGIN
+    COMBOBOX        IDC_CBO_SEL_AXIS,81,7,120,325,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Select Axis No : ",IDC_STATIC,13,9,54,11,SS_CENTERIMAGE
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,7,6,259,16
+    GROUPBOX        "Position Monitor",IDC_STATIC,7,28,259,69
+    GROUPBOX        "< Jog(Velocity) Move >",IDC_STATIC,7,258,259,70
+    LTEXT           "Target Position 1   :",IDC_STATIC,13,153,67,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_POS1,81,153,76,14,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "Target Position 2   :",IDC_STATIC,13,170,67,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_POS2,81,170,76,14,ES_RIGHT | ES_AUTOHSCROLL
+    GROUPBOX        "< Position Move >",IDC_STATIC,7,105,259,142
+    LTEXT           "Command Position :",IDC_STATIC,13,40,67,14,
+                    SS_CENTERIMAGE
+    LTEXT           "Feedback Position  :",IDC_STATIC,13,58,67,14,
+                    SS_CENTERIMAGE
+    RTEXT           "0.000",IDC_STC_CMD_POS,81,40,76,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    RTEXT           "0.000",IDC_STC_ACT_POS,81,58,76,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    PUSHBUTTON      "Position Clear",IDC_BTN_POS_CLEAR,202,40,58,32
+    LTEXT           "Command Velocity :",IDC_STATIC,13,76,67,14,
+                    SS_CENTERIMAGE
+    RTEXT           "0.000",IDC_STC_CMD_VEL,81,76,76,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    PUSHBUTTON      "Move Target 1",IDC_BTN_MOVE1,202,153,58,14
+    PUSHBUTTON      "Move Target 2",IDC_BTN_MOVE2,202,170,58,14
+    CONTROL         "[00] Absolute",IDC_RDO_ABS,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,83,118,57,10
+    CONTROL         "[01] Relative",IDC_RDO_REL,"Button",BS_AUTORADIOBUTTON,
+                    145,118,57,10
+    LTEXT           "Move Velocity       :",IDC_STATIC,13,191,67,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MOVE_VEL,81,191,76,14,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "Move Acceleration :",IDC_STATIC,13,208,67,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MOVE_ACC,81,208,76,14,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "Move Deceleration :",IDC_STATIC,13,225,67,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MOVE_DEC,81,225,76,14,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "Jog Velocity          :",IDC_STATIC,13,271,67,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_JOG_VEL,81,271,76,14,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "Jog Acceleration    :",IDC_STATIC,13,289,67,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_JOG_ACC,81,289,76,14,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "Jog Deceleration    :",IDC_STATIC,13,307,67,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_JOG_DEC,81,307,76,14,ES_RIGHT | ES_AUTOHSCROLL
+    PUSHBUTTON      "Jog Move(+)",IDC_BTN_JOG_MOVE_P,202,271,58,23
+    PUSHBUTTON      "Jog Move(-)",IDC_BTN_JOG_MOVE_N,202,299,58,23
+    PUSHBUTTON      "Move SStop",IDC_BTN_SSTOP,202,215,58,23
+    PUSHBUTTON      "Load File",IDC_BTN_LOAD_FILE,202,7,58,14
+    COMBOBOX        IDC_CBO_PROFILE,81,133,120,70,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Velocity Profile Set :",IDC_STATIC,13,133,67,14,
+                    SS_CENTERIMAGE
+    LTEXT           "Unit",IDC_STATIC,161,40,36,14,SS_CENTERIMAGE
+    LTEXT           "Unit",IDC_STATIC,161,58,36,14,SS_CENTERIMAGE
+    CONTROL         "Unit/Sec",IDC_STATIC,"Static",SS_SIMPLE | 
+                    SS_CENTERIMAGE | WS_GROUP,161,76,36,14
+    LTEXT           "Unit",IDC_STATIC,161,153,36,14,SS_CENTERIMAGE
+    LTEXT           "Unit/Sec",IDC_STATIC,161,191,36,14,SS_CENTERIMAGE
+    CONTROL         "Unit/Sec^2",IDC_STATIC,"Static",SS_SIMPLE | 
+                    SS_CENTERIMAGE | WS_GROUP,161,208,36,14
+    LTEXT           "Unit",IDC_STATIC,161,170,36,14,SS_CENTERIMAGE
+    CONTROL         "Unit/Sec^2",IDC_STATIC,"Static",SS_SIMPLE | 
+                    SS_CENTERIMAGE | WS_GROUP,161,225,36,14
+    LTEXT           "Unit/Sec",IDC_STATIC,161,271,36,14,SS_CENTERIMAGE
+    CONTROL         "Unit/Sec^2",IDC_STATIC,"Static",SS_SIMPLE | 
+                    SS_CENTERIMAGE | WS_GROUP,161,289,36,14
+    CONTROL         "Unit/Sec^2",IDC_STATIC,"Static",SS_SIMPLE | 
+                    SS_CENTERIMAGE | WS_GROUP,161,307,36,14
+    CONTROL         "Servo On",IDC_CHK_SERVO_ON,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,202,76,58,14
+    PUSHBUTTON      "Repeat Target 2",IDC_BTN_REPEAT,202,186,58,23
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204b0"
+        BEGIN
+            VALUE "Comments", "(2011.03.28 compiled r1.0) for EzSoftwareRM\0"
+            VALUE "CompanyName", "Ajinextek\0"
+            VALUE "FileDescription", "MoveSingleAxis Example\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "MoveSingleAxis\0"
+            VALUE "LegalCopyright", "Copyright (C) 2011 AJINEXTEK Co,. LTD.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "MoveSingleAxis.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "MoveSingleAxis\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_MOVESINGLEAXIS_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 266
+        VERTGUIDE, 13
+        VERTGUIDE, 260
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 328
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_MOVESINGLEAXIS_DIALOG DLGINIT
+BEGIN
+    IDC_CBO_PROFILE, 0x403, 23, 0
+0x3030, 0x203a, 0x5953, 0x5f4d, 0x5254, 0x5041, 0x5a45, 0x494f, 0x5f44, 
+0x4f4d, 0x4544, "\000" 
+    IDC_CBO_PROFILE, 0x403, 24, 0
+0x3130, 0x203a, 0x5341, 0x4d59, 0x545f, 0x4152, 0x4550, 0x4f5a, 0x4449, 
+0x4d5f, 0x444f, 0x0045, 
+    IDC_CBO_PROFILE, 0x403, 21, 0
+0x3330, 0x203a, 0x5953, 0x5f4d, 0x5f53, 0x5543, 0x5652, 0x5f45, 0x4f4d, 
+0x4544, "\000" 
+    IDC_CBO_PROFILE, 0x403, 22, 0
+0x3430, 0x203a, 0x5341, 0x4d59, 0x535f, 0x435f, 0x5255, 0x4556, 0x4d5f, 
+0x444f, 0x0045, 
+    0
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\MoveSingleAxis.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

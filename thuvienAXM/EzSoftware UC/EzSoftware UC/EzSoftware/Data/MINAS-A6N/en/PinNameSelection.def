@@ -1,0 +1,78 @@
+#Signal code,Signal name
+SEN,ABS data request signal
+PULSH1,Command pulse input 1
+PULSH2,Command pulse input 1
+SIGNH1,Command pulse sign input 1
+SIGNH2,Command pulse sign input 1
+OPC1,Command pulse input 2 (open collector)
+OPC2,Command pulse sign input 2 (open collector)
+PULS1,Command pulse input 2
+PULS2,Command pulse input 2
+SIGN1,Command pulse sign input 2
+SIGN2,Command pulse sign input 2
+COM,Power supply
+EX-SON,External servo on input
+POT,Positive direction over-travel inhibition input
+NOT,Negative direction over-travel inhibition input
+CL,Deviation counter clear input
+A-CLR,Alarm clear input
+INH,Command pulse inhibition input
+DIV1,Electronic gear switching input 1
+VS-SEL1,Damping control switching input 1
+GAIN,Gain switching input
+TL-SEL,Torque limit switching input
+C-MODE,Control mode switching input
+INTSPD1,Slection 1 input of internal command speed
+INTSPD2,Slection 2 input of internal command speed
+INTSPD3,Slection 3 input of internal command speed
+ZEROSPD,Speed zero clamp input
+VS-SEL2,Damping control switching input 2
+VC-SIGN,Speed command sign input
+TC-SIGN,Torque command sign input
+DIV2,Electronic gear switching input 2
+E-STOP,Forced alarm input
+J-SEL,Inertia ratio switching input
+DB-SEL,Dynamic brake (DB) switching input
+EXT1,External latch input 1
+EXT2,External latch input 2
+STOP,Stoppage input
+RET,Escape operation input
+HOME,Near the origin input
+EXT3,External latch input 3
+SI-MON1,General purpose monitor input 1
+SI-MON2,General purpose monitor input 2
+SI-MON3,General purpose monitor input 3
+SI-MON4,General purpose monitor input 4
+SI-MON5,General purpose monitor input 5
+BAT,Absolute cell input
+AIN,Maker uses
+FG,Frame ground
+GND,Signal ground
+OA,A-phase output
+OB,B-phase output
+OZ,Z-phase output
+CZ,Z-phase output (open collector)
+ALM,Servo-Alarm output
+S-RDY,Servo-Ready output
+BRK-OFF,External brake release signal
+INP,Positioning complete
+AT-SPEED,Speed arrival output
+TLC,Torque in-limit signal output
+ZSP,Zero-speed detection output signal
+V-COIN,Speed coincidence output
+INP2,Positioning complete 2
+WARN1,Alarm output 1
+WARN2,Alarm output 2
+IM,Torque monitor output
+SP,Speed monitor output
+P-CMD,Positional command ON/OFF output
+ALM-ATB,Alarm clear attribute output
+V-CMD,Speed command ON/OFF output
+V-LIMIT,Speed in-limit output
+EX-OUT1,RTEX operation output 1
+EX-OUT2,RTEX operation output 2
+SRV-ST,Servo-ON status output
+STO,STO monitor status output
+CMP-OUT,Position comparison output
+V-DIAG,Deterioration diagnosis velocity output
+RET_STAT,During execution of escape operation

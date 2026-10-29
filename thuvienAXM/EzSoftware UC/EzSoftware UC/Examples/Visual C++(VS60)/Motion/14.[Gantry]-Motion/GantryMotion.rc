@@ -1,0 +1,282 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\GantryMotion.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\GantryMotion.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_GANTRYMOTION_DIALOG DIALOGEX 0, 0, 273, 335
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "GantryMotion"
+FONT 9, "±¼¸²"
+BEGIN
+    COMBOBOX        IDC_CBO_SEL_AXIS,81,7,118,325,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Select Axis No : ",IDC_STATIC,13,9,54,11,SS_CENTERIMAGE
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,7,6,259,15
+    PUSHBUTTON      "Load File",IDC_BTN_LOAD_FILE,202,7,58,14
+    GROUPBOX        "Position Monitor",IDC_STATIC,7,27,259,89
+    LTEXT           "Command Position :",IDC_STATIC,13,50,67,14,
+                    SS_CENTERIMAGE
+    LTEXT           "Feedback Position  :",IDC_STATIC,13,66,67,14,
+                    SS_CENTERIMAGE
+    RTEXT           "0.000",IDC_STC_CMD_POS_MA,81,50,58,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    RTEXT           "0.000",IDC_STC_ACT_POS_MA,81,66,58,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    PUSHBUTTON      "Position Clear",IDC_BTN_POS_CLEAR,202,50,58,30
+    LTEXT           "Command Velocity :",IDC_STATIC,13,82,67,14,
+                    SS_CENTERIMAGE
+    RTEXT           "0.000",IDC_STC_CMD_VEL_MA,81,82,58,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    CTEXT           "Ma Axis 00",IDC_STC_AXIS_NO_MA,85,35,49,14,
+                    SS_CENTERIMAGE
+    CONTROL         "Servo On",IDC_CHK_SERVO_ON,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,202,82,58,14
+    CTEXT           "Sl Axis 01",IDC_STC_AXIS_NO_SL,146,35,47,14,
+                    SS_CENTERIMAGE
+    RTEXT           "0.000",IDC_STC_CMD_POS_SL,141,50,58,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    RTEXT           "0.000",IDC_STC_ACT_POS_SL,141,66,58,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    RTEXT           "0.000",IDC_STC_CMD_VEL_SL,141,82,58,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    CTEXT           "¡Ä",IDC_STC_GANTRY_STATE,136,38,8,8,SS_CENTERIMAGE
+    LTEXT           "Target Position      :",IDC_STATIC,13,148,67,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MOVE_POS,81,148,118,14,ES_RIGHT | ES_AUTOHSCROLL
+    PUSHBUTTON      "Move Target",IDC_BTN_MOVE_POS,202,148,58,14
+    GROUPBOX        "Position Move",IDC_STATIC,7,122,259,96
+    CONTROL         "[00] Absolute",IDC_RDO_ABS,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,83,134,57,10
+    CONTROL         "[01] Relative",IDC_RDO_REL,"Button",BS_AUTORADIOBUTTON,
+                    145,134,57,10
+    LTEXT           "Move Velocity       :",IDC_STATIC,13,164,67,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MOVE_VEL,81,164,118,14,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "Move Acceleration :",IDC_STATIC,13,180,67,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MOVE_ACC,81,180,118,14,ES_RIGHT | ES_AUTOHSCROLL
+    PUSHBUTTON      "Move Stop",IDC_BTN_MOVE_STOP,202,164,58,14
+    PUSHBUTTON      "Move Jog(+)",IDC_BTN_JOG_MOVE_P,202,180,58,14
+    PUSHBUTTON      "Move Jog(-)",IDC_BTN_JOG_MOVE_N,202,196,58,14
+    GROUPBOX        "Home Search",IDC_STATIC,7,224,259,49
+    LTEXT           "Home Result         : ",IDC_STATIC,13,236,67,14,
+                    SS_CENTERIMAGE
+    LTEXT           " [FFH] HOME_ERR_UNKNOWN",IDC_STC_HOME_RESULT,81,236,118,
+                    14,SS_CENTERIMAGE | SS_SUNKEN
+    LTEXT           "Home Step/Rate    : ",IDC_STATIC,13,252,67,14,
+                    SS_CENTERIMAGE
+    CTEXT           "",IDC_STC_HOME_STEP_MAIN,81,252,16,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    CTEXT           "",IDC_STC_HOME_STEP_SUB,99,252,16,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    CONTROL         "Progress1",IDC_PRG_HOME_RATE,"msctls_progress32",
+                    WS_BORDER,116,252,84,14
+    PUSHBUTTON      "Home Start",IDC_BTN_HOME_START,202,236,58,14
+    PUSHBUTTON      "Home Stop",IDC_BTN_HOME_STOP,202,252,58,14
+    GROUPBOX        "< Gantry Enable >",IDC_STATIC,7,279,259,49
+    COMBOBOX        IDC_CBO_GANTRY_HM_SLAVE_USE,202,291,58,91,
+                    CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Slave Hm Use: ",IDC_STATIC,152,291,48,12,SS_CENTERIMAGE
+    LTEXT           "Slave Home Range : ",IDC_STATIC,13,308,67,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_GANTRY_HM_RANGE,81,308,62,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,146,291,2,30
+    LTEXT           "Slave Home Offset  : ",IDC_STATIC,13,291,67,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_GANTRY_HM_OFFSET,81,291,62,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    CONTROL         "Gantry Enable",IDC_CHK_GANTRY_ENABLE,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,202,313,63,14
+    CONTROL         "Home Satae",IDC_CHK_HOME_STATE_MA,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,81,99,58,12
+    CONTROL         "Home Satae",IDC_CHK_HOME_STATE_SL,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,141,99,58,12
+    LTEXT           "Move Deceleration :",IDC_STATIC,13,196,64,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MOVE_DEC,81,196,118,14,ES_RIGHT | ES_AUTOHSCROLL
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,202,308,63,2
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204b0"
+        BEGIN
+            VALUE "Comments", "(2011.03.28 compiled r1.0) for EzSoftwareRM\0"
+            VALUE "CompanyName", "Ajinextek\0"
+            VALUE "FileDescription", "GantryMotion Example\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "GantryMotion\0"
+            VALUE "LegalCopyright", "Copyright (C) 2011 AJINEXTEK Co,. LTD.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "GantryMotion.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "GantryMotion\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_GANTRYMOTION_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 266
+        VERTGUIDE, 13
+        VERTGUIDE, 260
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 328
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_GANTRYMOTION_DIALOG DLGINIT
+BEGIN
+    IDC_CBO_GANTRY_HM_SLAVE_USE, 0x403, 9, 0
+0x3030, 0x203a, 0x4f4e, 0x454e, "\000" 
+    IDC_CBO_GANTRY_HM_SLAVE_USE, 0x403, 9, 0
+0x3130, 0x203a, 0x4f42, 0x4854, "\000" 
+    IDC_CBO_GANTRY_HM_SLAVE_USE, 0x403, 9, 0
+0x3230, 0x203a, 0x4145, 0x4843, "\000" 
+    0
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\GantryMotion.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
